@@ -75,8 +75,8 @@ function GoalCard({ label, now, goal }: { label: string; now: string; goal: stri
       textAlign: "center",
       boxShadow: "0 1px 4px rgba(0,0,0,0.1)",
     }}>
-      <div style={{ fontSize: 10.5, color: "rgba(255,255,255,0.4)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 10 }}>{label}</div>
-      <div style={{ fontSize: 12, color: "rgba(255,255,255,0.35)", marginBottom: 6 }}>Nu: {now}</div>
+      <div style={{ fontSize: 12, color: "rgba(255,255,255,0.6)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 10, fontWeight: 600 }}>{label}</div>
+      <div style={{ fontSize: 14, color: "rgba(255,255,255,0.55)", marginBottom: 8 }}>Nu: {now}</div>
       <div style={{ fontSize: 26, fontWeight: 800, color: YELLOW }}>{goal}</div>
     </div>
   );
