@@ -10,6 +10,7 @@ const NAV_ITEMS = [
     href: "/google-ads",
     sub: [
       { label: "Samenvatting", href: "/google-ads/samenvatting" },
+      { label: "Samenvatting v2", href: "/google-ads/samenvatting-v2" },
       { label: "Compleet", href: "/google-ads/compleet" },
       { label: "Doelstellingen", href: "/google-ads/doelstellingen" },
     ],
