@@ -24,6 +24,15 @@ const NAV_ITEMS = [
     ],
   },
   {
+    label: "Pinterest Ads",
+    href: "/pinterest-ads",
+    sub: [
+      { label: "Samenvatting", href: "/pinterest-ads/samenvatting" },
+      { label: "Compleet", href: "/pinterest-ads/compleet" },
+      { label: "Doelstellingen", href: "/pinterest-ads/doelstellingen" },
+    ],
+  },
+  {
     label: "SEO / CRO",
     href: "/seo-cro",
     sub: [
@@ -39,15 +48,6 @@ const NAV_ITEMS = [
       { label: "Samenvatting", href: "/marketing-automation/samenvatting" },
       { label: "Compleet", href: "/marketing-automation/compleet" },
       { label: "Doelstellingen", href: "/marketing-automation/doelstellingen" },
-    ],
-  },
-  {
-    label: "Pinterest Ads",
-    href: "/pinterest-ads",
-    sub: [
-      { label: "Samenvatting", href: "/pinterest-ads/samenvatting" },
-      { label: "Compleet", href: "/pinterest-ads/compleet" },
-      { label: "Doelstellingen", href: "/pinterest-ads/doelstellingen" },
     ],
   },
   {
