@@ -6,6 +6,14 @@ import { useState } from "react";
 const NAV_ITEMS = [
   { label: "Home", href: "/" },
   {
+    label: "AI Tools",
+    href: "/ai-tools",
+    sub: [
+      { label: "AdOptimizer", href: "https://adoptimizer.nl" },
+      { label: "Meta Optimizer", href: "https://www.meta-optimizer.nl" },
+    ],
+  },
+  {
     label: "Google Ads",
     href: "/google-ads",
     sub: [
@@ -127,6 +135,8 @@ export default function SiteHeader() {
                         <Link
                           key={sub.href}
                           href={sub.href}
+                          target={sub.href.startsWith("http") ? "_blank" : undefined}
+                          rel={sub.href.startsWith("http") ? "noopener noreferrer" : undefined}
                           style={{
                             display: "flex",
                             alignItems: "center",
