@@ -77,6 +77,28 @@ const CHANNELS = [
     ],
   },
   {
+    id: "pinterest-ads",
+    label: "Pinterest Ads",
+    icon: (
+      <svg viewBox="0 0 24 24" width="26" height="26" fill={CYAN}>
+        <path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.428 1.808-2.428.853 0 1.267.64 1.267 1.408 0 .858-.546 2.140-.828 3.330-.236.995.499 1.806 1.476 1.806 1.772 0 3.137-1.868 3.137-4.565 0-2.387-1.715-4.055-4.163-4.055-2.837 0-4.499 2.127-4.499 4.326 0 .857.33 1.776.741 2.278a.3.3 0 0 1 .069.285c-.076.31-.244.995-.276 1.134-.044.183-.145.222-.333.134-1.249-.581-2.030-2.407-2.030-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.220-5.190 6.220-1.013 0-1.966-.527-2.292-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.522 0 10-4.477 10-10S17.522 2 12 2z"/>
+      </svg>
+    ),
+    summary: "Eerste Pinterest-campagne (Performance+ Catalogue Sales, €3.000 spend) haalde een ROAS van 15,65×. Retargeting presteert boven prospecting (18,62× vs. 13,76×). Met 172 checkoutklanten zijn retargeting en lookalikes direct inzetbaar. Strategie: 3-laags budget van €5.000/mnd (20% overweging / 30% conversie / 50% catalogus).",
+    metrics: [
+      { label: "ROAS test", value: "15,65×", sub: "Performance+", trend: "up" },
+      { label: "Omzet test", value: "€46.944", sub: "172 checkouts", trend: "up" },
+      { label: "Streef ROAS", value: "9–11×", sub: "Nieuw plan", trend: "up" },
+      { label: "Maandbudget", value: "€5.000", sub: "20/30/50", trend: "up" },
+    ],
+    topAction: "3-laags structuur live zetten: catalogus + conversie + overweging",
+    links: [
+      { label: "Samenvatting", href: "/pinterest-ads/samenvatting" },
+      { label: "Compleet", href: "/pinterest-ads/compleet" },
+      { label: "Doelstellingen", href: "/pinterest-ads/doelstellingen" },
+    ],
+  },
+  {
     id: "marketing-automation",
     label: "Marketing Automation",
     icon: (

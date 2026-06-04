@@ -49,6 +49,15 @@ const NAV_ITEMS = [
       { label: "Doelstellingen", href: "/marketing-automation/doelstellingen" },
     ],
   },
+  {
+    label: "Pinterest Ads",
+    href: "/pinterest-ads",
+    sub: [
+      { label: "Samenvatting", href: "/pinterest-ads/samenvatting" },
+      { label: "Compleet", href: "/pinterest-ads/compleet" },
+      { label: "Doelstellingen", href: "/pinterest-ads/doelstellingen" },
+    ],
+  },
 ];
 
 export default function SiteHeader() {
