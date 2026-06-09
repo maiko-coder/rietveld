@@ -5,6 +5,7 @@ import { useState } from "react";
 
 const NAV_ITEMS = [
   { label: "Home", href: "/" },
+  { label: "Channel Breakdown", href: "/channel-breakdown" },
   {
     label: "Google Ads",
     href: "/google-ads",
