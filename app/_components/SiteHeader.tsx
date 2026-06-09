@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const NAV_ITEMS = [
-  { label: "Home", href: "/" },
+  { label: "Over Woeler", href: "/" },
   { label: "Channel Breakdown", href: "/channel-breakdown" },
   {
     label: "Google Ads",
