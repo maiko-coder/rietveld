@@ -51,16 +51,6 @@ export default function MHKPage() {
       {/* Content */}
       <div style={{ maxWidth: 1040, margin: "0 auto", padding: "44px 32px 64px" }}>
 
-        {/* Video */}
-        <div style={{ background: DARK, borderRadius: 14, marginBottom: 40, overflow: "hidden", boxShadow: "0 4px 20px rgba(0,0,0,0.12)" }}>
-          <video
-            src="/cases/mhk.mp4"
-            controls
-            preload="metadata"
-            style={{ width: "100%", display: "block", maxHeight: "70vh" }}
-          />
-        </div>
-
         {/* Het verhaal */}
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
           <div style={{ width: 4, height: 22, background: CYAN, borderRadius: 2 }} />
@@ -155,6 +145,16 @@ export default function MHKPage() {
           <p style={{ fontSize: 14, color: "#4b5563", lineHeight: 1.8, margin: 0 }}>
             Daarom wordt dezelfde strategie inmiddels uitgerold binnen België. Wat begon als een pitch voor één formule is uitgegroeid tot een internationaal schaalbaar marketingmodel dat ondernemers helpt groeien én een blijvende voorsprong geeft op de concurrentie.
           </p>
+        </div>
+
+        {/* Video */}
+        <div style={{ background: DARK, borderRadius: 14, marginTop: 40, overflow: "hidden", boxShadow: "0 4px 20px rgba(0,0,0,0.12)" }}>
+          <video
+            src="/cases/mhk.mp4"
+            controls
+            preload="metadata"
+            style={{ width: "100%", display: "block", maxHeight: "70vh" }}
+          />
         </div>
 
       </div>
