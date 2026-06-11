@@ -274,62 +274,45 @@ export default function TeamPage() {
         </div>
 
         {/* Organogram */}
-        <div style={{ marginBottom: 32 }}>
+        {/*
+          Vaste breedte 604px, gecentreerd. Posities (vanaf links):
+          Moran 0–118 · Sarah 146–286 (center 216) · Maiko 318–458 (center 388) · Geert 486–604
+          Specialisten (3×128 + 2×16 = 416, offset 94): centers op 158 / 302 / 446
+        */}
+        <div style={{ marginBottom: 32, overflowX: "auto" }}>
+          <div style={{ width: 604, margin: "0 auto" }}>
 
-          {/* Row 1: Moran — Sarah | Maiko — Geert */}
-          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 0 }}>
-            {/* Moran */}
-            <OrgNode member={moran} active={open.has("moran")} onClick={() => toggle("moran")} width={118} dashed />
-            {/* connector to Sarah */}
-            <div style={{ width: 28, height: 2, background: "#d1d5db", flexShrink: 0 }} />
-            {/* Sarah */}
-            <OrgNode member={sarah} active={open.has("sarah")} onClick={() => toggle("sarah")} width={140} />
-            {/* gap between leads */}
-            <div style={{ width: 32, flexShrink: 0 }} />
-            {/* Maiko */}
-            <OrgNode member={maiko} active={open.has("maiko")} onClick={() => toggle("maiko")} width={140} />
-            {/* connector to Geert */}
-            <div style={{ width: 28, height: 2, background: "#d1d5db", flexShrink: 0 }} />
-            {/* Geert */}
-            <OrgNode member={geert} active={open.has("geert")} onClick={() => toggle("geert")} width={118} dashed />
-          </div>
+            {/* Row 1: Moran — Sarah — Maiko — Geert, allemaal verbonden */}
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <OrgNode member={moran} active={open.has("moran")} onClick={() => toggle("moran")} width={118} dashed />
+              <div style={{ width: 28, height: 2, background: "#d1d5db", flexShrink: 0 }} />
+              <OrgNode member={sarah} active={open.has("sarah")} onClick={() => toggle("sarah")} width={140} />
+              <div style={{ width: 32, height: 2, background: "#d1d5db", flexShrink: 0 }} />
+              <OrgNode member={maiko} active={open.has("maiko")} onClick={() => toggle("maiko")} width={140} />
+              <div style={{ width: 28, height: 2, background: "#d1d5db", flexShrink: 0 }} />
+              <OrgNode member={geert} active={open.has("geert")} onClick={() => toggle("geert")} width={118} dashed />
+            </div>
 
-          {/* Vertical lines from Sarah and Maiko */}
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            {/* spacer matching moran+connector+half of sarah */}
-            <div style={{ width: 118 + 28 + 70, flexShrink: 0 }} />
-            <div style={{ width: 2, height: 20, background: "#d1d5db" }} />
-            <div style={{ width: 32 + 70 + 70, flexShrink: 0 }} />
-            <div style={{ width: 2, height: 20, background: "#d1d5db" }} />
-          </div>
+            {/* Verbindingen naar specialisten */}
+            <div style={{ position: "relative", height: 40 }}>
+              {/* verticaal vanaf Sarah */}
+              <div style={{ position: "absolute", left: 215, top: 0, width: 2, height: 20, background: "#d1d5db" }} />
+              {/* verticaal vanaf Maiko */}
+              <div style={{ position: "absolute", left: 387, top: 0, width: 2, height: 20, background: "#d1d5db" }} />
+              {/* horizontale balk over de drie specialisten-centers */}
+              <div style={{ position: "absolute", left: 157, top: 20, width: 290, height: 2, background: "#d1d5db" }} />
+              {/* drie verticale lijnen omlaag naar Kelly / Lorenzo / Isa */}
+              <div style={{ position: "absolute", left: 157, top: 20, width: 2, height: 20, background: "#d1d5db" }} />
+              <div style={{ position: "absolute", left: 301, top: 20, width: 2, height: 20, background: "#d1d5db" }} />
+              <div style={{ position: "absolute", left: 445, top: 20, width: 2, height: 20, background: "#d1d5db" }} />
+            </div>
 
-          {/* Horizontal bar connecting down to specialists */}
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <div style={{ width: 118 + 28 + 70, flexShrink: 0 }} />
-            {/* bar from center of sarah to center of maiko */}
-            <div style={{ height: 2, width: 32 + 140, background: "#d1d5db" }} />
-          </div>
-
-          {/* Three vertical drops from the bar */}
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <div style={{ width: 118 + 28 + 70 - 60, flexShrink: 0 }} />
-            {/* drop left (Kelly) */}
-            <div style={{ width: 2, height: 20, background: "#d1d5db" }} />
-            {/* spacing to center drop (Lorenzo) */}
-            <div style={{ width: 118, flexShrink: 0 }} />
-            {/* drop center */}
-            <div style={{ width: 2, height: 20, background: "#d1d5db" }} />
-            {/* spacing to right drop (Isa) */}
-            <div style={{ width: 118, flexShrink: 0 }} />
-            {/* drop right */}
-            <div style={{ width: 2, height: 20, background: "#d1d5db" }} />
-          </div>
-
-          {/* Row 2: Specialists */}
-          <div style={{ display: "flex", justifyContent: "center", gap: 16 }}>
-            {specialists.map((m) => (
-              <OrgNode key={m.id} member={m} active={open.has(m.id)} onClick={() => toggle(m.id)} width={128} />
-            ))}
+            {/* Row 2: Specialists — alleen naar boven verbonden */}
+            <div style={{ display: "flex", justifyContent: "center", gap: 16 }}>
+              {specialists.map((m) => (
+                <OrgNode key={m.id} member={m} active={open.has(m.id)} onClick={() => toggle(m.id)} width={128} />
+              ))}
+            </div>
           </div>
         </div>
 
