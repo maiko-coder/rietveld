@@ -52,15 +52,13 @@ export default function MHKPage() {
       <div style={{ maxWidth: 1040, margin: "0 auto", padding: "44px 32px 64px" }}>
 
         {/* Video */}
-        {/* Zodra de video beschikbaar is: vervang dit blok door een <video> tag (lokaal mp4-bestand in /public/cases/)
-            of een YouTube/Vimeo iframe-embed. */}
-        <div style={{ background: DARK, borderRadius: 14, marginBottom: 40, aspectRatio: "16/9", display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", gap: 12 }}>
-          <div style={{ width: 64, height: 64, borderRadius: "50%", background: `${CYAN}25`, border: `2px solid ${CYAN}60`, display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <svg viewBox="0 0 24 24" width="26" height="26" fill={CYAN}>
-              <path d="M8 5.5v13l11-6.5-11-6.5z" />
-            </svg>
-          </div>
-          <div style={{ fontSize: 13, color: "rgba(255,255,255,0.45)", fontWeight: 500 }}>Video volgt binnenkort</div>
+        <div style={{ background: DARK, borderRadius: 14, marginBottom: 40, overflow: "hidden", boxShadow: "0 4px 20px rgba(0,0,0,0.12)" }}>
+          <video
+            src="/cases/mhk.mp4"
+            controls
+            preload="metadata"
+            style={{ width: "100%", display: "block", maxHeight: "70vh" }}
+          />
         </div>
 
         {/* Het verhaal */}
