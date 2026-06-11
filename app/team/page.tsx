@@ -90,6 +90,7 @@ const TEAM = [
     functie: "Externe SEA specialist",
     lead: false,
     staff: true,
+    badge: "Klankbord",
     photo: "/team/geert.webp",
     details: [
       { label: "Relevante expertise en specialisaties", value: "Google Ads, GA4, GTM, Search Console, AI & campagnebeheer" },
@@ -162,9 +163,9 @@ function OrgNode({
           Projectleider
         </div>
       )}
-      {member.staff && (
+      {member.badge && (
         <div style={{ marginTop: 6, display: "inline-block", fontSize: 9, fontWeight: 700, padding: "2px 7px", borderRadius: 20, background: `${YELLOW}25`, color: "#7a5f0a", letterSpacing: "0.3px", textTransform: "uppercase", border: `1px dashed ${YELLOW}` }}>
-          Klankbord
+          {member.badge}
         </div>
       )}
     </div>
@@ -206,8 +207,8 @@ function ProfileCard({ member, onClose }: { member: (typeof TEAM)[0]; onClose: (
             {member.lead && (
               <span style={{ fontSize: 9, fontWeight: 700, padding: "2px 8px", borderRadius: 20, background: `${CYAN}15`, color: CYAN, textTransform: "uppercase", letterSpacing: "0.06em" }}>Projectleider</span>
             )}
-            {member.staff && (
-              <span style={{ fontSize: 9, fontWeight: 700, padding: "2px 8px", borderRadius: 20, background: `${YELLOW}20`, color: "#7a5f0a", textTransform: "uppercase", letterSpacing: "0.06em", border: `1px dashed ${YELLOW}` }}>Klankbord</span>
+            {member.badge && (
+              <span style={{ fontSize: 9, fontWeight: 700, padding: "2px 8px", borderRadius: 20, background: `${YELLOW}20`, color: "#7a5f0a", textTransform: "uppercase", letterSpacing: "0.06em", border: `1px dashed ${YELLOW}` }}>{member.badge}</span>
             )}
           </div>
           <div style={{ fontSize: 12, color: "#9ca3af", marginTop: 4 }}>
@@ -265,6 +266,12 @@ export default function TeamPage() {
       </div>
 
       <div style={{ maxWidth: 960, margin: "0 auto", padding: "44px 32px 64px" }}>
+
+        {/* Profiles header */}
+        <div style={{ textAlign: "center", marginBottom: 28 }}>
+          <h2 style={{ fontSize: 20, fontWeight: 700, color: DARK, margin: "0 0 6px" }}>Teamprofielen</h2>
+          <p style={{ fontSize: 13, color: "#9ca3af", margin: 0 }}>Klik op een teamlid in het organogram om het profiel te bekijken.</p>
+        </div>
 
         {/* Organogram */}
         <div style={{ marginBottom: 32 }}>
@@ -324,12 +331,6 @@ export default function TeamPage() {
               <OrgNode key={m.id} member={m} active={open.has(m.id)} onClick={() => toggle(m.id)} width={128} />
             ))}
           </div>
-        </div>
-
-        {/* Profiles header */}
-        <div style={{ textAlign: "center", marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, color: DARK, margin: "0 0 6px" }}>Teamprofielen</h2>
-          <p style={{ fontSize: 13, color: "#9ca3af", margin: 0 }}>Klik op een teamlid in het organogram om het profiel te bekijken.</p>
         </div>
 
         {/* Profile cards */}
