@@ -9,7 +9,7 @@ export default function MetaAdsSamenvatting() {
       <PageHero
         channel="Meta Ads"
         title="Samenvatting"
-        subtitle="Kern van de analyse en aanbevelingen op één pagina"
+        subtitle="Wat goed gaat en waar we direct winst pakken"
         stats={[
           { label: "Omzet ROAS", value: "15,74×", accent: "cyan" },
           { label: "POAS", value: "9,46×", accent: "yellow" },
@@ -29,7 +29,7 @@ export default function MetaAdsSamenvatting() {
         </div>
 
         <Callout>
-          Het account presteert ruim boven de minimale ROAS-doelstelling van 6× voor Nederland. De POAS-tracking via Conversions API is een geavanceerde implementatie die de meeste concurrenten niet hebben en die optimalisatie op winstgevendheid mogelijk maakt.
+          Het account zit ruim boven het doel van 6× ROAS voor Nederland. En we sturen op POAS: werkelijke winst per campagne, niet alleen omzet. De meeste concurrenten kunnen dat niet.
         </Callout>
 
         <SectionTitle>Top campagnes</SectionTitle>

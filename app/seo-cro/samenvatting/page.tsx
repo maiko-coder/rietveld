@@ -9,7 +9,7 @@ export default function SeoCroSamenvatting() {
       <PageHero
         channel="SEO / CRO"
         title="Samenvatting"
-        subtitle="Kern van de bevindingen en prioriteiten op één pagina"
+        subtitle="Wat goed staat en waar de winst zit"
         stats={[
           { label: "Health Score", value: "92/100", accent: "cyan" },
           { label: "Conversieratio", value: "2,41%", accent: "yellow" },
@@ -29,7 +29,7 @@ export default function SeoCroSamenvatting() {
         </div>
 
         <Callout>
-          De technische basis is sterk. De grootste SEO-kansen liggen niet in de techniek maar in structured data en content. CRO-verbeteringen zijn direct meetbaar via conversieratio en verhogen de ROAS van alle betaalde kanalen automatisch mee.
+          De techniek staat goed, daar hoeven we weinig aan te doen. De winst zit in structured data en content. En elke procent extra conversie maakt álle betaalde kanalen automatisch winstgevender. Daarom pakken we CRO direct mee.
         </Callout>
 
         <SectionTitle>SEO - top prioriteiten</SectionTitle>

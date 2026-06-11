@@ -9,7 +9,7 @@ export default function GoogleAdsSamenvatting() {
       <PageHero
         channel="Google Ads"
         title="Samenvatting"
-        subtitle="Overzicht van accountprestaties en prioriteiten"
+        subtitle="Hoe het account ervoor staat en wat we als eerste oppakken"
         stats={[
           { label: "Account ROAS", value: "5,87", accent: "cyan" },
           { label: "Spend huidig jaar", value: "€2,1M", accent: "yellow" },
@@ -29,7 +29,7 @@ export default function GoogleAdsSamenvatting() {
         </div>
 
         <Callout>
-          Het account is het afgelopen jaar fors gegroeid. De ROAS-daling van 6,43 naar 5,87 is een normaal patroon bij opschalen. Er is concrete ruimte om de structuur scherper te maken en de efficiëntie te verhogen.
+          Het account groeit hard, en dat mag wat ROAS kosten: de daling van 6,43 naar 5,87 hoort bij opschalen. Die efficiëntie halen we terug. De structuur kan scherper, en daar beginnen we mee.
         </Callout>
 
         <SectionTitle>Campagnes - huidige prestaties</SectionTitle>

@@ -11,7 +11,7 @@ export default function PinterestAdsSamenvatting() {
       <PageHero
         channel="Pinterest Ads"
         title="Samenvatting"
-        subtitle="Kern van de analyse en aanbevelingen op één pagina · Account 549760421679"
+        subtitle="De eerste testresultaten en het vervolgplan · Account 549760421679"
         stats={[
           { label: "ROAS (test)", value: "15,65×", accent: "cyan" },
           { label: "Omzet test", value: "€46.944", accent: "yellow" },
@@ -36,7 +36,7 @@ export default function PinterestAdsSamenvatting() {
         </div>
 
         <Callout>
-          De eerste Pinterest-campagne (Performance+ Catalogue Sales, €3.000 spend) haalde een ROAS van 15,65×. Retargeting presteerde boven prospecting (18,62× vs. 13,76×). Met 172 checkoutklanten zijn retargeting en lookalikes direct inzetbaar voor de vervolgstrategie.
+          Met €3.000 testbudget haalden we €47k omzet: een ROAS van 15,65×. Retargeting deed het nog beter dan prospecting (18,62× om 13,76×). En met 172 kopers uit de test kunnen we direct door met retargeting en lookalikes.
         </Callout>
 
         <SectionTitle>Prospecting vs. Retargeting</SectionTitle>
@@ -53,7 +53,7 @@ export default function PinterestAdsSamenvatting() {
         />
         <div style={{ background: `${YELLOW}15`, border: `1px solid ${YELLOW}40`, borderLeft: `4px solid ${YELLOW}`, borderRadius: 10, padding: "14px 18px", marginBottom: 8 }}>
           <p style={{ fontSize: 13.5, color: "#7a5a00", lineHeight: 1.7, margin: 0, fontWeight: 500 }}>
-            Retargeting haalt hogere ROAS maar prospecting levert nieuwe kopers. De vervolgstrategie gaat naar 50/50 binnen catalogus - én voegt overweging- en conversielagen toe voor meer bereik.
+            Retargeting scoort hoger, maar prospecting brengt nieuwe klanten binnen. Daarom gaan we naar 50/50 binnen catalogus en bouwen we er overweging- en conversielagen bij voor meer bereik.
           </p>
         </div>
 

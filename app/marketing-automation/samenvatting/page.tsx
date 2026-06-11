@@ -9,7 +9,7 @@ export default function MarketingAutomationSamenvatting() {
       <PageHero
         channel="Marketing Automation"
         title="Samenvatting"
-        subtitle="De kern van de e-mail strategie op één pagina"
+        subtitle="Vier flows die zichzelf terugverdienen"
         stats={[
           { label: "Flows te starten", value: "4", accent: "cyan" },
           { label: "Eerste 60 dagen", value: "2 flows", accent: "yellow" },
