@@ -8,6 +8,21 @@ const RED = "#ed1c23";
 
 const CASES = [
   {
+    href: "/cases/mhk",
+    label: "Case Study · MHK",
+    title: "Van pitch naar internationale groeipartner",
+    subtitle: "Europa's grootste inkooporganisatie in de keuken- en interieurbranche",
+    description:
+      "Wat acht jaar geleden begon met een pitch voor REDDY Keukens, groeide uit tot een internationaal schaalbaar marketingmodel. Woeler is vandaag de officiële online marketingpartner van MHK Nederland: zes franchiseformules in Nederland en België, ruim 250 ondernemers, aangestuurd met een omnichannel strategie en eigen AI-oplossingen.",
+    stats: [
+      { label: "Samenwerking", value: "8 jaar" },
+      { label: "Ondernemers", value: "250+" },
+      { label: "Bezoekersgroei (uitschieter)", value: "+848%" },
+    ],
+    tags: ["Omnichannel", "AI", "Franchise", "Internationaal"],
+    accent: CYAN,
+  },
+  {
     href: "/cases/manoir",
     label: "Case Study · Manoir",
     title: "Woeler goes America!",
