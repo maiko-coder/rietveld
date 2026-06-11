@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 
 const CYAN = "#00adef";
 const YELLOW = "#fecb09";
@@ -10,109 +11,102 @@ const TEAM = [
   {
     id: "sarah",
     name: "Sarah Voogd",
-    role: "Meta · Projectleider",
+    orgRole: "Meta",
     functie: "Teamlead / Senior allround marketeer",
-    initials: "SV",
-    color: CYAN,
     lead: true,
+    photo: "/team/sarah.webp",
     details: [
-      { label: "Relevante expertise", value: "Meta, GA4/Looker Studio, Strategie" },
-      { label: "Ervaring", value: "4 jaar" },
-      { label: "Verantwoordelijkheid", value: "Meta, Rapportage" },
-      { label: "Beschikbaarheid", value: "5–10 uur per week" },
-      { label: "Aanwezig op kantoor", value: "Maandelijks aanwezig" },
+      { label: "Relevante expertise en specialisaties", value: "Meta, GA4/Looker Studio, Strategie" },
+      { label: "Aantal jaren ervaring", value: "4 jaar" },
+      { label: "Verantwoordelijkheid binnen projectteam", value: "Meta, Rapportage" },
+      { label: "Beschikbaarheid per week", value: "5–10 uur" },
+      { label: "Aanwezig op het Rietveld kantoor", value: "Maandelijks aanwezig" },
     ],
   },
   {
     id: "maiko",
     name: "Maiko Groot",
-    role: "SEA · Projectleider",
+    orgRole: "SEA",
     functie: "Senior allround marketeer",
-    initials: "MG",
-    color: CYAN,
     lead: true,
+    photo: "/team/maiko.webp",
     details: [
-      { label: "Relevante expertise", value: "SEA, SEO/GEO, AI, GA4/Looker Studio, Strategie, CRO" },
-      { label: "Ervaring", value: "10+ jaar" },
-      { label: "Verantwoordelijkheid", value: "SEA, Rapportage" },
-      { label: "Beschikbaarheid", value: "15–20 uur per week" },
-      { label: "Aanwezig op kantoor", value: "Maandelijks aanwezig" },
+      { label: "Relevante expertise en specialisaties", value: "SEA, SEO/GEO, AI, GA4/Looker Studio, Strategie, CRO" },
+      { label: "Aantal jaren ervaring", value: "10+ jaar" },
+      { label: "Verantwoordelijkheid binnen projectteam", value: "SEA, Rapportage" },
+      { label: "Beschikbaarheid per week", value: "15–20 uur" },
+      { label: "Aanwezig op het Rietveld kantoor", value: "Maandelijks aanwezig" },
     ],
   },
   {
     id: "kelly",
     name: "Kelly Aalberse",
-    role: "Marketing automation",
+    orgRole: "Marketing automation",
     functie: "Teamlead / Senior allround marketeer",
-    initials: "KA",
-    color: "#8b5cf6",
     lead: false,
+    photo: "/team/kelly.webp",
     details: [
-      { label: "Relevante expertise", value: "Marketing automation, SEO/GEO, Meta" },
-      { label: "Ervaring", value: "10+ jaar" },
-      { label: "Verantwoordelijkheid", value: "Marketing automation" },
-      { label: "Beschikbaarheid", value: "5 uur per week" },
-      { label: "Aanwezig op kantoor", value: "Halfjaarlijks voor uitgebreide evaluatie" },
+      { label: "Relevante expertise en specialisaties", value: "Marketing automation, SEO/GEO, Meta" },
+      { label: "Aantal jaren ervaring", value: "10+ jaar" },
+      { label: "Verantwoordelijkheid binnen projectteam", value: "Marketing automation" },
+      { label: "Beschikbaarheid per week", value: "5 uur" },
+      { label: "Aanwezig op het Rietveld kantoor", value: "Halfjaarlijks voor uitgebreide evaluatie" },
     ],
   },
   {
     id: "lorenzo",
     name: "Lorenzo Fioraliso",
-    role: "SEO / GEO",
+    orgRole: "SEO/GEO",
     functie: "Senior allround marketeer",
-    initials: "LF",
-    color: "#10b981",
     lead: false,
+    photo: "/team/lorenzo.webp",
     details: [
-      { label: "Relevante expertise", value: "SEO/GEO, SEA, Marketing automation, Meta" },
-      { label: "Ervaring", value: "8 jaar" },
-      { label: "Verantwoordelijkheid", value: "SEO/GEO" },
-      { label: "Beschikbaarheid", value: "15 uur per maand" },
-      { label: "Aanwezig op kantoor", value: "Halfjaarlijks voor uitgebreide evaluatie" },
+      { label: "Relevante expertise en specialisaties", value: "SEO/GEO, SEA, Marketing automation, Meta" },
+      { label: "Aantal jaren ervaring", value: "8 jaar" },
+      { label: "Verantwoordelijkheid binnen projectteam", value: "SEO/GEO" },
+      { label: "Beschikbaarheid per maand", value: "15 uur" },
+      { label: "Aanwezig op het Rietveld kantoor", value: "Halfjaarlijks voor uitgebreide evaluatie" },
     ],
   },
   {
     id: "isa",
     name: "Isa van Leijden",
-    role: "Pinterest",
+    orgRole: "Pinterest",
     functie: "Senior social specialist",
-    initials: "IL",
-    color: "#e60023",
     lead: false,
+    photo: "/team/isa.webp",
     details: [
-      { label: "Relevante expertise", value: "Pinterest ads, Meta ads" },
-      { label: "Ervaring", value: "4 jaar" },
-      { label: "Verantwoordelijkheid", value: "Pinterest" },
-      { label: "Beschikbaarheid", value: "10–15 uur per maand" },
-      { label: "Aanwezig op kantoor", value: "Halfjaarlijks voor uitgebreide evaluatie" },
+      { label: "Relevante expertise en specialisaties", value: "Pinterest ads, Meta ads" },
+      { label: "Aantal jaren ervaring", value: "4 jaar" },
+      { label: "Verantwoordelijkheid binnen projectteam", value: "Pinterest" },
+      { label: "Beschikbaarheid per maand", value: "10–15 uur" },
+      { label: "Aanwezig op het Rietveld kantoor", value: "Halfjaarlijks voor uitgebreide evaluatie" },
     ],
   },
   {
     id: "geert",
     name: "Geert Groot",
-    role: "SEA klankbord",
+    orgRole: "SEA klankbord",
     functie: "Externe SEA specialist",
-    initials: "GG",
-    color: YELLOW,
     lead: false,
     staff: true,
+    photo: "/team/geert.webp",
     details: [
-      { label: "Relevante expertise", value: "Google Ads, GA4, GTM, Search Console, AI & campagnebeheer" },
-      { label: "Ervaring", value: "15+ jaar" },
-      { label: "Verantwoordelijkheid", value: "Klankbord SEA" },
-      { label: "Beschikbaarheid", value: "5–10 uur per week" },
-      { label: "Aanwezig op kantoor", value: "Op verzoek beschikbaar" },
+      { label: "Relevante expertise en specialisaties", value: "Google Ads, GA4, GTM, Search Console, AI & campagnebeheer" },
+      { label: "Aantal jaren ervaring", value: "15+ jaar" },
+      { label: "Verantwoordelijkheid binnen projectteam", value: "Klankbord SEA" },
+      { label: "Beschikbaarheid per week", value: "5–10 uur" },
+      { label: "Aanwezig op het Rietveld kantoor", value: "Op verzoek beschikbaar" },
     ],
   },
   {
     id: "moran",
     name: "Moran Roelfs",
-    role: "Accountmanager",
+    orgRole: "Accountmanager",
     functie: "Marketing strateeg",
-    initials: "MR",
-    color: "#f97316",
     lead: false,
     staff: true,
+    photo: "/team/moran.webp",
     details: [
       {
         label: "Rol",
@@ -123,82 +117,134 @@ const TEAM = [
   },
 ];
 
-function Avatar({ initials, color, size = 52 }: { initials: string; color: string; size?: number }) {
+const sarah = TEAM[0];
+const maiko = TEAM[1];
+const specialists = TEAM.slice(2, 5); // kelly, lorenzo, isa
+const moran = TEAM[6];
+const geert = TEAM[5];
+
+function OrgNode({
+  member,
+  active,
+  onClick,
+  width = 130,
+  dashed = false,
+}: {
+  member: (typeof TEAM)[0];
+  active: boolean;
+  onClick: () => void;
+  width?: number;
+  dashed?: boolean;
+}) {
   return (
     <div
+      onClick={onClick}
       style={{
-        width: size,
-        height: size,
-        borderRadius: "50%",
-        background: `${color}20`,
-        border: `2px solid ${color}50`,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        fontSize: size * 0.32,
-        fontWeight: 700,
-        color,
+        width,
+        background: active ? DARK : "white",
+        border: `2px ${dashed ? "dashed" : "solid"} ${active ? CYAN : "#e5e7eb"}`,
+        borderRadius: 12,
+        padding: "12px 8px 10px",
+        textAlign: "center",
+        cursor: "pointer",
+        transition: "box-shadow 0.15s, border-color 0.15s",
+        boxShadow: active ? `0 4px 16px ${CYAN}30` : "0 1px 4px rgba(0,0,0,0.06)",
         flexShrink: 0,
       }}
     >
-      {initials}
+      <div style={{ width: 52, height: 52, borderRadius: "50%", overflow: "hidden", margin: "0 auto 8px", border: `2px solid ${active ? CYAN : "#e5e7eb"}` }}>
+        <Image src={member.photo} alt={member.name} width={52} height={52} style={{ objectFit: "cover", width: "100%", height: "100%" }} />
+      </div>
+      <div style={{ fontSize: 11.5, fontWeight: 700, color: active ? "white" : DARK, lineHeight: 1.3 }}>{member.name}</div>
+      <div style={{ fontSize: 10, color: active ? `${CYAN}` : "#9ca3af", marginTop: 2 }}>{member.orgRole}</div>
+      {member.lead && (
+        <div style={{ marginTop: 6, display: "inline-block", fontSize: 9, fontWeight: 700, padding: "2px 7px", borderRadius: 20, background: `${CYAN}20`, color: CYAN, letterSpacing: "0.3px", textTransform: "uppercase" }}>
+          Projectleider
+        </div>
+      )}
+      {member.staff && (
+        <div style={{ marginTop: 6, display: "inline-block", fontSize: 9, fontWeight: 700, padding: "2px 7px", borderRadius: 20, background: `${YELLOW}25`, color: "#7a5f0a", letterSpacing: "0.3px", textTransform: "uppercase", border: `1px dashed ${YELLOW}` }}>
+          Klankbord
+        </div>
+      )}
+    </div>
+  );
+}
+
+function ProfileCard({ member, onClose }: { member: (typeof TEAM)[0]; onClose: () => void }) {
+  return (
+    <div
+      style={{
+        background: "white",
+        border: "1px solid #e5e7eb",
+        borderRadius: 16,
+        padding: "24px",
+        width: 440,
+        maxWidth: "100%",
+        boxSizing: "border-box",
+        animation: "fadeIn 0.25s ease",
+        position: "relative",
+        flexShrink: 0,
+      }}
+    >
+      <button
+        onClick={onClose}
+        style={{ position: "absolute", top: 14, right: 14, background: "none", border: "none", cursor: "pointer", color: "#9ca3af", fontSize: 18, lineHeight: 1, padding: 4 }}
+        aria-label="Sluit"
+      >
+        ×
+      </button>
+
+      {/* Top */}
+      <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 16 }}>
+        <div style={{ width: 72, height: 72, borderRadius: "50%", overflow: "hidden", flexShrink: 0, border: `2px solid ${CYAN}30` }}>
+          <Image src={member.photo} alt={member.name} width={72} height={72} style={{ objectFit: "cover", width: "100%", height: "100%" }} />
+        </div>
+        <div>
+          <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+            <h3 style={{ fontSize: 17, fontWeight: 700, color: DARK, margin: 0 }}>{member.name}</h3>
+            {member.lead && (
+              <span style={{ fontSize: 9, fontWeight: 700, padding: "2px 8px", borderRadius: 20, background: `${CYAN}15`, color: CYAN, textTransform: "uppercase", letterSpacing: "0.06em" }}>Projectleider</span>
+            )}
+            {member.staff && (
+              <span style={{ fontSize: 9, fontWeight: 700, padding: "2px 8px", borderRadius: 20, background: `${YELLOW}20`, color: "#7a5f0a", textTransform: "uppercase", letterSpacing: "0.06em", border: `1px dashed ${YELLOW}` }}>Klankbord</span>
+            )}
+          </div>
+          <div style={{ fontSize: 12, color: "#9ca3af", marginTop: 4 }}>
+            <span style={{ display: "block", fontSize: 10, textTransform: "uppercase", letterSpacing: "0.05em", color: "#c4c9d0", marginBottom: 1 }}>Functie binnen Woeler:</span>
+            {member.functie}
+          </div>
+        </div>
+      </div>
+
+      <div style={{ height: 1, background: "#f3f4f6", marginBottom: 16 }} />
+
+      <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+        {member.details.map((d, i) => (
+          <div key={i}>
+            <div style={{ fontSize: 10.5, fontWeight: 600, color: "#9ca3af", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 3 }}>{d.label}</div>
+            <div style={{ fontSize: 13, color: "#374151", lineHeight: 1.6 }}>{d.value}</div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
 
 export default function TeamPage() {
-  const [active, setActive] = useState<string | null>("sarah");
+  const [open, setOpen] = useState<Set<string>>(new Set());
 
-  const activeProfile = TEAM.find((m) => m.id === active);
-
-  const leads = TEAM.filter((m) => m.lead);
-  const specialists = TEAM.filter((m) => !m.lead && !m.staff);
-  const staff = TEAM.filter((m) => m.staff);
-
-  const OrgNode = ({ member, size = "md" }: { member: (typeof TEAM)[0]; size?: "sm" | "md" }) => {
-    const isActive = active === member.id;
-    const w = size === "sm" ? 110 : 130;
-    return (
-      <div
-        onClick={() => setActive(isActive ? null : member.id)}
-        style={{
-          width: w,
-          background: isActive ? DARK : "white",
-          border: `2px solid ${isActive ? member.color : "#e5e7eb"}`,
-          borderRadius: 12,
-          padding: "12px 10px 10px",
-          textAlign: "center",
-          cursor: "pointer",
-          transition: "all 0.15s",
-          boxShadow: isActive ? `0 4px 18px ${member.color}30` : "0 1px 4px rgba(0,0,0,0.06)",
-          borderStyle: member.staff ? "dashed" : "solid",
-        }}
-      >
-        <div style={{ display: "flex", justifyContent: "center", marginBottom: 8 }}>
-          <Avatar initials={member.initials} color={member.color} size={44} />
-        </div>
-        <div style={{ fontSize: 11.5, fontWeight: 700, color: isActive ? "white" : DARK, lineHeight: 1.3 }}>{member.name}</div>
-        <div style={{ fontSize: 10, color: isActive ? "rgba(255,255,255,0.55)" : "#9ca3af", marginTop: 3 }}>{member.role}</div>
-        {member.lead && (
-          <div style={{ marginTop: 6, display: "inline-block", fontSize: 9, fontWeight: 700, padding: "2px 7px", borderRadius: 20, background: `${CYAN}20`, color: CYAN, letterSpacing: "0.3px", textTransform: "uppercase" }}>
-            Projectleider
-          </div>
-        )}
-        {member.staff && (
-          <div style={{ marginTop: 6, display: "inline-block", fontSize: 9, fontWeight: 700, padding: "2px 7px", borderRadius: 20, background: `${YELLOW}20`, color: "#92710a", letterSpacing: "0.3px", textTransform: "uppercase", border: `1px dashed ${YELLOW}80` }}>
-            Klankbord
-          </div>
-        )}
-      </div>
-    );
+  const toggle = (id: string) => {
+    setOpen((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
   };
 
-  const Connector = ({ horizontal }: { horizontal?: boolean }) =>
-    horizontal ? (
-      <div style={{ width: 32, height: 2, background: "#d1d5db", flexShrink: 0 }} />
-    ) : (
-      <div style={{ width: 2, height: 24, background: "#d1d5db", margin: "0 auto" }} />
-    );
+  const showAll = () => setOpen(new Set(TEAM.map((m) => m.id)));
+  const visibleProfiles = TEAM.filter((m) => open.has(m.id));
 
   return (
     <div style={{ fontFamily: "system-ui, -apple-system, sans-serif", background: "#f3f4f6", minHeight: "100vh" }}>
@@ -218,148 +264,103 @@ export default function TeamPage() {
         <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 4, background: `linear-gradient(90deg, ${RED} 0%, ${YELLOW} 33%, ${CYAN} 66%, ${DARK} 100%)` }} />
       </div>
 
-      <div style={{ maxWidth: 1040, margin: "0 auto", padding: "44px 32px 64px" }}>
+      <div style={{ maxWidth: 960, margin: "0 auto", padding: "44px 32px 64px" }}>
 
         {/* Organogram */}
-        <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
-          <div style={{ width: 4, height: 22, background: CYAN, borderRadius: 2 }} />
-          <h2 style={{ fontSize: 18, fontWeight: 700, color: DARK, margin: 0 }}>Organogram</h2>
-          <span style={{ fontSize: 12, color: "#9ca3af", marginLeft: 4 }}>Klik op een teamlid voor het profiel</span>
-        </div>
+        <div style={{ marginBottom: 32 }}>
 
-        <div style={{ background: "white", borderRadius: 16, padding: "36px 32px", boxShadow: "0 1px 4px rgba(0,0,0,0.06)", marginBottom: 40 }}>
-
-          {/* Row 1: Staff + Leads */}
-          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 0, marginBottom: 0 }}>
-            {/* Moran left */}
-            <OrgNode member={staff[1]} size="sm" />
-            <Connector horizontal />
+          {/* Row 1: Moran — Sarah | Maiko — Geert */}
+          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 0 }}>
+            {/* Moran */}
+            <OrgNode member={moran} active={open.has("moran")} onClick={() => toggle("moran")} width={118} dashed />
+            {/* connector to Sarah */}
+            <div style={{ width: 28, height: 2, background: "#d1d5db", flexShrink: 0 }} />
             {/* Sarah */}
-            <OrgNode member={leads[0]} />
-            {/* Spacer between leads */}
-            <div style={{ width: 32 }} />
-            {/* Maiko */}
-            <OrgNode member={leads[1]} />
-            <Connector horizontal />
-            {/* Geert right */}
-            <OrgNode member={staff[0]} size="sm" />
-          </div>
-
-          {/* Vertical lines from leads down */}
-          <div style={{ display: "flex", justifyContent: "center", gap: 0 }}>
-            <div style={{ width: 110 + 32, flexShrink: 0 }} />
-            <div style={{ width: 130, display: "flex", justifyContent: "center" }}>
-              <div style={{ width: 2, height: 20, background: "#d1d5db" }} />
-            </div>
+            <OrgNode member={sarah} active={open.has("sarah")} onClick={() => toggle("sarah")} width={140} />
+            {/* gap between leads */}
             <div style={{ width: 32, flexShrink: 0 }} />
-            <div style={{ width: 130, display: "flex", justifyContent: "center" }}>
-              <div style={{ width: 2, height: 20, background: "#d1d5db" }} />
-            </div>
-            <div style={{ width: 110 + 32, flexShrink: 0 }} />
+            {/* Maiko */}
+            <OrgNode member={maiko} active={open.has("maiko")} onClick={() => toggle("maiko")} width={140} />
+            {/* connector to Geert */}
+            <div style={{ width: 28, height: 2, background: "#d1d5db", flexShrink: 0 }} />
+            {/* Geert */}
+            <OrgNode member={geert} active={open.has("geert")} onClick={() => toggle("geert")} width={118} dashed />
           </div>
 
-          {/* Horizontal connector across specialists */}
-          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", marginBottom: 0 }}>
-            <div style={{ width: 110 + 32 + 65 + 16, flexShrink: 0 }} />
-            <div style={{ height: 2, background: "#d1d5db", width: 130 + 32 + 130 - 32 }} />
+          {/* Vertical lines from Sarah and Maiko */}
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            {/* spacer matching moran+connector+half of sarah */}
+            <div style={{ width: 118 + 28 + 70, flexShrink: 0 }} />
+            <div style={{ width: 2, height: 20, background: "#d1d5db" }} />
+            <div style={{ width: 32 + 70 + 70, flexShrink: 0 }} />
+            <div style={{ width: 2, height: 20, background: "#d1d5db" }} />
           </div>
 
-          {/* Vertical drops to specialists */}
-          <div style={{ display: "flex", justifyContent: "center", gap: 0, marginBottom: 0 }}>
-            <div style={{ width: 110 + 32 + 65 + 16, flexShrink: 0 }} />
-            {specialists.map((_, i) => (
-              <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: "center", width: 140 + (i < specialists.length - 1 ? 18 : 0), flexShrink: 0 }}>
-                <div style={{ width: 2, height: 18, background: "#d1d5db" }} />
-              </div>
-            ))}
+          {/* Horizontal bar connecting down to specialists */}
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <div style={{ width: 118 + 28 + 70, flexShrink: 0 }} />
+            {/* bar from center of sarah to center of maiko */}
+            <div style={{ height: 2, width: 32 + 140, background: "#d1d5db" }} />
+          </div>
+
+          {/* Three vertical drops from the bar */}
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <div style={{ width: 118 + 28 + 70 - 60, flexShrink: 0 }} />
+            {/* drop left (Kelly) */}
+            <div style={{ width: 2, height: 20, background: "#d1d5db" }} />
+            {/* spacing to center drop (Lorenzo) */}
+            <div style={{ width: 118, flexShrink: 0 }} />
+            {/* drop center */}
+            <div style={{ width: 2, height: 20, background: "#d1d5db" }} />
+            {/* spacing to right drop (Isa) */}
+            <div style={{ width: 118, flexShrink: 0 }} />
+            {/* drop right */}
+            <div style={{ width: 2, height: 20, background: "#d1d5db" }} />
           </div>
 
           {/* Row 2: Specialists */}
-          <div style={{ display: "flex", justifyContent: "center", gap: 18 }}>
-            <div style={{ width: 110 + 32 + 65 + 16, flexShrink: 0 }} />
+          <div style={{ display: "flex", justifyContent: "center", gap: 16 }}>
             {specialists.map((m) => (
-              <OrgNode key={m.id} member={m} size="sm" />
+              <OrgNode key={m.id} member={m} active={open.has(m.id)} onClick={() => toggle(m.id)} width={128} />
             ))}
           </div>
         </div>
 
-        {/* Profile detail */}
-        {activeProfile && (
-          <div style={{ background: "white", borderRadius: 16, padding: "32px", boxShadow: "0 1px 4px rgba(0,0,0,0.06)", marginBottom: 40, borderTop: `3px solid ${activeProfile.color}`, animation: "fadeIn 0.2s ease" }}>
-            <div style={{ display: "flex", alignItems: "flex-start", gap: 20, marginBottom: 24 }}>
-              <Avatar initials={activeProfile.initials} color={activeProfile.color} size={72} />
-              <div style={{ flex: 1 }}>
-                <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
-                  <h3 style={{ fontSize: 20, fontWeight: 800, color: DARK, margin: 0 }}>{activeProfile.name}</h3>
-                  {activeProfile.lead && (
-                    <span style={{ fontSize: 10, fontWeight: 700, padding: "3px 10px", borderRadius: 20, background: `${CYAN}15`, color: CYAN, textTransform: "uppercase", letterSpacing: "0.08em" }}>Projectleider</span>
-                  )}
-                  {activeProfile.staff && (
-                    <span style={{ fontSize: 10, fontWeight: 700, padding: "3px 10px", borderRadius: 20, background: `${YELLOW}15`, color: "#92710a", textTransform: "uppercase", letterSpacing: "0.08em", border: `1px dashed ${YELLOW}80` }}>Klankbord</span>
-                  )}
-                </div>
-                <div style={{ fontSize: 13, color: activeProfile.color, fontWeight: 600, marginTop: 4 }}>{activeProfile.role}</div>
-                <div style={{ fontSize: 12, color: "#9ca3af", marginTop: 2 }}>Functie bij Woeler: {activeProfile.functie}</div>
-              </div>
-            </div>
-            <div style={{ height: 1, background: "#f3f4f6", marginBottom: 20 }} />
-            <div style={{ display: "grid", gridTemplateColumns: activeProfile.details.length === 1 ? "1fr" : "repeat(auto-fill, minmax(200px, 1fr))", gap: 16 }}>
-              {activeProfile.details.map((d, i) => (
-                <div key={i}>
-                  <div style={{ fontSize: 10.5, fontWeight: 600, color: "#9ca3af", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 5 }}>{d.label}</div>
-                  <div style={{ fontSize: 13.5, color: "#374151", lineHeight: 1.6 }}>{d.value}</div>
-                </div>
-              ))}
-            </div>
+        {/* Profiles header */}
+        <div style={{ textAlign: "center", marginBottom: 24 }}>
+          <h2 style={{ fontSize: 20, fontWeight: 700, color: DARK, margin: "0 0 6px" }}>Teamprofielen</h2>
+          <p style={{ fontSize: 13, color: "#9ca3af", margin: 0 }}>Klik op een teamlid in het organogram om het profiel te bekijken.</p>
+        </div>
+
+        {/* Profile cards */}
+        {visibleProfiles.length > 0 && (
+          <div style={{ display: "flex", gap: 16, flexWrap: "wrap", justifyContent: "center", marginBottom: 24 }}>
+            {visibleProfiles.map((m) => (
+              <ProfileCard key={m.id} member={m} onClose={() => toggle(m.id)} />
+            ))}
           </div>
         )}
 
-        {/* Team grid */}
-        <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
-          <div style={{ width: 4, height: 22, background: YELLOW, borderRadius: 2 }} />
-          <h2 style={{ fontSize: 18, fontWeight: 700, color: DARK, margin: 0 }}>Teamprofielen</h2>
-        </div>
-
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(290px, 1fr))", gap: 16 }}>
-          {TEAM.map((member) => {
-            const isActive = active === member.id;
-            return (
-              <div
-                key={member.id}
-                onClick={() => setActive(isActive ? null : member.id)}
-                style={{
-                  background: "white",
-                  borderRadius: 14,
-                  padding: "20px 22px",
-                  boxShadow: isActive ? `0 4px 16px ${member.color}25` : "0 1px 4px rgba(0,0,0,0.06)",
-                  border: `2px solid ${isActive ? member.color : "transparent"}`,
-                  cursor: "pointer",
-                  transition: "all 0.15s",
-                  borderTop: isActive ? `2px solid ${member.color}` : `3px solid ${member.color}`,
-                }}
-              >
-                <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 14 }}>
-                  <Avatar initials={member.initials} color={member.color} size={48} />
-                  <div>
-                    <div style={{ fontSize: 14, fontWeight: 700, color: DARK }}>{member.name}</div>
-                    <div style={{ fontSize: 12, color: member.color, fontWeight: 600, marginTop: 2 }}>{member.role}</div>
-                    <div style={{ fontSize: 11, color: "#9ca3af", marginTop: 1 }}>{member.functie}</div>
-                  </div>
-                </div>
-                <div style={{ height: 1, background: "#f3f4f6", marginBottom: 12 }} />
-                <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
-                  {member.details.slice(0, 2).map((d, i) => (
-                    <div key={i} style={{ background: "#f9fafb", borderRadius: 6, padding: "5px 10px" }}>
-                      <div style={{ fontSize: 9.5, color: "#9ca3af", textTransform: "uppercase", letterSpacing: "0.06em" }}>{d.label}</div>
-                      <div style={{ fontSize: 11.5, color: "#374151", fontWeight: 500, marginTop: 1 }}>{d.value}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
+        {/* Show all button */}
+        {open.size < TEAM.length && (
+          <div style={{ textAlign: "center" }}>
+            <button
+              onClick={showAll}
+              style={{
+                padding: "10px 28px",
+                background: "white",
+                border: "1px solid #d1d5db",
+                borderRadius: 20,
+                fontSize: 13,
+                color: DARK,
+                cursor: "pointer",
+                fontFamily: "inherit",
+              }}
+            >
+              Toon alle profielen
+            </button>
+          </div>
+        )}
       </div>
 
       <style>{`
