@@ -69,6 +69,7 @@ const NAV_ITEMS = [
     ],
   },
   { label: "Team", href: "/team" },
+  { label: "Rapportage", href: "/rapportage" },
 ];
 
 export default function SiteHeader() {
