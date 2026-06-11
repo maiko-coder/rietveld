@@ -86,7 +86,7 @@ const TEAM = [
   {
     id: "geert",
     name: "Geert Groot",
-    orgRole: "SEA klankbord",
+    orgRole: "SEA specialist",
     functie: "Externe SEA specialist",
     lead: false,
     staff: true,
