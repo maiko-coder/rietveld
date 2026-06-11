@@ -84,7 +84,7 @@ const NAV_ITEMS: NavItem[] = [
     ],
   },
   { label: "Team", href: "/team" },
-  { label: "Rapportage", href: "/rapportage" },
+  { label: "Rapportage", href: "https://datastudio.google.com/u/4/reporting/b90fa4bf-f791-4123-9be9-0c1c5fff3184/page/VgD" },
 ];
 
 export default function SiteHeader() {
@@ -143,6 +143,8 @@ export default function SiteHeader() {
               >
                 <Link
                   href={topHref}
+                  target={topHref.startsWith("http") ? "_blank" : undefined}
+                  rel={topHref.startsWith("http") ? "noopener noreferrer" : undefined}
                   style={{
                     display: "inline-flex",
                     alignItems: "center",
