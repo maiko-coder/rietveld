@@ -3,52 +3,67 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
-const NAV_ITEMS = [
+type SubItem = { label: string; href: string };
+type NestedItem = { label: string; href: string; sub: SubItem[] };
+type NavItem = {
+  label: string;
+  href: string;
+  sub?: SubItem[];
+  groups?: NestedItem[];
+};
+
+const NAV_ITEMS: NavItem[] = [
   { label: "Over Woeler", href: "/" },
   { label: "Channel Breakdown", href: "/channel-breakdown" },
   {
-    label: "Google Ads",
-    href: "/google-ads",
-    sub: [
-      { label: "Samenvatting", href: "/google-ads/samenvatting" },
-      { label: "Compleet", href: "/google-ads/compleet" },
-      { label: "Doelstellingen", href: "/google-ads/doelstellingen" },
-    ],
-  },
-  {
-    label: "Meta Ads",
-    href: "/meta-ads",
-    sub: [
-      { label: "Samenvatting", href: "/meta-ads/samenvatting" },
-      { label: "Compleet", href: "/meta-ads/compleet" },
-      { label: "Doelstellingen", href: "/meta-ads/doelstellingen" },
-    ],
-  },
-  {
-    label: "Pinterest Ads",
-    href: "/pinterest-ads",
-    sub: [
-      { label: "Samenvatting", href: "/pinterest-ads/samenvatting" },
-      { label: "Compleet", href: "/pinterest-ads/compleet" },
-      { label: "Doelstellingen", href: "/pinterest-ads/doelstellingen" },
-    ],
-  },
-  {
-    label: "SEO / CRO",
-    href: "/seo-cro",
-    sub: [
-      { label: "Samenvatting", href: "/seo-cro/samenvatting" },
-      { label: "Compleet", href: "/seo-cro/compleet" },
-      { label: "Doelstellingen", href: "/seo-cro/doelstellingen" },
-    ],
-  },
-  {
-    label: "Marketing Automation",
-    href: "/marketing-automation",
-    sub: [
-      { label: "Samenvatting", href: "/marketing-automation/samenvatting" },
-      { label: "Compleet", href: "/marketing-automation/compleet" },
-      { label: "Doelstellingen", href: "/marketing-automation/doelstellingen" },
+    label: "Analyses",
+    href: "/analyses",
+    groups: [
+      {
+        label: "Google Ads",
+        href: "/google-ads",
+        sub: [
+          { label: "Samenvatting", href: "/google-ads/samenvatting" },
+          { label: "Compleet", href: "/google-ads/compleet" },
+          { label: "Doelstellingen", href: "/google-ads/doelstellingen" },
+        ],
+      },
+      {
+        label: "Meta Ads",
+        href: "/meta-ads",
+        sub: [
+          { label: "Samenvatting", href: "/meta-ads/samenvatting" },
+          { label: "Compleet", href: "/meta-ads/compleet" },
+          { label: "Doelstellingen", href: "/meta-ads/doelstellingen" },
+        ],
+      },
+      {
+        label: "Pinterest Ads",
+        href: "/pinterest-ads",
+        sub: [
+          { label: "Samenvatting", href: "/pinterest-ads/samenvatting" },
+          { label: "Compleet", href: "/pinterest-ads/compleet" },
+          { label: "Doelstellingen", href: "/pinterest-ads/doelstellingen" },
+        ],
+      },
+      {
+        label: "SEO / CRO",
+        href: "/seo-cro",
+        sub: [
+          { label: "Samenvatting", href: "/seo-cro/samenvatting" },
+          { label: "Compleet", href: "/seo-cro/compleet" },
+          { label: "Doelstellingen", href: "/seo-cro/doelstellingen" },
+        ],
+      },
+      {
+        label: "Marketing Automation",
+        href: "/marketing-automation",
+        sub: [
+          { label: "Samenvatting", href: "/marketing-automation/samenvatting" },
+          { label: "Compleet", href: "/marketing-automation/compleet" },
+          { label: "Doelstellingen", href: "/marketing-automation/doelstellingen" },
+        ],
+      },
     ],
   },
   {
@@ -75,6 +90,7 @@ const NAV_ITEMS = [
 export default function SiteHeader() {
   const path = usePathname();
   const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const [openGroup, setOpenGroup] = useState<string | null>(null);
 
   const isActive = (href: string) => {
     if (href === "/") return path === "/";
@@ -102,19 +118,31 @@ export default function SiteHeader() {
       <nav style={{ background: "#00adef" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 32px", display: "flex", alignItems: "center", height: 44 }}>
           {NAV_ITEMS.map((item) => {
-            const active = isActive(item.href);
-            const hasDropdown = "sub" in item && item.sub;
+            const hasGroups = !!item.groups;
+            const hasDropdown = (!!item.sub && item.sub.length > 0) || hasGroups;
+            const active = hasGroups
+              ? item.groups!.some((g) => isActive(g.href))
+              : isActive(item.href);
             const isOpen = openMenu === item.href;
+
+            const topHref = hasGroups
+              ? item.groups![0].sub[0].href
+              : hasDropdown
+                ? item.sub![0].href
+                : item.href;
 
             return (
               <div
                 key={item.href}
                 style={{ position: "relative", height: "100%", display: "flex", alignItems: "center" }}
                 onMouseEnter={() => hasDropdown && setOpenMenu(item.href)}
-                onMouseLeave={() => setOpenMenu(null)}
+                onMouseLeave={() => {
+                  setOpenMenu(null);
+                  setOpenGroup(null);
+                }}
               >
                 <Link
-                  href={hasDropdown ? (item.sub![0].href) : item.href}
+                  href={topHref}
                   style={{
                     display: "inline-flex",
                     alignItems: "center",
@@ -137,8 +165,8 @@ export default function SiteHeader() {
                   )}
                 </Link>
 
-                {/* Dropdown */}
-                {hasDropdown && isOpen && (
+                {/* Simple dropdown */}
+                {!hasGroups && item.sub && isOpen && (
                   <div style={{
                     position: "absolute",
                     top: "100%",
@@ -150,7 +178,7 @@ export default function SiteHeader() {
                     overflow: "hidden",
                     zIndex: 200,
                   }}>
-                    {item.sub!.map((sub, i) => {
+                    {item.sub.map((sub, i) => {
                       const subActive = path === sub.href;
                       return (
                         <Link
@@ -172,10 +200,102 @@ export default function SiteHeader() {
                           }}
                         >
                           <span style={{ fontSize: 10, opacity: 0.4, fontFamily: "monospace", letterSpacing: "0.05em" }}>
-                            {["01", "02", "03"][i]}
+                            {String(i + 1).padStart(2, "0")}
                           </span>
                           {sub.label}
                         </Link>
+                      );
+                    })}
+                  </div>
+                )}
+
+                {/* Nested dropdown (Analyses) */}
+                {hasGroups && isOpen && (
+                  <div style={{
+                    position: "absolute",
+                    top: "100%",
+                    left: 0,
+                    background: "#262626",
+                    borderRadius: "0 0 8px 8px",
+                    boxShadow: "0 8px 24px rgba(0,0,0,0.35)",
+                    minWidth: 220,
+                    zIndex: 200,
+                  }}>
+                    {item.groups!.map((group, i) => {
+                      const groupActive = isActive(group.href);
+                      const groupOpen = openGroup === group.href;
+                      return (
+                        <div
+                          key={group.href}
+                          style={{ position: "relative" }}
+                          onMouseEnter={() => setOpenGroup(group.href)}
+                        >
+                          <Link
+                            href={group.sub[0].href}
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "space-between",
+                              gap: 10,
+                              padding: "11px 18px",
+                              fontSize: 13,
+                              fontWeight: groupActive ? 600 : 400,
+                              color: groupActive || groupOpen ? "#00adef" : "rgba(255,255,255,0.8)",
+                              background: groupActive || groupOpen ? "rgba(0,173,239,0.1)" : "transparent",
+                              borderLeft: groupActive ? "3px solid #00adef" : "3px solid transparent",
+                              borderBottom: i < item.groups!.length - 1 ? "1px solid rgba(255,255,255,0.06)" : "none",
+                            }}
+                          >
+                            <span style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                              <span style={{ fontSize: 10, opacity: 0.4, fontFamily: "monospace", letterSpacing: "0.05em" }}>
+                                {String(i + 1).padStart(2, "0")}
+                              </span>
+                              {group.label}
+                            </span>
+                            <svg width="6" height="10" viewBox="0 0 6 10" fill="none" style={{ opacity: 0.6 }}>
+                              <path d="M1 1l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                          </Link>
+
+                          {/* Flyout submenu */}
+                          {groupOpen && (
+                            <div style={{
+                              position: "absolute",
+                              top: 0,
+                              left: "100%",
+                              background: "#2e2e2e",
+                              borderRadius: "0 8px 8px 0",
+                              boxShadow: "0 8px 24px rgba(0,0,0,0.35)",
+                              minWidth: 170,
+                              overflow: "hidden",
+                              zIndex: 210,
+                            }}>
+                              {group.sub.map((sub, j) => {
+                                const subActive = path === sub.href;
+                                return (
+                                  <Link
+                                    key={sub.href}
+                                    href={sub.href}
+                                    style={{
+                                      display: "flex",
+                                      alignItems: "center",
+                                      gap: 10,
+                                      padding: "11px 18px",
+                                      fontSize: 13,
+                                      fontWeight: subActive ? 600 : 400,
+                                      color: subActive ? "#00adef" : "rgba(255,255,255,0.8)",
+                                      background: subActive ? "rgba(0,173,239,0.1)" : "transparent",
+                                      borderLeft: subActive ? "3px solid #00adef" : "3px solid transparent",
+                                      borderBottom: j < group.sub.length - 1 ? "1px solid rgba(255,255,255,0.06)" : "none",
+                                    }}
+                                  >
+                                    {sub.label}
+                                  </Link>
+                                );
+                              })}
+                            </div>
+                          )}
+                        </div>
                       );
                     })}
                   </div>
