@@ -94,7 +94,7 @@ const TEAM = [
     details: [
       { label: "Relevante expertise en specialisaties", value: "Google Ads, GA4, GTM, Search Console, AI & campagnebeheer" },
       { label: "Aantal jaren ervaring", value: "15+ jaar" },
-      { label: "Verantwoordelijkheid binnen projectteam", value: "Klankbord SEA" },
+      { label: "Verantwoordelijkheid binnen projectteam", value: "SEA" },
       { label: "Beschikbaarheid per week", value: "5–10 uur" },
       { label: "Aanwezig op het Rietveld kantoor", value: "Op verzoek beschikbaar" },
     ],
