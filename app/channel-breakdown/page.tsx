@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 
 const CYAN = "#00adef";
 const YELLOW = "#fecb09";
@@ -16,7 +16,7 @@ const CHANNELS = [
         <path d="M12 5V3M12 15v2M5 9H3M21 9h-2" stroke={CYAN} strokeWidth="1.8" strokeLinecap="round"/>
       </svg>
     ),
-    summary: "Het account is het afgelopen jaar fors gegroeid: spend steeg van €1,3M naar €2,1M (+67%) en de omzet van €8,2M naar €12,5M (+52%). De accountbrede ROAS staat op 5,87 — licht gedaald als gevolg van de snelle opschaling. Er liggen concrete kansen in campagnestructuur en een onbenut premium-segment boven €400.",
+    summary: "Het account is het afgelopen jaar fors gegroeid: spend steeg van €1,3M naar €2,1M (+67%) en de omzet van €8,2M naar €12,5M (+52%). De accountbrede ROAS staat op 5,87 - licht gedaald als gevolg van de snelle opschaling. Er liggen concrete kansen in campagnestructuur en een onbenut premium-segment boven €400.",
     metrics: [
       { label: "Account ROAS", value: "5,87", sub: "Doel: 6,5", trend: "up" },
       { label: "Spend", value: "€2,1M", sub: "+67% YoY", trend: "up" },
@@ -38,7 +38,7 @@ const CHANNELS = [
         <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z" />
       </svg>
     ),
-    summary: "Uitzonderlijk sterke accountprestaties over de totale meetperiode (sept 2023 – mei 2026). De retargeting-campagnes leveren ROAS tot 69x. POAS-tracking via Conversions API maakt optimalisatie op werkelijke marge mogelijk — een significante voorsprong op concurrenten.",
+    summary: "Uitzonderlijk sterke accountprestaties over de totale meetperiode (sept 2023 – mei 2026). De retargeting-campagnes leveren ROAS tot 69x. POAS-tracking via Conversions API maakt optimalisatie op werkelijke marge mogelijk - een significante voorsprong op concurrenten.",
     metrics: [
       { label: "Omzet ROAS", value: "15,74×", sub: "Totale periode", trend: "up" },
       { label: "POAS", value: "9,46×", sub: "aug 2024–mei 2026", trend: "up" },

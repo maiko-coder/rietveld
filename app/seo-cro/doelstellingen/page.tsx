@@ -1,4 +1,4 @@
-import PresentationNav from "../../_components/PresentationNav";
+﻿import PresentationNav from "../../_components/PresentationNav";
 
 const COLOR = "#16A34A";
 const COLOR_LIGHT = "#F0FDF4";
@@ -36,7 +36,7 @@ export default function SeoCroDoelstellingen() {
 
       <div style={{ maxWidth: 960, margin: "0 auto", padding: "40px 24px" }}>
 
-        <h2 style={{ fontSize: 18, fontWeight: 700, color: "#111827", borderBottom: `2px solid ${COLOR}`, paddingBottom: 10, marginBottom: 20 }}>SEO — doelstellingen & verwacht effect</h2>
+        <h2 style={{ fontSize: 18, fontWeight: 700, color: "#111827", borderBottom: `2px solid ${COLOR}`, paddingBottom: 10, marginBottom: 20 }}>SEO - doelstellingen & verwacht effect</h2>
         <Table
           headers={["Actie", "Impact", "Inspanning", "Verwacht effect", "Tijdshorizon"]}
           rows={[
@@ -51,7 +51,7 @@ export default function SeoCroDoelstellingen() {
           ]}
         />
 
-        <h2 style={{ fontSize: 18, fontWeight: 700, color: "#111827", borderBottom: `2px solid ${COLOR}`, paddingBottom: 10, marginBottom: 20, marginTop: 40 }}>CRO — doelstellingen per fase</h2>
+        <h2 style={{ fontSize: 18, fontWeight: 700, color: "#111827", borderBottom: `2px solid ${COLOR}`, paddingBottom: 10, marginBottom: 20, marginTop: 40 }}>CRO - doelstellingen per fase</h2>
         <Table
           headers={["Actie", "Vertrouwen", "Verwacht effect", "Inspanning"]}
           rows={[
@@ -63,7 +63,7 @@ export default function SeoCroDoelstellingen() {
             ["Filtering naar zijbalk", <Badge key="f" c="#b45309">Twijfel</Badge>, "+0,5–2% conv.rate categoriepagina's", "Middel"],
             ["Chatfunctie expert advies", <Badge key="g" c="#b45309">Twijfel</Badge>, "+0,2–0,8% conv.rate productpagina's", "Middel"],
             ["Upsell module winkelwagen", <Badge key="h" c="#b45309">Twijfel</Badge>, "AOV +1–3% (~€2–5/order)", "Hoog"],
-            ["Homepage herontwerp", <Badge key="i" c="#dc2626">Onzeker</Badge>, "Onduidelijk — A/B-test vereist", "Hoog"],
+            ["Homepage herontwerp", <Badge key="i" c="#dc2626">Onzeker</Badge>, "Onduidelijk - A/B-test vereist", "Hoog"],
           ]}
         />
 
@@ -73,7 +73,7 @@ export default function SeoCroDoelstellingen() {
             { l: "Organisch verkeer (SEO fase 1+2)", n: "Basis", g: "+5–10% na 3–6 mnd" },
             { l: "CTR-verbetering (structured data)", n: "Basis", g: "+3–7% relatief" },
             { l: "Conversieratio (CRO fase 1+2)", n: "2,41%", g: "2,6–2,8%" },
-            { l: "ROAS-effect (indirect via CRO)", n: "—", g: "+0,1–0,2× accountbreed" },
+            { l: "ROAS-effect (indirect via CRO)", n: "-", g: "+0,1–0,2× accountbreed" },
           ].map((k) => (
             <div key={k.l} style={{ background: "white", border: "1px solid #e5e7eb", borderRadius: 10, padding: "20px", borderTop: `3px solid ${COLOR}` }}>
               <div style={{ fontSize: 11, color: "#9ca3af", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 6 }}>{k.l}</div>
@@ -90,7 +90,7 @@ export default function SeoCroDoelstellingen() {
         <div style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: 10, padding: "20px 24px", marginBottom: 48 }}>
           <div style={{ fontSize: 11, fontWeight: 700, color: "#64748b", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 8 }}>Methodologische noot</div>
           <p style={{ fontSize: 13, color: "#475569", lineHeight: 1.7, margin: 0 }}>
-            Alle vermelde percentages zijn <strong>relatieve verbeteringen</strong> ten opzichte van de huidige waarden, niet absolute toevoegingen. Een CTR-verbetering van +5% op een huidige CTR van 4,0% resulteert in 4,2%, niet 9,0%. Schattingen zijn gebaseerd op sectorgemiddelden — werkelijke resultaten zijn afhankelijk van implementatiekwaliteit en concurrentiepositie.
+            Alle vermelde percentages zijn <strong>relatieve verbeteringen</strong> ten opzichte van de huidige waarden, niet absolute toevoegingen. Een CTR-verbetering van +5% op een huidige CTR van 4,0% resulteert in 4,2%, niet 9,0%. Schattingen zijn gebaseerd op sectorgemiddelden - werkelijke resultaten zijn afhankelijk van implementatiekwaliteit en concurrentiepositie.
           </p>
         </div>
 

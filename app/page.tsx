@@ -1,4 +1,4 @@
-export default function HomePage() {
+﻿export default function HomePage() {
   return (
     <div style={{ height: "calc(100vh - 96px)", display: "flex", flexDirection: "column" }}>
       <iframe
@@ -9,7 +9,7 @@ export default function HomePage() {
           border: "none",
           display: "block",
         }}
-        title="Woeler — Rietveld Licht presentatie"
+        title="Woeler - Rietveld Licht presentatie"
       />
     </div>
   );

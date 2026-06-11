@@ -1,4 +1,4 @@
-import PresentationNav from "../../_components/PresentationNav";
+﻿import PresentationNav from "../../_components/PresentationNav";
 
 const COLOR = "#2563EB";
 const COLOR_LIGHT = "#EFF6FF";
@@ -99,20 +99,20 @@ export default function GoogleAdsCompleet() {
           Het Google Ads-account van Rietveld Licht presteert goed en is het afgelopen jaar fors gegroeid. De spend steeg van €1,3M naar €2,1M (+67%) en de omzet van €8,2M naar €12,5M (+52%). Het account is daarmee een van de grootste groeimotoren in het digitale kanaalportfolio van Rietveld.
         </P>
         <P>
-          De keerzijde van die snelle groei is dat de ROAS licht daalde van 6,43 naar 5,87 en de kosten per bestelling stegen van €26 naar €32. Dit is een normaal patroon bij opschalen — bij een groter advertentiebudget trekt Google automatisch meer nieuwe, koudere doelgroepen aan die lager converteren dan bestaande kopers. Dit geeft aan dat er ruimte is om de structuur scherper te maken.
+          De keerzijde van die snelle groei is dat de ROAS licht daalde van 6,43 naar 5,87 en de kosten per bestelling stegen van €26 naar €32. Dit is een normaal patroon bij opschalen - bij een groter advertentiebudget trekt Google automatisch meer nieuwe, koudere doelgroepen aan die lager converteren dan bestaande kopers. Dit geeft aan dat er ruimte is om de structuur scherper te maken.
         </P>
         <Callout
           variant="blue"
           title="Drie kernconclusies"
           items={[
-            "Het account groeit sterk maar verliest licht aan efficiëntie — dit is herstelbaar met structuurwijzigingen",
-            "Bestsellers en Sale campagnes draaien zonder tROAS-doel — dit kost €420k spend aan efficiëntie",
-            "Het €400+ segment haalt 12–13x ROAS op slechts €12k spend — dit is de grootste onbenutte groeikans",
+            "Het account groeit sterk maar verliest licht aan efficiëntie - dit is herstelbaar met structuurwijzigingen",
+            "Bestsellers en Sale campagnes draaien zonder tROAS-doel - dit kost €420k spend aan efficiëntie",
+            "Het €400+ segment haalt 12–13x ROAS op slechts €12k spend - dit is de grootste onbenutte groeikans",
           ]}
         />
 
         {/* Sectie 2: Accountoverzicht */}
-        <H2>2. Accountoverzicht — groei & efficiëntie</H2>
+        <H2>2. Accountoverzicht - groei & efficiëntie</H2>
         <Table
           headers={["Metric", "Vorig jaar", "Huidig jaar", "Verschil"]}
           rows={[
@@ -120,18 +120,18 @@ export default function GoogleAdsCompleet() {
             ["Totale omzet", "€8,2M", "€12,5M", "+52%"],
             ["Account ROAS", "6,43", "5,87", "-8,7%"],
             ["Kosten per bestelling (CPA)", "€26", "€31,85", "+23%"],
-            ["PMax overall ROAS", "—", "4,69", "—"],
+            ["PMax overall ROAS", "-", "4,69", "-"],
           ]}
         />
         <P>
-          De ROAS-daling en CPA-stijging zijn direct gekoppeld aan de budgetverhoging. Bij opschaling neemt het aandeel prospecting toe, wat de blended ROAS drukt. Dit is inherent aan schaalvergroting — de vraag is of de accountstructuur optimaal is ingericht om het nieuwe budgetniveau efficiënt te verwerken.
+          De ROAS-daling en CPA-stijging zijn direct gekoppeld aan de budgetverhoging. Bij opschaling neemt het aandeel prospecting toe, wat de blended ROAS drukt. Dit is inherent aan schaalvergroting - de vraag is of de accountstructuur optimaal is ingericht om het nieuwe budgetniveau efficiënt te verwerken.
         </P>
 
         {/* Sectie 3: Campagneanalyse */}
         <H2>3. Campagneanalyse</H2>
         <H3>3.1 Wolves / Sheep</H3>
         <P>
-          De PMax-campagnes draaien gebundeld op alle producttypen — hanglampen, plafondlampen, spots, inbouwlampen en tafellampen concurreren om hetzelfde budget en hetzelfde doel. Producttypen met een lagere ROAS (bijv. volumes-hanglampen) drukken daarmee de prestaties van efficiëntere categorieën (spots, inbouwlampen: ROAS 5,3–6,5).
+          De PMax-campagnes draaien gebundeld op alle producttypen - hanglampen, plafondlampen, spots, inbouwlampen en tafellampen concurreren om hetzelfde budget en hetzelfde doel. Producttypen met een lagere ROAS (bijv. volumes-hanglampen) drukken daarmee de prestaties van efficiëntere categorieën (spots, inbouwlampen: ROAS 5,3–6,5).
         </P>
         <P>Huidig ROAS: ~5,2 · Doel: 5,5+</P>
 
@@ -143,13 +143,13 @@ export default function GoogleAdsCompleet() {
 
         <H3>3.3 Sale</H3>
         <P>
-          De Sale-campagne heeft de laagste ROAS van het account (3,44). Bij kortingsproducten is een lagere ROAS op zichzelf niet problematisch — het hangt af van de winstmarge per product. Zodra POAS-tracking actief is, wordt op winstgevendheid gestuurd in plaats van omzet-ROAS.
+          De Sale-campagne heeft de laagste ROAS van het account (3,44). Bij kortingsproducten is een lagere ROAS op zichzelf niet problematisch - het hangt af van de winstmarge per product. Zodra POAS-tracking actief is, wordt op winstgevendheid gestuurd in plaats van omzet-ROAS.
         </P>
         <P>Huidig ROAS: 3,44 · Doel: 4,0+ (of POAS-basis zodra marge-data beschikbaar)</P>
 
         <H3>3.4 Premium €400+ (nieuw te lanceren)</H3>
         <P>
-          Het segment producten boven €400 wordt momenteel nauwelijks geadverteerd. Op de €12k spend die dit segment nu ontvangt, realiseert het een ROAS van 12–13x. Dit is het sterkste rendementssignaal in het account — en het is grotendeels onbenut. Bij opschaling naar €75–100k spend is een ROAS van 10+ realistisch.
+          Het segment producten boven €400 wordt momenteel nauwelijks geadverteerd. Op de €12k spend die dit segment nu ontvangt, realiseert het een ROAS van 12–13x. Dit is het sterkste rendementssignaal in het account - en het is grotendeels onbenut. Bij opschaling naar €75–100k spend is een ROAS van 10+ realistisch.
         </P>
         <P>Huidig ROAS: 12–13x op €12k · Doel: 8,0+ op €75–100k spend (+€350–500k extra omzet)</P>
 
@@ -157,16 +157,16 @@ export default function GoogleAdsCompleet() {
         <H2>4. Technische bevindingen</H2>
         <Callout
           variant="red"
-          title="Locatietargeting — directe actie vereist"
+          title="Locatietargeting - directe actie vereist"
           items={[
             "Campagnes zijn ingesteld op 'aanwezig in of geïnteresseerd in' in plaats van 'aanwezigheid'",
-            "Hierdoor worden advertenties getoond aan gebruikers buiten het doelgebied die interesse tonen — lagere conversiekansen",
+            "Hierdoor worden advertenties getoond aan gebruikers buiten het doelgebied die interesse tonen - lagere conversiekansen",
             "Corrigeren naar 'Aanwezigheid' verwacht +1–3% efficiëntiewinst direct",
           ]}
         />
         <Callout
           variant="amber"
-          title="Biedstrategieën — optimalisatie kans"
+          title="Biedstrategieën - optimalisatie kans"
           items={[
             "Bestsellers en Sale campagnes draaien zonder tROAS-doel op €420k+ spend",
             "tROAS instellen verwacht ROAS van ~3,6 naar 4,0–4,5 te brengen op deze campagnes",

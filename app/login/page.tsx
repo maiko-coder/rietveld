@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useState, FormEvent } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense } from "react";
@@ -76,7 +76,7 @@ function LoginForm() {
           overflow: "hidden",
           boxShadow: "0 24px 64px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.06)",
         }}>
-          {/* Card top — branding */}
+          {/* Card top - branding */}
           <div style={{ background: DARK, padding: "32px 36px 28px", borderBottom: `3px solid ${CYAN}` }}>
             {/* Logos */}
             <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 28 }}>

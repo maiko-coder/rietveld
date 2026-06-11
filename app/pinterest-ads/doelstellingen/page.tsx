@@ -1,4 +1,4 @@
-import PresentationNav from "../../_components/PresentationNav";
+﻿import PresentationNav from "../../_components/PresentationNav";
 import { PageHero, SectionTitle, GoalCard, Callout, DarkTable, CYAN, RED, YELLOW, DARK } from "../../_components/ReportComponents";
 
 const PINTEREST_RED = "#e60023";
@@ -72,7 +72,7 @@ export default function PinterestAdsDoelstellingen() {
         />
 
         {/* Uitrol fases */}
-        <SectionTitle>Plan van aanpak — 2 fases</SectionTitle>
+        <SectionTitle>Plan van aanpak - 2 fases</SectionTitle>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, marginBottom: 8 }}>
           {[
             {
@@ -112,7 +112,7 @@ export default function PinterestAdsDoelstellingen() {
         <div style={{ background: "white", borderRadius: 12, padding: "16px 22px", boxShadow: "0 1px 4px rgba(0,0,0,0.06)", borderLeft: `4px solid ${YELLOW}`, marginBottom: 8, display: "flex", gap: 12 }}>
           <div style={{ width: 8, height: 8, borderRadius: "50%", background: YELLOW, flexShrink: 0, marginTop: 5 }} />
           <div>
-            <div style={{ fontSize: 13.5, fontWeight: 700, color: DARK, marginBottom: 3 }}>Doorlopend — Optimalisatie & rapportage</div>
+            <div style={{ fontSize: 13.5, fontWeight: 700, color: DARK, marginBottom: 3 }}>Doorlopend - Optimalisatie & rapportage</div>
             <div style={{ fontSize: 12.5, color: "#6b7280", lineHeight: 1.6 }}>ROAS, budget en creatives per laag bijhouden, bijsturen op accountdata, maandelijks rapporteren aan Rietveld Licht.</div>
           </div>
         </div>

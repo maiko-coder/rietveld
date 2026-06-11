@@ -1,4 +1,4 @@
-import PresentationNav from "../../_components/PresentationNav";
+﻿import PresentationNav from "../../_components/PresentationNav";
 import { PageHero, SectionTitle, SimpleStatCard, Callout, DarkTable, PriorityCard, GoalCard, CYAN, RED, YELLOW } from "../../_components/ReportComponents";
 
 export default function SeoCroSamenvatting() {
@@ -32,7 +32,7 @@ export default function SeoCroSamenvatting() {
           De technische basis is sterk. De grootste SEO-kansen liggen niet in de techniek maar in structured data en content. CRO-verbeteringen zijn direct meetbaar via conversieratio en verhogen de ROAS van alle betaalde kanalen automatisch mee.
         </Callout>
 
-        <SectionTitle>SEO — top prioriteiten</SectionTitle>
+        <SectionTitle>SEO - top prioriteiten</SectionTitle>
         <DarkTable
           headers={["Actie", "Impact", "Inspanning", "Effect"]}
           rows={[
@@ -45,19 +45,19 @@ export default function SeoCroSamenvatting() {
           ]}
         />
 
-        <SectionTitle accent={YELLOW}>CRO — top prioriteiten</SectionTitle>
+        <SectionTitle accent={YELLOW}>CRO - top prioriteiten</SectionTitle>
         <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 8 }}>
-          <PriorityCard num="01" color="#16a34a" title="Review score prominenter (9,4 / 24.450 reviews)" desc="Uitzonderlijk sterk social proof — nu statisch en nauwelijks zichtbaar op het beslissingsmoment. Reviewslider homepage + badge bij checkout." />
+          <PriorityCard num="01" color="#16a34a" title="Review score prominenter (9,4 / 24.450 reviews)" desc="Uitzonderlijk sterk social proof - nu statisch en nauwelijks zichtbaar op het beslissingsmoment. Reviewslider homepage + badge bij checkout." />
           <PriorityCard num="02" color="#16a34a" title="Mobiel menu + USP-balk verbeteren" desc="69% verkeer is mobiel maar converteert 27% slechter dan desktop. Transparant menu en hoge USP-balk zijn aantoonbare frictie. Lage inspanning." />
-          <PriorityCard num="03" color={CYAN} title="Winkelwagen sticky op desktop" desc="Verdwijnt nu bij scrollen — gemiste kans op het moment dat iemand klaar is om te kopen. Technisch eenvoudig." />
-          <PriorityCard num="04" color={YELLOW} title="Klarna / Afterpay integreren" desc="Gemiddelde orderwaarde €183–246 — spreid betalen verlaagt aankoopdrempel. Eerst checkout-uitvaldata analyseren voor beslissing." />
+          <PriorityCard num="03" color={CYAN} title="Winkelwagen sticky op desktop" desc="Verdwijnt nu bij scrollen - gemiste kans op het moment dat iemand klaar is om te kopen. Technisch eenvoudig." />
+          <PriorityCard num="04" color={YELLOW} title="Klarna / Afterpay integreren" desc="Gemiddelde orderwaarde €183–246 - spreid betalen verlaagt aankoopdrempel. Eerst checkout-uitvaldata analyseren voor beslissing." />
         </div>
 
         <SectionTitle accent={YELLOW}>Verwachte resultaten (3–6 maanden)</SectionTitle>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14 }}>
           <GoalCard label="Organisch verkeer" now="basis" goal="+5–10%" />
           <GoalCard label="Conversieratio doel" now="2,41%" goal="2,6–2,8%" />
-          <GoalCard label="ROAS-effect (indirect)" now="—" goal="+0,1–0,2×" />
+          <GoalCard label="ROAS-effect (indirect)" now="-" goal="+0,1–0,2×" />
         </div>
 
       </div>

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useState } from "react";
 import Image from "next/image";
 
@@ -90,7 +90,6 @@ const TEAM = [
     functie: "Externe SEA specialist",
     lead: false,
     staff: true,
-    badge: "Klankbord",
     photo: "/team/geert.webp",
     details: [
       { label: "Relevante expertise en specialisaties", value: "Google Ads, GA4, GTM, Search Console, AI & campagnebeheer" },
@@ -163,11 +162,6 @@ function OrgNode({
           Projectleider
         </div>
       )}
-      {member.badge && (
-        <div style={{ marginTop: 6, display: "inline-block", fontSize: 9, fontWeight: 700, padding: "2px 7px", borderRadius: 20, background: `${YELLOW}25`, color: "#7a5f0a", letterSpacing: "0.3px", textTransform: "uppercase", border: `1px dashed ${YELLOW}` }}>
-          {member.badge}
-        </div>
-      )}
     </div>
   );
 }
@@ -206,9 +200,6 @@ function ProfileCard({ member, onClose }: { member: (typeof TEAM)[0]; onClose: (
             <h3 style={{ fontSize: 17, fontWeight: 700, color: DARK, margin: 0 }}>{member.name}</h3>
             {member.lead && (
               <span style={{ fontSize: 9, fontWeight: 700, padding: "2px 8px", borderRadius: 20, background: `${CYAN}15`, color: CYAN, textTransform: "uppercase", letterSpacing: "0.06em" }}>Projectleider</span>
-            )}
-            {member.badge && (
-              <span style={{ fontSize: 9, fontWeight: 700, padding: "2px 8px", borderRadius: 20, background: `${YELLOW}20`, color: "#7a5f0a", textTransform: "uppercase", letterSpacing: "0.06em", border: `1px dashed ${YELLOW}` }}>{member.badge}</span>
             )}
           </div>
           <div style={{ fontSize: 12, color: "#9ca3af", marginTop: 4 }}>
@@ -282,7 +273,7 @@ export default function TeamPage() {
         <div style={{ marginBottom: 32, overflowX: "auto" }}>
           <div style={{ width: 604, margin: "0 auto" }}>
 
-            {/* Row 1: Moran — Sarah — Maiko — Geert, allemaal verbonden */}
+            {/* Row 1: Moran - Sarah - Maiko - Geert, allemaal verbonden */}
             <div style={{ display: "flex", alignItems: "center" }}>
               <OrgNode member={moran} active={open.has("moran")} onClick={() => toggle("moran")} width={118} dashed />
               <div style={{ width: 28, height: 2, background: "#d1d5db", flexShrink: 0 }} />
@@ -307,7 +298,7 @@ export default function TeamPage() {
               <div style={{ position: "absolute", left: 445, top: 20, width: 2, height: 20, background: "#d1d5db" }} />
             </div>
 
-            {/* Row 2: Specialists — alleen naar boven verbonden */}
+            {/* Row 2: Specialists - alleen naar boven verbonden */}
             <div style={{ display: "flex", justifyContent: "center", gap: 16 }}>
               {specialists.map((m) => (
                 <OrgNode key={m.id} member={m} active={open.has(m.id)} onClick={() => toggle(m.id)} width={128} />

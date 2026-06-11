@@ -1,4 +1,4 @@
-import PresentationNav from "../../_components/PresentationNav";
+﻿import PresentationNav from "../../_components/PresentationNav";
 import { PageHero, SectionTitle, SimpleStatCard, Callout, DarkTable, PriorityCard, GoalCard, CYAN, RED, YELLOW, DARK } from "../../_components/ReportComponents";
 
 export default function MetaAdsSamenvatting() {
@@ -40,7 +40,7 @@ export default function MetaAdsSamenvatting() {
             ["StoreTraffic (showroom)", "35,6×", "20,25×", <span key="b" style={{ background: "#f0fdf4", color: "#16a34a", fontSize: 11, fontWeight: 700, padding: "3px 10px", borderRadius: 20 }}>Zeer sterk</span>],
             ["Retargeting RTG ROAS", "12,7×", "7,11×", <span key="c" style={{ background: "#f0fdf4", color: "#16a34a", fontSize: 11, fontWeight: 700, padding: "3px 10px", borderRadius: 20 }}>Sterk</span>],
             ["Advantage+ Shopping", "14,8×", "8,18×", <span key="d" style={{ background: "#f0fdf4", color: "#16a34a", fontSize: 11, fontWeight: 700, padding: "3px 10px", borderRadius: 20 }}>Solide</span>],
-            ["Qvisits (branding)", "0,76×", "—", <span key="e" style={{ background: "#fef9e7", color: "#b45309", fontSize: 11, fontWeight: 700, padding: "3px 10px", borderRadius: 20 }}>Bewust brandingdoel</span>],
+            ["Qvisits (branding)", "0,76×", "-", <span key="e" style={{ background: "#fef9e7", color: "#b45309", fontSize: 11, fontWeight: 700, padding: "3px 10px", borderRadius: 20 }}>Bewust brandingdoel</span>],
           ]}
         />
 

@@ -1,4 +1,4 @@
-import PresentationNav from "../../_components/PresentationNav";
+﻿import PresentationNav from "../../_components/PresentationNav";
 import { PageHero, SectionTitle, Callout, GoalCard, CYAN, RED, YELLOW, DARK } from "../../_components/ReportComponents";
 
 export default function MarketingAutomationSamenvatting() {
@@ -24,9 +24,9 @@ export default function MarketingAutomationSamenvatting() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 14, marginBottom: 8 }}>
           {[
             { num: "01", title: "Welkomst & Onboarding", priority: "Start", pColor: RED, desc: "3 e-mails over 7 dagen. Direct → Dag 3 (inspiratie) → Dag 7 (aanbod met vervaldatum).", items: ["Vertrouwen opbouwen vóór producten tonen", "Klikgedrag meten om klantinteresse te bepalen", "Eerste aankoop stimuleren via urgentie-aanbod"] },
-            { num: "02", title: "Verlaten Winkelwagen", priority: "Start", pColor: RED, desc: "3 e-mails over 48 uur. 60min → 24u → 48u.", items: ["Herinnering zonder korting (60 min)", "Hulp aanbieden + alternatieven (24u)", "Gratis bezorging of €10 korting (48u — laatste kans)"] },
-            { num: "03", title: "Post-aankoop & Loyaliteit", priority: "Jaar 1", pColor: YELLOW, desc: "4 e-mails over 30 dagen. Direct → Dag 3 → Dag 14 → Dag 30.", items: ["Bevestiging + installatie-tips (retourkans verlagen)", "Review uitnodiging (dag 14 — optimale timing)", "Cross-sell op basis van aankoopcategorie (dag 30)"] },
-            { num: "04", title: "Win-back", priority: "Jaar 1", pColor: YELLOW, desc: "3 e-mails over 28 dagen bij inactiviteit >90 dagen.", items: ["Inspiratie zonder druk (dag 0)", "Concreet aanbod 15% korting (dag 14)", "Laatste kans of uitschrijven (dag 28 — lijstkwaliteit)"] },
+            { num: "02", title: "Verlaten Winkelwagen", priority: "Start", pColor: RED, desc: "3 e-mails over 48 uur. 60min → 24u → 48u.", items: ["Herinnering zonder korting (60 min)", "Hulp aanbieden + alternatieven (24u)", "Gratis bezorging of €10 korting (48u - laatste kans)"] },
+            { num: "03", title: "Post-aankoop & Loyaliteit", priority: "Jaar 1", pColor: YELLOW, desc: "4 e-mails over 30 dagen. Direct → Dag 3 → Dag 14 → Dag 30.", items: ["Bevestiging + installatie-tips (retourkans verlagen)", "Review uitnodiging (dag 14 - optimale timing)", "Cross-sell op basis van aankoopcategorie (dag 30)"] },
+            { num: "04", title: "Win-back", priority: "Jaar 1", pColor: YELLOW, desc: "3 e-mails over 28 dagen bij inactiviteit >90 dagen.", items: ["Inspiratie zonder druk (dag 0)", "Concreet aanbod 15% korting (dag 14)", "Laatste kans of uitschrijven (dag 28 - lijstkwaliteit)"] },
           ].map((f) => (
             <div key={f.num} style={{ background: "white", borderRadius: 12, padding: "20px 22px", boxShadow: "0 1px 4px rgba(0,0,0,0.06)", borderLeft: `4px solid ${f.pColor}` }}>
               <div style={{ display: "flex", gap: 12, alignItems: "flex-start", marginBottom: 12 }}>
@@ -69,16 +69,16 @@ export default function MarketingAutomationSamenvatting() {
             { l: "Winkelwagen conv.", v: "11%" },
             { l: "E-mail aandeel omzet", v: "22%" },
           ].map((k) => (
-            <GoalCard key={k.l} label={k.l} now="—" goal={k.v} />
+            <GoalCard key={k.l} label={k.l} now="-" goal={k.v} />
           ))}
         </div>
 
-        <SectionTitle accent={RED}>Eerste 60 dagen — begin hier</SectionTitle>
+        <SectionTitle accent={RED}>Eerste 60 dagen - begin hier</SectionTitle>
         <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
           {[
-            "E-mailplatform kiezen en koppelen aan webshop — zonder dit kan niets starten",
-            "Welkomstflow live zetten — elke nieuwe abonnee verdient een goede eerste indruk",
-            "Verlaten winkelwagen flow activeren — snelste directe ROI-generator binnen e-mail",
+            "E-mailplatform kiezen en koppelen aan webshop - zonder dit kan niets starten",
+            "Welkomstflow live zetten - elke nieuwe abonnee verdient een goede eerste indruk",
+            "Verlaten winkelwagen flow activeren - snelste directe ROI-generator binnen e-mail",
             "Exit-intent pop-up live op webshop + medewerkers instrueren in winkel",
             "Bestaande e-maillijst importeren en opschonen",
           ].map((item, i) => (

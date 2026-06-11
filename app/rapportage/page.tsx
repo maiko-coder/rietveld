@@ -1,4 +1,4 @@
-const REPORT_URL = "https://datastudio.google.com/u/4/reporting/b90fa4bf-f791-4123-9be9-0c1c5fff3184/page/VgD";
+﻿const REPORT_URL = "https://datastudio.google.com/u/4/reporting/b90fa4bf-f791-4123-9be9-0c1c5fff3184/page/VgD";
 const EMBED_URL = "https://lookerstudio.google.com/embed/reporting/b90fa4bf-f791-4123-9be9-0c1c5fff3184/page/VgD";
 
 export default function RapportagePage() {
@@ -21,7 +21,7 @@ export default function RapportagePage() {
       <iframe
         src={EMBED_URL}
         style={{ flex: 1, width: "100%", border: "none", display: "block" }}
-        title="Rietveld rapportage — Looker Studio"
+        title="Rietveld rapportage - Looker Studio"
         allowFullScreen
         sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
       />

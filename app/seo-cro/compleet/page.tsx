@@ -1,4 +1,4 @@
-import PresentationNav from "../../_components/PresentationNav";
+﻿import PresentationNav from "../../_components/PresentationNav";
 
 const COLOR = "#16A34A";
 const COLOR_LIGHT = "#F0FDF4";
@@ -58,31 +58,31 @@ export default function SeoCroCompleet() {
 
         {/* SEO Deel */}
         <div style={{ background: COLOR_LIGHT, borderRadius: 10, padding: "16px 20px", marginBottom: 32, borderLeft: `4px solid ${COLOR}` }}>
-          <div style={{ fontSize: 11, fontWeight: 700, color: "#15803d", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 4 }}>Deel 1 — SEO</div>
-          <P>Rietveldlicht.nl staat technisch sterk met een Health Score van 92/100. De grootste SEO-groeikansen liggen in structured data, contentstrategie en internationale SEO — niet in de technische basis.</P>
+          <div style={{ fontSize: 11, fontWeight: 700, color: "#15803d", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 4 }}>Deel 1 - SEO</div>
+          <P>Rietveldlicht.nl staat technisch sterk met een Health Score van 92/100. De grootste SEO-groeikansen liggen in structured data, contentstrategie en internationale SEO - niet in de technische basis.</P>
         </div>
 
-        <H1>1. Technische SEO — bevindingen</H1>
+        <H1>1. Technische SEO - bevindingen</H1>
 
-        <H2>1.1 Ontbrekende alt-teksten — 989 pagina&apos;s</H2>
+        <H2>1.1 Ontbrekende alt-teksten - 989 pagina&apos;s</H2>
         <P>Bijna 1.000 afbeeldingen missen een alt-attribuut op productpagina&apos;s, categoriepagina&apos;s, blogs, FAQ en homepage. Hierdoor begrijpt Google de afbeeldingen minder goed, gaan rankingkansen in Google Afbeeldingen verloren en verslechtert de toegankelijkheid.</P>
         <Callout variant="green" title="Aanbevolen aanpak" items={["Beschrijvende alt-teksten op basis van merk, producttype, kleur, materiaal, stijl", "Voorbeeld: 'Lumidora hanglamp zwart mat metaal industrieel'", "Verwacht effect: +2–4% relatief meer verkeer via Google Afbeeldingen"]} />
 
-        <H2>1.2 Hreflang-problemen — 424 pagina&apos;s</H2>
+        <H2>1.2 Hreflang-problemen - 424 pagina&apos;s</H2>
         <P>393 pagina&apos;s missen een return-link en x-default attribuut. 31 hreflang-URLs verwijzen naar foutieve responses. Google kan hierdoor niet altijd bepalen welke taalversie aan gebruikers getoond moet worden.</P>
         <Callout variant="amber" title="Gevolg" items={["Internationale rankingkansen worden actief geblokkeerd", "Correctie is verplicht voor Belgium en Duitsland uitrol", "Inspanning: Middel · Impact: Verlies stoppen (geen nieuwe groei maar fouten corrigeren)"]} />
 
         <H2>1.3 Meta tags & headings</H2>
         <P>2 pagina&apos;s met dubbele title tags, 7 pagina&apos;s met dubbele meta descriptions, FAQ-pagina met te korte title, 2 pagina&apos;s zonder H1-tag. Lage inspanning, middel impact.</P>
 
-        <H1>2. Structured Data — grootste SEO-kans</H1>
+        <H1>2. Structured Data - grootste SEO-kans</H1>
         <P>Structured data is momenteel nauwelijks aanwezig. Dit is de grootste kans op extra zichtbaarheid binnen Google voor een webshop van deze omvang.</P>
         <Table
           headers={["Schema type", "Verwachte impact", "Inspanning", "Prioriteit"]}
           rows={[
-            ["Product + Offer schema", <Badge key="a" c="#dc2626">Zeer hoog</Badge>, "Middel", "1 — Direct"],
-            ["FAQ Schema", <Badge key="b" c="#dc2626">Hoog</Badge>, "Laag", "1 — Direct"],
-            ["Breadcrumb Schema", <Badge key="c" c="#dc2626">Hoog</Badge>, "Laag", "1 — Direct"],
+            ["Product + Offer schema", <Badge key="a" c="#dc2626">Zeer hoog</Badge>, "Middel", "1 - Direct"],
+            ["FAQ Schema", <Badge key="b" c="#dc2626">Hoog</Badge>, "Laag", "1 - Direct"],
+            ["Breadcrumb Schema", <Badge key="c" c="#dc2626">Hoog</Badge>, "Laag", "1 - Direct"],
           ]}
         />
         <P>Product + Offer schema maakt prijzen, voorraadstatus en reviews zichtbaar in Google op alle 2.340 productpagina&apos;s. Verwacht: +15–30% CTR (realistisch +3–8% bij goede implementatie). Breadcrumb en FAQ schema zijn lage-inspanning kansen met directe CTR-verbetering.</P>
@@ -92,16 +92,16 @@ export default function SeoCroCompleet() {
         <H2>3.1 Categorieteksten uitbreiden</H2>
         <P>Categoriepagina&apos;s missen momenteel content voor rankings op commerciële zoekwoorden zoals &apos;hanglampen kopen&apos;, &apos;industriële verlichting&apos;, &apos;plafondlamp zwart&apos;. Aanbeveling: introductietekst (100–150 woorden), H2/H3-secties per subcategorie, keuzetips en FAQ-sectie per pagina.</P>
 
-        <H2>3.2 Blogstrategie — 2 artikelen per maand</H2>
+        <H2>3.2 Blogstrategie - 2 artikelen per maand</H2>
         <P>Informatieve zoekvragen vroeg in de funnel: &apos;hoe hoog hanglamp boven eettafel?&apos;, &apos;warm vs koud wit licht&apos;. Effect pas na 6–12 maanden meetbaar. Werkt alleen bij consistente publicatie en kwalitatieve content.</P>
 
         {/* CRO Deel */}
         <div style={{ background: "#f0fdf4", borderRadius: 10, padding: "16px 20px", marginBottom: 32, marginTop: 40, borderLeft: `4px solid ${COLOR}` }}>
-          <div style={{ fontSize: 11, fontWeight: 700, color: "#15803d", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 4 }}>Deel 2 — CRO</div>
+          <div style={{ fontSize: 11, fontWeight: 700, color: "#15803d", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 4 }}>Deel 2 - CRO</div>
           <P>Huidige conversieratio: 2,41% (mobiel 2,26% · desktop 3,12%). 69% van het verkeer is mobiel. Elke procentpunt hogere conversieratio op het huidige verkeer verbetert de ROAS van alle betaalde kanalen automatisch mee.</P>
         </div>
 
-        <H1>4. CRO — directe verbeterpunten (Fase 1)</H1>
+        <H1>4. CRO - directe verbeterpunten (Fase 1)</H1>
         <Table
           headers={["Actie", "Vertrouwen", "Verwacht effect", "Inspanning"]}
           rows={[
@@ -112,17 +112,17 @@ export default function SeoCroCompleet() {
           ]}
         />
 
-        <H1>5. CRO — korte termijn (Fase 2)</H1>
+        <H1>5. CRO - korte termijn (Fase 2)</H1>
         <Table
           headers={["Actie", "Vertrouwen", "Verwacht effect", "Voorwaarde"]}
           rows={[
             ["Klarna / Afterpay integreren", <Badge key="a" c="#b45309">Twijfel</Badge>, "+0,5–1,5% conv.rate bij orders >€150", "Eerst checkout-uitvaldata checken"],
-            ["Filtering naar zijbalk + prijssortering", <Badge key="b" c="#b45309">Twijfel</Badge>, "+0,5–2% conv.rate categoriepagina's", "—"],
-            ["Chatfunctie — expert advies", <Badge key="c" c="#b45309">Twijfel</Badge>, "+0,2–0,8% conv.rate productpagina's", "Capaciteit voor goede opvolging"],
+            ["Filtering naar zijbalk + prijssortering", <Badge key="b" c="#b45309">Twijfel</Badge>, "+0,5–2% conv.rate categoriepagina's", "-"],
+            ["Chatfunctie - expert advies", <Badge key="c" c="#b45309">Twijfel</Badge>, "+0,2–0,8% conv.rate productpagina's", "Capaciteit voor goede opvolging"],
           ]}
         />
 
-        <H1>6. CRO — middellange termijn (Fase 3)</H1>
+        <H1>6. CRO - middellange termijn (Fase 3)</H1>
         <Table
           headers={["Actie", "Vertrouwen", "Verwacht effect", "Risico"]}
           rows={[
@@ -136,7 +136,7 @@ export default function SeoCroCompleet() {
           {[
             { l: "SEO verkeerseffect fase 1+2", n: "Basis", g: "+5–10% organisch" },
             { l: "CRO conversieratio doel", n: "2,41%", g: "2,6–2,8%" },
-            { l: "ROAS-effect (indirect)", n: "—", g: "+0,1–0,2×" },
+            { l: "ROAS-effect (indirect)", n: "-", g: "+0,1–0,2×" },
           ].map((k) => (
             <div key={k.l} style={{ background: "white", border: "1px solid #e5e7eb", borderRadius: 10, padding: "18px", borderTop: `3px solid ${COLOR}`, textAlign: "center" }}>
               <div style={{ fontSize: 11, color: "#9ca3af", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 6 }}>{k.l}</div>
@@ -147,12 +147,12 @@ export default function SeoCroCompleet() {
         </div>
         <Callout
           variant="green"
-          title="Aanbeveling — begin hier"
+          title="Aanbeveling - begin hier"
           items={[
-            "SEO: Alt-teksten, hreflang en breadcrumb/FAQ schema zijn laaghangend fruit — lage inspanning, geen risico",
-            "CRO: Drie 'zekere' fase 1-acties — mobiel menu, reviews en sticky winkelwagen zijn direct uit te voeren",
+            "SEO: Alt-teksten, hreflang en breadcrumb/FAQ schema zijn laaghangend fruit - lage inspanning, geen risico",
+            "CRO: Drie 'zekere' fase 1-acties - mobiel menu, reviews en sticky winkelwagen zijn direct uit te voeren",
             "Klarna/Afterpay: Eerst checkout-uitvaldata analyseren voordat beslissing genomen wordt",
-            "Homepage herontwerp: Uitstellen tot A/B-testdata beschikbaar is — risico op conversieverlies is reëel",
+            "Homepage herontwerp: Uitstellen tot A/B-testdata beschikbaar is - risico op conversieverlies is reëel",
           ]}
         />
 

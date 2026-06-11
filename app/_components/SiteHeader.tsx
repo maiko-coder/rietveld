@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -99,7 +99,7 @@ export default function SiteHeader() {
 
   return (
     <header style={{ background: "#262626", boxShadow: "0 1px 0 rgba(255,255,255,0.06)", position: "sticky", top: 0, zIndex: 100 }}>
-      {/* Top bar — branding */}
+      {/* Top bar - branding */}
       <div style={{ borderBottom: "1px solid rgba(255,255,255,0.08)", padding: "14px 32px", display: "flex", alignItems: "center", gap: 20, maxWidth: 1200, margin: "0 auto" }}>
         <Link href="/" style={{ display: "flex", alignItems: "center" }}>
           <img src="/rietveld-logo.svg" alt="Rietveld" style={{ height: 36, width: "auto" }} />

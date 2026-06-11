@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import Link from "next/link";
 
 const CYAN = "#00adef";
@@ -28,7 +28,7 @@ const CASES = [
     title: "Woeler goes America!",
     subtitle: "Meubel- en interieurmerk uit Boston",
     description:
-      "Manoir is een Frans-geïnspireerd meubelmerk opgericht door Elizabeth Jones. Via een combinatie van Meta Ads en Google Ads heeft Woeler de maandelijkse omzet met meer dan 1000% laten groeien — en de gemiddelde orderwaarde met 24% verhoogd.",
+      "Manoir is een Frans-geïnspireerd meubelmerk opgericht door Elizabeth Jones. Via een combinatie van Meta Ads en Google Ads heeft Woeler de maandelijkse omzet met meer dan 1000% laten groeien - en de gemiddelde orderwaarde met 24% verhoogd.",
     stats: [
       { label: "Gemiddelde orderwaarde", value: "+24%" },
       { label: "Maandelijkse omzet", value: "+1000%" },
@@ -43,7 +43,7 @@ const CASES = [
     title: "Duurzame omzetgroei met behoud van rendement",
     subtitle: "Specialist in EPDM & dakbedekking",
     description:
-      "Dakvoordeelshop is een gevestigde webshop voor EPDM, dakbedekking en accessoires. Door productsegmentatie, feed-optimalisatie en gefaseerde budgetverhogingen groeide de omzet fors — terwijl de ROAS stabiel bleef tussen de 5 en 6.",
+      "Dakvoordeelshop is een gevestigde webshop voor EPDM, dakbedekking en accessoires. Door productsegmentatie, feed-optimalisatie en gefaseerde budgetverhogingen groeide de omzet fors - terwijl de ROAS stabiel bleef tussen de 5 en 6.",
     stats: [
       { label: "Omzetgroei maart (YoY)", value: "+47%" },
       { label: "Omzetgroei april (YoY)", value: "+24%" },

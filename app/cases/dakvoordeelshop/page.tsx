@@ -1,4 +1,4 @@
-import { CYAN, YELLOW, DARK, RED } from "../../_components/ReportComponents";
+﻿import { CYAN, YELLOW, DARK, RED } from "../../_components/ReportComponents";
 
 export default function DakvoordeelshopPage() {
   return (
@@ -16,7 +16,7 @@ export default function DakvoordeelshopPage() {
             Duurzame omzetgroei<br />met behoud van rendement
           </h1>
           <p style={{ fontSize: 16, color: "rgba(255,255,255,0.55)", marginBottom: 44, maxWidth: 560 }}>
-            Hoe gecontroleerd opschalen via Google Ads leidde tot structurele omzetgroei — zonder de ROAS onder druk te zetten.
+            Hoe gecontroleerd opschalen via Google Ads leidde tot structurele omzetgroei - zonder de ROAS onder druk te zetten.
           </p>
 
           {/* Key metrics */}

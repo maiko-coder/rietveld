@@ -1,4 +1,4 @@
-const CYAN = "#00adef";
+﻿const CYAN = "#00adef";
 const YELLOW = "#fecb09";
 const DARK = "#262626";
 const RED = "#ed1c23";
@@ -34,7 +34,7 @@ const SERVICES = [
     budget: "€60K media budget",
     fee: "€1.000",
     hours: "10 uur",
-    note: "€5K per maand — de eerste €10K is gratis dankzij onze premium partnership met Pinterest.",
+    note: "€5K per maand - de eerste €10K is gratis dankzij onze premium partnership met Pinterest.",
     icon: (
       <svg viewBox="0 0 24 24" width="22" height="22" fill={CYAN}>
         <path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.03-2.83.19-.78 1.26-5.33 1.26-5.33s-.32-.64-.32-1.59c0-1.49.87-2.61 1.94-2.61.92 0 1.36.69 1.36 1.51 0 .92-.59 2.3-.89 3.58-.25 1.07.53 1.94 1.58 1.94 1.9 0 3.36-2 3.36-4.89 0-2.56-1.84-4.35-4.47-4.35-3.04 0-4.83 2.28-4.83 4.64 0 .92.35 1.9.79 2.44.09.1.1.2.07.3-.08.33-.26 1.07-.3 1.22-.05.2-.16.24-.36.14-1.34-.62-2.18-2.58-2.18-4.15 0-3.38 2.46-6.49 7.09-6.49 3.72 0 6.61 2.65 6.61 6.19 0 3.7-2.33 6.67-5.57 6.67-1.08 0-2.1-.56-2.45-1.23l-.67 2.55c-.24.93-.89 2.1-1.33 2.81A10 10 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z" />
@@ -98,7 +98,7 @@ export default function VoorstelPage() {
           </div>
           <h1 style={{ fontSize: 40, fontWeight: 800, lineHeight: 1.1, margin: "0 0 12px" }}>Maandelijkse samenwerking</h1>
           <p style={{ fontSize: 15, color: "rgba(255,255,255,0.5)", maxWidth: 540, margin: "0 0 36px" }}>
-            Een volledig marketingteam voor alle kanalen — met vaste maandelijkse fees, transparante uren en geen verrassingen.
+            Een volledig marketingteam voor alle kanalen - met vaste maandelijkse fees, transparante uren en geen verrassingen.
           </p>
 
           <div style={{ display: "flex", gap: 48, flexWrap: "wrap" }}>

@@ -1,4 +1,4 @@
-import PresentationNav from "../../_components/PresentationNav";
+﻿import PresentationNav from "../../_components/PresentationNav";
 import { CYAN } from "../../_components/ReportComponents";
 
 export default function PinterestAdsCompleet() {
@@ -15,7 +15,7 @@ export default function PinterestAdsCompleet() {
             border: "none",
             display: "block",
           }}
-          title="Pinterest Ads — Volledige analyse"
+          title="Pinterest Ads - Volledige analyse"
         />
       </div>
     </div>

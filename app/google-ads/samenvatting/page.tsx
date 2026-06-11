@@ -1,4 +1,4 @@
-import PresentationNav from "../../_components/PresentationNav";
+﻿import PresentationNav from "../../_components/PresentationNav";
 import { PageHero, SectionTitle, StatCard, Callout, DarkTable, PriorityCard, GoalCard, CYAN, RED, YELLOW } from "../../_components/ReportComponents";
 
 export default function GoogleAdsSamenvatting() {
@@ -32,7 +32,7 @@ export default function GoogleAdsSamenvatting() {
           Het account is het afgelopen jaar fors gegroeid. De ROAS-daling van 6,43 naar 5,87 is een normaal patroon bij opschalen. Er is concrete ruimte om de structuur scherper te maken en de efficiëntie te verhogen.
         </Callout>
 
-        <SectionTitle>Campagnes — huidige prestaties</SectionTitle>
+        <SectionTitle>Campagnes - huidige prestaties</SectionTitle>
         <DarkTable
           headers={["Campagne", "ROAS Nu", "Doel", "Prioriteit"]}
           rows={[
@@ -45,9 +45,9 @@ export default function GoogleAdsSamenvatting() {
 
         <SectionTitle accent={YELLOW}>Top 3 prioriteiten</SectionTitle>
         <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 8 }}>
-          <PriorityCard num="01" color={RED} title="tROAS instellen op Bestsellers & Sale" desc="€420k spend op campagnes zonder doelstelling — tROAS instellen verwacht ROAS van ~3,6 naar 4,0–4,5 te brengen" />
+          <PriorityCard num="01" color={RED} title="tROAS instellen op Bestsellers & Sale" desc="€420k spend op campagnes zonder doelstelling - tROAS instellen verwacht ROAS van ~3,6 naar 4,0–4,5 te brengen" />
           <PriorityCard num="02" color="#16a34a" title="Premium €400+ campagne opschalen" desc="Segment haalt 12–13× ROAS op €12k spend. Opschalen naar €75–100k levert +€350–500k extra omzet op" />
-          <PriorityCard num="03" color={CYAN} title="PMax splitsen op producttype" desc="Spots, inbouwlampen en tafellampen concurreren nu met hanglampen — splitsing geeft elk type eigen budget en doel" />
+          <PriorityCard num="03" color={CYAN} title="PMax splitsen op producttype" desc="Spots, inbouwlampen en tafellampen concurreren nu met hanglampen - splitsing geeft elk type eigen budget en doel" />
         </div>
 
         <SectionTitle accent={YELLOW}>Doel over 6 maanden</SectionTitle>

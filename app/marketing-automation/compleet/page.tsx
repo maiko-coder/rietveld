@@ -1,4 +1,4 @@
-import PresentationNav from "../../_components/PresentationNav";
+﻿import PresentationNav from "../../_components/PresentationNav";
 
 const COLOR = "#0891B2";
 const COLOR_LIGHT = "#ECFEFF";
@@ -61,7 +61,7 @@ export default function MarketingAutomationCompleet() {
           <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", opacity: 0.6, marginBottom: 12 }}>E-mail & Marketing Automation · Rietveld Verlichting</div>
           <h1 style={{ fontSize: 42, fontWeight: 700, lineHeight: 1.1, marginBottom: 16 }}>Marketing Automation<br />Complete Strategie</h1>
           <p style={{ fontSize: 16, opacity: 0.75, maxWidth: 520, lineHeight: 1.6, marginBottom: 40 }}>
-            Strategie voor e-mail marketing en marketing automation — van welkomstflow tot win-back
+            Strategie voor e-mail marketing en marketing automation - van welkomstflow tot win-back
           </p>
           <div style={{ display: "flex", gap: 32, paddingTop: 32, borderTop: "1px solid rgba(255,255,255,0.15)" }}>
             {[{ l: "Kernflows", v: "4" }, { l: "Aandeel e-mail doel", v: ">18%" }, { l: "Winkelwagen conv. doel", v: ">8%" }, { l: "Automation openrate doel", v: ">42%" }].map((m) => (
@@ -77,7 +77,7 @@ export default function MarketingAutomationCompleet() {
         <P>E-mail is het meest directe, meetbare en schaalbare kanaal dat Rietveld Verlichting volledig in eigen hand heeft. Waar social media-bereik afhankelijk is van algoritmes en betaald adverteren verloopt via externe platformen, is e-mail een directe communicatielijn met de klant: geen tussenpartij, geen veiling, geen organisch bereikprobleem.</P>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12, marginBottom: 24 }}>
           {[
-            { l: "Activering", d: "E-mail zet klanten in beweging — naar de webshop, winkel of adviesgesprek" },
+            { l: "Activering", d: "E-mail zet klanten in beweging - naar de webshop, winkel of adviesgesprek" },
             { l: "Verbinding", d: "Houdt het gesprek levend tussen aankoopmomenten en verbindt alle kanalen aan elkaar" },
             { l: "Personalisatie", d: "Op schaal relevante communicatie op basis van aankoopgeschiedenis en gedrag" },
           ].map((p) => (
@@ -93,7 +93,7 @@ export default function MarketingAutomationCompleet() {
           {[
             { num: "①", t: "Relevantie boven frequentie", d: "Liever één e-mail die raak is dan vijf die genegeerd worden. Elk bericht moet een aanleiding hebben die voor de ontvanger betekenisvol is." },
             { num: "②", t: "Gedragsgestuurd, niet kalendergestuurd", d: "De meeste e-mails worden verstuurd op basis van wat een klant doet, niet op een vaste dag in de week." },
-            { num: "③", t: "Eén klantprofiel", d: "Data uit alle kanalen — webshop, winkel, social — voeden hetzelfde profiel. E-mail communiceert vanuit dat profiel, niet vanuit productcategorieën." },
+            { num: "③", t: "Eén klantprofiel", d: "Data uit alle kanalen - webshop, winkel, social - voeden hetzelfde profiel. E-mail communiceert vanuit dat profiel, niet vanuit productcategorieën." },
           ].map((p) => (
             <div key={p.num} style={{ background: "white", border: "1px solid #e5e7eb", borderRadius: 10, padding: "16px 20px", display: "flex", gap: 14 }}>
               <div style={{ background: COLOR_LIGHT, color: COLOR, fontSize: 18, fontWeight: 700, width: 36, height: 36, borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>{p.num}</div>
@@ -115,7 +115,7 @@ export default function MarketingAutomationCompleet() {
           ]}
         />
         <H2>Segmentatiedimensies</H2>
-        <P>Aankoopgedrag (productcategorie, besteedwaarde, aantal orders) · Engagementgedrag (openpercentage 90 dagen, klikgedrag) · Klantfase (nieuw, groeiend, loyaal, inactief — maandelijks herberekend)</P>
+        <P>Aankoopgedrag (productcategorie, besteedwaarde, aantal orders) · Engagementgedrag (openpercentage 90 dagen, klikgedrag) · Klantfase (nieuw, groeiend, loyaal, inactief - maandelijks herberekend)</P>
 
         <H1>4. De vier kernflows</H1>
         <FlowCard
@@ -123,7 +123,7 @@ export default function MarketingAutomationCompleet() {
           title="Welkomst & Onboarding"
           priority="Start"
           steps={[
-            { trigger: "Direct na inschrijving of eerste aankoop", goal: "Bevestig inschrijving, introduceer merk en kernwaarden. Geen producten — eerst vertrouwen. CTA: Bestsellers" },
+            { trigger: "Direct na inschrijving of eerste aankoop", goal: "Bevestig inschrijving, introduceer merk en kernwaarden. Geen producten - eerst vertrouwen. CTA: Bestsellers" },
             { trigger: "Dag 3", goal: "Wooninspiratiemail: sfeervolle beelden, stylingtips. Subtiele productverwijzingen. Doel: betrokkenheid meten." },
             { trigger: "Dag 7", goal: "Concrete kortingsprikkel of gratis bezorging. Urgentie via vervaldatum. CTA: Gebruik je voordeel." },
           ]}
@@ -180,7 +180,7 @@ export default function MarketingAutomationCompleet() {
           headers={["Type", "Frequentie", "Ontvanger", "Doel"]}
           rows={[
             ["Inspiratiemail", "2× per maand", "B2C actief segment", "Woontrends, stylingtips, sfeerbeelden, nieuwe collecties"],
-            ["Aanbieding / Seizoen", "1× per maand", "B2C alle segmenten", "Gerichte actie gekoppeld aan seizoen — altijd met urgentie en CTA"],
+            ["Aanbieding / Seizoen", "1× per maand", "B2C alle segmenten", "Gerichte actie gekoppeld aan seizoen - altijd met urgentie en CTA"],
             ["Nieuwe collectie", "Niet gepland", "B2C alle segmenten", "Nieuwe collectie en/of producten"],
           ]}
         />
@@ -211,11 +211,11 @@ export default function MarketingAutomationCompleet() {
           ]}
         />
 
-        <H1>9. Prioritaire aanbevelingen — eerste 60 dagen</H1>
+        <H1>9. Prioritaire aanbevelingen - eerste 60 dagen</H1>
         <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 48 }}>
           {[
             { num: "1", t: "E-mailplatform kiezen en koppelen aan webshop", d: "Zonder dit kan niets anders in dit plan starten. Prioriteit 1." },
-            { num: "2", t: "Welkomstflow live zetten (Flow 1)", d: "Elke nieuwe abonnee verdient een goede eerste indruk — laagste inspanning met hoogste strategische waarde." },
+            { num: "2", t: "Welkomstflow live zetten (Flow 1)", d: "Elke nieuwe abonnee verdient een goede eerste indruk - laagste inspanning met hoogste strategische waarde." },
             { num: "3", t: "Verlaten winkelwagen flow activeren (Flow 2)", d: "Snelste directe ROI-generator binnen e-mail marketing." },
             { num: "4", t: "Opt-in zichtbaar maken op webshop", d: "Exit-intent pop-up met concreet voordeel, medewerkers instrueren in winkel." },
             { num: "5", t: "Bestaande e-maillijst importeren en opschonen", d: "Verwijder ongeldige adressen voordat de eerste mailing verstuurd wordt." },

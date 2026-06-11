@@ -1,4 +1,4 @@
-import PresentationNav from "../../_components/PresentationNav";
+﻿import PresentationNav from "../../_components/PresentationNav";
 
 const COLOR = "#1877F2";
 const COLOR_LIGHT = "#EBF3FF";
@@ -127,7 +127,7 @@ export default function MetaAdsCompleet() {
           title="Sterk: Conversions API en POAS-tracking volledig uitgerold"
           items={[
             "Vrijwel alle events draaien server-side via de Conversions API",
-            "POAS-tracking actief sinds augustus 2024 — per transactie wordt werkelijke brutowinst doorgegeven",
+            "POAS-tracking actief sinds augustus 2024 - per transactie wordt werkelijke brutowinst doorgegeven",
             "€1.008.110 aan brutomargewaarde gemeten (aug 2024 – mei 2026), gem. brutomarge 56,9%",
             "Feed wordt dagelijks bijgewerkt via Channable/BGenius",
           ]}
@@ -136,9 +136,9 @@ export default function MetaAdsCompleet() {
           variant="amber"
           title="Aandachtspunten"
           items={[
-            "Catalogus is niet gekoppeld aan de pixel — DPA's zijn de grootste onbenutte groeikans",
-            "q_visit event match quality score is 4,9/10 (doel: 6+) — beperkt optimalisatie Qvisits-campagnes",
-            "PageView gebruikt meerdere integraties — risico op dubbele event-registratie",
+            "Catalogus is niet gekoppeld aan de pixel - DPA's zijn de grootste onbenutte groeikans",
+            "q_visit event match quality score is 4,9/10 (doel: 6+) - beperkt optimalisatie Qvisits-campagnes",
+            "PageView gebruikt meerdere integraties - risico op dubbele event-registratie",
           ]}
         />
 
@@ -153,7 +153,7 @@ export default function MetaAdsCompleet() {
         <P>Meta-campagnes zijn vrijwel volledig gefocust op Nederland. België is een logische eerste uitrol met herbruikbare NL-content. Duitsland (Lumidora) vraagt aparte assets.</P>
 
         <H2>6.4 Meta als leadgenerator voor e-mail</H2>
-        <P>Meta Lead Ads gekoppeld aan de welkomstflow in het e-mailplatform — bezoekers die een product bekeken maar niet kochten zijn de primaire doelgroep.</P>
+        <P>Meta Lead Ads gekoppeld aan de welkomstflow in het e-mailplatform - bezoekers die een product bekeken maar niet kochten zijn de primaire doelgroep.</P>
 
         <H1>7. Strategie per fase</H1>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12, marginBottom: 24 }}>

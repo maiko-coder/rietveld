@@ -1,4 +1,4 @@
-import PresentationNav from "../../_components/PresentationNav";
+﻿import PresentationNav from "../../_components/PresentationNav";
 
 const COLOR = "#0891B2";
 const COLOR_LIGHT = "#ECFEFF";
@@ -64,10 +64,10 @@ export default function MarketingAutomationDoelstellingen() {
         <h2 style={{ fontSize: 18, fontWeight: 700, color: "#111827", borderBottom: `2px solid ${COLOR}`, paddingBottom: 10, marginBottom: 20, marginTop: 40 }}>Flow-specifieke doelstellingen</h2>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 12, marginBottom: 32 }}>
           {[
-            { title: "Flow 1 — Welkomst & Onboarding", kpis: [{ l: "Openrate", v: ">55%" }, { l: "Klik op Dag-7 aanbod", v: ">12%" }, { l: "Conversie binnen 14 dagen", v: ">8%" }] },
-            { title: "Flow 2 — Verlaten Winkelwagen", kpis: [{ l: "Openrate e-mail 1", v: ">60%" }, { l: "Conversie na 3 e-mails", v: ">11%" }, { l: "Recovery per periode", v: "Meten" }] },
-            { title: "Flow 3 — Post-aankoop", kpis: [{ l: "Review-conversie", v: ">12%" }, { l: "Cross-sell klikratio", v: ">8%" }, { l: "Retourpercentage effect", v: "-15% rel." }] },
-            { title: "Flow 4 — Win-back", kpis: [{ l: "Re-activatie na flow", v: ">15%" }, { l: "Uitschrijfpercentage flow", v: "<5%" }, { l: "Lijstkwaliteit verbetering", v: "Meten" }] },
+            { title: "Flow 1 - Welkomst & Onboarding", kpis: [{ l: "Openrate", v: ">55%" }, { l: "Klik op Dag-7 aanbod", v: ">12%" }, { l: "Conversie binnen 14 dagen", v: ">8%" }] },
+            { title: "Flow 2 - Verlaten Winkelwagen", kpis: [{ l: "Openrate e-mail 1", v: ">60%" }, { l: "Conversie na 3 e-mails", v: ">11%" }, { l: "Recovery per periode", v: "Meten" }] },
+            { title: "Flow 3 - Post-aankoop", kpis: [{ l: "Review-conversie", v: ">12%" }, { l: "Cross-sell klikratio", v: ">8%" }, { l: "Retourpercentage effect", v: "-15% rel." }] },
+            { title: "Flow 4 - Win-back", kpis: [{ l: "Re-activatie na flow", v: ">15%" }, { l: "Uitschrijfpercentage flow", v: "<5%" }, { l: "Lijstkwaliteit verbetering", v: "Meten" }] },
           ].map((f) => (
             <div key={f.title} style={{ background: "white", border: "1px solid #e5e7eb", borderRadius: 10, padding: "16px" }}>
               <div style={{ fontSize: 13, fontWeight: 700, color: "#111827", marginBottom: 12, paddingBottom: 8, borderBottom: "1px solid #f3f4f6" }}>{f.title}</div>
@@ -88,7 +88,7 @@ export default function MarketingAutomationDoelstellingen() {
           </p>
         </div>
 
-        <h2 style={{ fontSize: 18, fontWeight: 700, color: "#111827", borderBottom: `2px solid ${COLOR}`, paddingBottom: 10, marginBottom: 20 }}>Prioriteitenmatrix — implementatie</h2>
+        <h2 style={{ fontSize: 18, fontWeight: 700, color: "#111827", borderBottom: `2px solid ${COLOR}`, paddingBottom: 10, marginBottom: 20 }}>Prioriteitenmatrix - implementatie</h2>
         <div style={{ background: "white", border: "1px solid #e5e7eb", borderRadius: 10, overflow: "hidden", marginBottom: 48 }}>
           <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
             <thead><tr style={{ background: "#f9fafb" }}>{["Actie", "Prioriteit", "Impact", "Tijdshorizon"].map((h) => <th key={h} style={{ padding: "10px 14px", textAlign: "left", fontWeight: 600, color: "#374151", fontSize: 12, borderBottom: "1px solid #e5e7eb" }}>{h}</th>)}</tr></thead>

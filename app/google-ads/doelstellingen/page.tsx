@@ -1,4 +1,4 @@
-import PresentationNav from "../../_components/PresentationNav";
+﻿import PresentationNav from "../../_components/PresentationNav";
 
 const COLOR = "#2563EB";
 const COLOR_LIGHT = "#EFF6FF";
@@ -104,7 +104,7 @@ export default function GoogleAdsDoelstellingen() {
       <div style={{ maxWidth: 960, margin: "0 auto", padding: "40px 24px" }}>
 
         {/* Accountoverzicht */}
-        <SectionTitle>Accountprestaties — groei & uitdaging</SectionTitle>
+        <SectionTitle>Accountprestaties - groei & uitdaging</SectionTitle>
         <p style={{ fontSize: 14, color: "#4b5563", lineHeight: 1.7, marginBottom: 20 }}>
           Het account presteert goed en is het afgelopen jaar fors gegroeid: spend steeg van €1,3M naar €2,1M (+67%) en de omzet van €8,2M naar €12,5M (+52%). De keerzijde van die snelle groei is dat de ROAS licht daalde van 6,43 naar 5,87 en de kosten per bestelling stegen van €26 naar €32. Dat is een normaal patroon bij opschalen, maar het geeft aan dat er ruimte is om de structuur scherper te maken.
         </p>
@@ -125,7 +125,7 @@ export default function GoogleAdsDoelstellingen() {
             "Campagnes met een verkeerde instelling corrigeren",
             "Bestsellers- en Sale-campagnes scherper aansturen op een tROAS die past bij die producten",
             "Bestsellers-campagne opsplitsen op apparaat zodat mobiel en desktop apart gestuurd worden",
-            "Doel: accountbrede ROAS richting 6,0 — kosten per bestelling terug naar ca. €30",
+            "Doel: accountbrede ROAS richting 6,0 - kosten per bestelling terug naar ca. €30",
           ]}
         />
         <Callout
@@ -133,7 +133,7 @@ export default function GoogleAdsDoelstellingen() {
           title="Middellange termijn (3 – 6 maanden)"
           items={[
             "PMax-campagnes opsplitsen op producttype: spots, inbouwlampen en tafellampen (ROAS 5,3–6,5) krijgen eigen budget",
-            "Aparte campagne lanceren voor producten boven €400 — segment haalt nu ROAS 12–13x op slechts €12k spend",
+            "Aparte campagne lanceren voor producten boven €400 - segment haalt nu ROAS 12–13x op slechts €12k spend",
             "Doel: accountbrede ROAS 6,2–6,5 en kosten per bestelling onder de €29",
           ]}
         />
@@ -143,7 +143,7 @@ export default function GoogleAdsDoelstellingen() {
           items={[
             "Testen met bieden op werkelijke winstmarge (POAS) in plaats van omzet-ROAS",
             "Regionale targeting implementeren",
-            "Vereist margeklasse-label in de feed — fundamentelere aanpassing met meer sturing op werkelijke winstgevendheid",
+            "Vereist margeklasse-label in de feed - fundamentelere aanpassing met meer sturing op werkelijke winstgevendheid",
           ]}
         />
 
@@ -161,7 +161,7 @@ export default function GoogleAdsDoelstellingen() {
           ]}
         />
         <p style={{ fontSize: 12, color: "#9ca3af", marginBottom: 32 }}>
-          * Bij Sale geldt: een lagere ROAS bij kortingsproducten is niet per se problematisch — het hangt af van de marge per stuk. Zodra POAS-tracking actief is, sturen we op winstgevendheid in plaats van omzet-ROAS.
+          * Bij Sale geldt: een lagere ROAS bij kortingsproducten is niet per se problematisch - het hangt af van de marge per stuk. Zodra POAS-tracking actief is, sturen we op winstgevendheid in plaats van omzet-ROAS.
         </p>
 
         {/* KPI tabel */}
@@ -198,7 +198,7 @@ export default function GoogleAdsDoelstellingen() {
           <KpiCard label="Omzetgroei (zelfde spend)" now="Basis" goal="+8 – 12%" accent />
         </div>
         <div style={{ background: COLOR_LIGHT, borderRadius: 10, padding: "20px 24px", marginBottom: 32 }}>
-          <h3 style={{ fontSize: 14, fontWeight: 700, color: "#1d4ed8", marginBottom: 10 }}>Realistisch verwachting — toelichting</h3>
+          <h3 style={{ fontSize: 14, fontWeight: 700, color: "#1d4ed8", marginBottom: 10 }}>Realistisch verwachting - toelichting</h3>
           <p style={{ fontSize: 13, color: "#374151", lineHeight: 1.7, marginBottom: 8 }}>
             De quick wins (instellingen, tROAS-correcties) leveren samen een ROAS-verbetering van circa +0,10–0,15 op accountniveau. De structuurwijzigingen en het premium-segment voegen daar nog eens +0,20–0,35 aan toe. Gecombineerd betekent dat een accountbrede ROAS van 6,2–6,4 realistisch is binnen 6 tot 12 maanden, bij gelijkblijvend of beperkt hoger budget.
           </p>
@@ -209,7 +209,7 @@ export default function GoogleAdsDoelstellingen() {
 
         {/* €400+ segment */}
         <div style={{ background: "#fffbeb", border: "1px solid #fde68a", borderRadius: 10, padding: "20px 24px", marginBottom: 48 }}>
-          <h3 style={{ fontSize: 14, fontWeight: 700, color: "#b45309", marginBottom: 8 }}>€400+ segment — grootste onbenutte kans</h3>
+          <h3 style={{ fontSize: 14, fontWeight: 700, color: "#b45309", marginBottom: 8 }}>€400+ segment - grootste onbenutte kans</h3>
           <p style={{ fontSize: 13, color: "#374151", lineHeight: 1.7 }}>
             Het segment producten boven €400 haalt momenteel een ROAS van 12–13x op slechts €12k spend per jaar. Dit is een nauwelijks geadverteerd segment dat bij opschaling naar €75–100k spend nog steeds een ROAS van 10+ kan realiseren, goed voor +€350–500k extra omzet. Dit is de meest concrete groeikans in het account.
           </p>

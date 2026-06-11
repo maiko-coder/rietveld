@@ -1,4 +1,4 @@
-import { CYAN, YELLOW, DARK, RED } from "../../_components/ReportComponents";
+﻿import { CYAN, YELLOW, DARK, RED } from "../../_components/ReportComponents";
 
 export default function ManoirPage() {
   return (
@@ -101,7 +101,7 @@ export default function ManoirPage() {
         </div>
 
         <p style={{ fontSize: 14, color: "#6b7280", lineHeight: 1.8, marginBottom: 28, maxWidth: 760 }}>
-          Voor het online succes van Manoir zetten we Google Ads en Meta Ads in. Met Meta richten we ons op de best presterende regio's in de VS; in Google sturen we op zoekwoorden en doelgroepen met hoge koopintentie. Door slim in te spelen op Amerikaanse feestdagen — o.a. 4th of July en Labor Day — draaien we sterke sale-campagnes.
+          Voor het online succes van Manoir zetten we Google Ads en Meta Ads in. Met Meta richten we ons op de best presterende regio's in de VS; in Google sturen we op zoekwoorden en doelgroepen met hoge koopintentie. Door slim in te spelen op Amerikaanse feestdagen - o.a. 4th of July en Labor Day - draaien we sterke sale-campagnes.
         </p>
 
         {/* Kanalen grid */}
@@ -174,7 +174,7 @@ export default function ManoirPage() {
             <div style={{ background: "rgba(255,255,255,0.05)", borderRadius: 10, padding: "20px 22px", border: "1px solid rgba(255,255,255,0.08)" }}>
               <div style={{ fontSize: 11, fontWeight: 700, color: CYAN, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 10 }}>Meta · Inspireren</div>
               <p style={{ fontSize: 13, color: "rgba(255,255,255,0.7)", lineHeight: 1.7, margin: 0 }}>
-                Meta Ads inzetten voor de gehele customer journey — van merkbekendheid (prospecting) tot directe aankopen. Creatives perfect afgestemd op de Frans-geïnspireerde stijl.
+                Meta Ads inzetten voor de gehele customer journey - van merkbekendheid (prospecting) tot directe aankopen. Creatives perfect afgestemd op de Frans-geïnspireerde stijl.
               </p>
             </div>
             <div style={{ background: "rgba(255,255,255,0.05)", borderRadius: 10, padding: "20px 22px", border: "1px solid rgba(255,255,255,0.08)" }}>
