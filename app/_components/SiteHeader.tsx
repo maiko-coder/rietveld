@@ -182,6 +182,26 @@ export default function SiteHeader() {
               </div>
             );
           })}
+          <div style={{ flex: 1 }} />
+          <Link
+            href="/voorstel"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 6,
+              height: 30,
+              padding: "0 16px",
+              fontSize: 12.5,
+              fontWeight: 700,
+              color: "#262626",
+              background: "#fecb09",
+              borderRadius: 6,
+              whiteSpace: "nowrap",
+              letterSpacing: "0.01em",
+            }}
+          >
+            Voorstel
+          </Link>
         </div>
       </nav>
     </header>
