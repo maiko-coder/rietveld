@@ -59,6 +59,16 @@ const NAV_ITEMS = [
       { label: "Meta Optimizer", href: "https://www.meta-optimizer.nl" },
     ],
   },
+  {
+    label: "Cases",
+    href: "/cases",
+    sub: [
+      { label: "MHK", href: "/cases/mhk" },
+      { label: "Dakvoordeelshop", href: "/cases/dakvoordeelshop" },
+      { label: "Manoir", href: "/cases/manoir" },
+    ],
+  },
+  { label: "Team", href: "/team" },
 ];
 
 export default function SiteHeader() {
