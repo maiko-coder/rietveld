@@ -16,7 +16,7 @@ const TEAM = [
     lead: true,
     photo: "/team/sarah.webp",
     details: [
-      { label: "Relevante expertise en specialisaties", value: "Meta, GA4/Looker Studio, Strategie" },
+      { label: "Relevante expertise en specialisaties", value: "Meta, GA4/Data Studio, Strategie" },
       { label: "Aantal jaren ervaring", value: "4 jaar" },
       { label: "Verantwoordelijkheid binnen projectteam", value: "Meta, Rapportage" },
       { label: "Beschikbaarheid per week", value: "5–10 uur" },
@@ -31,7 +31,7 @@ const TEAM = [
     lead: true,
     photo: "/team/maiko.webp",
     details: [
-      { label: "Relevante expertise en specialisaties", value: "SEA, SEO/GEO, AI, GA4/Looker Studio, Strategie, CRO" },
+      { label: "Relevante expertise en specialisaties", value: "SEA, SEO/GEO, AI, GA4/Data Studio, Strategie, CRO" },
       { label: "Aantal jaren ervaring", value: "10+ jaar" },
       { label: "Verantwoordelijkheid binnen projectteam", value: "SEA, Rapportage" },
       { label: "Beschikbaarheid per week", value: "15–20 uur" },
