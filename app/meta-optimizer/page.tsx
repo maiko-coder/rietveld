@@ -7,55 +7,50 @@ const RED = "#ed1c23";
 
 const SLIDES = [
   {
-    src: "/adoptimizer/01-account-overview.png",
-    title: "Account overview",
-    desc: "Persoonlijk dashboard met openstaande werkzaamheden per account.",
+    src: "/meta-optimizer/01-dashboard.png",
+    title: "Dashboard",
+    desc: "Metrics en budgetvoorspellingen per Meta Ads account.",
   },
   {
-    src: "/adoptimizer/02-health-check.png",
-    title: "Account health check",
-    desc: "Automatische signalering van budget- en campagne-aandachtspunten.",
+    src: "/meta-optimizer/02-account-health.png",
+    title: "Account Health",
+    desc: "Alerts, optimalisatiesuggesties en A/B-testideeën op basis van accountdata.",
   },
   {
-    src: "/adoptimizer/03-budget-check.png",
-    title: "Account budget check",
-    desc: "Metrics en budgetvoorspellingen per account en periode.",
+    src: "/meta-optimizer/03-account-analyse.png",
+    title: "Account Analyse",
+    desc: "Diepgaande statistieken en breakdowns per platform en apparaat.",
   },
   {
-    src: "/adoptimizer/04-ai-strategie.png",
+    src: "/meta-optimizer/04-performance-trends.png",
+    title: "Performance Trends",
+    desc: "Dagelijks verloop van uitgaven, impressies, klikken, conversies en ROAS.",
+  },
+  {
+    src: "/meta-optimizer/05-plaatsingen-creatives.png",
+    title: "Plaatsingen & Creatives",
+    desc: "Welke plaatsingen presteren het best en hoe doen je creatives het.",
+  },
+  {
+    src: "/meta-optimizer/06-strategie.png",
     title: "AI Strategie",
-    desc: "Biedstrategie per campagne, doel vs. werkelijk en AI-suggesties.",
+    desc: "KPI-overzicht met AI-analyse op maat per account en periode.",
   },
   {
-    src: "/adoptimizer/08-zoekterm-analyse.png",
-    title: "AI Zoekterm Analyse",
-    desc: "AI-detectie van irrelevante zoektermen met potentiële besparing per campagne.",
-  },
-  {
-    src: "/adoptimizer/05-shopping.png",
-    title: "Shopping & campagnes",
-    desc: "Campagne-overzicht met productstatistieken en AI-analyse per segment.",
-  },
-  {
-    src: "/adoptimizer/06-feed-optimizer.png",
-    title: "Feed Optimizer",
-    desc: "Producttitels optimaliseren met AI en exporteren naar Google Shopping.",
-  },
-  {
-    src: "/adoptimizer/07-product-overlap.png",
-    title: "Product Overlap",
-    desc: "Producten die in meerdere campagnes actief zijn, met kosten- en ROAS-verdeling.",
+    src: "/meta-optimizer/07-doelgroep-analyse.png",
+    title: "Doelgroep Analyse",
+    desc: "Insights per leeftijd, regio, geslacht, apparaat en plaatsing.",
   },
 ];
 
 const FEATURES = [
-  "Account health check en budget monitoring",
-  "AI zoekterm-analyse en strategie-adviezen",
-  "Shopping feed optimalisatie en product overlap",
-  "Campagne-overzichten met AI-automatiseringen",
+  "Dashboard met budgetvoorspelling en metrics per periode",
+  "Account health check met optimalisatie- en testideeën",
+  "Doelgroep-, plaatsings- en performance-analyse",
+  "AI-strategie op basis van accountdata",
 ];
 
-export default function AdOptimizerPage() {
+export default function MetaOptimizerPage() {
   return (
     <div style={{ fontFamily: "system-ui, -apple-system, sans-serif", background: "#f3f4f6", minHeight: "100vh" }}>
       <div className="page-hero">
@@ -91,9 +86,9 @@ export default function AdOptimizerPage() {
           >
             AI Tool · Woeler
           </div>
-          <h1 style={{ fontSize: 40, fontWeight: 800, lineHeight: 1.1, margin: "0 0 12px" }}>AdOptimizer</h1>
+          <h1 style={{ fontSize: 40, fontWeight: 800, lineHeight: 1.1, margin: "0 0 12px" }}>Meta AI Tool</h1>
           <p style={{ fontSize: 15, color: "rgba(255,255,255,0.5)", maxWidth: 560, margin: 0 }}>
-            Eigen AI-platform voor Google Ads: van account health tot zoekterm-analyse, feed optimalisatie en shopping inzichten.
+            Eigen AI-platform voor Meta Ads: van dashboard en account health tot doelgroep-analyse, plaatsingen en strategie.
           </p>
         </div>
         <div
@@ -120,7 +115,7 @@ export default function AdOptimizerPage() {
           }}
         >
           <p style={{ fontSize: 14, color: "#0d6e9a", lineHeight: 1.75, fontWeight: 600, margin: 0 }}>
-            We laten AdOptimizer live zien tijdens onze presentatie. Onderstaande screenshots geven een indruk van de belangrijkste onderdelen.
+            We laten de Meta AI Tool live zien tijdens onze presentatie. Onderstaande screenshots geven een indruk van de belangrijkste onderdelen.
           </p>
         </div>
 
