@@ -11,8 +11,6 @@ export type ToolSlide = {
 export default function ToolScreenshotCarousel({ slides }: { slides: ToolSlide[] }) {
   const [index, setIndex] = useState(0);
   const [lightbox, setLightbox] = useState(false);
-  const [zoom, setZoom] = useState(1);
-  const [dims, setDims] = useState<{ w: number; h: number } | null>(null);
   const touchStart = useRef<number | null>(null);
   const touchDelta = useRef(0);
 
@@ -44,11 +42,6 @@ export default function ToolScreenshotCarousel({ slides }: { slides: ToolSlide[]
     };
   }, [lightbox, prev, next]);
 
-  useEffect(() => {
-    setZoom(1);
-    setDims(null);
-  }, [index, lightbox]);
-
   const onTouchStart = (e: React.TouchEvent) => {
     touchStart.current = e.touches[0].clientX;
     touchDelta.current = 0;
@@ -65,11 +58,6 @@ export default function ToolScreenshotCarousel({ slides }: { slides: ToolSlide[]
     else if (touchDelta.current < -50) next();
     touchStart.current = null;
     touchDelta.current = 0;
-  };
-
-  const openLightbox = () => {
-    setZoom(1);
-    setLightbox(true);
   };
 
   return (
@@ -95,7 +83,7 @@ export default function ToolScreenshotCarousel({ slides }: { slides: ToolSlide[]
             ‹
           </button>
 
-          <button type="button" className="adoptimizer-carousel-slide" onClick={openLightbox} aria-label="Vergroot afbeelding">
+          <button type="button" className="adoptimizer-carousel-slide" onClick={() => setLightbox(true)} aria-label="Open afbeelding">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={slide.src}
@@ -104,7 +92,7 @@ export default function ToolScreenshotCarousel({ slides }: { slides: ToolSlide[]
               decoding="async"
               className="adoptimizer-carousel-img"
             />
-            <span className="adoptimizer-carousel-zoom-hint">Tik om te vergroten</span>
+            <span className="adoptimizer-carousel-zoom-hint">Tik om te openen</span>
           </button>
 
           <button type="button" className="adoptimizer-carousel-btn adoptimizer-carousel-btn--next" onClick={next} aria-label="Volgende">
@@ -129,41 +117,14 @@ export default function ToolScreenshotCarousel({ slides }: { slides: ToolSlide[]
         <div className="adoptimizer-lightbox" role="dialog" aria-modal="true" aria-label={slide.title}>
           <div className="adoptimizer-lightbox-toolbar">
             <span style={{ fontSize: 14, fontWeight: 600, color: "white" }}>{slide.title}</span>
-            <div className="adoptimizer-lightbox-controls">
-              <button type="button" onClick={() => setZoom((z) => Math.max(1, z - 0.25))} aria-label="Uitzoomen">
-                −
-              </button>
-              <span>{Math.round(zoom * 100)}%</span>
-              <button type="button" onClick={() => setZoom((z) => Math.min(4, z + 0.25))} aria-label="Inzoomen">
-                +
-              </button>
-              <button type="button" className="adoptimizer-lightbox-close" onClick={() => setLightbox(false)} aria-label="Sluiten">
-                ×
-              </button>
-            </div>
+            <button type="button" className="adoptimizer-lightbox-close" onClick={() => setLightbox(false)} aria-label="Sluiten">
+              ×
+            </button>
           </div>
 
           <div className="adoptimizer-lightbox-scroll">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={slide.src}
-              alt={slide.title}
-              className="adoptimizer-lightbox-img"
-              width={dims?.w}
-              height={dims?.h}
-              style={
-                dims
-                  ? {
-                      width: `${dims.w * zoom}px`,
-                      height: `${dims.h * zoom}px`,
-                    }
-                  : undefined
-              }
-              onLoad={(e) => {
-                const img = e.currentTarget;
-                setDims({ w: img.naturalWidth, h: img.naturalHeight });
-              }}
-            />
+            <img src={slide.src} alt={slide.title} className="adoptimizer-lightbox-img" />
           </div>
 
           <div className="adoptimizer-lightbox-nav">

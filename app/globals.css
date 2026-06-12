@@ -397,32 +397,16 @@ a { color: inherit; text-decoration: none; }
   flex-shrink: 0;
 }
 
-.adoptimizer-lightbox-controls {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.adoptimizer-lightbox-controls button {
+.adoptimizer-lightbox-close {
   width: 36px;
   height: 36px;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.1);
   color: white;
-  font-size: 18px;
+  font-size: 24px;
+  line-height: 1;
   cursor: pointer;
-}
-
-.adoptimizer-lightbox-controls span {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 13px;
-  min-width: 44px;
-  text-align: center;
-}
-
-.adoptimizer-lightbox-close {
-  font-size: 24px !important;
 }
 
 .adoptimizer-lightbox-scroll {
