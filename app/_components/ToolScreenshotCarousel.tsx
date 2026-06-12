@@ -12,6 +12,7 @@ export default function ToolScreenshotCarousel({ slides }: { slides: ToolSlide[]
   const [index, setIndex] = useState(0);
   const [lightbox, setLightbox] = useState(false);
   const [zoom, setZoom] = useState(1);
+  const [naturalWidth, setNaturalWidth] = useState<number | null>(null);
   const touchStart = useRef<number | null>(null);
   const touchDelta = useRef(0);
 
@@ -45,6 +46,7 @@ export default function ToolScreenshotCarousel({ slides }: { slides: ToolSlide[]
 
   useEffect(() => {
     setZoom(1);
+    setNaturalWidth(null);
   }, [index, lightbox]);
 
   const onTouchStart = (e: React.TouchEvent) => {
@@ -100,7 +102,7 @@ export default function ToolScreenshotCarousel({ slides }: { slides: ToolSlide[]
               alt={slide.title}
               loading={index === 0 ? "eager" : "lazy"}
               decoding="async"
-              style={{ width: "100%", height: "auto", display: "block" }}
+              className="adoptimizer-carousel-img"
             />
             <span className="adoptimizer-carousel-zoom-hint">Tik om te vergroten</span>
           </button>
@@ -132,7 +134,7 @@ export default function ToolScreenshotCarousel({ slides }: { slides: ToolSlide[]
                 −
               </button>
               <span>{Math.round(zoom * 100)}%</span>
-              <button type="button" onClick={() => setZoom((z) => Math.min(3, z + 0.25))} aria-label="Inzoomen">
+              <button type="button" onClick={() => setZoom((z) => Math.min(4, z + 0.25))} aria-label="Inzoomen">
                 +
               </button>
               <button type="button" className="adoptimizer-lightbox-close" onClick={() => setLightbox(false)} aria-label="Sluiten">
@@ -147,7 +149,8 @@ export default function ToolScreenshotCarousel({ slides }: { slides: ToolSlide[]
               src={slide.src}
               alt={slide.title}
               className="adoptimizer-lightbox-img"
-              style={{ transform: `scale(${zoom})`, transformOrigin: "top center" }}
+              style={naturalWidth ? { width: `${naturalWidth * zoom}px` } : undefined}
+              onLoad={(e) => setNaturalWidth(e.currentTarget.naturalWidth)}
             />
           </div>
 
