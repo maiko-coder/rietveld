@@ -276,6 +276,12 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* AdOptimizer carousel */
+.tool-screenshot-section {
+  max-width: min(1240px, calc(100vw - 48px));
+  margin: 0 auto;
+  padding: 0 24px 48px;
+}
+
 .adoptimizer-carousel {
   background: white;
   border-radius: 16px;
@@ -307,10 +313,13 @@ a { color: inherit; text-decoration: none; }
   border-radius: 12px;
   overflow: hidden;
   background: #f9fafb;
-  cursor: zoom-in;
   padding: 0;
   position: relative;
   font: inherit;
+}
+
+.adoptimizer-carousel-slide--interactive {
+  cursor: pointer;
 }
 
 .adoptimizer-carousel-img {
@@ -318,6 +327,7 @@ a { color: inherit; text-decoration: none; }
   height: auto;
   display: block;
   max-width: 100%;
+  object-fit: contain;
 }
 
 .adoptimizer-carousel-zoom-hint {
@@ -420,10 +430,10 @@ a { color: inherit; text-decoration: none; }
 }
 
 .adoptimizer-lightbox-img {
-  width: auto;
+  width: 100%;
+  max-width: 100%;
   height: auto;
-  max-width: none;
-  flex-shrink: 0;
+  display: block;
 }
 
 .adoptimizer-lightbox-nav {
@@ -446,6 +456,10 @@ a { color: inherit; text-decoration: none; }
 }
 
 @media (max-width: 740px) {
+  .tool-screenshot-section {
+    padding: 0 16px 48px;
+  }
+
   .adoptimizer-carousel {
     padding: 16px;
   }

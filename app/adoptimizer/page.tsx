@@ -145,7 +145,9 @@ export default function AdOptimizerPage() {
             </div>
           ))}
         </div>
+      </div>
 
+      <div className="tool-screenshot-section">
         <ToolScreenshotCarousel slides={SLIDES} />
       </div>
     </div>

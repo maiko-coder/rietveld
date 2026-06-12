@@ -140,7 +140,9 @@ export default function MetaOptimizerPage() {
             </div>
           ))}
         </div>
+      </div>
 
+      <div className="tool-screenshot-section">
         <ToolScreenshotCarousel slides={SLIDES} />
       </div>
     </div>
