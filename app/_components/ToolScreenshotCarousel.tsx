@@ -11,6 +11,7 @@ export type ToolSlide = {
 export default function ToolScreenshotCarousel({ slides }: { slides: ToolSlide[] }) {
   const [index, setIndex] = useState(0);
   const [lightbox, setLightbox] = useState(false);
+  const [zoom, setZoom] = useState(1);
   const touchStart = useRef<number | null>(null);
   const touchDelta = useRef(0);
 
@@ -26,6 +27,10 @@ export default function ToolScreenshotCarousel({ slides }: { slides: ToolSlide[]
 
   const prev = useCallback(() => goTo(index - 1), [goTo, index]);
   const next = useCallback(() => goTo(index + 1), [goTo, index]);
+
+  useEffect(() => {
+    setZoom(1);
+  }, [index, lightbox]);
 
   useEffect(() => {
     if (!lightbox) return;
@@ -116,14 +121,23 @@ export default function ToolScreenshotCarousel({ slides }: { slides: ToolSlide[]
       {lightbox && (
         <div className="adoptimizer-lightbox" role="dialog" aria-modal="true" aria-label={slide.title}>
           <div className="adoptimizer-lightbox-toolbar">
-            <span style={{ fontSize: 14, fontWeight: 600, color: "white" }}>{slide.title}</span>
+            <span className="adoptimizer-lightbox-title">{slide.title}</span>
+            <div className="adoptimizer-lightbox-zoom">
+              <button type="button" onClick={() => setZoom((z) => Math.max(1, z - 0.25))} aria-label="Uitzoomen">
+                −
+              </button>
+              <span>{Math.round(zoom * 100)}%</span>
+              <button type="button" onClick={() => setZoom((z) => Math.min(3, z + 0.25))} aria-label="Inzoomen">
+                +
+              </button>
+            </div>
             <button type="button" className="adoptimizer-lightbox-close" onClick={() => setLightbox(false)} aria-label="Sluiten">
               ×
             </button>
           </div>
 
           <div className="adoptimizer-lightbox-scroll">
-            <div className="adoptimizer-lightbox-content">
+            <div className="adoptimizer-lightbox-content" style={{ "--zoom": zoom } as React.CSSProperties}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={slide.src} alt={slide.title} className="adoptimizer-lightbox-img" />
             </div>

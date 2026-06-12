@@ -414,6 +414,39 @@ a { color: inherit; text-decoration: none; }
   flex-shrink: 0;
 }
 
+.adoptimizer-lightbox-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  flex: 1;
+  min-width: 0;
+}
+
+.adoptimizer-lightbox-zoom {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.adoptimizer-lightbox-zoom button {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.adoptimizer-lightbox-zoom span {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  min-width: 44px;
+  text-align: center;
+}
+
 .adoptimizer-lightbox-close {
   width: 36px;
   height: 36px;
@@ -484,5 +517,22 @@ a { color: inherit; text-decoration: none; }
   .adoptimizer-carousel-header {
     flex-direction: column;
     gap: 8px;
+  }
+
+  .adoptimizer-lightbox-scroll {
+    padding: 0 16px 16px;
+  }
+
+  .adoptimizer-lightbox-content {
+    max-width: calc(100vw - 32px);
+  }
+
+  .adoptimizer-lightbox-zoom {
+    display: flex;
+  }
+
+  .adoptimizer-lightbox-img {
+    width: calc(100% * var(--zoom, 1));
+    max-width: none;
   }
 }
