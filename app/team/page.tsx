@@ -47,7 +47,7 @@ const TEAM = [
       { label: "Relevante expertise en specialisaties", value: "Marketing automation, SEO/GEO, Meta" },
       { label: "Aantal jaren ervaring", value: "10+ jaar" },
       { label: "Verantwoordelijkheid binnen projectteam", value: "Marketing automation" },
-      { label: "Beschikbaarheid per week", value: "5–7 uur" },
+      { label: "Beschikbaarheid per week", value: "6–8 uur" },
     ],
   },
   {

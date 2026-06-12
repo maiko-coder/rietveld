@@ -352,13 +352,36 @@ a { color: inherit; text-decoration: none; }
     padding: 28px 16px 48px;
   }
 
+  .voorstel-table-header {
+    display: none;
+  }
+
   .voorstel-service-card,
   .voorstel-total {
+    grid-template-columns: 1fr;
+    gap: 16px;
     padding: 20px 18px;
+  }
+
+  .voorstel-service-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid #f1f3f5;
+  }
+
+  .voorstel-field-label--mobile {
+    display: block;
   }
 
   .voorstel-service-note {
     margin: 0 18px 18px;
+  }
+
+  .voorstel-total-title {
+    margin-bottom: 4px;
   }
 }
 
@@ -441,22 +464,53 @@ a { color: inherit; text-decoration: none; }
 
 .voorstel-hero-stats {
   display: flex;
-  flex-direction: column;
-  gap: 24px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 48px;
 }
 
 .voorstel-hero-stats > div {
-  width: 100%;
+  width: auto;
 }
 
 .voorstel-content {
-  max-width: 640px;
+  max-width: 1040px;
   margin: 0 auto;
-  padding: 44px 24px 64px;
+  padding: 44px 32px 64px;
+}
+
+.voorstel-section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.voorstel-table-header {
+  display: grid;
+  grid-template-columns: minmax(220px, 1.35fr) 1fr 1fr 1fr;
+  gap: 20px;
+  padding: 0 28px 10px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9ca3af;
+}
+
+.voorstel-services {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 36px;
 }
 
 .voorstel-service-card {
-  padding: 22px 24px;
+  padding: 22px 28px;
+  display: grid;
+  grid-template-columns: minmax(220px, 1.35fr) 1fr 1fr 1fr;
+  gap: 20px;
+  align-items: center;
 }
 
 .voorstel-service-name {
@@ -467,16 +521,15 @@ a { color: inherit; text-decoration: none; }
 }
 
 .voorstel-service-fields {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-top: 18px;
-  padding-top: 18px;
-  border-top: 1px solid #f1f3f5;
+  display: contents;
 }
 
 .voorstel-service-field {
   min-width: 0;
+}
+
+.voorstel-field-label--mobile {
+  display: none;
 }
 
 .voorstel-field-label {
@@ -502,7 +555,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .voorstel-service-note {
-  margin: 0 24px 18px;
+  margin: 0 28px 18px;
   border-radius: 8px;
   padding: 10px 16px;
   font-size: 13px;
@@ -512,20 +565,18 @@ a { color: inherit; text-decoration: none; }
 .voorstel-total {
   background: #262626;
   border-radius: 14px;
-  padding: 24px;
+  padding: 26px 32px;
+  display: grid;
+  grid-template-columns: minmax(220px, 1.35fr) 1fr 1fr 1fr;
+  gap: 20px;
+  align-items: center;
 }
 
 .voorstel-total-title {
   font-size: 16px;
   font-weight: 800;
   color: white;
-  margin-bottom: 4px;
-}
-
-.voorstel-service-fields--total {
-  border-top-color: rgba(255, 255, 255, 0.12);
-  margin-top: 16px;
-  padding-top: 16px;
+  margin-bottom: 0;
 }
 
 .voorstel-field-label--dark {

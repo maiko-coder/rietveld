@@ -52,7 +52,7 @@ const SERVICES = [
     name: "SEO / GEO",
     budget: null,
     fee: "€2.500",
-    hours: "18–22 uur",
+    hours: "22–26 uur",
     note: null,
     icon: (
       <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke={CYAN} strokeWidth="2">
@@ -66,7 +66,7 @@ const SERVICES = [
     name: "Marketing Automation",
     budget: null,
     fee: "€3.000",
-    hours: "23–27 uur",
+    hours: "25–30 uur",
     note: null,
     icon: (
       <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke={CYAN} strokeWidth="2">
@@ -128,7 +128,7 @@ export default function VoorstelPage() {
             </div>
             <div>
               <div style={{ fontSize: 11, color: "rgba(255,255,255,0.35)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 6 }}>Uren per maand</div>
-              <div style={{ fontSize: 44, fontWeight: 900, color: CYAN, lineHeight: 1 }} className="voorstel-hero-stat-value">152–184</div>
+              <div style={{ fontSize: 44, fontWeight: 900, color: CYAN, lineHeight: 1 }} className="voorstel-hero-stat-value">158–191</div>
             </div>
             <div>
               <div style={{ fontSize: 11, color: "rgba(255,255,255,0.35)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 6 }}>Kanalen</div>
@@ -140,12 +140,19 @@ export default function VoorstelPage() {
       </div>
 
       <div className="voorstel-content">
-        <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
+        <div className="voorstel-section-header">
           <div style={{ width: 4, height: 22, background: CYAN, borderRadius: 2 }} />
           <h2 style={{ fontSize: 18, fontWeight: 700, color: DARK, margin: 0 }}>Opbouw per kanaal</h2>
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: 14, marginBottom: 36 }}>
+        <div className="voorstel-table-header">
+          <div>Kanaal</div>
+          <div>Budget</div>
+          <div>Fee per maand</div>
+          <div>Uren per maand</div>
+        </div>
+
+        <div className="voorstel-services">
           {SERVICES.map((s) => (
             <div key={s.name} style={{ background: "white", borderRadius: 14, boxShadow: "0 1px 4px rgba(0,0,0,0.06)", overflow: "hidden", opacity: s.dimmed ? 0.72 : 1 }}>
               <div className="voorstel-service-card">
@@ -158,17 +165,17 @@ export default function VoorstelPage() {
 
                 <div className="voorstel-service-fields">
                   <div className="voorstel-service-field">
-                    <div className="voorstel-field-label">Budget</div>
+                    <div className="voorstel-field-label voorstel-field-label--mobile">Budget</div>
                     <div className="voorstel-field-value" style={{ color: s.budget ? "#374151" : "#c4c9d0" }}>{s.budget ?? "n.v.t."}</div>
                   </div>
 
                   <div className="voorstel-service-field">
-                    <div className="voorstel-field-label">Fee per maand</div>
+                    <div className="voorstel-field-label voorstel-field-label--mobile">Fee per maand</div>
                     <div className="voorstel-field-value voorstel-field-value--fee">{s.fee}</div>
                   </div>
 
                   <div className="voorstel-service-field">
-                    <div className="voorstel-field-label">Uren per maand</div>
+                    <div className="voorstel-field-label voorstel-field-label--mobile">Uren per maand</div>
                     <div className="voorstel-field-value">{s.hours}</div>
                   </div>
                 </div>
@@ -185,19 +192,17 @@ export default function VoorstelPage() {
 
         <div className="voorstel-total">
           <div className="voorstel-total-title">Totaal per maand</div>
-          <div className="voorstel-service-fields voorstel-service-fields--total">
-            <div className="voorstel-service-field">
-              <div className="voorstel-field-label voorstel-field-label--dark">Media budget</div>
-              <div className="voorstel-field-value voorstel-field-value--dark">€2,2–2,4M SEA + €90–110K Meta + min. €60K Pinterest</div>
-            </div>
-            <div className="voorstel-service-field">
-              <div className="voorstel-field-label voorstel-field-label--dark">Fee</div>
-              <div className="voorstel-field-value voorstel-field-value--total-fee">€17.500 – €19.000</div>
-            </div>
-            <div className="voorstel-service-field">
-              <div className="voorstel-field-label voorstel-field-label--dark">Uren</div>
-              <div className="voorstel-field-value voorstel-field-value--total-hours">152–184</div>
-            </div>
+          <div className="voorstel-service-field">
+            <div className="voorstel-field-label voorstel-field-label--dark voorstel-field-label--mobile">Media budget</div>
+            <div className="voorstel-field-value voorstel-field-value--dark">€2,2–2,4M SEA + €90–110K Meta + min. €60K Pinterest</div>
+          </div>
+          <div className="voorstel-service-field">
+            <div className="voorstel-field-label voorstel-field-label--dark voorstel-field-label--mobile">Fee</div>
+            <div className="voorstel-field-value voorstel-field-value--total-fee">€17.500 – €19.000</div>
+          </div>
+          <div className="voorstel-service-field">
+            <div className="voorstel-field-label voorstel-field-label--dark voorstel-field-label--mobile">Uren</div>
+            <div className="voorstel-field-value voorstel-field-value--total-hours">158–191</div>
           </div>
         </div>
 
