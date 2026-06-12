@@ -5,10 +5,10 @@ export default function ManoirPage() {
     <div style={{ fontFamily: "system-ui, -apple-system, sans-serif", background: "#f3f4f6", minHeight: "100vh" }}>
 
       {/* Hero */}
-      <div style={{ background: DARK, color: "white", padding: "56px 32px 52px", position: "relative", overflow: "hidden" }}>
+      <div className="case-hero">
         <div style={{ position: "absolute", right: -100, top: -100, width: 400, height: 400, borderRadius: "50%", background: `radial-gradient(circle, ${CYAN}15 0%, transparent 70%)`, pointerEvents: "none" }} />
         <div style={{ position: "absolute", left: -60, bottom: -60, width: 280, height: 280, borderRadius: "50%", background: `radial-gradient(circle, ${YELLOW}10 0%, transparent 70%)`, pointerEvents: "none" }} />
-        <div style={{ maxWidth: 1040, margin: "0 auto", position: "relative" }}>
+        <div className="case-hero-inner">
           <div style={{ display: "inline-flex", alignItems: "center", gap: 6, background: `${CYAN}20`, border: `1px solid ${CYAN}40`, borderRadius: 20, padding: "4px 12px", fontSize: 11, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: CYAN, marginBottom: 16 }}>
             Case Study · Manoir
           </div>
@@ -20,7 +20,7 @@ export default function ManoirPage() {
           </p>
 
           {/* Key metrics */}
-          <div style={{ display: "flex", gap: 48, flexWrap: "wrap" }}>
+          <div className="case-hero-stats">
             <div>
               <div style={{ fontSize: 11, color: "rgba(255,255,255,0.35)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 6 }}>Gemiddelde orderwaarde</div>
               <div style={{ fontSize: 44, fontWeight: 900, color: YELLOW, lineHeight: 1 }}>+24%</div>
@@ -40,10 +40,10 @@ export default function ManoirPage() {
       </div>
 
       {/* Content */}
-      <div style={{ maxWidth: 1040, margin: "0 auto", padding: "44px 32px 64px" }}>
+      <div className="case-content">
 
         {/* About Manoir */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginBottom: 40 }}>
+        <div className="report-grid-2" style={{ gap: 24, marginBottom: 40 }}>
           <div style={{ background: "white", borderRadius: 14, padding: "32px", boxShadow: "0 1px 4px rgba(0,0,0,0.06)", borderTop: `3px solid ${CYAN}` }}>
             <div style={{ fontSize: 10.5, color: "#9ca3af", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 12, fontWeight: 600 }}>Over Manoir</div>
             <h2 style={{ fontSize: 20, fontWeight: 800, color: DARK, marginBottom: 14, margin: "0 0 14px" }}>Franse elegantie met karakter</h2>
@@ -105,7 +105,7 @@ export default function ManoirPage() {
         </p>
 
         {/* Kanalen grid */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, marginBottom: 40 }}>
+        <div className="report-grid-2" style={{ gap: 20, marginBottom: 40 }}>
           {/* Meta Ads */}
           <div style={{ background: "white", borderRadius: 14, padding: "28px", boxShadow: "0 1px 4px rgba(0,0,0,0.06)", borderLeft: `4px solid #1877f2` }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
@@ -170,7 +170,7 @@ export default function ManoirPage() {
             </div>
             <h2 style={{ fontSize: 18, fontWeight: 700, color: "white", margin: 0 }}>De Gouden Combinatie</h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+          <div className="report-grid-2" style={{ gap: 20 }}>
             <div style={{ background: "rgba(255,255,255,0.05)", borderRadius: 10, padding: "20px 22px", border: "1px solid rgba(255,255,255,0.08)" }}>
               <div style={{ fontSize: 11, fontWeight: 700, color: CYAN, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 10 }}>Meta · Inspireren</div>
               <p style={{ fontSize: 13, color: "rgba(255,255,255,0.7)", lineHeight: 1.7, margin: 0 }}>

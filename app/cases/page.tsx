@@ -59,9 +59,9 @@ export default function CasesPage() {
     <div style={{ fontFamily: "system-ui, -apple-system, sans-serif", background: "#f3f4f6", minHeight: "100vh" }}>
 
       {/* Hero */}
-      <div style={{ background: DARK, color: "white", padding: "52px 32px 48px", position: "relative", overflow: "hidden" }}>
+      <div className="case-hero">
         <div style={{ position: "absolute", right: -80, top: -80, width: 360, height: 360, borderRadius: "50%", background: `radial-gradient(circle, ${CYAN}15 0%, transparent 70%)`, pointerEvents: "none" }} />
-        <div style={{ maxWidth: 1040, margin: "0 auto", position: "relative" }}>
+        <div className="case-hero-inner">
           <div style={{ display: "inline-flex", alignItems: "center", gap: 6, background: `${CYAN}20`, border: `1px solid ${CYAN}40`, borderRadius: 20, padding: "4px 12px", fontSize: 11, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: CYAN, marginBottom: 16 }}>
             Cases · Rietveld Licht & Wonen
           </div>
@@ -74,7 +74,7 @@ export default function CasesPage() {
       </div>
 
       {/* Cases */}
-      <div style={{ maxWidth: 1040, margin: "0 auto", padding: "44px 32px 64px" }}>
+      <div className="case-content">
         <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
           {CASES.map((c) => (
             <Link
@@ -101,7 +101,7 @@ export default function CasesPage() {
                   (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
                 }}
               >
-                <div style={{ padding: "32px 36px", display: "grid", gridTemplateColumns: "1fr auto", gap: 32, alignItems: "start" }}>
+                <div className="case-card-layout">
 
                   {/* Left: content */}
                   <div>

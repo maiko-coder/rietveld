@@ -13,10 +13,10 @@ export default function MHKPage() {
     <div style={{ fontFamily: "system-ui, -apple-system, sans-serif", background: "#f3f4f6", minHeight: "100vh" }}>
 
       {/* Hero */}
-      <div style={{ background: DARK, color: "white", padding: "56px 32px 52px", position: "relative", overflow: "hidden" }}>
+      <div className="case-hero">
         <div style={{ position: "absolute", right: -100, top: -100, width: 400, height: 400, borderRadius: "50%", background: `radial-gradient(circle, ${CYAN}15 0%, transparent 70%)`, pointerEvents: "none" }} />
         <div style={{ position: "absolute", left: -60, bottom: -60, width: 280, height: 280, borderRadius: "50%", background: `radial-gradient(circle, ${YELLOW}10 0%, transparent 70%)`, pointerEvents: "none" }} />
-        <div style={{ maxWidth: 1040, margin: "0 auto", position: "relative" }}>
+        <div className="case-hero-inner">
           <div style={{ display: "inline-flex", alignItems: "center", gap: 6, background: `${CYAN}20`, border: `1px solid ${CYAN}40`, borderRadius: 20, padding: "4px 12px", fontSize: 11, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: CYAN, marginBottom: 16 }}>
             Case Study · MHK
           </div>
@@ -28,7 +28,7 @@ export default function MHKPage() {
           </p>
 
           {/* Key metrics */}
-          <div style={{ display: "flex", gap: 48, flexWrap: "wrap" }}>
+          <div className="case-hero-stats">
             <div>
               <div style={{ fontSize: 11, color: "rgba(255,255,255,0.35)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 6 }}>Samenwerking</div>
               <div style={{ fontSize: 44, fontWeight: 900, color: YELLOW, lineHeight: 1 }}>8 jaar</div>
@@ -49,7 +49,7 @@ export default function MHKPage() {
       </div>
 
       {/* Content */}
-      <div style={{ maxWidth: 1040, margin: "0 auto", padding: "44px 32px 64px" }}>
+      <div className="case-content">
 
         {/* Het verhaal */}
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
@@ -57,7 +57,7 @@ export default function MHKPage() {
           <h2 style={{ fontSize: 18, fontWeight: 700, color: DARK, margin: 0 }}>Van pitch naar partnerschap</h2>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginBottom: 40 }}>
+        <div className="report-grid-2" style={{ gap: 24, marginBottom: 40 }}>
           <div style={{ background: "white", borderRadius: 14, padding: "32px", boxShadow: "0 1px 4px rgba(0,0,0,0.06)", borderTop: `3px solid ${CYAN}` }}>
             <p style={{ fontSize: 14, color: "#4b5563", lineHeight: 1.75, margin: 0 }}>
               Acht jaar geleden werd Woeler uitgenodigd om een pitch te verzorgen voor MHK; één van Europa's grootste inkooporganisaties binnen de keuken- en interieurbranche. De uitdaging: laten zien hoe een slimme combinatie van marketing, technologie en data aangesloten ondernemers kon helpen groeien in een steeds meer digitaal wordende markt.
@@ -105,7 +105,7 @@ export default function MHKPage() {
             </div>
             <h2 style={{ fontSize: 18, fontWeight: 700, color: "white", margin: 0 }}>AI als motor achter groei</h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+          <div className="report-grid-2" style={{ gap: 20 }}>
             <p style={{ fontSize: 13.5, color: "rgba(255,255,255,0.7)", lineHeight: 1.8, margin: 0 }}>
               Om continu voorop te blijven lopen, ontwikkelde Woeler eigen AI-oplossingen die campagnes, zoekgedrag, marktontwikkelingen en conversiedata analyseren. Hierdoor worden trends sneller herkend, succesvolle campagnes sneller opgeschaald en nieuwe kansen eerder benut.
             </p>
@@ -122,7 +122,7 @@ export default function MHKPage() {
           <span style={{ fontSize: 12, color: "#9ca3af" }}>Binnen de franchise labels</span>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: 14, marginBottom: 40 }}>
+        <div className="report-grid-auto" style={{ marginBottom: 40 }}>
           {RESULTS.map((r) => (
             <div key={r.label + r.sub} style={{ background: "white", borderRadius: 12, padding: "20px 22px", boxShadow: "0 1px 4px rgba(0,0,0,0.06)", borderTop: `3px solid ${CYAN}` }}>
               <div style={{ fontSize: 26, fontWeight: 900, color: DARK, lineHeight: 1, marginBottom: 8 }}>{r.value}</div>
