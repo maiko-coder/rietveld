@@ -504,6 +504,14 @@ a { color: inherit; text-decoration: none; }
   font-weight: 500;
 }
 
+.voorstel-service-note p {
+  margin: 0 0 8px;
+}
+
+.voorstel-service-note p:last-child {
+  margin-bottom: 0;
+}
+
 .voorstel-total {
   background: #262626;
   border-radius: 14px;
