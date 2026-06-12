@@ -33,7 +33,7 @@ const TEAM = [
       { label: "Relevante expertise en specialisaties", value: "SEA, SEO/GEO, AI, GA4/Data Studio, Strategie, CRO" },
       { label: "Aantal jaren ervaring", value: "10+ jaar" },
       { label: "Verantwoordelijkheid binnen projectteam", value: "SEA, Rapportage" },
-      { label: "Beschikbaarheid per week", value: "15–20 uur" },
+      { label: "Beschikbaarheid per week", value: "18–22 uur" },
     ],
   },
   {
@@ -47,7 +47,7 @@ const TEAM = [
       { label: "Relevante expertise en specialisaties", value: "Marketing automation, SEO/GEO, Meta" },
       { label: "Aantal jaren ervaring", value: "10+ jaar" },
       { label: "Verantwoordelijkheid binnen projectteam", value: "Marketing automation" },
-      { label: "Beschikbaarheid per week", value: "5 uur" },
+      { label: "Beschikbaarheid per week", value: "5–7 uur" },
     ],
   },
   {
@@ -61,7 +61,7 @@ const TEAM = [
       { label: "Relevante expertise en specialisaties", value: "SEO/GEO, SEA, Marketing automation, Meta" },
       { label: "Aantal jaren ervaring", value: "8 jaar" },
       { label: "Verantwoordelijkheid binnen projectteam", value: "SEO/GEO" },
-      { label: "Beschikbaarheid per maand", value: "15 uur" },
+      { label: "Beschikbaarheid per maand", value: "25–30 uur" },
     ],
   },
   {
@@ -90,11 +90,7 @@ const TEAM = [
       { label: "Relevante expertise en specialisaties", value: "Google Ads, GA4, GTM, Search Console, AI & campagnebeheer" },
       { label: "Aantal jaren ervaring", value: "15+ jaar" },
       { label: "Verantwoordelijkheid binnen projectteam", value: "SEA" },
-      { label: "Beschikbaarheid per week", value: "5–10 uur" },
-    ],
-  },
-  {
-    id: "moran",
+      { label: "Beschikbaarheid per week", value: "0–5 uur" },
     name: "Moran Roelfs",
     orgRole: "Accountmanager",
     functie: "Marketing strateeg",
