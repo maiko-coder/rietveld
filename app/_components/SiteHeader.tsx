@@ -15,6 +15,7 @@ type NavItem = {
 const NAV_ITEMS: NavItem[] = [
   { label: "Over Woeler", href: "/" },
   { label: "Channel Breakdown", href: "/channel-breakdown" },
+  { label: "Strategie", href: "/strategie" },
   {
     label: "Analyses",
     href: "/analyses",
