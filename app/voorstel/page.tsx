@@ -213,10 +213,6 @@ export default function VoorstelPage() {
           </div>
         </div>
 
-        <div className="voorstel-total-note">
-          Bij de uiterste fee&apos;s kom je op €19.000 per maand. Admarkt, Bol en Criteo zijn nog nader te bepalen — indien deze kanalen worden opgepakt, komt daar circa €2.000 fee per maand bij.
-        </div>
-
         <div className="voorstel-commitments">
           <div className="voorstel-commitments-title">Wat je van ons mag verwachten</div>
           <ul className="voorstel-commitments-list">
