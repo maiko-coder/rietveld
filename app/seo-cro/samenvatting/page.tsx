@@ -29,7 +29,7 @@ export default function SeoCroSamenvatting() {
         </Grid4>
 
         <Callout>
-          De techniek staat goed, daar hoeven we weinig aan te doen. De winst zit in structured data en content. En elke procent extra conversie maakt álle betaalde kanalen automatisch winstgevender. Daarom pakken we CRO direct mee.
+          De techniek staat goed, daar is weinig aan te doen. De winst zit in structured data en content. En elke procent extra conversie maakt álle betaalde kanalen automatisch winstgevender. Daarom wordt CRO direct meegenomen.
         </Callout>
 
         <SectionTitle>SEO - top prioriteiten</SectionTitle>

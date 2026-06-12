@@ -36,7 +36,7 @@ export default function PinterestAdsSamenvatting() {
         </Grid3>
 
         <Callout>
-          Met €3.000 testbudget haalden we €47k omzet: een ROAS van 15,65×. Retargeting deed het nog beter dan prospecting (18,62× om 13,76×). En met 172 kopers uit de test kunnen we direct door met retargeting en lookalikes.
+          Met €3.000 testbudget werd €47k omzet behaald: een ROAS van 15,65×. Retargeting deed het nog beter dan prospecting (18,62× om 13,76×). Met 172 kopers uit de test is direct doorgaan met retargeting en lookalikes mogelijk.
         </Callout>
 
         <SectionTitle>Prospecting vs. Retargeting</SectionTitle>
@@ -53,7 +53,7 @@ export default function PinterestAdsSamenvatting() {
         />
         <div style={{ background: `${YELLOW}15`, border: `1px solid ${YELLOW}40`, borderLeft: `4px solid ${YELLOW}`, borderRadius: 10, padding: "14px 18px", marginBottom: 8 }}>
           <p style={{ fontSize: 13.5, color: "#7a5a00", lineHeight: 1.7, margin: 0, fontWeight: 500 }}>
-            Retargeting scoort hoger, maar prospecting brengt nieuwe klanten binnen. Daarom gaan we naar 50/50 binnen catalogus en bouwen we er overweging- en conversielagen bij voor meer bereik.
+            Retargeting scoort hoger, maar prospecting brengt nieuwe klanten binnen. Daarom verschuift het budget naar 50/50 binnen catalogus, met extra overweging- en conversielagen voor meer bereik.
           </p>
         </div>
 

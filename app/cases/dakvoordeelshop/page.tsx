@@ -162,7 +162,7 @@ export default function DakvoordeelshopPage() {
         <div style={{ background: "white", borderRadius: 14, padding: "32px 36px", boxShadow: "0 1px 4px rgba(0,0,0,0.06)", borderLeft: `4px solid ${CYAN}` }}>
           <div style={{ fontSize: 48, color: `${CYAN}30`, fontFamily: "Georgia, serif", lineHeight: 0.6, marginBottom: 16 }}>"</div>
           <p style={{ fontSize: 15, color: "#374151", lineHeight: 1.8, fontStyle: "italic", margin: "0 0 20px", maxWidth: 740 }}>
-            Wat deze klant bijzonder maakt, is dat er veel vertrouwen is in het proces. Daardoor kunnen we ons volledig richten op wat echt belangrijk is: duurzame groei realiseren zonder het rendement uit het oog te verliezen. De resultaten laten zien dat gecontroleerd opschalen vaak effectiever is dan snelle, agressieve groei. Juist door stap voor stap te werken, hebben we de omzet fors kunnen laten groeien terwijl de ROAS stabiel bleef.
+            Wat deze klant bijzonder maakt, is dat er veel vertrouwen is in het proces. Daardoor kan de focus volledig liggen op wat echt belangrijk is: duurzame groei realiseren zonder het rendement uit het oog te verliezen. De resultaten laten zien dat gecontroleerd opschalen vaak effectiever is dan snelle, agressieve groei. Juist door stap voor stap te werken, is de omzet fors gegroeid terwijl de ROAS stabiel bleef.
           </p>
           <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
             <div style={{ width: 38, height: 38, borderRadius: "50%", background: `${CYAN}15`, border: `2px solid ${CYAN}30`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 15, fontWeight: 700, color: CYAN }}>G</div>

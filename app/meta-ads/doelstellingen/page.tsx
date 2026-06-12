@@ -89,7 +89,7 @@ export default function MetaAdsDoelstellingen() {
             {
               num: "02",
               t: "Activering van dynamische productadvertenties (DPA's)",
-              d: "Huidige retargeting draait al op 29,37x ROAS zonder productspecifieke personalisatie. Na DPA-activering verwachten wij een ROAS van 34–40x. De RTG VarB USP campagne liet al 81x ROAS zien als benchmark voor wat relevante retargeting kan doen.",
+              d: "Huidige retargeting draait al op 29,37x ROAS zonder productspecifieke personalisatie. Na DPA-activering wordt een ROAS van 34–40x verwacht. De RTG VarB USP campagne liet al 81x ROAS zien als benchmark voor wat relevante retargeting kan doen.",
             },
             {
               num: "03",

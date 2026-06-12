@@ -1,4 +1,4 @@
-import PresentationNav from "../../_components/PresentationNav";
+﻿import PresentationNav from "../../_components/PresentationNav";
 
 const COLOR = "#2563EB";
 const COLOR_LIGHT = "#EFF6FF";
@@ -133,7 +133,7 @@ export default function GoogleAdsDoelstellingen() {
           title="Middellange termijn (3 – 6 maanden)"
           items={[
             "PMax-campagnes opsplitsen op producttype: spots, inbouwlampen en tafellampen (ROAS 5,3–6,5) krijgen eigen budget",
-            "Aparte campagne lanceren voor producten boven €400 - segment haalt nu ROAS 12–13x op slechts €12k spend",
+            "Aparte campagne lanceren voor producten boven €400 - segment behaalt nu ROAS 12–13x op slechts €12k spend",
             "Doel: accountbrede ROAS 6,2–6,5 en kosten per bestelling onder de €29",
           ]}
         />
@@ -161,7 +161,7 @@ export default function GoogleAdsDoelstellingen() {
           ]}
         />
         <p style={{ fontSize: 12, color: "#9ca3af", marginBottom: 32 }}>
-          * Bij Sale geldt: een lagere ROAS bij kortingsproducten is niet per se problematisch - het hangt af van de marge per stuk. Zodra POAS-tracking actief is, sturen we op winstgevendheid in plaats van omzet-ROAS.
+          * Bij Sale geldt: een lagere ROAS bij kortingsproducten is niet per se problematisch - het hangt af van de marge per stuk. Zodra POAS-tracking actief is, wordt gestuurd op winstgevendheid in plaats van omzet-ROAS.
         </p>
 
         {/* KPI tabel */}
@@ -211,7 +211,7 @@ export default function GoogleAdsDoelstellingen() {
         <div style={{ background: "#fffbeb", border: "1px solid #fde68a", borderRadius: 10, padding: "20px 24px", marginBottom: 48 }}>
           <h3 style={{ fontSize: 14, fontWeight: 700, color: "#b45309", marginBottom: 8 }}>€400+ segment - grootste onbenutte kans</h3>
           <p style={{ fontSize: 13, color: "#374151", lineHeight: 1.7 }}>
-            Het segment producten boven €400 haalt momenteel een ROAS van 12–13x op slechts €12k spend per jaar. Dit is een nauwelijks geadverteerd segment dat bij opschaling naar €75–100k spend nog steeds een ROAS van 10+ kan realiseren, goed voor +€350–500k extra omzet. Dit is de meest concrete groeikans in het account.
+            Het segment producten boven €400 behaalt momenteel een ROAS van 12–13x op slechts €12k spend per jaar. Dit is een nauwelijks geadverteerd segment dat bij opschaling naar €75–100k spend nog steeds een ROAS van 10+ kan realiseren, goed voor +€350–500k extra omzet. Dit is de meest concrete groeikans in het account.
           </p>
         </div>
 

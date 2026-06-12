@@ -9,7 +9,7 @@ export default function GoogleAdsSamenvatting() {
       <PageHero
         channel="Google Ads"
         title="Samenvatting"
-        subtitle="Hoe het account ervoor staat en wat we als eerste oppakken"
+        subtitle="Hoe het account ervoor staat en welke verbeterpunten als eerste worden opgepakt"
         stats={[
           { label: "Account ROAS", value: "5,87", accent: "cyan" },
           { label: "Spend huidig jaar", value: "€2,1M", accent: "yellow" },
@@ -29,7 +29,7 @@ export default function GoogleAdsSamenvatting() {
         </Grid4>
 
         <Callout>
-          Het account groeit hard. Dat mag wat ROAS kosten: de daling van 6,43 naar 5,87 hoort bij opschalen. Die efficiëntie halen we terug. De structuur kan scherper, dus daar beginnen we mee.
+          Het account groeit hard. Dat mag wat ROAS kosten: de daling van 6,43 naar 5,87 hoort bij opschalen. Die efficiëntie wordt teruggehaald. De structuur kan scherper, dus daar wordt mee begonnen.
         </Callout>
 
         <SectionTitle>Campagnes - huidige prestaties</SectionTitle>
@@ -46,7 +46,7 @@ export default function GoogleAdsSamenvatting() {
         <SectionTitle accent={YELLOW}>Top 3 prioriteiten</SectionTitle>
         <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 8 }}>
           <PriorityCard num="01" color={RED} title="tROAS instellen op Bestsellers & Sale" desc="€420k spend op campagnes zonder doelstelling - tROAS instellen verwacht ROAS van ~3,6 naar 4,0–4,5 te brengen" />
-          <PriorityCard num="02" color="#16a34a" title="Premium €400+ campagne opschalen" desc="Segment haalt 12–13× ROAS op €12k spend. Opschalen naar €75–100k levert +€350–500k extra omzet op" />
+          <PriorityCard num="02" color="#16a34a" title="Premium €400+ campagne opschalen" desc="Segment behaalt 12–13× ROAS op €12k spend. Opschalen naar €75–100k levert +€350–500k extra omzet op" />
           <PriorityCard num="03" color={CYAN} title="PMax splitsen op producttype" desc="Spots, inbouwlampen en tafellampen concurreren nu met hanglampen - splitsing geeft elk type eigen budget en doel" />
         </div>
 

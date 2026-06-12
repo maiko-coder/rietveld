@@ -16,7 +16,7 @@ const CHANNELS = [
         <path d="M12 5V3M12 15v2M5 9H3M21 9h-2" stroke={CYAN} strokeWidth="1.8" strokeLinecap="round"/>
       </svg>
     ),
-    summary: "Google Ads is het afgelopen jaar hard gegroeid: van €1,3M naar €2,1M spend (+67%) en van €8,2M naar €12,5M omzet (+52%). De ROAS zakte licht naar 5,87. Logisch: zo hard opschalen kost altijd wat efficiëntie. Dat halen we terug met een scherpere structuur. En het premium-segment boven €400 ligt nog vrijwel onbenut.",
+    summary: "Google Ads is het afgelopen jaar hard gegroeid: van €1,3M naar €2,1M spend (+67%) en van €8,2M naar €12,5M omzet (+52%). De ROAS zakte licht naar 5,87. Logisch: zo hard opschalen kost altijd wat efficiëntie. Dat wordt teruggehaald met een scherpere structuur. En het premium-segment boven €400 ligt nog vrijwel onbenut.",
     metrics: [
       { label: "Account ROAS", value: "5,87", sub: "Doel: 6,5", trend: "up" },
       { label: "Spend", value: "€2,1M", sub: "+67% YoY", trend: "up" },
@@ -38,7 +38,7 @@ const CHANNELS = [
         <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z" />
       </svg>
     ),
-    summary: "Meta draait uitstekend. Retargeting haalt een ROAS tot 69x. En omdat we via de Conversions API op POAS sturen, optimaliseren we op werkelijke winst in plaats van alleen omzet. De meeste concurrenten kunnen dat niet.",
+    summary: "Meta draait uitstekend. Retargeting levert een ROAS op tot 69x. Sturing loopt via de Conversions API op POAS: optimalisatie op werkelijke winst in plaats van alleen omzet. De meeste concurrenten kunnen dat niet.",
     metrics: [
       { label: "Omzet ROAS", value: "15,74×", sub: "Totale periode", trend: "up" },
       { label: "POAS", value: "9,46×", sub: "aug 2024–mei 2026", trend: "up" },
@@ -84,7 +84,7 @@ const CHANNELS = [
         <path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.03-2.83.19-.78 1.26-5.33 1.26-5.33s-.32-.64-.32-1.59c0-1.49.87-2.61 1.94-2.61.92 0 1.36.69 1.36 1.51 0 .92-.59 2.3-.89 3.58-.25 1.07.53 1.94 1.58 1.94 1.9 0 3.36-2 3.36-4.89 0-2.56-1.84-4.35-4.47-4.35-3.04 0-4.83 2.28-4.83 4.64 0 .92.35 1.9.79 2.44.09.1.1.2.07.3-.08.33-.26 1.07-.3 1.22-.05.2-.16.24-.36.14-1.34-.62-2.18-2.58-2.18-4.15 0-3.38 2.46-6.49 7.09-6.49 3.72 0 6.61 2.65 6.61 6.19 0 3.7-2.33 6.67-5.57 6.67-1.08 0-2.1-.56-2.45-1.23l-.67 2.55c-.24.93-.89 2.1-1.33 2.81A10 10 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/>
       </svg>
     ),
-    summary: "De eerste test op Pinterest leverde direct resultaat: €3.000 spend, €47k omzet, een ROAS van 15,65×. Dat smaakt naar meer. Met 172 kopers uit de test kunnen we retargeting en lookalikes meteen inzetten. Het plan: €5.000 per maand, opgebouwd in drie lagen (20% overweging / 30% conversie / 50% catalogus).",
+    summary: "De eerste test op Pinterest leverde direct resultaat: €3.000 spend, €47k omzet, een ROAS van 15,65×. Dat smaakt naar meer. Met 172 kopers uit de test is retargeting en lookalikes direct inzetbaar. Het plan: €5.000 per maand, opgebouwd in drie lagen (20% overweging / 30% conversie / 50% catalogus).",
     metrics: [
       { label: "ROAS test", value: "15,65×", sub: "Performance+", trend: "up" },
       { label: "Omzet test", value: "€46.944", sub: "172 checkouts", trend: "up" },

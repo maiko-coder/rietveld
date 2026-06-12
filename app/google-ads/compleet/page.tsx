@@ -1,4 +1,4 @@
-import PresentationNav from "../../_components/PresentationNav";
+﻿import PresentationNav from "../../_components/PresentationNav";
 
 const COLOR = "#2563EB";
 const COLOR_LIGHT = "#EFF6FF";
@@ -107,7 +107,7 @@ export default function GoogleAdsCompleet() {
           items={[
             "Het account groeit sterk maar verliest licht aan efficiëntie - dit is herstelbaar met structuurwijzigingen",
             "Bestsellers en Sale campagnes draaien zonder tROAS-doel - dit kost €420k spend aan efficiëntie",
-            "Het €400+ segment haalt 12–13x ROAS op slechts €12k spend - dit is de grootste onbenutte groeikans",
+            "Het €400+ segment behaalt 12–13x ROAS op slechts €12k spend - dit is de grootste onbenutte groeikans",
           ]}
         />
 

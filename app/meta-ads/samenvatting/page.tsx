@@ -9,7 +9,7 @@ export default function MetaAdsSamenvatting() {
       <PageHero
         channel="Meta Ads"
         title="Samenvatting"
-        subtitle="Wat goed gaat en waar we direct winst pakken"
+        subtitle="Wat goed gaat en waar direct winst te behalen valt"
         stats={[
           { label: "Omzet ROAS", value: "15,74×", accent: "cyan" },
           { label: "POAS", value: "9,46×", accent: "yellow" },
@@ -29,7 +29,7 @@ export default function MetaAdsSamenvatting() {
         </Grid4>
 
         <Callout>
-          Het account zit ruim boven het doel van 6× ROAS voor Nederland. En we sturen op POAS: werkelijke winst per campagne, niet alleen omzet. De meeste concurrenten kunnen dat niet.
+          Het account zit ruim boven het doel van 6× ROAS voor Nederland. Sturing loopt op POAS: werkelijke winst per campagne, niet alleen omzet. De meeste concurrenten kunnen dat niet.
         </Callout>
 
         <SectionTitle>Top campagnes</SectionTitle>
