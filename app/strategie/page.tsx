@@ -47,13 +47,13 @@ export default function StrategiePage() {
       <ReportContainer style={{ maxWidth: 960, margin: "0 auto" }}>
         <SectionTitle>1. Waar we staan en waar we heen willen</SectionTitle>
         <BodyText>
-          Rietveld Licht heeft de afgelopen jaren stevig gebouwd aan losse kanalen die elk goed presteren. Google Ads groeide naar 2,1 miljoen euro (ad-spend) en 12,5 miljoen euro omzet. Meta draait een ROAS van 15,7 en stuurt al op winst via POAS. Pinterest leverde in een eerste test van 3.000 euro al een ROAS van 15,6. De website staat technisch sterk met een health score van 92 op 100. Toch valt er qua omnichannel genoeg te verbeteren. De andere kanalen zouden naast SEA ook veel meer omzet kunnen genereren.
+          Rietveld Licht heeft de afgelopen jaren stevig gebouwd aan losse kanalen die elk goed presteren. Google Ads groeide in Nederland naar 2,1 miljoen euro ad-spend en 12,5 miljoen euro omzet. Meta draait een ROAS van 15,7 en stuurt al op winst via POAS. Pinterest leverde in een eerste test van 3.000 euro al een ROAS van 15,6. De website staat technisch sterk met een health score van 92 op 100. Toch valt er qua omnichannel genoeg te verbeteren. De andere kanalen zouden naast SEA ook veel meer omzet kunnen genereren.
         </BodyText>
         <BodyText>
           De kracht zit nu nog in de afzonderlijke kanalen. De volgende stap is samenhang. Een klant ziet Rietveld niet als vijf losse advertenties, maar als één merk. Iemand vindt inspiratie op Pinterest, ziet een lamp terug via Meta, zoekt later gericht op Google en koopt na een e-mail.
         </BodyText>
         <Callout>
-          Dit plan brengt de vijf kanalen onder één strategie. Het doel is niet meer budget in elk kanaal, maar een klantreis waarin de kanalen elkaar versterken. Dat verhoogt het rendement van alles wat al draait en opent drie concrete groeikansen: het premiumsegment in Google Ads, dynamische retargeting op Meta, en e-mailmarketing als kanaal dat de hele reis aan elkaar knoopt.
+          Dit plan brengt de vijf kanalen onder één strategie. Het doel is niet meer budget in elk kanaal, maar een klantreis waarin de kanalen elkaar versterken. Dat verhoogt het rendement van alles wat al draait en opent drie concrete groeikansen: het premiumsegment in Google Ads, dynamische retargeting op Meta en e-mailmarketing als kanaal dat de hele reis aan elkaar knoopt.
         </Callout>
 
         <SectionTitle accent={YELLOW}>De drie grootste kansen</SectionTitle>
@@ -110,7 +110,7 @@ export default function StrategiePage() {
 
         <SectionTitle>4. E-mailmarketing</SectionTitle>
         <BodyText>
-          E-mailmarketing verdient een aparte plek in dit plan, omdat het de lijm tussen de kanalen is. Elk signaal uit een ander kanaal kan een passend e-mailmoment starten. Zo wordt losse reclame een doorlopend gesprek.
+          E-mailmarketing verdient een aparte plek in dit plan omdat het de lijm tussen de kanalen is. Elk signaal uit een ander kanaal kan een passend e-mailmoment starten. Zo wordt losse reclame een doorlopend gesprek.
         </BodyText>
         <DarkTable
           headers={["Kanaal", "Signaal", "E-mailrespons"]}
@@ -125,7 +125,7 @@ export default function StrategiePage() {
 
         <SectionTitle accent={YELLOW}>5. De gefaseerde aanpak</SectionTitle>
         <BodyText>
-          De volgorde is bewust. Eerst de quick wins die direct rendement opleveren en weinig risico dragen. Daarna de structurele groei. Tot slot opschalen en internationaal uitbreiden.
+          Deze volgorde is bewust gekozen. We starten met de quick wins die direct rendement opleveren met minimaal risico. Vervolgens focussen we op structurele groei, om tot slot op te schalen en internationaal uit te breiden.
         </BodyText>
         <Grid3 style={{ marginBottom: 8 }}>
           <PhaseCard
@@ -187,9 +187,9 @@ export default function StrategiePage() {
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           {[
             "Alles onder één dak: website, SEO, Google Ads, Meta, Pinterest en e-mail, stuurbaar vanuit één bureau.",
-            "Tien jaar ervaring in de branche, wij weten wat werkt.",
+            "Tien jaar ervaring in de branche; wij weten wat werkt.",
             "Eigen AI-tools voor Google en Meta die kleine taken automatiseren, zodat ons team op strategie en kwaliteit kan sturen. Maar ook een databron van al onze woongerelateerde klanten. Zo kunnen wij veranderingen in de markt herkennen zoals (woon)trends en veranderend zoek- en koopgedrag. Ontwikkelingen die we dan ook direct kunnen doorvoeren om andere kanalen in de marketingmix.",
-            "Premium Pinterest Partner, met branche data, benchmarks en vroege toegang tot nieuwe functies.",
+            "Premium Pinterest Partner met branche data, mooie deals, benchmarks en vroege toegang tot nieuwe functies.",
           ].map((item) => (
             <div
               key={item.slice(0, 40)}
