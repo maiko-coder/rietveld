@@ -70,7 +70,7 @@ const NAV_ITEMS: NavItem[] = [
     label: "AI Tools",
     href: "/ai-tools",
     sub: [
-      { label: "AdOptimizer", href: "https://adoptimizer.nl" },
+      { label: "AdOptimizer", href: "/adoptimizer" },
       { label: "Meta Optimizer", href: "https://www.meta-optimizer.nl" },
     ],
   },
