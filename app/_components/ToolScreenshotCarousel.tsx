@@ -1,7 +1,6 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import Image from "next/image";
 
 export type ToolSlide = {
   src: string;
@@ -95,13 +94,13 @@ export default function ToolScreenshotCarousel({ slides }: { slides: ToolSlide[]
           </button>
 
           <button type="button" className="adoptimizer-carousel-slide" onClick={openLightbox} aria-label="Vergroot afbeelding">
-            <Image
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src={slide.src}
               alt={slide.title}
-              width={1400}
-              height={900}
+              loading={index === 0 ? "eager" : "lazy"}
+              decoding="async"
               style={{ width: "100%", height: "auto", display: "block" }}
-              priority={index === 0}
             />
             <span className="adoptimizer-carousel-zoom-hint">Tik om te vergroten</span>
           </button>
@@ -143,12 +142,12 @@ export default function ToolScreenshotCarousel({ slides }: { slides: ToolSlide[]
           </div>
 
           <div className="adoptimizer-lightbox-scroll">
-            <Image
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src={slide.src}
               alt={slide.title}
-              width={1400}
-              height={900}
-              style={{ width: "auto", height: "auto", maxWidth: "none", transform: `scale(${zoom})`, transformOrigin: "top center" }}
+              className="adoptimizer-lightbox-img"
+              style={{ transform: `scale(${zoom})`, transformOrigin: "top center" }}
             />
           </div>
 
