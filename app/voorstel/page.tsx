@@ -127,27 +127,29 @@ export default function VoorstelPage() {
         <div style={{ display: "flex", flexDirection: "column", gap: 14, marginBottom: 36 }}>
           {SERVICES.map((s) => (
             <div key={s.name} style={{ background: "white", borderRadius: 14, boxShadow: "0 1px 4px rgba(0,0,0,0.06)", overflow: "hidden" }}>
-              <div className="voorstel-service-row">
+              <div className="voorstel-service-card">
                 <div className="voorstel-service-name">
                   <div style={{ width: 42, height: 42, borderRadius: 10, background: `${CYAN}12`, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                     {s.icon}
                   </div>
-                  <div style={{ fontSize: 15, fontWeight: 700, color: DARK }}>{s.name}</div>
+                  <div style={{ fontSize: 16, fontWeight: 700, color: DARK }}>{s.name}</div>
                 </div>
 
-                <div className="voorstel-service-field">
-                  <div style={{ fontSize: 10, color: "#9ca3af", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 3 }}>Budget</div>
-                  <div style={{ fontSize: 13.5, fontWeight: 600, color: s.budget ? "#374151" : "#c4c9d0" }}>{s.budget ?? "n.v.t."}</div>
-                </div>
+                <div className="voorstel-service-fields">
+                  <div className="voorstel-service-field">
+                    <div className="voorstel-field-label">Budget</div>
+                    <div className="voorstel-field-value" style={{ color: s.budget ? "#374151" : "#c4c9d0" }}>{s.budget ?? "n.v.t."}</div>
+                  </div>
 
-                <div className="voorstel-service-field">
-                  <div style={{ fontSize: 10, color: "#9ca3af", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 3 }}>Fee per maand</div>
-                  <div style={{ fontSize: 17, fontWeight: 800, color: DARK }}>{s.fee}</div>
-                </div>
+                  <div className="voorstel-service-field">
+                    <div className="voorstel-field-label">Fee per maand</div>
+                    <div className="voorstel-field-value voorstel-field-value--fee">{s.fee}</div>
+                  </div>
 
-                <div className="voorstel-service-field">
-                  <div style={{ fontSize: 10, color: "#9ca3af", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 3 }}>Uren per maand</div>
-                  <div style={{ fontSize: 13.5, fontWeight: 600, color: "#374151" }}>{s.hours}</div>
+                  <div className="voorstel-service-field">
+                    <div className="voorstel-field-label">Uren per maand</div>
+                    <div className="voorstel-field-value">{s.hours}</div>
+                  </div>
                 </div>
               </div>
 
@@ -161,18 +163,20 @@ export default function VoorstelPage() {
         </div>
 
         <div className="voorstel-total">
-          <div style={{ fontSize: 15, fontWeight: 800, color: "white" }}>Totaal per maand</div>
-          <div className="voorstel-service-field">
-            <div style={{ fontSize: 10, color: "rgba(255,255,255,0.4)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 3 }}>Media budget</div>
-            <div style={{ fontSize: 13.5, fontWeight: 600, color: "rgba(255,255,255,0.75)" }}>±€2,25M op jaarbasis</div>
-          </div>
-          <div className="voorstel-service-field">
-            <div style={{ fontSize: 10, color: "rgba(255,255,255,0.4)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 3 }}>Fee</div>
-            <div style={{ fontSize: 22, fontWeight: 900, color: YELLOW }}>€15.000</div>
-          </div>
-          <div className="voorstel-service-field">
-            <div style={{ fontSize: 10, color: "rgba(255,255,255,0.4)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 3 }}>Uren</div>
-            <div style={{ fontSize: 22, fontWeight: 900, color: CYAN }}>145–150</div>
+          <div className="voorstel-total-title">Totaal per maand</div>
+          <div className="voorstel-service-fields voorstel-service-fields--total">
+            <div className="voorstel-service-field">
+              <div className="voorstel-field-label voorstel-field-label--dark">Media budget</div>
+              <div className="voorstel-field-value voorstel-field-value--dark">±€2,25M op jaarbasis</div>
+            </div>
+            <div className="voorstel-service-field">
+              <div className="voorstel-field-label voorstel-field-label--dark">Fee</div>
+              <div className="voorstel-field-value voorstel-field-value--total-fee">€15.000</div>
+            </div>
+            <div className="voorstel-service-field">
+              <div className="voorstel-field-label voorstel-field-label--dark">Uren</div>
+              <div className="voorstel-field-value voorstel-field-value--total-hours">145–150</div>
+            </div>
           </div>
         </div>
 
