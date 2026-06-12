@@ -1,4 +1,4 @@
-﻿import PresentationNav from "../../_components/PresentationNav";
+import PresentationNav from "../../_components/PresentationNav";
 
 const COLOR = "#1877F2";
 const COLOR_LIGHT = "#EBF3FF";
@@ -14,7 +14,7 @@ function P({ children }: { children: React.ReactNode }) {
 }
 function Table({ headers, rows }: { headers: string[]; rows: (string | React.ReactNode)[][] }) {
   return (
-    <div style={{ background: "white", border: "1px solid #e5e7eb", borderRadius: 10, overflow: "hidden", marginBottom: 20 }}>
+    <div className="report-table-wrap" style={{ background: "white", border: "1px solid #e5e7eb", borderRadius: 10, marginBottom: 20 }}>
       <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
         <thead><tr style={{ background: "#f9fafb" }}>{headers.map((h, i) => <th key={i} style={{ padding: "10px 14px", textAlign: "left", fontWeight: 600, color: "#374151", fontSize: 12, borderBottom: "1px solid #e5e7eb" }}>{h}</th>)}</tr></thead>
         <tbody>{rows.map((row, i) => <tr key={i} style={{ background: i % 2 === 0 ? "white" : "#f9fafb" }}>{row.map((cell, j) => <td key={j} style={{ padding: "10px 14px", color: "#374151", borderBottom: i < rows.length - 1 ? "1px solid #f3f4f6" : "none" }}>{cell}</td>)}</tr>)}</tbody>
@@ -43,12 +43,12 @@ export default function MetaAdsCompleet() {
     <div style={{ fontFamily: "system-ui, -apple-system, sans-serif", background: "#f9fafb", minHeight: "100vh" }}>
       <PresentationNav channel="Meta Ads" color={COLOR} basePath="/meta-ads" />
 
-      <div style={{ background: "linear-gradient(135deg, #1558b0 0%, #1877f2 100%)", color: "white", padding: "64px 24px 48px" }}>
-        <div style={{ maxWidth: 960, margin: "0 auto" }}>
+      <div className="report-cover" style={{ background: "linear-gradient(135deg, #1558b0 0%, #1877f2 100%)", color: "white" }}>
+        <div className="report-cover-inner">
           <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", opacity: 0.6, marginBottom: 12 }}>Meta Ads Analyse · Rietveld Licht B.V. · Juni 2026</div>
           <h1 style={{ fontSize: 42, fontWeight: 700, lineHeight: 1.1, marginBottom: 16 }}>Meta Ads<br />Complete Presentatie</h1>
           <p style={{ fontSize: 16, opacity: 0.75, maxWidth: 520, lineHeight: 1.6, marginBottom: 48 }}>Huidige positie · Kansen · Strategie · Doelstellingen · Sept 2023 – mei 2026</p>
-          <div style={{ display: "flex", gap: 40, flexWrap: "wrap", paddingTop: 32, borderTop: "1px solid rgba(255,255,255,0.15)" }}>
+          <div className="report-cover-stats">
             {[{ l: "Omzet ROAS", v: "15,74x" }, { l: "Totaal aankopen", v: "6.496" }, { l: "Conversiewaarde", v: "€1,82M" }, { l: "Gem. CPA", v: "€17,78" }].map((m) => (
               <div key={m.l}>
                 <div style={{ fontSize: 11, opacity: 0.55, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 2 }}>{m.l}</div>
@@ -59,10 +59,10 @@ export default function MetaAdsCompleet() {
         </div>
       </div>
 
-      <div style={{ maxWidth: 960, margin: "0 auto", padding: "40px 24px" }}>
+      <div className="report-container--960">
 
         <H1>1. Managementsamenvatting</H1>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 10, marginBottom: 20 }}>
+        <div className="report-grid-4" style={{ marginBottom: 20 }}>
           {[
             { l: "Omzet ROAS", v: "15,74x", sub: "sept 2023 – mei 2026", color: "green" as const },
             { l: "Totaal aankopen", v: "6.496", sub: "sept 2023 – mei 2026", color: "blue" as const },
@@ -156,7 +156,7 @@ export default function MetaAdsCompleet() {
         <P>Meta Lead Ads gekoppeld aan de welkomstflow in het e-mailplatform - bezoekers die een product bekeken maar niet kochten zijn de primaire doelgroep.</P>
 
         <H1>7. Strategie per fase</H1>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12, marginBottom: 24 }}>
+        <div className="report-grid-3" style={{ marginBottom: 24 }}>
           {[
             { phase: "Fase 1", period: "Maand 1–2", items: ["Pixel koppelen aan catalogus", "Event match quality verbeteren", "Budgetverschuiving doelgroepen", "Rapportagestructuur opzetten"], color: "#fee2e2", tc: "#dc2626" },
             { phase: "Fase 2", period: "Maand 3–6", items: ["DPA's live zetten", "Meta Lead Ads activeren", "België uitrollen", "StoreTraffic opschalen"], color: COLOR_LIGHT, tc: COLOR },

@@ -1,11 +1,11 @@
-﻿import PresentationNav from "../../_components/PresentationNav";
+import PresentationNav from "../../_components/PresentationNav";
 
 const COLOR = "#16A34A";
 const COLOR_LIGHT = "#F0FDF4";
 
 function Table({ headers, rows }: { headers: string[]; rows: (string | React.ReactNode)[][] }) {
   return (
-    <div style={{ background: "white", border: "1px solid #e5e7eb", borderRadius: 10, overflow: "hidden", marginBottom: 20 }}>
+    <div className="report-table-wrap" style={{ background: "white", border: "1px solid #e5e7eb", borderRadius: 10, marginBottom: 20 }}>
       <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
         <thead><tr style={{ background: "#f9fafb" }}>{headers.map((h, i) => <th key={i} style={{ padding: "10px 14px", textAlign: "left", fontWeight: 600, color: "#374151", fontSize: 12, borderBottom: "1px solid #e5e7eb" }}>{h}</th>)}</tr></thead>
         <tbody>{rows.map((row, i) => <tr key={i} style={{ background: i % 2 === 0 ? "white" : "#f9fafb" }}>{row.map((cell, j) => <td key={j} style={{ padding: "10px 14px", color: "#374151", borderBottom: i < rows.length - 1 ? "1px solid #f3f4f6" : "none" }}>{cell}</td>)}</tr>)}</tbody>
@@ -22,8 +22,8 @@ export default function SeoCroDoelstellingen() {
     <div style={{ fontFamily: "system-ui, -apple-system, sans-serif", background: "#f9fafb", minHeight: "100vh" }}>
       <PresentationNav channel="SEO / CRO" color={COLOR} basePath="/seo-cro" />
 
-      <div style={{ background: "linear-gradient(135deg, #14532d 0%, #16a34a 100%)", color: "white", padding: "48px 24px" }}>
-        <div style={{ maxWidth: 960, margin: "0 auto" }}>
+      <div className="report-cover" style={{ background: "linear-gradient(135deg, #14532d 0%, #16a34a 100%)", color: "white" }}>
+        <div className="report-cover-inner">
           <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", opacity: 0.7, marginBottom: 8 }}>SEO & CRO · Rietveld Licht</div>
           <h1 style={{ fontSize: 36, fontWeight: 700, lineHeight: 1.15, marginBottom: 12 }}>Doelstellingen & KPI&apos;s</h1>
           <div style={{ display: "flex", gap: 32, marginTop: 24 }}>
@@ -34,7 +34,7 @@ export default function SeoCroDoelstellingen() {
         </div>
       </div>
 
-      <div style={{ maxWidth: 960, margin: "0 auto", padding: "40px 24px" }}>
+      <div className="report-container--960">
 
         <h2 style={{ fontSize: 18, fontWeight: 700, color: "#111827", borderBottom: `2px solid ${COLOR}`, paddingBottom: 10, marginBottom: 20 }}>SEO - doelstellingen & verwacht effect</h2>
         <Table
@@ -68,7 +68,7 @@ export default function SeoCroDoelstellingen() {
         />
 
         <h2 style={{ fontSize: 18, fontWeight: 700, color: "#111827", borderBottom: `2px solid ${COLOR}`, paddingBottom: 10, marginBottom: 20, marginTop: 40 }}>Totaaldoelstellingen na implementatie</h2>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 12, marginBottom: 24 }}>
+        <div className="report-grid-2" style={{ marginBottom: 24 }}>
           {[
             { l: "Organisch verkeer (SEO fase 1+2)", n: "Basis", g: "+5–10% na 3–6 mnd" },
             { l: "CTR-verbetering (structured data)", n: "Basis", g: "+3–7% relatief" },

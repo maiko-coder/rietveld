@@ -1,5 +1,5 @@
-﻿import PresentationNav from "../../_components/PresentationNav";
-import { PageHero, SectionTitle, GoalCard, Callout, DarkTable, CYAN, RED, YELLOW, DARK } from "../../_components/ReportComponents";
+import PresentationNav from "../../_components/PresentationNav";
+import { PageHero, SectionTitle, GoalCard, Callout, DarkTable, ReportContainer, CYAN, RED, YELLOW, DARK } from "../../_components/ReportComponents";
 
 const PINTEREST_RED = "#e60023";
 
@@ -20,11 +20,11 @@ export default function PinterestAdsDoelstellingen() {
         ]}
       />
 
-      <div style={{ maxWidth: 1040, margin: "0 auto", padding: "8px 28px 60px" }}>
+      <ReportContainer>
 
         {/* Hero callout */}
         <SectionTitle>Hoofddoelstelling</SectionTitle>
-        <div style={{
+        <div className="report-feature-card" style={{
           background: DARK,
           borderRadius: 14,
           padding: "28px 32px",
@@ -73,7 +73,7 @@ export default function PinterestAdsDoelstellingen() {
 
         {/* Uitrol fases */}
         <SectionTitle>Plan van aanpak - 2 fases</SectionTitle>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, marginBottom: 8 }}>
+        <div className="report-grid-2" style={{ marginBottom: 8 }}>
           {[
             {
               fase: "Fase 1",
@@ -119,7 +119,7 @@ export default function PinterestAdsDoelstellingen() {
 
         {/* KPI doelen */}
         <SectionTitle accent={YELLOW}>Doelen over 6 maanden</SectionTitle>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14, marginBottom: 16 }}>
+        <div className="report-grid-3" style={{ marginBottom: 16 }}>
           <GoalCard label="Account ROAS (blended)" now="15,65× (test)" goal="9–11×" />
           <GoalCard label="Maandbudget" now="€3.000 (test)" goal="€5.000/mnd" />
           <GoalCard label="Maandomzet (streef)" now="€46.944 (test)" goal="€45–55k/mnd" />
@@ -129,7 +129,7 @@ export default function PinterestAdsDoelstellingen() {
           De streef-ROAS van 9–11× ligt bewust lager dan de testcampagne (15,65×): bij een groter en gestructureerd budget met prospecting, overweging én conversie is een blended ROAS van 9–11× realistisch en boven de e-commerce benchmark van 8–10×. Budget wordt opgeschaald zodra ROAS en omzetdata dat onderbouwen.
         </Callout>
 
-      </div>
+      </ReportContainer>
     </div>
   );
 }

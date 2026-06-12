@@ -5,7 +5,7 @@ const COLOR_LIGHT = "#EBF3FF";
 
 function Table({ headers, rows }: { headers: string[]; rows: (string | React.ReactNode)[][] }) {
   return (
-    <div style={{ background: "white", border: "1px solid #e5e7eb", borderRadius: 10, overflow: "hidden", marginBottom: 20 }}>
+    <div className="report-table-wrap" style={{ background: "white", border: "1px solid #e5e7eb", borderRadius: 10, marginBottom: 20 }}>
       <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
         <thead><tr style={{ background: "#f9fafb" }}>{headers.map((h, i) => <th key={i} style={{ padding: "10px 14px", textAlign: "left", fontWeight: 600, color: "#374151", fontSize: 12, borderBottom: "1px solid #e5e7eb" }}>{h}</th>)}</tr></thead>
         <tbody>{rows.map((row, i) => <tr key={i} style={{ background: i % 2 === 0 ? "white" : "#f9fafb" }}>{row.map((cell, j) => <td key={j} style={{ padding: "10px 14px", color: "#374151", borderBottom: i < rows.length - 1 ? "1px solid #f3f4f6" : "none" }}>{cell}</td>)}</tr>)}</tbody>
@@ -22,8 +22,8 @@ export default function MetaAdsDoelstellingen() {
     <div style={{ fontFamily: "system-ui, -apple-system, sans-serif", background: "#f9fafb", minHeight: "100vh" }}>
       <PresentationNav channel="Meta Ads" color={COLOR} basePath="/meta-ads" />
 
-      <div style={{ background: "linear-gradient(135deg, #1558b0 0%, #1877f2 100%)", color: "white", padding: "48px 24px" }}>
-        <div style={{ maxWidth: 960, margin: "0 auto" }}>
+      <div className="report-cover" style={{ background: "linear-gradient(135deg, #1558b0 0%, #1877f2 100%)", color: "white" }}>
+        <div className="report-cover-inner">
           <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", opacity: 0.7, marginBottom: 8 }}>Meta Ads · Rietveld Licht</div>
           <h1 style={{ fontSize: 36, fontWeight: 700, lineHeight: 1.15, marginBottom: 12 }}>Doelstellingen & KPI&apos;s</h1>
           <div style={{ display: "flex", gap: 32, marginTop: 24 }}>
@@ -34,7 +34,7 @@ export default function MetaAdsDoelstellingen() {
         </div>
       </div>
 
-      <div style={{ maxWidth: 960, margin: "0 auto", padding: "40px 24px" }}>
+      <div className="report-container--960">
 
         <h2 style={{ fontSize: 18, fontWeight: 700, color: "#111827", borderBottom: `2px solid ${COLOR}`, paddingBottom: 10, marginBottom: 20 }}>ROAS-doelstellingen per markt</h2>
         <Table

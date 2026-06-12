@@ -1,5 +1,5 @@
 ﻿import PresentationNav from "../../_components/PresentationNav";
-import { PageHero, SectionTitle, SimpleStatCard, Callout, DarkTable, PriorityCard, CYAN, RED, YELLOW, DARK } from "../../_components/ReportComponents";
+import { PageHero, SectionTitle, SimpleStatCard, Callout, DarkTable, PriorityCard, ReportContainer, Grid4, Grid3, CYAN, RED, YELLOW, DARK } from "../../_components/ReportComponents";
 
 const PINTEREST_RED = "#e60023";
 
@@ -20,20 +20,20 @@ export default function PinterestAdsSamenvatting() {
         ]}
       />
 
-      <div style={{ maxWidth: 1040, margin: "0 auto", padding: "8px 28px 60px" }}>
+      <ReportContainer>
 
         <SectionTitle>Accountprestaties - 4 mrt t/m 1 jun 2026</SectionTitle>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 14, marginBottom: 8 }}>
+        <Grid4 style={{ marginBottom: 8 }}>
           <SimpleStatCard label="Totaal spend" value="€3.000" sub="Testperiode" />
           <SimpleStatCard label="Omzet (checkout)" value="€46.944" sub="Testperiode" />
           <SimpleStatCard label="ROAS" value="15,65×" sub="Performance+" />
           <SimpleStatCard label="CTR" value="0,63%" sub="557.476 impressies" />
-        </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14, marginBottom: 24 }}>
+        </Grid4>
+        <Grid3 style={{ marginBottom: 24 }}>
           <SimpleStatCard label="Checkouts" value="172" sub="Kopers uit test" />
           <SimpleStatCard label="Clicks (Pin)" value="3.506" sub="Outbound: 3.620" />
           <SimpleStatCard label="Impressies" value="557.476" sub="Kernperiode" />
-        </div>
+        </Grid3>
 
         <Callout>
           Met €3.000 testbudget haalden we €47k omzet: een ROAS van 15,65×. Retargeting deed het nog beter dan prospecting (18,62× om 13,76×). En met 172 kopers uit de test kunnen we direct door met retargeting en lookalikes.
@@ -81,7 +81,7 @@ export default function PinterestAdsSamenvatting() {
         </div>
 
         <SectionTitle accent={YELLOW}>Voorgesteld maandbudget - 3-laags structuur</SectionTitle>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14 }}>
+        <Grid3>
           {[
             { laag: "Overweging", budget: "€1.000/mnd", pct: "20%", doel: "Bereik & verkeer via sfeerbeelden", color: CYAN },
             { laag: "Conversie", budget: "€1.500/mnd", pct: "30%", doel: "Retargeting sitebezoek & winkelmand", color: YELLOW },
@@ -93,12 +93,12 @@ export default function PinterestAdsSamenvatting() {
               <div style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", lineHeight: 1.6 }}>{l.doel}</div>
             </div>
           ))}
-        </div>
+        </Grid3>
         <div style={{ textAlign: "center" as const, marginTop: 12, fontSize: 13, color: "#9ca3af" }}>
           Totaal: <strong style={{ color: DARK }}>€5.000/maand</strong> - budget verder omhoog als ROAS en omzet dat toelaten
         </div>
 
-      </div>
+      </ReportContainer>
     </div>
   );
 }

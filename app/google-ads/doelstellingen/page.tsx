@@ -1,4 +1,4 @@
-﻿import PresentationNav from "../../_components/PresentationNav";
+import PresentationNav from "../../_components/PresentationNav";
 
 const COLOR = "#2563EB";
 const COLOR_LIGHT = "#EFF6FF";
@@ -45,7 +45,7 @@ function Callout({ title, items, variant = "blue" }: { title: string; items: str
 
 function Table({ headers, rows }: { headers: string[]; rows: (string | React.ReactNode)[][] }) {
   return (
-    <div style={{ background: "white", border: "1px solid #e5e7eb", borderRadius: 10, overflow: "hidden", marginBottom: 16 }}>
+    <div className="report-table-wrap" style={{ background: "white", border: "1px solid #e5e7eb", borderRadius: 10, marginBottom: 16 }}>
       <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
         <thead>
           <tr style={{ background: "#f9fafb" }}>
@@ -80,12 +80,12 @@ export default function GoogleAdsDoelstellingen() {
       <PresentationNav channel="Google Ads" color={COLOR} basePath="/google-ads" />
 
       {/* Hero */}
-      <div style={{ background: `linear-gradient(135deg, #1e40af 0%, #2563eb 100%)`, color: "white", padding: "48px 24px" }}>
-        <div style={{ maxWidth: 960, margin: "0 auto" }}>
+      <div className="report-cover" style={{ background: `linear-gradient(135deg, #1e40af 0%, #2563eb 100%)`, color: "white" }}>
+        <div className="report-cover-inner">
           <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", opacity: 0.7, marginBottom: 8 }}>Google Ads · Rietveld Licht</div>
           <h1 style={{ fontSize: 36, fontWeight: 700, lineHeight: 1.15, marginBottom: 12 }}>Doelstellingen & KPI&apos;s</h1>
           <p style={{ fontSize: 15, opacity: 0.75, maxWidth: 560 }}>Accountdoelstellingen voor de komende 12 maanden op basis van de Rietveld-analyse</p>
-          <div style={{ marginTop: 32, display: "flex", gap: 32, flexWrap: "wrap" }}>
+          <div className="report-cover-stats report-cover-stats--compact">
             {[
               { label: "Huidige account ROAS", value: "5,87" },
               { label: "Doel jaar 1", value: "6,3 – 6,8" },
@@ -101,14 +101,14 @@ export default function GoogleAdsDoelstellingen() {
         </div>
       </div>
 
-      <div style={{ maxWidth: 960, margin: "0 auto", padding: "40px 24px" }}>
+      <div className="report-container--960">
 
         {/* Accountoverzicht */}
         <SectionTitle>Accountprestaties - groei & uitdaging</SectionTitle>
         <p style={{ fontSize: 14, color: "#4b5563", lineHeight: 1.7, marginBottom: 20 }}>
           Het account presteert goed en is het afgelopen jaar fors gegroeid: spend steeg van €1,3M naar €2,1M (+67%) en de omzet van €8,2M naar €12,5M (+52%). De keerzijde van die snelle groei is dat de ROAS licht daalde van 6,43 naar 5,87 en de kosten per bestelling stegen van €26 naar €32. Dat is een normaal patroon bij opschalen, maar het geeft aan dat er ruimte is om de structuur scherper te maken.
         </p>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12, marginBottom: 32 }}>
+        <div className="report-grid-4" style={{ marginBottom: 32 }}>
           <KpiCard label="Spend" now="€1,3M" goal="€2,1M" accent />
           <KpiCard label="Omzet" now="€8,2M" goal="€12,5M" accent />
           <KpiCard label="ROAS" now="6,43" goal="5,87" />
@@ -192,7 +192,7 @@ export default function GoogleAdsDoelstellingen() {
 
         {/* Verwachting */}
         <SectionTitle>Verwachting in 6 maanden</SectionTitle>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12, marginBottom: 24 }}>
+        <div className="report-grid-3" style={{ marginBottom: 24 }}>
           <KpiCard label="Account ROAS" now="5,87" goal="6,3 – 6,5" accent />
           <KpiCard label="CPA" now="€31,85" goal="€27 – 29" accent />
           <KpiCard label="Omzetgroei (zelfde spend)" now="Basis" goal="+8 – 12%" accent />

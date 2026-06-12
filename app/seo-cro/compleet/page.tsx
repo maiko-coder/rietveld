@@ -1,4 +1,4 @@
-﻿import PresentationNav from "../../_components/PresentationNav";
+import PresentationNav from "../../_components/PresentationNav";
 
 const COLOR = "#16A34A";
 const COLOR_LIGHT = "#F0FDF4";
@@ -14,7 +14,7 @@ function P({ children }: { children: React.ReactNode }) {
 }
 function Table({ headers, rows }: { headers: string[]; rows: (string | React.ReactNode)[][] }) {
   return (
-    <div style={{ background: "white", border: "1px solid #e5e7eb", borderRadius: 10, overflow: "hidden", marginBottom: 20 }}>
+    <div className="report-table-wrap" style={{ background: "white", border: "1px solid #e5e7eb", borderRadius: 10, marginBottom: 20 }}>
       <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
         <thead><tr style={{ background: "#f9fafb" }}>{headers.map((h, i) => <th key={i} style={{ padding: "10px 14px", textAlign: "left", fontWeight: 600, color: "#374151", fontSize: 12, borderBottom: "1px solid #e5e7eb" }}>{h}</th>)}</tr></thead>
         <tbody>{rows.map((row, i) => <tr key={i} style={{ background: i % 2 === 0 ? "white" : "#f9fafb" }}>{row.map((cell, j) => <td key={j} style={{ padding: "10px 14px", color: "#374151", borderBottom: i < rows.length - 1 ? "1px solid #f3f4f6" : "none" }}>{cell}</td>)}</tr>)}</tbody>
@@ -41,12 +41,12 @@ export default function SeoCroCompleet() {
     <div style={{ fontFamily: "system-ui, -apple-system, sans-serif", background: "#f9fafb", minHeight: "100vh" }}>
       <PresentationNav channel="SEO / CRO" color={COLOR} basePath="/seo-cro" />
 
-      <div style={{ background: "linear-gradient(135deg, #14532d 0%, #16a34a 100%)", color: "white", padding: "64px 24px 48px" }}>
-        <div style={{ maxWidth: 960, margin: "0 auto" }}>
+      <div className="report-cover" style={{ background: "linear-gradient(135deg, #14532d 0%, #16a34a 100%)", color: "white" }}>
+        <div className="report-cover-inner">
           <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", opacity: 0.6, marginBottom: 12 }}>SEO & CRO Analyse · Rietveld Licht & Wonen · Mei 2026</div>
           <h1 style={{ fontSize: 42, fontWeight: 700, lineHeight: 1.1, marginBottom: 16 }}>SEO & CRO<br />Complete Presentatie</h1>
           <p style={{ fontSize: 16, opacity: 0.75, maxWidth: 520, lineHeight: 1.6, marginBottom: 48 }}>Zoekmachineoptimalisatie en conversie-optimalisatie voor rietveldlicht.nl</p>
-          <div style={{ display: "flex", gap: 40, flexWrap: "wrap", paddingTop: 32, borderTop: "1px solid rgba(255,255,255,0.15)" }}>
+          <div className="report-cover-stats">
             {[{ l: "Health Score", v: "92/100" }, { l: "Huidige conv.rate", v: "2,41%" }, { l: "Mobiel conv.rate", v: "2,26%" }, { l: "Desktop conv.rate", v: "3,12%" }].map((m) => (
               <div key={m.l}><div style={{ fontSize: 11, opacity: 0.55, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 2 }}>{m.l}</div><div style={{ fontSize: 24, fontWeight: 700 }}>{m.v}</div></div>
             ))}
@@ -54,7 +54,7 @@ export default function SeoCroCompleet() {
         </div>
       </div>
 
-      <div style={{ maxWidth: 960, margin: "0 auto", padding: "40px 24px" }}>
+      <div className="report-container--960">
 
         {/* SEO Deel */}
         <div style={{ background: COLOR_LIGHT, borderRadius: 10, padding: "16px 20px", marginBottom: 32, borderLeft: `4px solid ${COLOR}` }}>
@@ -132,7 +132,7 @@ export default function SeoCroCompleet() {
         />
 
         <H1>7. Totaaloverzicht & verwachting</H1>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12, marginBottom: 32 }}>
+        <div className="report-grid-3" style={{ marginBottom: 32 }}>
           {[
             { l: "SEO verkeerseffect fase 1+2", n: "Basis", g: "+5–10% organisch" },
             { l: "CRO conversieratio doel", n: "2,41%", g: "2,6–2,8%" },

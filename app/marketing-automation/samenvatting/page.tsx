@@ -1,5 +1,5 @@
 ﻿import PresentationNav from "../../_components/PresentationNav";
-import { PageHero, SectionTitle, Callout, GoalCard, CYAN, RED, YELLOW, DARK } from "../../_components/ReportComponents";
+import { PageHero, SectionTitle, Callout, GoalCard, ReportContainer, Grid2, Grid4, CYAN, RED, YELLOW, DARK } from "../../_components/ReportComponents";
 
 export default function MarketingAutomationSamenvatting() {
   return (
@@ -18,10 +18,10 @@ export default function MarketingAutomationSamenvatting() {
         ]}
       />
 
-      <div style={{ maxWidth: 1040, margin: "0 auto", padding: "8px 28px 60px" }}>
+      <ReportContainer>
 
         <SectionTitle>Vier kernflows</SectionTitle>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 14, marginBottom: 8 }}>
+        <Grid2 style={{ marginBottom: 8 }}>
           {[
             { num: "01", title: "Welkomst & Onboarding", priority: "Start", pColor: RED, desc: "3 e-mails over 7 dagen. Direct → Dag 3 (inspiratie) → Dag 7 (aanbod met vervaldatum).", items: ["Vertrouwen opbouwen vóór producten tonen", "Klikgedrag meten om klantinteresse te bepalen", "Eerste aankoop stimuleren via urgentie-aanbod"] },
             { num: "02", title: "Verlaten Winkelwagen", priority: "Start", pColor: RED, desc: "3 e-mails over 48 uur. 60min → 24u → 48u.", items: ["Herinnering zonder korting (60 min)", "Hulp aanbieden + alternatieven (24u)", "Gratis bezorging of €10 korting (48u - laatste kans)"] },
@@ -42,7 +42,7 @@ export default function MarketingAutomationSamenvatting() {
               </ul>
             </div>
           ))}
-        </div>
+        </Grid2>
 
         <SectionTitle accent={YELLOW}>3 strategische principes</SectionTitle>
         <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 8 }}>
@@ -62,7 +62,7 @@ export default function MarketingAutomationSamenvatting() {
         </div>
 
         <SectionTitle>KPI-targets (12 maanden)</SectionTitle>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 14, marginBottom: 8 }}>
+        <Grid4 style={{ marginBottom: 8 }}>
           {[
             { l: "Openrate nieuwsbrief", v: "32%" },
             { l: "Click-through rate", v: "5%" },
@@ -71,7 +71,7 @@ export default function MarketingAutomationSamenvatting() {
           ].map((k) => (
             <GoalCard key={k.l} label={k.l} now="-" goal={k.v} />
           ))}
-        </div>
+        </Grid4>
 
         <SectionTitle accent={RED}>Eerste 60 dagen - begin hier</SectionTitle>
         <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
@@ -89,7 +89,7 @@ export default function MarketingAutomationSamenvatting() {
           ))}
         </div>
 
-      </div>
+      </ReportContainer>
     </div>
   );
 }

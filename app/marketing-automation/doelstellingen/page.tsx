@@ -1,11 +1,11 @@
-﻿import PresentationNav from "../../_components/PresentationNav";
+import PresentationNav from "../../_components/PresentationNav";
 
 const COLOR = "#0891B2";
 const COLOR_LIGHT = "#ECFEFF";
 
 function Table({ headers, rows }: { headers: string[]; rows: (string | React.ReactNode)[][] }) {
   return (
-    <div style={{ background: "white", border: "1px solid #e5e7eb", borderRadius: 10, overflow: "hidden", marginBottom: 20 }}>
+    <div className="report-table-wrap" style={{ background: "white", border: "1px solid #e5e7eb", borderRadius: 10, marginBottom: 20 }}>
       <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
         <thead><tr style={{ background: "#f9fafb" }}>{headers.map((h, i) => <th key={i} style={{ padding: "10px 14px", textAlign: "left", fontWeight: 600, color: "#374151", fontSize: 12, borderBottom: "1px solid #e5e7eb" }}>{h}</th>)}</tr></thead>
         <tbody>{rows.map((row, i) => <tr key={i} style={{ background: i % 2 === 0 ? "white" : "#f9fafb" }}>{row.map((cell, j) => <td key={j} style={{ padding: "10px 14px", color: "#374151", borderBottom: i < rows.length - 1 ? "1px solid #f3f4f6" : "none" }}>{cell}</td>)}</tr>)}</tbody>
@@ -19,8 +19,8 @@ export default function MarketingAutomationDoelstellingen() {
     <div style={{ fontFamily: "system-ui, -apple-system, sans-serif", background: "#f9fafb", minHeight: "100vh" }}>
       <PresentationNav channel="Marketing Automation" color={COLOR} basePath="/marketing-automation" />
 
-      <div style={{ background: "linear-gradient(135deg, #164e63 0%, #0891b2 100%)", color: "white", padding: "48px 24px" }}>
-        <div style={{ maxWidth: 960, margin: "0 auto" }}>
+      <div className="report-cover" style={{ background: "linear-gradient(135deg, #164e63 0%, #0891b2 100%)", color: "white" }}>
+        <div className="report-cover-inner">
           <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", opacity: 0.7, marginBottom: 8 }}>Marketing Automation · Rietveld Verlichting</div>
           <h1 style={{ fontSize: 36, fontWeight: 700, lineHeight: 1.15, marginBottom: 12 }}>Doelstellingen & KPI&apos;s</h1>
           <div style={{ display: "flex", gap: 32, marginTop: 24 }}>
@@ -31,7 +31,7 @@ export default function MarketingAutomationDoelstellingen() {
         </div>
       </div>
 
-      <div style={{ maxWidth: 960, margin: "0 auto", padding: "40px 24px" }}>
+      <div className="report-container--960">
 
         <h2 style={{ fontSize: 18, fontWeight: 700, color: "#111827", borderBottom: `2px solid ${COLOR}`, paddingBottom: 10, marginBottom: 20 }}>E-mail performance KPI&apos;s</h2>
         <Table
@@ -62,7 +62,7 @@ export default function MarketingAutomationDoelstellingen() {
         />
 
         <h2 style={{ fontSize: 18, fontWeight: 700, color: "#111827", borderBottom: `2px solid ${COLOR}`, paddingBottom: 10, marginBottom: 20, marginTop: 40 }}>Flow-specifieke doelstellingen</h2>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 12, marginBottom: 32 }}>
+        <div className="report-grid-2" style={{ marginBottom: 32 }}>
           {[
             { title: "Flow 1 - Welkomst & Onboarding", kpis: [{ l: "Openrate", v: ">55%" }, { l: "Klik op Dag-7 aanbod", v: ">12%" }, { l: "Conversie binnen 14 dagen", v: ">8%" }] },
             { title: "Flow 2 - Verlaten Winkelwagen", kpis: [{ l: "Openrate e-mail 1", v: ">60%" }, { l: "Conversie na 3 e-mails", v: ">11%" }, { l: "Recovery per periode", v: "Meten" }] },

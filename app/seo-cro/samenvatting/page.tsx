@@ -1,5 +1,5 @@
 ﻿import PresentationNav from "../../_components/PresentationNav";
-import { PageHero, SectionTitle, SimpleStatCard, Callout, DarkTable, PriorityCard, GoalCard, CYAN, RED, YELLOW } from "../../_components/ReportComponents";
+import { PageHero, SectionTitle, SimpleStatCard, Callout, DarkTable, PriorityCard, GoalCard, ReportContainer, Grid4, Grid3, CYAN, RED, YELLOW } from "../../_components/ReportComponents";
 
 export default function SeoCroSamenvatting() {
   return (
@@ -18,15 +18,15 @@ export default function SeoCroSamenvatting() {
         ]}
       />
 
-      <div style={{ maxWidth: 1040, margin: "0 auto", padding: "8px 28px 60px" }}>
+      <ReportContainer>
 
         <SectionTitle>Uitgangspositie</SectionTitle>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 14, marginBottom: 24 }}>
+        <Grid4 style={{ marginBottom: 24 }}>
           <SimpleStatCard label="Health Score" value="92/100" sub="Technisch sterk" />
           <SimpleStatCard label="Huidige conv.rate" value="2,41%" sub="Sitebreed" />
           <SimpleStatCard label="Mobiel conv.rate" value="2,26%" sub="69% van verkeer" />
           <SimpleStatCard label="Desktop conv.rate" value="3,12%" sub="31% van verkeer" />
-        </div>
+        </Grid4>
 
         <Callout>
           De techniek staat goed, daar hoeven we weinig aan te doen. De winst zit in structured data en content. En elke procent extra conversie maakt álle betaalde kanalen automatisch winstgevender. Daarom pakken we CRO direct mee.
@@ -54,13 +54,13 @@ export default function SeoCroSamenvatting() {
         </div>
 
         <SectionTitle accent={YELLOW}>Verwachte resultaten (3–6 maanden)</SectionTitle>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14 }}>
+        <Grid3>
           <GoalCard label="Organisch verkeer" now="basis" goal="+5–10%" />
           <GoalCard label="Conversieratio doel" now="2,41%" goal="2,6–2,8%" />
           <GoalCard label="ROAS-effect (indirect)" now="-" goal="+0,1–0,2×" />
-        </div>
+        </Grid3>
 
-      </div>
+      </ReportContainer>
     </div>
   );
 }

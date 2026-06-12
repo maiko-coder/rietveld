@@ -1,4 +1,4 @@
-﻿import PresentationNav from "../../_components/PresentationNav";
+import PresentationNav from "../../_components/PresentationNav";
 
 const COLOR = "#0891B2";
 const COLOR_LIGHT = "#ECFEFF";
@@ -14,7 +14,7 @@ function P({ children }: { children: React.ReactNode }) {
 }
 function Table({ headers, rows }: { headers: string[]; rows: (string | React.ReactNode)[][] }) {
   return (
-    <div style={{ background: "white", border: "1px solid #e5e7eb", borderRadius: 10, overflow: "hidden", marginBottom: 20 }}>
+    <div className="report-table-wrap" style={{ background: "white", border: "1px solid #e5e7eb", borderRadius: 10, marginBottom: 20 }}>
       <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
         <thead><tr style={{ background: "#f9fafb" }}>{headers.map((h, i) => <th key={i} style={{ padding: "10px 14px", textAlign: "left", fontWeight: 600, color: "#374151", fontSize: 12, borderBottom: "1px solid #e5e7eb" }}>{h}</th>)}</tr></thead>
         <tbody>{rows.map((row, i) => <tr key={i} style={{ background: i % 2 === 0 ? "white" : "#f9fafb" }}>{row.map((cell, j) => <td key={j} style={{ padding: "10px 14px", color: "#374151", borderBottom: i < rows.length - 1 ? "1px solid #f3f4f6" : "none" }}>{cell}</td>)}</tr>)}</tbody>
@@ -35,7 +35,7 @@ function FlowCard({ num, title, priority, steps }: { num: string; title: string;
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
         {steps.map((step, i) => (
-          <div key={i} style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, background: "#f9fafb", borderRadius: 8, padding: "10px 14px" }}>
+          <div key={i} className="report-grid-2" style={{ background: "#f9fafb", borderRadius: 8, padding: "10px 14px" }}>
             <div>
               <div style={{ fontSize: 10, color: "#9ca3af", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 2 }}>Trigger & timing</div>
               <div style={{ fontSize: 12, color: "#374151" }}>{step.trigger}</div>
@@ -56,14 +56,14 @@ export default function MarketingAutomationCompleet() {
     <div style={{ fontFamily: "system-ui, -apple-system, sans-serif", background: "#f9fafb", minHeight: "100vh" }}>
       <PresentationNav channel="Marketing Automation" color={COLOR} basePath="/marketing-automation" />
 
-      <div style={{ background: "linear-gradient(135deg, #164e63 0%, #0891b2 100%)", color: "white", padding: "64px 24px 48px" }}>
-        <div style={{ maxWidth: 960, margin: "0 auto" }}>
+      <div className="report-cover" style={{ background: "linear-gradient(135deg, #164e63 0%, #0891b2 100%)", color: "white" }}>
+        <div className="report-cover-inner">
           <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", opacity: 0.6, marginBottom: 12 }}>E-mail & Marketing Automation · Rietveld Verlichting</div>
           <h1 style={{ fontSize: 42, fontWeight: 700, lineHeight: 1.1, marginBottom: 16 }}>Marketing Automation<br />Complete Strategie</h1>
           <p style={{ fontSize: 16, opacity: 0.75, maxWidth: 520, lineHeight: 1.6, marginBottom: 40 }}>
             Strategie voor e-mail marketing en marketing automation - van welkomstflow tot win-back
           </p>
-          <div style={{ display: "flex", gap: 32, paddingTop: 32, borderTop: "1px solid rgba(255,255,255,0.15)" }}>
+          <div className="report-cover-stats">
             {[{ l: "Kernflows", v: "4" }, { l: "Aandeel e-mail doel", v: ">18%" }, { l: "Winkelwagen conv. doel", v: ">8%" }, { l: "Automation openrate doel", v: ">42%" }].map((m) => (
               <div key={m.l}><div style={{ fontSize: 11, opacity: 0.55, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 2 }}>{m.l}</div><div style={{ fontSize: 24, fontWeight: 700 }}>{m.v}</div></div>
             ))}
@@ -71,11 +71,11 @@ export default function MarketingAutomationCompleet() {
         </div>
       </div>
 
-      <div style={{ maxWidth: 960, margin: "0 auto", padding: "40px 24px" }}>
+      <div className="report-container--960">
 
         <H1>1. Waarom e-mail</H1>
         <P>E-mail is het meest directe, meetbare en schaalbare kanaal dat Rietveld Verlichting volledig in eigen hand heeft. Waar social media-bereik afhankelijk is van algoritmes en betaald adverteren verloopt via externe platformen, is e-mail een directe communicatielijn met de klant: geen tussenpartij, geen veiling, geen organisch bereikprobleem.</P>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12, marginBottom: 24 }}>
+        <div className="report-grid-3" style={{ marginBottom: 24 }}>
           {[
             { l: "Activering", d: "E-mail zet klanten in beweging - naar de webshop, winkel of adviesgesprek" },
             { l: "Verbinding", d: "Houdt het gesprek levend tussen aankoopmomenten en verbindt alle kanalen aan elkaar" },
@@ -161,7 +161,7 @@ export default function MarketingAutomationCompleet() {
         />
 
         <H1>5. Micro-automations</H1>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 10, marginBottom: 24 }}>
+        <div className="report-grid-2" style={{ marginBottom: 24 }}>
           {[
             { t: "Verjaardag", d: "Één e-mail met persoonlijk voordeel op de dag zelf of een week van tevoren" },
             { t: "Prijsdaling", d: "Klant bekijkt product, product daalt in prijs → directe notificatie" },

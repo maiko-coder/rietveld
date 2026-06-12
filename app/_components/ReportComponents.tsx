@@ -3,6 +3,22 @@ export const YELLOW = "#fecb09";
 export const DARK = "#262626";
 export const RED = "#ed1c23";
 
+export function ReportContainer({ children, style }: { children: React.ReactNode; style?: React.CSSProperties }) {
+  return <div className="report-container" style={style}>{children}</div>;
+}
+
+export function Grid4({ children, style }: { children: React.ReactNode; style?: React.CSSProperties }) {
+  return <div className="report-grid-4" style={style}>{children}</div>;
+}
+
+export function Grid3({ children, style }: { children: React.ReactNode; style?: React.CSSProperties }) {
+  return <div className="report-grid-3" style={style}>{children}</div>;
+}
+
+export function Grid2({ children, style }: { children: React.ReactNode; style?: React.CSSProperties }) {
+  return <div className="report-grid-2" style={style}>{children}</div>;
+}
+
 export function StatCard({ label, value, delta, positive }: { label: string; value: string; delta: string; positive: boolean }) {
   return (
     <div style={{ background: "white", borderRadius: 12, padding: "20px 22px", borderTop: `3px solid ${CYAN}`, boxShadow: "0 1px 4px rgba(0,0,0,0.06)" }}>
@@ -66,7 +82,7 @@ export function GoalCard({ label, now, goal }: { label: string; now: string; goa
 
 export function DarkTable({ headers, rows }: { headers: string[]; rows: (string | React.ReactNode)[][] }) {
   return (
-    <div style={{ background: "white", borderRadius: 12, overflow: "auto", boxShadow: "0 1px 4px rgba(0,0,0,0.06)", marginBottom: 8 }}>
+    <div className="report-table-wrap" style={{ background: "white", borderRadius: 12, boxShadow: "0 1px 4px rgba(0,0,0,0.06)", marginBottom: 8 }}>
       <table style={{ width: "100%", borderCollapse: "collapse" as const, fontSize: 13 }}>
         <thead>
           <tr style={{ background: DARK }}>
@@ -97,15 +113,15 @@ export function PageHero({ channel, title, subtitle, stats }: {
 }) {
   const accentColor = { cyan: CYAN, yellow: YELLOW, white: "rgba(255,255,255,0.4)" };
   return (
-    <div style={{ background: DARK, color: "white", padding: "52px 32px 44px", position: "relative", overflow: "hidden" }}>
+    <div className="page-hero">
       <div style={{ position: "absolute", right: -80, top: -80, width: 360, height: 360, borderRadius: "50%", background: `radial-gradient(circle, ${CYAN}18 0%, transparent 70%)`, pointerEvents: "none" }} />
-      <div style={{ maxWidth: 1040, margin: "0 auto", position: "relative" }}>
+      <div className="page-hero-inner">
         <div style={{ display: "inline-flex", alignItems: "center", gap: 6, background: `${CYAN}20`, border: `1px solid ${CYAN}40`, borderRadius: 20, padding: "4px 12px", fontSize: 11, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase" as const, color: CYAN, marginBottom: 16 }}>
           {channel} · Rietveld Licht &amp; Wonen
         </div>
         <h1 style={{ fontSize: 40, fontWeight: 800, lineHeight: 1.1, marginBottom: 10 }}>{title}</h1>
         <p style={{ fontSize: 15, color: "rgba(255,255,255,0.5)", marginBottom: 36 }}>{subtitle}</p>
-        <div style={{ display: "flex", gap: 36, flexWrap: "wrap" as const }}>
+        <div className="page-hero-stats">
           {stats.map((s) => (
             <div key={s.label}>
               <div style={{ fontSize: 10.5, color: "rgba(255,255,255,0.35)", textTransform: "uppercase" as const, letterSpacing: "0.08em", marginBottom: 5 }}>{s.label}</div>

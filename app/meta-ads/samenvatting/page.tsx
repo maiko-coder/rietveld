@@ -1,5 +1,5 @@
 ﻿import PresentationNav from "../../_components/PresentationNav";
-import { PageHero, SectionTitle, SimpleStatCard, Callout, DarkTable, PriorityCard, GoalCard, CYAN, RED, YELLOW, DARK } from "../../_components/ReportComponents";
+import { PageHero, SectionTitle, SimpleStatCard, Callout, DarkTable, PriorityCard, GoalCard, ReportContainer, Grid4, Grid3, CYAN, RED, YELLOW, DARK } from "../../_components/ReportComponents";
 
 export default function MetaAdsSamenvatting() {
   return (
@@ -18,15 +18,15 @@ export default function MetaAdsSamenvatting() {
         ]}
       />
 
-      <div style={{ maxWidth: 1040, margin: "0 auto", padding: "8px 28px 60px" }}>
+      <ReportContainer>
 
         <SectionTitle>Accountprestaties (sept 2023 – mei 2026)</SectionTitle>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 14, marginBottom: 24 }}>
+        <Grid4 style={{ marginBottom: 24 }}>
           <SimpleStatCard label="Omzet ROAS" value="15,74×" sub="Totale periode" />
           <SimpleStatCard label="Totaal spend" value="€115k" sub="Totale periode" />
           <SimpleStatCard label="POAS" value="9,46×" sub="aug 2024 – mei 2026" />
           <SimpleStatCard label="CPA" value="€17,78" sub="kosten per aankoop" />
-        </div>
+        </Grid4>
 
         <Callout>
           Het account zit ruim boven het doel van 6× ROAS voor Nederland. En we sturen op POAS: werkelijke winst per campagne, niet alleen omzet. De meeste concurrenten kunnen dat niet.
@@ -52,13 +52,13 @@ export default function MetaAdsSamenvatting() {
         </div>
 
         <SectionTitle accent={YELLOW}>Groeidoelstellingen</SectionTitle>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14 }}>
+        <Grid3>
           <GoalCard label="Blended ROAS NL" now="16,36×" goal="≥20× (fase 3)" />
           <GoalCard label="POAS" now="9,46×" goal="≥13× (fase 3)" />
           <GoalCard label="CPA webshop" now="€17,18" goal="≤€15 (fase 3)" />
-        </div>
+        </Grid3>
 
-      </div>
+      </ReportContainer>
     </div>
   );
 }

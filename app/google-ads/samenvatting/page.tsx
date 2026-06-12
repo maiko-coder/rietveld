@@ -1,5 +1,5 @@
 ﻿import PresentationNav from "../../_components/PresentationNav";
-import { PageHero, SectionTitle, StatCard, Callout, DarkTable, PriorityCard, GoalCard, CYAN, RED, YELLOW } from "../../_components/ReportComponents";
+import { PageHero, SectionTitle, StatCard, Callout, DarkTable, PriorityCard, GoalCard, ReportContainer, Grid4, Grid3, CYAN, RED, YELLOW } from "../../_components/ReportComponents";
 
 export default function GoogleAdsSamenvatting() {
   return (
@@ -18,15 +18,15 @@ export default function GoogleAdsSamenvatting() {
         ]}
       />
 
-      <div style={{ maxWidth: 1040, margin: "0 auto", padding: "8px 28px 60px" }}>
+      <ReportContainer>
 
         <SectionTitle>Accountprestaties op een rij</SectionTitle>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 14, marginBottom: 24 }}>
+        <Grid4 style={{ marginBottom: 24 }}>
           <StatCard label="Spend (huidig jaar)" value="€2,1M" delta="+67% t.o.v. vorig jaar" positive={true} />
           <StatCard label="Omzet" value="€12,5M" delta="+52% t.o.v. vorig jaar" positive={true} />
           <StatCard label="Account ROAS" value="5,87" delta="Was 6,43 vorig jaar" positive={false} />
           <StatCard label="CPA" value="€31,85" delta="Was €26 vorig jaar" positive={false} />
-        </div>
+        </Grid4>
 
         <Callout>
           Het account groeit hard, en dat mag wat ROAS kosten: de daling van 6,43 naar 5,87 hoort bij opschalen. Die efficiëntie halen we terug. De structuur kan scherper, en daar beginnen we mee.
@@ -51,13 +51,13 @@ export default function GoogleAdsSamenvatting() {
         </div>
 
         <SectionTitle accent={YELLOW}>Doel over 6 maanden</SectionTitle>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14 }}>
+        <Grid3>
           <GoalCard label="Account ROAS" now="5,87" goal="6,3 – 6,5" />
           <GoalCard label="CPA" now="€31,85" goal="€27 – 29" />
           <GoalCard label="Omzetgroei" now="basis" goal="+8 – 12%" />
-        </div>
+        </Grid3>
 
-      </div>
+      </ReportContainer>
     </div>
   );
 }

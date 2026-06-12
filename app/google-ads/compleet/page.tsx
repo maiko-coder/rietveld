@@ -1,4 +1,4 @@
-﻿import PresentationNav from "../../_components/PresentationNav";
+import PresentationNav from "../../_components/PresentationNav";
 
 const COLOR = "#2563EB";
 const COLOR_LIGHT = "#EFF6FF";
@@ -17,7 +17,7 @@ function P({ children }: { children: React.ReactNode }) {
 
 function Table({ headers, rows }: { headers: string[]; rows: (string | React.ReactNode)[][] }) {
   return (
-    <div style={{ background: "white", border: "1px solid #e5e7eb", borderRadius: 10, overflow: "hidden", marginBottom: 20 }}>
+    <div className="report-table-wrap" style={{ background: "white", border: "1px solid #e5e7eb", borderRadius: 10, marginBottom: 20 }}>
       <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
         <thead>
           <tr style={{ background: "#f9fafb" }}>
@@ -66,8 +66,8 @@ export default function GoogleAdsCompleet() {
       <PresentationNav channel="Google Ads" color={COLOR} basePath="/google-ads" />
 
       {/* Cover */}
-      <div style={{ background: "linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%)", color: "white", padding: "64px 24px 48px" }}>
-        <div style={{ maxWidth: 960, margin: "0 auto" }}>
+      <div className="report-cover" style={{ background: "linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%)", color: "white" }}>
+        <div className="report-cover-inner">
           <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", opacity: 0.6, marginBottom: 12 }}>
             Google Ads Analyse · Rietveld Licht & Wonen · Juni 2026
           </div>
@@ -75,7 +75,7 @@ export default function GoogleAdsCompleet() {
           <p style={{ fontSize: 16, opacity: 0.75, maxWidth: 520, lineHeight: 1.6, marginBottom: 48 }}>
             Accountanalyse, campagneprestaties, groeikansen en strategische aanbevelingen
           </p>
-          <div style={{ display: "flex", gap: 40, flexWrap: "wrap", paddingTop: 32, borderTop: "1px solid rgba(255,255,255,0.15)" }}>
+          <div className="report-cover-stats">
             {[
               { l: "Spend", v: "€2,1M/jaar" },
               { l: "Omzet", v: "€12,5M/jaar" },
@@ -91,7 +91,7 @@ export default function GoogleAdsCompleet() {
         </div>
       </div>
 
-      <div style={{ maxWidth: 960, margin: "0 auto", padding: "40px 24px" }}>
+      <div className="report-container--960">
 
         {/* Sectie 1: Managementsamenvatting */}
         <H2>1. Managementsamenvatting</H2>
@@ -177,7 +177,7 @@ export default function GoogleAdsCompleet() {
         {/* Sectie 5: Strategie */}
         <H2>5. Strategische aanpak per fase</H2>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12, marginBottom: 24 }}>
+        <div className="report-grid-3" style={{ marginBottom: 24 }}>
           {[
             {
               phase: "Fase 1",
@@ -247,7 +247,7 @@ export default function GoogleAdsCompleet() {
         <P>
           De quick wins (instellingen, tROAS-correcties) leveren samen een ROAS-verbetering van circa +0,10–0,15 op accountniveau. De structuurwijzigingen en het premium-segment voegen daar nog eens +0,20–0,35 aan toe. Gecombineerd betekent dat een accountbrede ROAS van 6,2–6,4 realistisch is binnen 6 tot 12 maanden, bij gelijkblijvend of beperkt hoger budget.
         </P>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12, marginBottom: 32 }}>
+        <div className="report-grid-3" style={{ marginBottom: 32 }}>
           {[
             { l: "Account ROAS", n: "5,87", g: "6,3 – 6,5" },
             { l: "CPA", n: "€31,85", g: "€27 – 29" },
