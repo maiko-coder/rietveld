@@ -53,7 +53,7 @@ export default function StrategiePage() {
           De kracht zit nu nog in de afzonderlijke kanalen. De volgende stap is samenhang. Een klant ziet Rietveld niet als vijf losse advertenties, maar als één merk. Iemand vindt inspiratie op Pinterest, ziet een lamp terug via Meta, zoekt later gericht op Google en koopt na een e-mail.
         </BodyText>
         <Callout>
-          Dit plan brengt de vijf kanalen onder één strategie. Het doel is niet meer budget in elk kanaal, maar een klantreis waarin de kanalen elkaar versterken. Dat verhoogt het rendement van alles wat al draait, en het opent drie concrete groeikansen: het premiumsegment in Google Ads, dynamische retargeting op Meta, en e-mailmarketing als kanaal dat de hele reis aan elkaar knoopt.
+          Dit plan brengt de vijf kanalen onder één strategie. Het doel is niet meer budget in elk kanaal, maar een klantreis waarin de kanalen elkaar versterken. Dat verhoogt het rendement van alles wat al draait en opent drie concrete groeikansen: het premiumsegment in Google Ads, dynamische retargeting op Meta, en e-mailmarketing als kanaal dat de hele reis aan elkaar knoopt.
         </Callout>
 
         <SectionTitle accent={YELLOW}>De drie grootste kansen</SectionTitle>
@@ -68,7 +68,7 @@ export default function StrategiePage() {
 
         <SectionTitle>2. De visie op omnichannel</SectionTitle>
         <BodyText>
-          Omnichannel betekent niet dat je overal aanwezig bent. Het betekent dat elk kanaal een rol speelt in dezelfde reis, en dat ze data en momentum aan elkaar doorgeven. Drie principes sturen deze aanpak.
+          Omnichannel betekent niet dat je overal aanwezig bent. Het betekent dat elk kanaal een rol speelt in dezelfde reis en dat ze data en momentum aan elkaar doorgeven. Drie principes sturen deze aanpak.
         </BodyText>
         <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 8 }}>
           <PriorityCard
@@ -93,7 +93,7 @@ export default function StrategiePage() {
 
         <SectionTitle>3. Hoe de kanalen samenwerken</SectionTitle>
         <BodyText>
-          De klantreis loopt van inspiratie naar herhaalaankoop. Elk kanaal pakt het moment waarin het het sterkst is, en geeft de klant door aan de volgende fase.
+          De klantreis loopt van inspiratie naar herhaalaankoop. Elk kanaal pakt het moment waarin het het sterkst is en geeft de klant door aan de volgende fase.
         </BodyText>
         <DarkTable
           headers={["Fase", "Kanalen", "Rol in de reis"]}
@@ -101,7 +101,7 @@ export default function StrategiePage() {
             ["Inspiratie", "Pinterest, Meta (prospecting)", "De wens wekken voordat iemand een product zoekt. Sfeer en interieur, niet de losse lamp."],
             ["Overweging", "Meta (retargeting), Pinterest", "Bezoekers terughalen met het product dat ze bekeken. Vertrouwen opbouwen."],
             ["Koop", "Google Ads, website", "De koopintentie vangen op zoekwoorden en de bezoeker naar de bestelling leiden."],
-            ["Herhaling", "E-mailmarketing", "Het contact warm houden tussen en na aankopen, en alle kanalen aan elkaar verbinden."],
+            ["Herhaling", "E-mailmarketing", "Het contact warm houden tussen en na aankopen en alle kanalen aan elkaar verbinden."],
           ]}
         />
         <Callout color={YELLOW}>

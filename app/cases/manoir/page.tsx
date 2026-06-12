@@ -51,7 +51,7 @@ export default function ManoirPage() {
               Manoir is een meubel- en interieurmerk uit Boston, opgericht door Elizabeth Jones in 2015. Geïnspireerd door klassiek Frans en Europees design lanceerde het merk op Bastille Day 2017 de iconische Villecerf Mirror, gevolgd door een succesvolle pop-up store in Bow Market in 2018.
             </p>
             <p style={{ fontSize: 14, color: "#4b5563", lineHeight: 1.75, margin: "12px 0 0" }}>
-              Vandaag ontwerpt Manoir duurzame collecties met handmatige afwerkingen. De naam verwijst naar het Franse "manoir" (landhuis), en de collectie voelt als een unieke vondst van een Franse markt.
+              Vandaag ontwerpt Manoir duurzame collecties met handmatige afwerkingen. De naam verwijst naar het Franse "manoir" (landhuis). De collectie voelt als een unieke vondst van een Franse markt.
             </p>
           </div>
 
@@ -202,7 +202,7 @@ export default function ManoirPage() {
         <div style={{ background: "white", borderRadius: 14, padding: "32px 36px", boxShadow: "0 1px 4px rgba(0,0,0,0.06)", borderLeft: `4px solid ${CYAN}`, marginBottom: 40 }}>
           <div style={{ fontSize: 48, color: `${CYAN}30`, fontFamily: "Georgia, serif", lineHeight: 0.6, marginBottom: 16 }}>"</div>
           <p style={{ fontSize: 15, color: "#374151", lineHeight: 1.8, fontStyle: "italic", margin: "0 0 20px", maxWidth: 700 }}>
-            De Amerikaanse consument verschilt sterk van de doelgroepen waar ik eerder mee werkte, en juist dat maakt het uitdagend en leerzaam. Des te mooier dat de samenwerking zo succesvol is! De cijfers spreken voor zich. Deze groei creëert ruimte om verder uit te breiden en op te schalen.
+            De Amerikaanse consument verschilt sterk van de doelgroepen waar ik eerder mee werkte. Juist dat maakt het uitdagend en leerzaam. Des te mooier dat de samenwerking zo succesvol is! De cijfers spreken voor zich. Deze groei creëert ruimte om verder uit te breiden en op te schalen.
           </p>
           <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
             <div style={{ width: 38, height: 38, borderRadius: "50%", background: `${CYAN}15`, border: `2px solid ${CYAN}30`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 15, fontWeight: 700, color: CYAN }}>S</div>

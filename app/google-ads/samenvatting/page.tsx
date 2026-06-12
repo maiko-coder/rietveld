@@ -29,7 +29,7 @@ export default function GoogleAdsSamenvatting() {
         </Grid4>
 
         <Callout>
-          Het account groeit hard, en dat mag wat ROAS kosten: de daling van 6,43 naar 5,87 hoort bij opschalen. Die efficiëntie halen we terug. De structuur kan scherper, en daar beginnen we mee.
+          Het account groeit hard. Dat mag wat ROAS kosten: de daling van 6,43 naar 5,87 hoort bij opschalen. Die efficiëntie halen we terug. De structuur kan scherper, dus daar beginnen we mee.
         </Callout>
 
         <SectionTitle>Campagnes - huidige prestaties</SectionTitle>
