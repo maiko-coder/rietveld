@@ -224,7 +224,7 @@ function ProfileCard({ member, onClose }: { member: (typeof TEAM)[0]; onClose: (
 }
 
 export default function TeamPage() {
-  const [open, setOpen] = useState<Set<string>>(new Set());
+  const [open, setOpen] = useState<Set<string>>(() => new Set(TEAM.map((m) => m.id)));
 
   const toggle = (id: string) => {
     setOpen((prev) => {
@@ -235,7 +235,6 @@ export default function TeamPage() {
     });
   };
 
-  const showAll = () => setOpen(new Set(TEAM.map((m) => m.id)));
   const visibleProfiles = TEAM.filter((m) => open.has(m.id));
 
   return (
@@ -261,7 +260,7 @@ export default function TeamPage() {
         {/* Profiles header */}
         <div style={{ textAlign: "center", marginBottom: 28 }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, color: DARK, margin: "0 0 6px" }}>Teamprofielen</h2>
-          <p style={{ fontSize: 13, color: "#9ca3af", margin: 0 }}>Klik op een teamlid in het organogram om het profiel te bekijken.</p>
+          <p style={{ fontSize: 13, color: "#9ca3af", margin: 0 }}>Klik op een teamlid in het organogram om een profiel te openen of sluiten.</p>
         </div>
 
         {/* Organogram */}
@@ -316,26 +315,6 @@ export default function TeamPage() {
           </div>
         )}
 
-        {/* Show all button */}
-        {open.size < TEAM.length && (
-          <div style={{ textAlign: "center" }}>
-            <button
-              onClick={showAll}
-              style={{
-                padding: "10px 28px",
-                background: "white",
-                border: "1px solid #d1d5db",
-                borderRadius: 20,
-                fontSize: 13,
-                color: DARK,
-                cursor: "pointer",
-                fontFamily: "inherit",
-              }}
-            >
-              Toon alle profielen
-            </button>
-          </div>
-        )}
       </div>
 
       <style>{`
