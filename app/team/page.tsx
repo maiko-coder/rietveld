@@ -136,27 +136,29 @@ function OrgNode({
   width?: number;
   dashed?: boolean;
 }) {
+  const visible = active;
   return (
     <div
       onClick={onClick}
       style={{
         width,
-        background: active ? DARK : "white",
-        border: `2px ${dashed ? "dashed" : "solid"} ${active ? CYAN : "#e5e7eb"}`,
+        background: visible ? "white" : "#eceff3",
+        border: `2px ${dashed ? "dashed" : "solid"} ${visible ? "#e5e7eb" : "#d1d5db"}`,
         borderRadius: 12,
         padding: "12px 8px 10px",
         textAlign: "center",
         cursor: "pointer",
-        transition: "box-shadow 0.15s, border-color 0.15s",
-        boxShadow: active ? `0 4px 16px ${CYAN}30` : "0 1px 4px rgba(0,0,0,0.06)",
+        transition: "background 0.15s, border-color 0.15s, box-shadow 0.15s, opacity 0.15s",
+        boxShadow: visible ? "0 1px 4px rgba(0,0,0,0.06)" : "none",
+        opacity: visible ? 1 : 0.82,
         flexShrink: 0,
       }}
     >
-      <div style={{ width: 52, height: 52, borderRadius: "50%", overflow: "hidden", margin: "0 auto 8px", border: `2px solid ${active ? CYAN : "#e5e7eb"}` }}>
+      <div style={{ width: 52, height: 52, borderRadius: "50%", overflow: "hidden", margin: "0 auto 8px", border: `2px solid ${visible ? "#e5e7eb" : "#d1d5db"}` }}>
         <Image src={member.photo} alt={member.name} width={52} height={52} style={{ objectFit: "cover", width: "100%", height: "100%" }} />
       </div>
-      <div style={{ fontSize: 11.5, fontWeight: 700, color: active ? "white" : DARK, lineHeight: 1.3 }}>{member.name}</div>
-      <div style={{ fontSize: 10, color: active ? `${CYAN}` : "#9ca3af", marginTop: 2 }}>{member.orgRole}</div>
+      <div style={{ fontSize: 11.5, fontWeight: 700, color: visible ? DARK : "#9ca3af", lineHeight: 1.3 }}>{member.name}</div>
+      <div style={{ fontSize: 10, color: visible ? "#9ca3af" : "#b0b5bc", marginTop: 2 }}>{member.orgRole}</div>
       {member.lead && (
         <div style={{ marginTop: 6, display: "inline-block", fontSize: 9, fontWeight: 700, padding: "2px 7px", borderRadius: 20, background: `${CYAN}20`, color: CYAN, letterSpacing: "0.3px", textTransform: "uppercase" }}>
           Projectleider
