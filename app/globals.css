@@ -432,13 +432,14 @@ a { color: inherit; text-decoration: none; }
   padding: 0 16px 16px;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
 }
 
 .adoptimizer-lightbox-img {
   width: auto;
   height: auto;
   max-width: none;
-  image-rendering: auto;
+  flex-shrink: 0;
 }
 
 .adoptimizer-lightbox-nav {

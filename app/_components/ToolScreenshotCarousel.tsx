@@ -12,7 +12,7 @@ export default function ToolScreenshotCarousel({ slides }: { slides: ToolSlide[]
   const [index, setIndex] = useState(0);
   const [lightbox, setLightbox] = useState(false);
   const [zoom, setZoom] = useState(1);
-  const [naturalWidth, setNaturalWidth] = useState<number | null>(null);
+  const [dims, setDims] = useState<{ w: number; h: number } | null>(null);
   const touchStart = useRef<number | null>(null);
   const touchDelta = useRef(0);
 
@@ -46,7 +46,7 @@ export default function ToolScreenshotCarousel({ slides }: { slides: ToolSlide[]
 
   useEffect(() => {
     setZoom(1);
-    setNaturalWidth(null);
+    setDims(null);
   }, [index, lightbox]);
 
   const onTouchStart = (e: React.TouchEvent) => {
@@ -149,8 +149,20 @@ export default function ToolScreenshotCarousel({ slides }: { slides: ToolSlide[]
               src={slide.src}
               alt={slide.title}
               className="adoptimizer-lightbox-img"
-              style={naturalWidth ? { width: `${naturalWidth * zoom}px` } : undefined}
-              onLoad={(e) => setNaturalWidth(e.currentTarget.naturalWidth)}
+              width={dims?.w}
+              height={dims?.h}
+              style={
+                dims
+                  ? {
+                      width: `${dims.w * zoom}px`,
+                      height: `${dims.h * zoom}px`,
+                    }
+                  : undefined
+              }
+              onLoad={(e) => {
+                const img = e.currentTarget;
+                setDims({ w: img.naturalWidth, h: img.naturalHeight });
+              }}
             />
           </div>
 
