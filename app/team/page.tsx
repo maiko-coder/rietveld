@@ -91,6 +91,10 @@ const TEAM = [
       { label: "Aantal jaren ervaring", value: "15+ jaar" },
       { label: "Verantwoordelijkheid binnen projectteam", value: "SEA" },
       { label: "Beschikbaarheid per week", value: "0–5 uur" },
+    ],
+  },
+  {
+    id: "moran",
     name: "Moran Roelfs",
     orgRole: "Accountmanager",
     functie: "Marketing strateeg",
