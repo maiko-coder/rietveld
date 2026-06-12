@@ -8,24 +8,9 @@ export type ToolSlide = {
   desc: string;
 };
 
-function useIsMobile() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const mq = window.matchMedia("(max-width: 740px)");
-    const update = () => setIsMobile(mq.matches);
-    update();
-    mq.addEventListener("change", update);
-    return () => mq.removeEventListener("change", update);
-  }, []);
-
-  return isMobile;
-}
-
 export default function ToolScreenshotCarousel({ slides }: { slides: ToolSlide[] }) {
   const [index, setIndex] = useState(0);
   const [lightbox, setLightbox] = useState(false);
-  const isMobile = useIsMobile();
   const touchStart = useRef<number | null>(null);
   const touchDelta = useRef(0);
 
@@ -41,10 +26,6 @@ export default function ToolScreenshotCarousel({ slides }: { slides: ToolSlide[]
 
   const prev = useCallback(() => goTo(index - 1), [goTo, index]);
   const next = useCallback(() => goTo(index + 1), [goTo, index]);
-
-  useEffect(() => {
-    if (!isMobile) setLightbox(false);
-  }, [isMobile]);
 
   useEffect(() => {
     if (!lightbox) return;
@@ -102,19 +83,7 @@ export default function ToolScreenshotCarousel({ slides }: { slides: ToolSlide[]
             ‹
           </button>
 
-          <div
-            className={`adoptimizer-carousel-slide${isMobile ? " adoptimizer-carousel-slide--interactive" : ""}`}
-            {...(isMobile
-              ? {
-                  role: "button" as const,
-                  tabIndex: 0,
-                  onClick: () => setLightbox(true),
-                  onKeyDown: (e: React.KeyboardEvent) => {
-                    if (e.key === "Enter" || e.key === " ") setLightbox(true);
-                  },
-                }
-              : {})}
-          >
+          <button type="button" className="adoptimizer-carousel-slide adoptimizer-carousel-slide--interactive" onClick={() => setLightbox(true)} aria-label="Open afbeelding">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={slide.src}
@@ -123,8 +92,8 @@ export default function ToolScreenshotCarousel({ slides }: { slides: ToolSlide[]
               decoding="async"
               className="adoptimizer-carousel-img"
             />
-            {isMobile && <span className="adoptimizer-carousel-zoom-hint">Tik om te openen</span>}
-          </div>
+            <span className="adoptimizer-carousel-open-hint">Klik om te openen</span>
+          </button>
 
           <button type="button" className="adoptimizer-carousel-btn adoptimizer-carousel-btn--next" onClick={next} aria-label="Volgende">
             ›
@@ -144,7 +113,7 @@ export default function ToolScreenshotCarousel({ slides }: { slides: ToolSlide[]
         </div>
       </div>
 
-      {lightbox && isMobile && (
+      {lightbox && (
         <div className="adoptimizer-lightbox" role="dialog" aria-modal="true" aria-label={slide.title}>
           <div className="adoptimizer-lightbox-toolbar">
             <span style={{ fontSize: 14, fontWeight: 600, color: "white" }}>{slide.title}</span>
@@ -154,8 +123,10 @@ export default function ToolScreenshotCarousel({ slides }: { slides: ToolSlide[]
           </div>
 
           <div className="adoptimizer-lightbox-scroll">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={slide.src} alt={slide.title} className="adoptimizer-lightbox-img" />
+            <div className="adoptimizer-lightbox-content">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={slide.src} alt={slide.title} className="adoptimizer-lightbox-img" />
+            </div>
           </div>
 
           <div className="adoptimizer-lightbox-nav">

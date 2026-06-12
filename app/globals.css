@@ -320,6 +320,7 @@ a { color: inherit; text-decoration: none; }
 
 .adoptimizer-carousel-slide--interactive {
   cursor: pointer;
+  text-align: left;
 }
 
 .adoptimizer-carousel-img {
@@ -330,7 +331,7 @@ a { color: inherit; text-decoration: none; }
   object-fit: contain;
 }
 
-.adoptimizer-carousel-zoom-hint {
+.adoptimizer-carousel-open-hint {
   display: none;
   position: absolute;
   bottom: 10px;
@@ -342,6 +343,12 @@ a { color: inherit; text-decoration: none; }
   padding: 5px 10px;
   border-radius: 20px;
   pointer-events: none;
+}
+
+@media (min-width: 741px) {
+  .adoptimizer-carousel-open-hint {
+    display: block;
+  }
 }
 
 .adoptimizer-carousel-btn {
@@ -423,15 +430,17 @@ a { color: inherit; text-decoration: none; }
   flex: 1;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
-  padding: 0 16px 16px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  padding: 0 24px 16px;
+}
+
+.adoptimizer-lightbox-content {
+  width: 100%;
+  max-width: min(1240px, calc(100vw - 48px));
+  margin: 0 auto;
 }
 
 .adoptimizer-lightbox-img {
   width: 100%;
-  max-width: 100%;
   height: auto;
   display: block;
 }
@@ -468,7 +477,7 @@ a { color: inherit; text-decoration: none; }
     display: none;
   }
 
-  .adoptimizer-carousel-zoom-hint {
+  .adoptimizer-carousel-open-hint {
     display: block;
   }
 
