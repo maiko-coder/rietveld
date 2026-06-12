@@ -20,7 +20,6 @@ const TEAM = [
       { label: "Aantal jaren ervaring", value: "4 jaar" },
       { label: "Verantwoordelijkheid binnen projectteam", value: "Meta, Rapportage" },
       { label: "Beschikbaarheid per week", value: "5–10 uur" },
-      { label: "Aanwezig op het Rietveld kantoor", value: "Maandelijks aanwezig" },
     ],
   },
   {
@@ -35,7 +34,6 @@ const TEAM = [
       { label: "Aantal jaren ervaring", value: "10+ jaar" },
       { label: "Verantwoordelijkheid binnen projectteam", value: "SEA, Rapportage" },
       { label: "Beschikbaarheid per week", value: "15–20 uur" },
-      { label: "Aanwezig op het Rietveld kantoor", value: "Maandelijks aanwezig" },
     ],
   },
   {
@@ -50,7 +48,6 @@ const TEAM = [
       { label: "Aantal jaren ervaring", value: "10+ jaar" },
       { label: "Verantwoordelijkheid binnen projectteam", value: "Marketing automation" },
       { label: "Beschikbaarheid per week", value: "5 uur" },
-      { label: "Aanwezig op het Rietveld kantoor", value: "Halfjaarlijks voor uitgebreide evaluatie" },
     ],
   },
   {
@@ -65,7 +62,6 @@ const TEAM = [
       { label: "Aantal jaren ervaring", value: "8 jaar" },
       { label: "Verantwoordelijkheid binnen projectteam", value: "SEO/GEO" },
       { label: "Beschikbaarheid per maand", value: "15 uur" },
-      { label: "Aanwezig op het Rietveld kantoor", value: "Halfjaarlijks voor uitgebreide evaluatie" },
     ],
   },
   {
@@ -80,7 +76,6 @@ const TEAM = [
       { label: "Aantal jaren ervaring", value: "4 jaar" },
       { label: "Verantwoordelijkheid binnen projectteam", value: "Pinterest" },
       { label: "Beschikbaarheid per maand", value: "10–15 uur" },
-      { label: "Aanwezig op het Rietveld kantoor", value: "Halfjaarlijks voor uitgebreide evaluatie" },
     ],
   },
   {
@@ -96,7 +91,6 @@ const TEAM = [
       { label: "Aantal jaren ervaring", value: "15+ jaar" },
       { label: "Verantwoordelijkheid binnen projectteam", value: "SEA" },
       { label: "Beschikbaarheid per week", value: "5–10 uur" },
-      { label: "Aanwezig op het Rietveld kantoor", value: "Op verzoek beschikbaar" },
     ],
   },
   {
