@@ -89,10 +89,9 @@ export default function VoorstelPage() {
   return (
     <div style={{ fontFamily: "system-ui, -apple-system, sans-serif", background: "#f3f4f6", minHeight: "100vh" }}>
 
-      {/* Hero */}
-      <div style={{ background: DARK, color: "white", padding: "52px 32px 48px", position: "relative", overflow: "hidden" }}>
+      <div className="voorstel-hero">
         <div style={{ position: "absolute", right: -80, top: -80, width: 360, height: 360, borderRadius: "50%", background: `radial-gradient(circle, ${CYAN}15 0%, transparent 70%)`, pointerEvents: "none" }} />
-        <div style={{ maxWidth: 1040, margin: "0 auto", position: "relative" }}>
+        <div className="voorstel-hero-inner">
           <div style={{ display: "inline-flex", alignItems: "center", gap: 6, background: `${YELLOW}20`, border: `1px solid ${YELLOW}40`, borderRadius: 20, padding: "4px 12px", fontSize: 11, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: YELLOW, marginBottom: 16 }}>
             Voorstel · Rietveld Licht & Wonen
           </div>
@@ -101,70 +100,59 @@ export default function VoorstelPage() {
             Een volledig marketingteam voor alle kanalen - met vaste maandelijkse fees, transparante uren en geen verrassingen.
           </p>
 
-          <div style={{ display: "flex", gap: 48, flexWrap: "wrap" }}>
+          <div className="voorstel-hero-stats">
             <div>
               <div style={{ fontSize: 11, color: "rgba(255,255,255,0.35)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 6 }}>Totale fee per maand</div>
-              <div style={{ fontSize: 44, fontWeight: 900, color: YELLOW, lineHeight: 1 }}>€15.000</div>
+              <div style={{ fontSize: 44, fontWeight: 900, color: YELLOW, lineHeight: 1 }} className="voorstel-hero-stat-value">€15.000</div>
             </div>
             <div>
               <div style={{ fontSize: 11, color: "rgba(255,255,255,0.35)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 6 }}>Uren per maand</div>
-              <div style={{ fontSize: 44, fontWeight: 900, color: CYAN, lineHeight: 1 }}>145–150</div>
+              <div style={{ fontSize: 44, fontWeight: 900, color: CYAN, lineHeight: 1 }} className="voorstel-hero-stat-value">145–150</div>
             </div>
             <div>
               <div style={{ fontSize: 11, color: "rgba(255,255,255,0.35)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 6 }}>Kanalen</div>
-              <div style={{ fontSize: 44, fontWeight: 900, color: "white", lineHeight: 1 }}>6</div>
+              <div style={{ fontSize: 44, fontWeight: 900, color: "white", lineHeight: 1 }} className="voorstel-hero-stat-value">6</div>
             </div>
           </div>
         </div>
         <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 4, background: `linear-gradient(90deg, ${RED} 0%, ${YELLOW} 33%, ${CYAN} 66%, ${DARK} 100%)` }} />
       </div>
 
-      {/* Content */}
-      <div style={{ maxWidth: 1040, margin: "0 auto", padding: "44px 32px 64px" }}>
-
-        {/* Section title */}
+      <div className="voorstel-content">
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
           <div style={{ width: 4, height: 22, background: CYAN, borderRadius: 2 }} />
           <h2 style={{ fontSize: 18, fontWeight: 700, color: DARK, margin: 0 }}>Opbouw per kanaal</h2>
         </div>
 
-        {/* Service rows */}
         <div style={{ display: "flex", flexDirection: "column", gap: 14, marginBottom: 36 }}>
           {SERVICES.map((s) => (
             <div key={s.name} style={{ background: "white", borderRadius: 14, boxShadow: "0 1px 4px rgba(0,0,0,0.06)", overflow: "hidden" }}>
-              <div style={{ padding: "22px 28px", display: "grid", gridTemplateColumns: "minmax(220px, 1.4fr) 1fr 1fr 1fr", gap: 20, alignItems: "center" }}>
-
-                {/* Name */}
-                <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+              <div className="voorstel-service-row">
+                <div className="voorstel-service-name">
                   <div style={{ width: 42, height: 42, borderRadius: 10, background: `${CYAN}12`, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                     {s.icon}
                   </div>
                   <div style={{ fontSize: 15, fontWeight: 700, color: DARK }}>{s.name}</div>
                 </div>
 
-                {/* Budget */}
-                <div>
+                <div className="voorstel-service-field">
                   <div style={{ fontSize: 10, color: "#9ca3af", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 3 }}>Budget</div>
                   <div style={{ fontSize: 13.5, fontWeight: 600, color: s.budget ? "#374151" : "#c4c9d0" }}>{s.budget ?? "n.v.t."}</div>
                 </div>
 
-                {/* Fee */}
-                <div>
+                <div className="voorstel-service-field">
                   <div style={{ fontSize: 10, color: "#9ca3af", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 3 }}>Fee per maand</div>
                   <div style={{ fontSize: 17, fontWeight: 800, color: DARK }}>{s.fee}</div>
                 </div>
 
-                {/* Hours */}
-                <div>
+                <div className="voorstel-service-field">
                   <div style={{ fontSize: 10, color: "#9ca3af", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 3 }}>Uren per maand</div>
                   <div style={{ fontSize: 13.5, fontWeight: 600, color: "#374151" }}>{s.hours}</div>
                 </div>
-
               </div>
 
-              {/* Note */}
               {s.note && (
-                <div style={{ margin: "0 28px 18px", background: `${YELLOW}12`, border: `1px solid ${YELLOW}40`, borderLeft: `4px solid ${YELLOW}`, borderRadius: 8, padding: "10px 16px", fontSize: 13, color: "#6b5a10", fontWeight: 500 }}>
+                <div className="voorstel-service-note" style={{ background: `${YELLOW}12`, border: `1px solid ${YELLOW}40`, borderLeft: `4px solid ${YELLOW}`, color: "#6b5a10" }}>
                   {s.note}
                 </div>
               )}
@@ -172,18 +160,17 @@ export default function VoorstelPage() {
           ))}
         </div>
 
-        {/* Total */}
-        <div style={{ background: DARK, borderRadius: 14, padding: "26px 32px", display: "grid", gridTemplateColumns: "minmax(220px, 1.4fr) 1fr 1fr 1fr", gap: 20, alignItems: "center" }}>
+        <div className="voorstel-total">
           <div style={{ fontSize: 15, fontWeight: 800, color: "white" }}>Totaal per maand</div>
-          <div>
+          <div className="voorstel-service-field">
             <div style={{ fontSize: 10, color: "rgba(255,255,255,0.4)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 3 }}>Media budget</div>
             <div style={{ fontSize: 13.5, fontWeight: 600, color: "rgba(255,255,255,0.75)" }}>±€2,25M op jaarbasis</div>
           </div>
-          <div>
+          <div className="voorstel-service-field">
             <div style={{ fontSize: 10, color: "rgba(255,255,255,0.4)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 3 }}>Fee</div>
             <div style={{ fontSize: 22, fontWeight: 900, color: YELLOW }}>€15.000</div>
           </div>
-          <div>
+          <div className="voorstel-service-field">
             <div style={{ fontSize: 10, color: "rgba(255,255,255,0.4)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 3 }}>Uren</div>
             <div style={{ fontSize: 22, fontWeight: 900, color: CYAN }}>145–150</div>
           </div>
@@ -192,7 +179,6 @@ export default function VoorstelPage() {
         <p style={{ fontSize: 12, color: "#9ca3af", marginTop: 20, textAlign: "center" }}>
           Alle bedragen zijn exclusief btw. Mediabudgetten worden rechtstreeks aan de platformen betaald.
         </p>
-
       </div>
     </div>
   );

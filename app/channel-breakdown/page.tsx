@@ -136,12 +136,7 @@ export default function HomePage() {
     <div style={{ minHeight: "100vh", background: "#f4f5f7", fontFamily: "system-ui, -apple-system, sans-serif" }}>
 
       {/* Hero */}
-      <div style={{
-        background: DARK,
-        padding: "64px 32px 52px",
-        position: "relative",
-        overflow: "hidden",
-      }}>
+      <div className="channel-breakdown-hero">
         <div style={{
           position: "absolute", right: -100, top: -100,
           width: 400, height: 400, borderRadius: "50%",
@@ -150,7 +145,7 @@ export default function HomePage() {
         }} />
         <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 4, background: `linear-gradient(90deg, ${RED} 0%, ${YELLOW} 33%, ${CYAN} 66%, ${DARK} 100%)` }} />
 
-        <div style={{ maxWidth: 1200, margin: "0 auto", position: "relative" }}>
+        <div className="channel-breakdown-hero-inner">
           <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: CYAN, marginBottom: 14 }}>
             Marketing Intelligence · Woeler × Rietveld
           </div>
@@ -160,7 +155,7 @@ export default function HomePage() {
           <p style={{ fontSize: 15, color: "rgba(255,255,255,0.45)", maxWidth: 500, lineHeight: 1.7, marginBottom: 40 }}>
             Alle marketingrapportages voor Rietveld Licht &amp; Wonen op één plek.
           </p>
-          <div style={{ display: "flex", gap: 36, flexWrap: "wrap" }}>
+          <div className="channel-breakdown-hero-stats">
             {[
               { label: "Google Ads ROAS", value: "5,87", accent: CYAN },
               { label: "Meta Ads ROAS", value: "15,74×", accent: YELLOW },
@@ -177,13 +172,13 @@ export default function HomePage() {
       </div>
 
       {/* Channel cards */}
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "44px 32px 0" }}>
+      <div className="channel-breakdown-content">
         <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 24 }}>
           <div style={{ width: 3, height: 16, background: CYAN, borderRadius: 2 }} />
           <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#6b7280" }}>Kanalen</span>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(520px, 1fr))", gap: 20 }}>
+        <div className="channel-breakdown-grid">
           {CHANNELS.map((ch) => (
             <div key={ch.id} style={{
               background: "white",
@@ -231,12 +226,9 @@ export default function HomePage() {
               </div>
 
               {/* Metrics strip */}
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", borderTop: "1px solid #f1f3f5", borderBottom: "1px solid #f1f3f5", background: "#fafbfc" }}>
-                {ch.metrics.map((m, i) => (
-                  <div key={m.label} style={{
-                    padding: "13px 15px",
-                    borderRight: i < 3 ? "1px solid #f1f3f5" : "none",
-                  }}>
+              <div className="channel-breakdown-metrics">
+                {ch.metrics.map((m) => (
+                  <div key={m.label} className="channel-breakdown-metric">
                     <div style={{ fontSize: 10, color: "#9ca3af", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 5 }}>{m.label}</div>
                     <div style={{ fontSize: 15, fontWeight: 800, color: DARK, display: "flex", alignItems: "center", gap: 3 }}>
                       {m.value} <TrendIcon trend={m.trend as "up" | "neutral" | "down"} />
@@ -247,7 +239,7 @@ export default function HomePage() {
               </div>
 
               {/* Top action footer */}
-              <div style={{ padding: "12px 18px", display: "flex", alignItems: "center", gap: 10 }}>
+              <div className="channel-breakdown-footer">
                 <div style={{ width: 8, height: 8, borderRadius: "50%", background: YELLOW, flexShrink: 0, boxShadow: `0 0 0 2px ${YELLOW}40` }} />
                 <span style={{ fontSize: 12.5, color: "#374151", lineHeight: 1.5, flex: 1 }}>
                   <strong style={{ color: DARK }}>Topprioriteit:</strong> {ch.topAction}
@@ -275,7 +267,7 @@ export default function HomePage() {
             <div style={{ width: 3, height: 16, background: YELLOW, borderRadius: 2 }} />
             <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#6b7280" }}>Snelle toegang</span>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(210px, 1fr))", gap: 8 }}>
+          <div className="channel-breakdown-quicklinks">
             {CHANNELS.flatMap((ch) => ch.links.map((l) => ({
               label: `${ch.label} · ${l.label}`,
               href: l.href,
