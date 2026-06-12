@@ -66,7 +66,7 @@ export function GoalCard({ label, now, goal }: { label: string; now: string; goa
 
 export function DarkTable({ headers, rows }: { headers: string[]; rows: (string | React.ReactNode)[][] }) {
   return (
-    <div style={{ background: "white", borderRadius: 12, overflow: "hidden", boxShadow: "0 1px 4px rgba(0,0,0,0.06)", marginBottom: 8 }}>
+    <div style={{ background: "white", borderRadius: 12, overflow: "auto", boxShadow: "0 1px 4px rgba(0,0,0,0.06)", marginBottom: 8 }}>
       <table style={{ width: "100%", borderCollapse: "collapse" as const, fontSize: 13 }}>
         <thead>
           <tr style={{ background: DARK }}>

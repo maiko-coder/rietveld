@@ -354,6 +354,17 @@
 
   /* ── Footer ── */
   .doc-footer { background: #fff; margin-top: 10px; padding: 20px 56px; font-size: 11px; color: #ccc; border-top: 1px solid #e8e8e8; }
+
+/* responsive-mobile */
+@media (max-width: 700px) {
+  body { padding: 20px 12px 32px; }
+  .kpi-grid-5, .kpi-grid-4, .kpi-grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .two-col, .three-col, .goals-layout, .ba-images-row, .scale-compare { grid-template-columns: 1fr; }
+  .goal-bar-row { grid-template-columns: 90px 1fr 44px; }
+  .chapter-title { font-size: 24px; }
+  .ba-header { flex-wrap: wrap; }
+  table { display: block; overflow-x: auto; }
+}
 </style>
 </head>
 <body>

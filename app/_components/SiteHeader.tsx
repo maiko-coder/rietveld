@@ -1,7 +1,7 @@
 ﻿"use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type SubItem = { label: string; href: string };
 type NestedItem = { label: string; href: string; sub: SubItem[] };
@@ -91,6 +91,13 @@ export default function SiteHeader() {
   const path = usePathname();
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [openGroup, setOpenGroup] = useState<string | null>(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileSection, setMobileSection] = useState<string | null>(null);
+
+  useEffect(() => {
+    setMobileOpen(false);
+    setMobileSection(null);
+  }, [path]);
 
   const isActive = (href: string) => {
     if (href === "/") return path === "/";
@@ -109,7 +116,7 @@ export default function SiteHeader() {
           <img src="/woeler-logo.png" alt="Woeler" style={{ height: 28, width: "auto", filter: "brightness(0) invert(1)" }} />
         </Link>
         <div style={{ flex: 1 }} />
-        <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)" }}>
+        <span className="hdr-tagline" style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)" }}>
           Marketing Rapportages · 2026
         </span>
       </div>
@@ -117,6 +124,37 @@ export default function SiteHeader() {
       {/* Nav bar */}
       <nav style={{ background: "#00adef" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 32px", display: "flex", alignItems: "center", height: 44 }}>
+          <button
+            className="nav-burger"
+            onClick={() => setMobileOpen((o) => !o)}
+            aria-label="Menu"
+            aria-expanded={mobileOpen}
+            style={{
+              alignItems: "center",
+              gap: 8,
+              background: "none",
+              border: "none",
+              color: "white",
+              fontSize: 13,
+              fontWeight: 700,
+              padding: "0 4px",
+              height: 44,
+              cursor: "pointer",
+              fontFamily: "inherit",
+            }}
+          >
+            {mobileOpen ? (
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M4 4l10 10M14 4L4 14" stroke="white" strokeWidth="2" strokeLinecap="round" />
+              </svg>
+            ) : (
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M2 4.5h14M2 9h14M2 13.5h14" stroke="white" strokeWidth="2" strokeLinecap="round" />
+              </svg>
+            )}
+            Menu
+          </button>
+          <div className="nav-desktop" style={{ display: "flex", alignItems: "center", height: "100%" }}>
           {NAV_ITEMS.map((item) => {
             const hasGroups = !!item.groups;
             const hasDropdown = (!!item.sub && item.sub.length > 0) || hasGroups;
@@ -305,6 +343,7 @@ export default function SiteHeader() {
               </div>
             );
           })}
+          </div>
           <div style={{ flex: 1 }} />
           <Link
             href="/voorstel"
@@ -327,6 +366,111 @@ export default function SiteHeader() {
           </Link>
         </div>
       </nav>
+
+      {/* Mobiel menu */}
+      {mobileOpen && (
+        <div style={{ background: "#262626", borderTop: "1px solid rgba(255,255,255,0.08)", maxHeight: "calc(100vh - 110px)", overflowY: "auto" }}>
+          {NAV_ITEMS.map((item) => {
+            const hasChildren = (!!item.sub && item.sub.length > 0) || !!item.groups;
+            const rowStyle: React.CSSProperties = {
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              width: "100%",
+              padding: "13px 20px",
+              fontSize: 14,
+              fontWeight: 600,
+              color: "white",
+              background: "none",
+              border: "none",
+              borderBottom: "1px solid rgba(255,255,255,0.07)",
+              cursor: "pointer",
+              fontFamily: "inherit",
+              textAlign: "left" as const,
+            };
+
+            if (!hasChildren) {
+              const external = item.href.startsWith("http");
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  target={external ? "_blank" : undefined}
+                  rel={external ? "noopener noreferrer" : undefined}
+                  onClick={() => setMobileOpen(false)}
+                  style={{ ...rowStyle, color: isActive(item.href) && !external ? "#00adef" : "white" }}
+                >
+                  {item.label}
+                  {external && (
+                    <svg viewBox="0 0 16 16" width="11" height="11" fill="none">
+                      <path d="M6 3h7v7M13 3L7 9" stroke="rgba(255,255,255,0.5)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  )}
+                </Link>
+              );
+            }
+
+            const expanded = mobileSection === item.href;
+            return (
+              <div key={item.href}>
+                <button onClick={() => setMobileSection(expanded ? null : item.href)} style={rowStyle}>
+                  {item.label}
+                  <svg width="12" height="8" viewBox="0 0 10 6" fill="none" style={{ transform: expanded ? "rotate(180deg)" : "none", transition: "transform 0.15s", opacity: 0.6 }}>
+                    <path d="M1 1l4 4 4-4" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+
+                {expanded && item.sub && item.sub.map((sub) => {
+                  const external = sub.href.startsWith("http");
+                  return (
+                    <Link
+                      key={sub.href}
+                      href={sub.href}
+                      target={external ? "_blank" : undefined}
+                      rel={external ? "noopener noreferrer" : undefined}
+                      onClick={() => setMobileOpen(false)}
+                      style={{
+                        display: "block",
+                        padding: "11px 20px 11px 36px",
+                        fontSize: 13.5,
+                        color: path === sub.href ? "#00adef" : "rgba(255,255,255,0.75)",
+                        background: "rgba(0,0,0,0.25)",
+                        borderBottom: "1px solid rgba(255,255,255,0.05)",
+                      }}
+                    >
+                      {sub.label}
+                    </Link>
+                  );
+                })}
+
+                {expanded && item.groups && item.groups.map((group) => (
+                  <div key={group.href} style={{ background: "rgba(0,0,0,0.25)" }}>
+                    <div style={{ padding: "11px 20px 5px 36px", fontSize: 11, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: isActive(group.href) ? "#00adef" : "rgba(255,255,255,0.4)" }}>
+                      {group.label}
+                    </div>
+                    {group.sub.map((sub) => (
+                      <Link
+                        key={sub.href}
+                        href={sub.href}
+                        onClick={() => setMobileOpen(false)}
+                        style={{
+                          display: "block",
+                          padding: "9px 20px 9px 52px",
+                          fontSize: 13.5,
+                          color: path === sub.href ? "#00adef" : "rgba(255,255,255,0.75)",
+                          borderBottom: "1px solid rgba(255,255,255,0.04)",
+                        }}
+                      >
+                        {sub.label}
+                      </Link>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            );
+          })}
+        </div>
+      )}
     </header>
   );
 }

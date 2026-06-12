@@ -210,7 +210,7 @@ export default function HomePage() {
                   </div>
                   <div style={{ flex: 1 }}>
                     <h3 style={{ fontSize: 18, fontWeight: 800, color: DARK, margin: 0, marginBottom: 6 }}>{ch.label}</h3>
-                    <div style={{ display: "flex", gap: 5 }}>
+                    <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
                       {ch.links.map((l) => (
                         <Link key={l.href} href={l.href} style={{
                           fontSize: 11,
