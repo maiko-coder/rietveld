@@ -220,7 +220,7 @@ function ProfileCard({ member, onClose }: { member: (typeof TEAM)[0]; onClose: (
 }
 
 export default function TeamPage() {
-  const [open, setOpen] = useState<Set<string>>(() => new Set(TEAM.map((m) => m.id)));
+  const [open, setOpen] = useState<Set<string>>(new Set());
 
   const toggle = (id: string) => {
     setOpen((prev) => {
@@ -231,6 +231,7 @@ export default function TeamPage() {
     });
   };
 
+  const showAll = () => setOpen(new Set(TEAM.map((m) => m.id)));
   const visibleProfiles = TEAM.filter((m) => open.has(m.id));
 
   return (
@@ -301,6 +302,26 @@ export default function TeamPage() {
             </div>
           </div>
         </div>
+
+        {open.size < TEAM.length && (
+          <div style={{ textAlign: "center", marginBottom: 32 }}>
+            <button
+              onClick={showAll}
+              style={{
+                padding: "10px 28px",
+                background: "white",
+                border: "1px solid #d1d5db",
+                borderRadius: 20,
+                fontSize: 13,
+                color: DARK,
+                cursor: "pointer",
+                fontFamily: "inherit",
+              }}
+            >
+              Toon alle profielen
+            </button>
+          </div>
+        )}
 
         {/* Profile cards */}
         {visibleProfiles.length > 0 && (
