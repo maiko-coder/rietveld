@@ -165,6 +165,7 @@ function OrgNode({
 function ProfileCard({ member, onClose }: { member: (typeof TEAM)[0]; onClose: () => void }) {
   return (
     <div
+      className="team-profile-card"
       style={{
         background: "white",
         border: "1px solid #e5e7eb",
@@ -232,13 +233,16 @@ export default function TeamPage() {
   };
 
   const showAll = () => setOpen(new Set(TEAM.map((m) => m.id)));
+  const hideAll = () => setOpen(new Set());
   const visibleProfiles = TEAM.filter((m) => open.has(m.id));
+  const allOpen = open.size === TEAM.length;
+  const noneOpen = open.size === 0;
 
   return (
     <div style={{ fontFamily: "system-ui, -apple-system, sans-serif", background: "#f3f4f6", minHeight: "100vh" }}>
 
       {/* Hero */}
-      <div style={{ background: DARK, color: "white", padding: "52px 32px 48px", position: "relative", overflow: "hidden" }}>
+      <div className="team-hero" style={{ background: DARK, color: "white", padding: "52px 32px 48px", position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", right: -80, top: -80, width: 360, height: 360, borderRadius: "50%", background: `radial-gradient(circle, ${CYAN}15 0%, transparent 70%)`, pointerEvents: "none" }} />
         <div style={{ maxWidth: 1040, margin: "0 auto", position: "relative" }}>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 6, background: `${CYAN}20`, border: `1px solid ${CYAN}40`, borderRadius: 20, padding: "4px 12px", fontSize: 11, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: CYAN, marginBottom: 16 }}>
@@ -252,7 +256,7 @@ export default function TeamPage() {
         <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 4, background: `linear-gradient(90deg, ${RED} 0%, ${YELLOW} 33%, ${CYAN} 66%, ${DARK} 100%)` }} />
       </div>
 
-      <div style={{ maxWidth: 960, margin: "0 auto", padding: "44px 32px 64px" }}>
+      <div className="team-content" style={{ maxWidth: 960, margin: "0 auto", padding: "44px 32px 64px" }}>
 
         {/* Profiles header */}
         <div style={{ textAlign: "center", marginBottom: 28 }}>
@@ -266,8 +270,8 @@ export default function TeamPage() {
           Moran 0–118 · Sarah 146–286 (center 216) · Maiko 318–458 (center 388) · Geert 486–604
           Specialisten (3×128 + 2×16 = 416, offset 94): centers op 158 / 302 / 446
         */}
-        <div style={{ marginBottom: 32, overflowX: "auto" }}>
-          <div style={{ width: 604, margin: "0 auto" }}>
+        <div className="team-org-scroll" style={{ marginBottom: 32, overflowX: "auto" }}>
+          <div className="team-org" style={{ width: 604, margin: "0 auto" }}>
 
             {/* Row 1: Moran - Sarah - Maiko - Geert, allemaal verbonden */}
             <div style={{ display: "flex", alignItems: "center" }}>
@@ -303,29 +307,28 @@ export default function TeamPage() {
           </div>
         </div>
 
-        {open.size < TEAM.length && (
-          <div style={{ textAlign: "center", marginBottom: 32 }}>
-            <button
-              onClick={showAll}
-              style={{
-                padding: "10px 28px",
-                background: "white",
-                border: "1px solid #d1d5db",
-                borderRadius: 20,
-                fontSize: 13,
-                color: DARK,
-                cursor: "pointer",
-                fontFamily: "inherit",
-              }}
-            >
-              Toon alle profielen
-            </button>
-          </div>
-        )}
+        <div className="team-actions">
+          <button
+            type="button"
+            className="team-action-btn"
+            onClick={showAll}
+            disabled={allOpen}
+          >
+            Toon alle profielen
+          </button>
+          <button
+            type="button"
+            className="team-action-btn"
+            onClick={hideAll}
+            disabled={noneOpen}
+          >
+            Sluit alle profielen
+          </button>
+        </div>
 
         {/* Profile cards */}
         {visibleProfiles.length > 0 && (
-          <div style={{ display: "flex", gap: 16, flexWrap: "wrap", justifyContent: "center", marginBottom: 24 }}>
+          <div className="team-profiles">
             {visibleProfiles.map((m) => (
               <ProfileCard key={m.id} member={m} onClose={() => toggle(m.id)} />
             ))}

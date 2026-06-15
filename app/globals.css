@@ -736,6 +736,93 @@ a { color: inherit; text-decoration: none; }
   }
 }
 
+/* Team page */
+.team-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.team-action-btn {
+  padding: 10px 28px;
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 20px;
+  font-size: 13px;
+  color: #262626;
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color 0.15s, color 0.15s, opacity 0.15s;
+}
+
+.team-action-btn:hover:not(:disabled) {
+  border-color: #00adef;
+  color: #00adef;
+}
+
+.team-action-btn:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.team-profiles {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 740px) {
+  .team-hero {
+    padding: 36px 18px 32px !important;
+  }
+
+  .team-hero h1 {
+    font-size: 30px !important;
+  }
+
+  .team-content {
+    padding: 28px 16px 48px !important;
+  }
+
+  .team-org-scroll {
+    margin-left: -16px;
+    margin-right: -16px;
+    padding: 0 16px 4px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .team-org {
+    width: 604px;
+    min-width: 604px;
+  }
+
+  .team-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .team-action-btn {
+    width: 100%;
+    padding: 12px 20px;
+  }
+
+  .team-profiles {
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .team-profile-card {
+    width: 100% !important;
+    padding: 20px 18px !important;
+  }
+}
+
 /* AdOptimizer carousel */
 .tool-screenshot-section {
   max-width: min(1240px, calc(100vw - 48px));
