@@ -236,7 +236,7 @@ export default function TeamPage() {
   const hideAll = () => setOpen(new Set());
   const visibleProfiles = TEAM.filter((m) => open.has(m.id));
   const allOpen = open.size === TEAM.length;
-  const noneOpen = open.size === 0;
+  const toggleAll = () => (allOpen ? hideAll() : showAll());
 
   return (
     <div style={{ fontFamily: "system-ui, -apple-system, sans-serif", background: "#f3f4f6", minHeight: "100vh" }}>
@@ -311,18 +311,9 @@ export default function TeamPage() {
           <button
             type="button"
             className="team-action-btn"
-            onClick={showAll}
-            disabled={allOpen}
+            onClick={toggleAll}
           >
-            Toon alle profielen
-          </button>
-          <button
-            type="button"
-            className="team-action-btn"
-            onClick={hideAll}
-            disabled={noneOpen}
-          >
-            Sluit alle profielen
+            {allOpen ? "Sluit alle profielen" : "Toon alle profielen"}
           </button>
         </div>
 
