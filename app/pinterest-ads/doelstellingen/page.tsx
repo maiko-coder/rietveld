@@ -1,5 +1,5 @@
 import PresentationNav from "../../_components/PresentationNav";
-import { SectionTitle, GoalCard, Callout, DarkTable, ReportContainer, CYAN, RED, YELLOW, DARK } from "../../_components/ReportComponents";
+import { SectionTitle, GoalCard, Callout, DarkTable, ReportContainer, CYAN, YELLOW, DARK } from "../../_components/ReportComponents";
 
 const PINTEREST_RED = "#E60023";
 
