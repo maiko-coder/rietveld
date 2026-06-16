@@ -148,6 +148,27 @@ a { color: inherit; text-decoration: none; }
   min-width: 480px;
 }
 
+.pinterest-compleet-body {
+  padding-bottom: 64px;
+}
+
+.pinterest-compleet-body iframe {
+  width: 100%;
+  min-height: 7200px;
+  border: none;
+  display: block;
+}
+
+@media (max-width: 740px) {
+  .pinterest-compleet-body {
+    padding-bottom: 48px;
+  }
+
+  .pinterest-compleet-body iframe {
+    min-height: 9600px;
+  }
+}
+
 .pres-nav-inner {
   max-width: 1040px;
   margin: 0 auto;

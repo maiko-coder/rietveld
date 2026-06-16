@@ -32,16 +32,12 @@ export default function PinterestAdsCompleet() {
         </div>
       </div>
 
-      <iframe
-        src="/reports/pinterest-analyse.html"
-        style={{
-          width: "100%",
-          minHeight: "7200px",
-          border: "none",
-          display: "block",
-        }}
-        title="Pinterest Ads - Volledige analyse"
-      />
+      <div className="report-container--960 pinterest-compleet-body">
+        <iframe
+          src="/reports/pinterest-analyse.html"
+          title="Pinterest Ads - Volledige analyse"
+        />
+      </div>
     </div>
   );
 }

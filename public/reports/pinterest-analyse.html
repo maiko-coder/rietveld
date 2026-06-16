@@ -16,9 +16,10 @@
   }
 
   .page {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 40px 24px 80px;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
     gap: 0;
@@ -53,9 +54,9 @@
 
   /* ── Chapter blocks ── */
   .chapter {
-    background: #fff;
-    padding: 40px 0;
-    margin-top: 10px;
+    padding: 0 0 40px;
+    margin-top: 0;
+    background: transparent;
   }
   .chapter-label {
     display: inline-block;
@@ -354,11 +355,13 @@
   .sep { height: 1px; background: #e8e8e8; margin: 28px 0; }
 
   /* ── Footer ── */
-  .doc-footer { background: #fff; margin-top: 10px; padding: 20px 0; font-size: 11px; color: #ccc; border-top: 1px solid #e8e8e8; }
+  .doc-footer { background: transparent; margin-top: 0; padding: 20px 0 0; font-size: 11px; color: #ccc; border-top: 1px solid #e8e8e8; }
 
 /* responsive-mobile */
 @media (max-width: 740px) {
-  .page { padding: 28px 16px 48px; }
+  .chapter {
+    padding-bottom: 32px;
+  }
   .kpi-grid-5, .kpi-grid-4, .kpi-grid-3 { grid-template-columns: repeat(2, 1fr); }
   .two-col, .three-col, .goals-layout, .ba-images-row, .scale-compare { grid-template-columns: 1fr; }
   .goal-bar-row { grid-template-columns: 90px 1fr 44px; }
