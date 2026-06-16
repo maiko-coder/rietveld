@@ -1,24 +1,37 @@
 import PresentationNav from "../../_components/PresentationNav";
-import { PageHero, SectionTitle, GoalCard, Callout, DarkTable, ReportContainer, CYAN, RED, YELLOW, DARK } from "../../_components/ReportComponents";
+import { SectionTitle, GoalCard, Callout, DarkTable, ReportContainer, CYAN, RED, YELLOW, DARK } from "../../_components/ReportComponents";
 
-const PINTEREST_RED = "#e60023";
+const PINTEREST_RED = "#E60023";
 
 export default function PinterestAdsDoelstellingen() {
   return (
     <div style={{ fontFamily: "system-ui, -apple-system, sans-serif", background: "#f4f5f7", minHeight: "100vh" }}>
-      <PresentationNav channel="Pinterest Ads" color={CYAN} basePath="/pinterest-ads" />
+      <PresentationNav channel="Pinterest Ads" color={PINTEREST_RED} basePath="/pinterest-ads" />
 
-      <PageHero
-        channel="Pinterest Ads"
-        title="Doelstellingen"
-        subtitle="Van testcampagne naar structurele inzet op €5.000 per maand"
-        stats={[
-          { label: "Test ROAS", value: "15,65×", accent: "cyan" },
-          { label: "Streef ROAS", value: "9–11×", accent: "yellow" },
-          { label: "Maandbudget", value: "€5.000", accent: "cyan" },
-          { label: "Benchmark", value: "8–10×", accent: "white" },
-        ]}
-      />
+      <div className="report-cover" style={{ background: "linear-gradient(135deg, #bd081c 0%, #e60023 100%)", color: "white" }}>
+        <div className="report-cover-inner">
+          <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", opacity: 0.6, marginBottom: 12 }}>
+            Pinterest Ads Analyse · Rietveld Licht &amp; Wonen · Juni 2026
+          </div>
+          <h1 style={{ fontSize: 42, fontWeight: 700, lineHeight: 1.1, marginBottom: 16 }}>Doelstellingen</h1>
+          <p style={{ fontSize: 16, opacity: 0.75, maxWidth: 520, lineHeight: 1.6, marginBottom: 48 }}>
+            Van testcampagne naar structurele inzet op €5.000 per maand
+          </p>
+          <div className="report-cover-stats">
+            {[
+              { l: "Test ROAS", v: "15,65×" },
+              { l: "Streef ROAS", v: "9–11×" },
+              { l: "Maandbudget", v: "€5.000" },
+              { l: "Benchmark", v: "8–10×" },
+            ].map((m) => (
+              <div key={m.l}>
+                <div style={{ fontSize: 11, opacity: 0.55, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 2 }}>{m.l}</div>
+                <div style={{ fontSize: 24, fontWeight: 700 }}>{m.v}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
       <ReportContainer>
 
