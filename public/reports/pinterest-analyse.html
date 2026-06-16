@@ -18,7 +18,7 @@
   .page {
     max-width: 960px;
     margin: 0 auto;
-    padding: 44px 32px 80px;
+    padding: 40px 24px 80px;
     display: flex;
     flex-direction: column;
     gap: 0;
@@ -27,7 +27,7 @@
   /* ── Header ── */
   .doc-header {
     background: #fff;
-    padding: 44px 56px 36px;
+    padding: 44px 0 36px;
     border-bottom: 3px solid #e60023;
   }
   .header-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
@@ -54,7 +54,7 @@
   /* ── Chapter blocks ── */
   .chapter {
     background: #fff;
-    padding: 40px 56px;
+    padding: 40px 0;
     margin-top: 10px;
   }
   .chapter-label {
@@ -129,7 +129,7 @@
   .dot-purple { background: #8b6bb8; }
   .dot-gold { background: #c9a227; }
 
-  .narrative { font-size: 14px; color: #333; line-height: 1.7; margin-bottom: 28px; max-width: 780px; }
+  .narrative { font-size: 14px; color: #333; line-height: 1.7; margin-bottom: 28px; }
 
   .chapter-title {
     font-size: 20px;
@@ -232,7 +232,7 @@
   /* ── Acties tabel ── */
   .acties-tabel tbody td { vertical-align: top; padding: 11px 10px; }
 
-  .intro-text { font-size: 13px; color: #444; line-height: 1.65; margin-bottom: 20px; max-width: 720px; }
+  .intro-text { font-size: 13px; color: #444; line-height: 1.65; margin-bottom: 20px; }
   .intro-text.wide { max-width: none; }
 
   /* ── Doelstellingen / ROAS-chart ── */
@@ -354,11 +354,11 @@
   .sep { height: 1px; background: #e8e8e8; margin: 28px 0; }
 
   /* ── Footer ── */
-  .doc-footer { background: #fff; margin-top: 10px; padding: 20px 56px; font-size: 11px; color: #ccc; border-top: 1px solid #e8e8e8; }
+  .doc-footer { background: #fff; margin-top: 10px; padding: 20px 0; font-size: 11px; color: #ccc; border-top: 1px solid #e8e8e8; }
 
 /* responsive-mobile */
-@media (max-width: 700px) {
-  body { padding: 20px 12px 32px; }
+@media (max-width: 740px) {
+  .page { padding: 28px 16px 48px; }
   .kpi-grid-5, .kpi-grid-4, .kpi-grid-3 { grid-template-columns: repeat(2, 1fr); }
   .two-col, .three-col, .goals-layout, .ba-images-row, .scale-compare { grid-template-columns: 1fr; }
   .goal-bar-row { grid-template-columns: 90px 1fr 44px; }
