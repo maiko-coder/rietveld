@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meta Ads Analyse — Rietveld Licht B.V.</title>
+<style>
+  :root {
+    --red: #1877F2;
+    --dark: #1A1A1A;
+    --gray: #555555;
+    --light: #F5F5F5;
+    --mid: #E8E8E8;
+    --green: #27AE60;
+    --green-light: #EAF3DE;
+    --green-dark: #3B6D11;
+    --amber: #E67E22;
+    --amber-light: #FAEEDA;
+    --amber-dark: #854F0B;
+    --blue: #2980B9;
+    --blue-light: #EBF5FB;
+    --blue-dark: #185FA5;
+    --teal: #0F6E56;
+    --teal-light: #E1F5EE;
+    --red-light: #EBF3FF;
+    --red-dark: #1558b0;
+    --white: #ffffff;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body { overflow: hidden; }
+
+  body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 14px;
+    color: var(--dark);
+    background: #f9fafb;
+    line-height: 1.7;
+  }
+
+  /* MAIN */
+  .main {
+    margin-left: 0;
+    padding: 0 0 48px;
+    max-width: none;
+  }
+
+  /* COVER */
+  .cover {
+    padding: 2rem 0 2rem;
+    border-bottom: 3px solid var(--red);
+    margin-bottom: 2.5rem;
+  }
+  .cover-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 0.5rem;
+  }
+  .cover-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--dark);
+    line-height: 1.15;
+    margin-bottom: 0.5rem;
+  }
+  .cover-sub {
+    font-size: 15px;
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+  }
+  .cover-meta {
+    font-size: 12px;
+    color: #999;
+  }
+
+  /* TAB BUTTONS (horizontal) */
+  .tab-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+  .tab-btn {
+    background: #f0f5ff;
+    border: 1px solid #dbeafe;
+    color: #374151;
+    border-radius: 20px;
+    padding: 6px 18px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.15s;
+    font-family: inherit;
+  }
+  .tab-btn:hover { background: #dbeafe; }
+  .tab-btn.active { background: var(--red); border-color: var(--red); color: #fff; font-weight: 600; }
+
+  /* TAB CONTENT PANELS */
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* SECTIONS */
+  .section {
+    margin-bottom: 3.5rem;
+    scroll-margin-top: 2rem;
+  }
+  h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--dark);
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--red);
+    margin-bottom: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  h1:first-child { margin-top: 0; }
+  h2 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--red);
+    margin: 1.75rem 0 0.75rem;
+  }
+  h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--dark);
+    margin: 1.25rem 0 0.5rem;
+  }
+  p {
+    color: var(--gray);
+    margin-bottom: 0.75rem;
+    font-size: 14px;
+  }
+  ul {
+    margin: 0.5rem 0 0.75rem 1.25rem;
+    color: var(--gray);
+  }
+  ul li { margin-bottom: 0.3rem; font-size: 14px; }
+  ul.sub { margin-left: 2.25rem; list-style: disc; }
+  ul.sub li { font-size: 13px; }
+
+  /* KPI GRID */
+  .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 12px; }
+  .kpi-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 1.25rem; }
+  .kpi-card {
+    background: var(--white);
+    border: 1px solid var(--mid);
+    border-radius: 8px;
+    padding: 1.1rem 1.1rem 1rem;
+    border-top: 3px solid var(--mid);
+  }
+  .kpi-card.green { border-top-color: var(--green); }
+  .kpi-card.blue { border-top-color: var(--blue); }
+  .kpi-card.red-c { border-top-color: var(--red); }
+  .kpi-card.amber { border-top-color: var(--amber); }
+  .kpi-card.teal { border-top-color: var(--teal); }
+  .kpi-label { font-size: 11px; color: #999; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .kpi-value { font-size: 26px; font-weight: 700; color: var(--dark); line-height: 1.1; }
+  .kpi-card.green .kpi-value { color: var(--green-dark); }
+  .kpi-card.blue .kpi-value { color: var(--blue-dark); }
+  .kpi-card.red-c .kpi-value { color: var(--red); }
+  .kpi-card.amber .kpi-value { color: var(--amber-dark); }
+  .kpi-card.teal .kpi-value { color: var(--teal); }
+  .kpi-sub { font-size: 11px; color: #bbb; margin-top: 3px; }
+
+  /* TABLES */
+  .table-wrap { overflow-x: auto; margin: 1rem 0; border-radius: 8px; border: 1px solid var(--mid); }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  thead tr { background: var(--light); }
+  th { padding: 10px 12px; text-align: left; font-weight: 600; color: var(--dark); font-size: 12px; border-bottom: 2px solid var(--mid); }
+  td { padding: 9px 12px; border-bottom: 1px solid var(--mid); color: var(--gray); vertical-align: middle; }
+  tr:last-child td { border-bottom: none; }
+  tr.hl td { background: #f0f5ff; }
+  tr.total td { background: var(--light); font-weight: 600; color: var(--dark); }
+
+  /* BADGES */
+  .badge { display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 10px; }
+  .b-green { background: var(--green-light); color: var(--green-dark); }
+  .b-amber { background: var(--amber-light); color: var(--amber-dark); }
+  .b-red { background: #fee2e2; color: #dc2626; }
+  .b-blue { background: var(--blue-light); color: var(--blue-dark); }
+  .b-teal { background: var(--teal-light); color: var(--teal); }
+  .b-gray { background: var(--light); color: var(--gray); }
+
+  /* BARS */
+  .bar-chart { display: flex; flex-direction: column; gap: 7px; margin: 1rem 0; }
+  .bar-row { display: flex; align-items: center; gap: 10px; }
+  .bar-label { font-size: 12px; color: var(--gray); width: 130px; flex-shrink: 0; }
+  .bar-track { flex: 1; height: 24px; background: var(--light); border-radius: 4px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 8px; font-size: 11px; font-weight: 600; color: var(--white); min-width: 40px; }
+  .bar-val { font-size: 12px; color: var(--gray); width: 44px; text-align: right; flex-shrink: 0; }
+
+  /* CALLOUT BOXES */
+  .callout { border-radius: 8px; padding: 1.1rem 1.25rem; margin: 1rem 0; border-left: 4px solid; }
+  .callout.green { background: var(--green-light); border-color: var(--green); }
+  .callout.amber { background: var(--amber-light); border-color: var(--amber); }
+  .callout.red { background: #fee2e2; border-color: #dc2626; }
+  .callout.blue { background: var(--red-light); border-color: var(--red); }
+  .callout-title { font-size: 13px; font-weight: 700; margin-bottom: 0.5rem; }
+  .callout.green .callout-title { color: var(--green-dark); }
+  .callout.amber .callout-title { color: var(--amber-dark); }
+  .callout.red .callout-title { color: #dc2626; }
+  .callout.blue .callout-title { color: var(--red-dark); }
+  .callout ul { color: var(--gray); margin-left: 1rem; }
+  .callout ul li { font-size: 13px; margin-bottom: 0.25rem; }
+
+  /* FUNNEL TABLE */
+  .funnel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+  .funnel-card { background: var(--white); border: 1px solid var(--mid); border-radius: 8px; padding: 1rem; }
+  .funnel-layer { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--red); margin-bottom: 0.25rem; }
+  .funnel-types { font-size: 13px; color: var(--dark); font-weight: 600; margin-bottom: 0.25rem; }
+  .funnel-kpi { font-size: 12px; color: var(--gray); }
+
+  /* PHASE TIMELINE */
+  .phase-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1rem 0; }
+  .phase-card { background: var(--white); border: 1px solid var(--mid); border-radius: 8px; padding: 1.1rem; position: relative; }
+  .phase-num { font-size: 11px; font-weight: 700; color: var(--red); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.25rem; }
+  .phase-period { font-size: 12px; color: #bbb; margin-bottom: 0.75rem; }
+  .phase-card ul { margin-left: 1rem; }
+  .phase-card ul li { font-size: 12px; color: var(--gray); margin-bottom: 0.2rem; }
+  .phase-kpi { margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--mid); display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+  /* TWO COL */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+
+  /* FOOTER */
+  .footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--mid); font-size: 11px; color: #bbb; background: transparent; }
+
+  /* SUMMARY SPECIFIC */
+  .sum-block {
+    background: var(--white);
+    border: 1px solid var(--mid);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .sum-block h2 {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--red);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--mid);
+    margin-top: 0;
+  }
+  .priority-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--light);
+  }
+  .priority-item:last-child { border-bottom: none; }
+  .priority-num {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    background: var(--red);
+    color: white;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .priority-text { font-size: 13px; color: var(--dark); line-height: 1.5; }
+  .priority-text strong { color: var(--dark); }
+  .priority-text span { color: var(--gray); font-size: 12px; display: block; }
+  .budget-bar-wrap { margin: 0.5rem 0 1rem; }
+  .budget-bar { display: flex; height: 32px; border-radius: 6px; overflow: hidden; width: 100%; }
+  .budget-seg { display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: white; transition: width 0.3s; }
+  .budget-legend { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 0.5rem; }
+  .budget-legend-item { display: flex; align-items: center; gap: 0.35rem; font-size: 12px; color: var(--gray); }
+  .budget-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .doelgroep-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .doelgroep-card { background: var(--light); border-radius: 8px; padding: 0.9rem; }
+  .doelgroep-card.winner { background: var(--green-light); border: 1px solid #c3dfa8; }
+  .doelgroep-card.warning { background: var(--amber-light); border: 1px solid #f0c98a; }
+  .doelgroep-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray); margin-bottom: 0.35rem; }
+  .doelgroep-val { font-size: 18px; font-weight: 700; color: var(--dark); }
+  .doelgroep-sub { font-size: 12px; color: var(--gray); margin-top: 0.15rem; }
+  .top-camp-row { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 0; border-bottom: 1px solid var(--light); }
+  .top-camp-row:last-child { border-bottom: none; }
+  .top-camp-name { font-size: 13px; color: var(--dark); font-weight: 500; }
+  .top-camp-meta { font-size: 12px; color: var(--gray); }
+  .top-camp-roas { font-size: 15px; font-weight: 700; color: var(--green); }
+
+  @media (max-width: 700px) {
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    .phase-grid { grid-template-columns: 1fr; }
+    .two-col { grid-template-columns: 1fr; }
+    .doelgroep-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<main class="main">
+
+  <!-- TAB BUTTONS -->
+  <div class="tab-buttons">
+    <button class="tab-btn active" data-tab="samenvatting">Samenvatting</button>
+    <button class="tab-btn" data-tab="compleet">Compleet rapport</button>
+    <button class="tab-btn" data-tab="doelstellingen-tab">Doelstellingen</button>
+  </div>
+
+  <!-- TAB: SAMENVATTING -->
+  <div class="tab-panel active" id="panel-samenvatting">
+
+    <!-- Accountprestaties -->
+    <div class="sum-block" id="sum-prestaties">
+      <h2>Accountprestaties</h2>
+      <div class="kpi-grid">
+        <div class="kpi-card green">
+          <div class="kpi-label">Omzet ROAS</div>
+          <div class="kpi-value">15,80x</div>
+          <div class="kpi-sub">sept 2023 – juni 2026</div>
+        </div>
+        <div class="kpi-card blue">
+          <div class="kpi-label">Totaal aankopen</div>
+          <div class="kpi-value">6.765</div>
+          <div class="kpi-sub">sept 2023 – juni 2026</div>
+        </div>
+        <div class="kpi-card red-c">
+          <div class="kpi-label">Conversiewaarde</div>
+          <div class="kpi-value">€1,88M</div>
+          <div class="kpi-sub">totaal gegenereerd</div>
+        </div>
+        <div class="kpi-card amber">
+          <div class="kpi-label">Gem. CPA</div>
+          <div class="kpi-value">€17,58</div>
+          <div class="kpi-sub">kosten per aankoop</div>
+        </div>
+      </div>
+      <div class="kpi-grid-2" style="margin-top:0.75rem;">
+        <div class="kpi-card teal">
+          <div class="kpi-label">POAS</div>
+          <div class="kpi-value">8,76x</div>
+          <div class="kpi-sub">rendement op brutowinst (aug 2024 – juni 2026)</div>
+        </div>
+        <div class="kpi-card teal">
+          <div class="kpi-label">Brutomargewaarde</div>
+          <div class="kpi-value">€1,04M</div>
+          <div class="kpi-sub">gerealiseerde marge (aug 2024 – juni 2026)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Top campagnes -->
+    <div class="sum-block" id="sum-campagnes">
+      <h2>Top campagnes</h2>
+      <div class="top-camp-row">
+        <div>
+          <div class="top-camp-name">RTG USP VarA 2026 <span class="badge b-green">Actief</span></div>
+          <div class="top-camp-meta">€5.763 spend · 1.325 aankopen</div>
+        </div>
+        <div class="top-camp-roas">57x ROAS</div>
+      </div>
+      <div class="top-camp-row">
+        <div>
+          <div class="top-camp-name">StoreTraffic sept 2024</div>
+          <div class="top-camp-meta">€24.309 spend · 2.803 aankopen · niet meer actief</div>
+        </div>
+        <div class="top-camp-roas">35,65x ROAS</div>
+      </div>
+      <div class="top-camp-row">
+        <div>
+          <div class="top-camp-name">Advantage+ Shopping 2025 <span class="badge b-green">Actief</span></div>
+          <div class="top-camp-meta">€5.547 spend · 274 aankopen</div>
+        </div>
+        <div class="top-camp-roas">13,23x ROAS</div>
+      </div>
+      <div class="top-camp-row">
+        <div>
+          <div class="top-camp-name">StoreTraffic 2026 <span class="badge b-green">Actief</span></div>
+          <div class="top-camp-meta">€2.000 spend · opstartfase</div>
+        </div>
+        <div class="top-camp-roas">8,11x ROAS</div>
+      </div>
+    </div>
+
+    <!-- Directe prioriteiten -->
+    <div class="sum-block" id="sum-prioriteiten">
+      <h2>Directe prioriteiten</h2>
+      <div class="priority-item">
+        <div class="priority-num">1</div>
+        <div class="priority-text"><strong>Budgetverschuiving doelgroepen op POAS</strong><span>65+ vrouwen (POAS 2,88x) naar 55–64 mannen (POAS 27,94x)</span></div>
+      </div>
+      <div class="priority-item">
+        <div class="priority-num">2</div>
+        <div class="priority-text"><strong>StoreTraffic 2026 opschalen</strong><span>Opvolger van de campagne met 35,65x ROAS, nu in opstartfase</span></div>
+      </div>
+      <div class="priority-item">
+        <div class="priority-num">3</div>
+        <div class="priority-text"><strong>Huisstijl doorvoeren in advertentievisuals</strong><span>Logo, kleuren en lettertype consistent maken in alle creatives</span></div>
+      </div>
+      <div class="priority-item">
+        <div class="priority-num">4</div>
+        <div class="priority-text"><strong>Showroomcontent produceren</strong><span>Video/foto van de showroombeleving: gestijlde kamers, licht aan, lunchcorner</span></div>
+      </div>
+      <div class="priority-item">
+        <div class="priority-num">5</div>
+        <div class="priority-text"><strong>Awareness-budget terugbrengen naar 20–25%</strong><span>Nu 34,8% naar Qvisits; vrijgekomen budget naar bewezen conversiecampagnes</span></div>
+      </div>
+      <div class="priority-item">
+        <div class="priority-num">6</div>
+        <div class="priority-text"><strong>Event match quality verbeteren</strong><span>q_visit score 4,9/10; onder wenselijke drempel van 6+</span></div>
+      </div>
+    </div>
+
+    <!-- Groeidoelstellingen -->
+    <div class="sum-block" id="sum-doelstellingen">
+      <h2>Groeidoelstellingen</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>KPI</th><th>Huidig</th><th>Fase 1</th><th>Fase 2</th><th>Fase 3</th></tr>
+          </thead>
+          <tbody>
+            <tr class="hl"><td>Blended ROAS NL</td><td>15,80x</td><td>≥16x</td><td>≥18x</td><td>≥20x</td></tr>
+            <tr class="hl"><td>POAS</td><td>8,76x</td><td>≥9,5x</td><td>≥11x</td><td>≥13x</td></tr>
+            <tr><td>CPA (webshop)</td><td>€17,58</td><td>≤€20</td><td>≤€18</td><td>≤€15</td></tr>
+            <tr><td>StoreTraffic CPA</td><td>€8,67</td><td>€8–10</td><td>€6–8</td><td>€5–7</td></tr>
+            <tr><td>E-mailaanmeldingen via Lead Ads</td><td>0</td><td>n.v.t.</td><td>200+/mnd</td><td>400+/mnd</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Budgetverdeling -->
+    <div class="sum-block" id="sum-budget">
+      <h2>Budgetverdeling</h2>
+      <div class="budget-bar-wrap">
+        <div class="budget-bar">
+          <div class="budget-seg" style="width:34.8%;background:var(--amber);">34,8%</div>
+          <div class="budget-seg" style="width:23.2%;background:var(--blue);">23,2%</div>
+          <div class="budget-seg" style="width:42%;background:var(--green);">42%</div>
+        </div>
+        <div class="budget-legend">
+          <div class="budget-legend-item"><div class="budget-dot" style="background:var(--amber)"></div>Qvisits/Awareness €41.421</div>
+          <div class="budget-legend-item"><div class="budget-dot" style="background:var(--blue)"></div>StoreTraffic €27.651</div>
+          <div class="budget-legend-item"><div class="budget-dot" style="background:var(--green)"></div>Conversie €49.952</div>
+        </div>
+      </div>
+      <p style="font-size:13px;color:var(--gray);margin-top:0.5rem;">Het awareness-aandeel van 34,8% is aan de hoge kant. Wij brengen dit terug naar 20–25% en heralloceren het vrijgekomen budget naar StoreTraffic en RTG USP.</p>
+    </div>
+
+    <!-- Sterkste doelgroep -->
+    <div class="sum-block" id="sum-doelgroep">
+      <h2>Sterkste doelgroep</h2>
+      <div class="doelgroep-grid">
+        <div class="doelgroep-card winner">
+          <div class="doelgroep-label">Beste performer</div>
+          <div class="doelgroep-val">55–64 mannen</div>
+          <div class="doelgroep-sub">POAS 27,94x · €7.028 spend</div>
+        </div>
+        <div class="doelgroep-card winner">
+          <div class="doelgroep-label">Hoogste marge%</div>
+          <div class="doelgroep-val">25–34 mannen</div>
+          <div class="doelgroep-sub">68% marge · POAS 11,23x</div>
+        </div>
+        <div class="doelgroep-card warning">
+          <div class="doelgroep-label">Bijsturen</div>
+          <div class="doelgroep-val">65+ vrouwen</div>
+          <div class="doelgroep-sub">POAS 2,88x · 21,8% van budget</div>
+        </div>
+        <div class="doelgroep-card">
+          <div class="doelgroep-label">Solide</div>
+          <div class="doelgroep-val">55–64 vrouwen</div>
+          <div class="doelgroep-sub">POAS 13,60x · €22.162 spend</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- END TAB SAMENVATTING -->
+
+  <!-- TAB: COMPLEET -->
+  <div class="tab-panel" id="panel-compleet">
+
+    <!-- 1. SAMENVATTING -->
+    <div class="section" id="samenvatting">
+      <h1>1. Managementsamenvatting</h1>
+
+      <div class="kpi-grid">
+        <div class="kpi-card green">
+          <div class="kpi-label">Omzet ROAS</div>
+          <div class="kpi-value">15,80x</div>
+          <div class="kpi-sub">sept 2023 – juni 2026</div>
+        </div>
+        <div class="kpi-card blue">
+          <div class="kpi-label">Totaal aankopen</div>
+          <div class="kpi-value">6.765</div>
+          <div class="kpi-sub">sept 2023 – juni 2026</div>
+        </div>
+        <div class="kpi-card red-c">
+          <div class="kpi-label">Conversiewaarde</div>
+          <div class="kpi-value">€1,88M</div>
+          <div class="kpi-sub">totaal gegenereerd</div>
+        </div>
+        <div class="kpi-card amber">
+          <div class="kpi-label">Gem. CPA</div>
+          <div class="kpi-value">€17,58</div>
+          <div class="kpi-sub">kosten per aankoop</div>
+        </div>
+      </div>
+      <div class="kpi-grid-2">
+        <div class="kpi-card teal">
+          <div class="kpi-label">POAS</div>
+          <div class="kpi-value">8,76x</div>
+          <div class="kpi-sub">rendement op brutowinst (aug 2024 – juni 2026)</div>
+        </div>
+        <div class="kpi-card teal">
+          <div class="kpi-label">Brutomargewaarde</div>
+          <div class="kpi-value">€1,04M</div>
+          <div class="kpi-sub">gerealiseerde marge (aug 2024 – juni 2026)</div>
+        </div>
+      </div>
+
+      <p>Rietveld Licht zet Meta Ads in als een groeiend onderdeel van de betaalde mediastrategie, naast Google Ads, Criteo en marketplace-adverteren. Het account is in de periode 2023–2026 sterk doorontwikkeld: van een eerste test met €1.000 spend in september 2023 naar een volwassen accountstructuur met meerdere campagnetypes en bijna €119.000 totale spend in de periode juni 2024–juni 2026.</p>
+      <p>De overall ROAS over de volledige geanalyseerde periode bedraagt 15,80x, ruim boven de minimale doelstelling van 4x voor Nederland. De conversiecampagnes, en met name de retargeting- en StoreTraffic-campagnes, presteren uitzonderlijk goed. De Qvisits-brandingcampagnes zijn bewust verlieslatend op directe ROAS maar dienen een apart doel: merkbekendheid en websiteverkeer.</p>
+      <p>Een bijzonder sterk punt dat direct opvalt: Rietveld heeft een volledig operationele POAS-tracking via de Conversions API. Per transactie wordt de werkelijke brutowinst doorgegeven aan Meta, wat optimalisatie op winstgevendheid mogelijk maakt. Dit is een geavanceerde implementatie die wij direct benutten en verder uitbouwen.</p>
+      <p>Er liggen significante kansen op het gebied van doelgroepoptimalisatie, catalogusgekoppelde dynamische advertenties, internationale uitrol en een betere aansluiting van Meta op de overige kanalen binnen de omnichannel strategie.</p>
+    </div>
+
+    <!-- 2. HUIDIGE POSITIE -->
+    <div class="section" id="positie">
+      <h1>2. Huidige positie — accountanalyse</h1>
+
+      <h2>2.1 Ontwikkeling per periode</h2>
+      <p>Het account is in drie herkenbare fases opgebouwd. Elke fase laat een andere maturity zien in campagnestructuur, doelgroepbenadering en budgetinzet.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Periode</th><th>Besteed</th><th>Aankopen</th><th>Conversiewaarde</th><th>ROAS</th><th>CPA</th><th>CPM</th><th>Weergaven</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Sept 2023</td><td>€1.000</td><td>52</td><td>€13.129</td>
+              <td><span class="badge b-green">13,13x</span></td><td>€19,23</td><td>€7,47</td><td>133.887</td>
+            </tr>
+            <tr>
+              <td>Feb – apr 2024</td><td>€5.914</td><td>126</td><td>€27.690</td>
+              <td><span class="badge b-amber">4,68x</span></td><td>€46,93</td><td>€7,97</td><td>742.129</td>
+            </tr>
+            <tr class="hl">
+              <td>Jun 2024 – jun 2026</td><td>€118.924</td><td>6.765</td><td>€1.879.134</td>
+              <td><span class="badge b-green">15,80x</span></td><td>€17,58</td><td>€9,20</td><td>-</td>
+            </tr>
+            <tr class="total">
+              <td>Totaal</td><td>€118.924</td><td>6.765</td><td>€1.879.134</td>
+              <td><span class="badge b-green">15,80x</span></td><td>€17,58</td><td>-</td><td>-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>De ROAS-dip in feb–apr 2024 (4,68x) is het directe gevolg van budgetopschaling: bij 6x meer spend is prospecting relatief zwaarder gewogen, wat de blended ROAS drukt. In de periode juni 2024–juni 2026 bedraagt de blended ROAS 15,80x door een betere campagnemix met meer gewicht op retargeting en StoreTraffic.</p>
+
+      <h2>2.2 Campagnestructuur: sterke en zwakke performers</h2>
+      <p>De campagneportefeuille bestaat uit vier herkenbare types met sterk uiteenlopende prestaties:</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Campagnetype</th><th>Spend</th><th>Aankopen</th><th>Omzet ROAS</th><th>POAS</th><th>Marge%</th><th>Beoordeling</th></tr>
+          </thead>
+          <tbody>
+            <tr class="hl"><td>RTG USP VarA 2026 <span class="badge b-green">Actief</span></td><td>€5.763</td><td>1.325</td><td>57,02x</td><td>32,18x</td><td>56%</td><td><span class="badge b-green">Uitzonderlijk sterk</span></td></tr>
+            <tr class="hl"><td>StoreTraffic sept 2024 (7-day)</td><td>€24.309</td><td>2.803</td><td>35,65x</td><td>20,25x</td><td>57%</td><td><span class="badge b-amber">Niet meer actief</span></td></tr>
+            <tr><td>RTG RTG_ROAS WebshopOnly</td><td>€10.600</td><td>616</td><td>12,74x</td><td>7,11x</td><td>56%</td><td><span class="badge b-amber">Niet meer actief</span></td></tr>
+            <tr><td>Advantage+ Shopping 2025 <span class="badge b-green">Actief</span></td><td>€5.547</td><td>274</td><td>13,23x</td><td>7,71x</td><td>58%</td><td><span class="badge b-green">Solide</span></td></tr>
+            <tr><td>Advantage+ ROAS WebshopOnly (7-day)</td><td>€7.543</td><td>346</td><td>15,47x</td><td>8,18x</td><td>53%</td><td><span class="badge b-amber">Niet meer actief</span></td></tr>
+            <tr><td>StoreTraffic sept 2026 <span class="badge b-green">Actief</span></td><td>€2.000</td><td>64</td><td>8,11x</td><td>4,63x</td><td>57%</td><td><span class="badge b-teal">Opstartfase</span></td></tr>
+            <tr><td>Traffic/Qvisits (branding) <span class="badge b-green">Actief</span></td><td>€41.421</td><td>140</td><td>0,79x</td><td>n.v.t.</td><td>-</td><td><span class="badge b-amber">Bewust brandingdoel</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>De campagnetabel toont zowel omzet-ROAS als POAS. De RTG USP VarA campagne is momenteel de sterkste actieve conversiecampagne met een ROAS van 57x en POAS van 32x. De grote StoreTraffic-campagne uit september 2024 (€24.309 spend, ROAS 35,65x) is niet meer actief; de opvolger uit 2026 staat in de opstartfase. De Qvisits-campagnes vertegenwoordigen €41.421 (34,8%) van het totale Meta-budget maar genereren nauwelijks directe aankopen. Dit is een bewuste keuze voor merkopbouw, maar 34,8% is relatief hoog voor een account dat zo sterk op conversie presteert.</p>
+
+      <div class="callout blue">
+        <div class="callout-title">Campagnestatus: actief vs. uitgefaseerd</div>
+        <ul>
+          <li><strong>Actief:</strong> RTG USP VarA 2026 (57x ROAS), Advantage+ Shopping 2025 (13,23x), nieuwe StoreTraffic 2026 (opstartfase), Qvisits 2026 m2 (brandingdoel)</li>
+          <li><strong>Niet meer actief:</strong> de grote StoreTraffic campagne sept 2024 (€24.309 spend, 35,65x ROAS) staat niet meer aan. Dit is een aandachtspunt: de opvolger (2026) heeft pas €2.000 spend en staat nog in de opstartfase</li>
+          <li><strong>RTG VarB USP</strong> (ROAS 81x op €800 spend) is ook niet meer actief; dit was een van de sterkst presterende campagnes ooit in het account</li>
+          <li>Wij schalen de nieuwe StoreTraffic en RTG USP varianten snel op en evalueren waarom de bewezen performers zijn uitgefaseerd</li>
+        </ul>
+      </div>
+
+      <h2>2.3 Doelgroepanalyse: wie converteert?</h2>
+      <p>De data over alle periodes onthult duidelijke demografische patronen. De POAS-data voegt een cruciale dimensie toe: niet alleen wie converteert, maar wie de meest winstgevende aankopen doet.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Doelgroep</th><th>Spend</th><th>Aankopen</th><th>Omzet ROAS</th><th>POAS</th><th>Marge%</th><th>Insight</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>18–24 vrouwen <sup>*</sup></td><td>€956</td><td>256</td><td>79,66x</td><td>45,87x</td><td>58%</td><td><span class="badge b-gray">Observatie</span></td></tr>
+            <tr class="hl"><td>55–64 mannen</td><td>€7.028</td><td>1.171</td><td>49,79x</td><td>27,94x</td><td>56%</td><td><span class="badge b-green">Hoog volume + hoge POAS</span></td></tr>
+            <tr class="hl"><td>25–34 mannen</td><td>€5.377</td><td>309</td><td>16,57x</td><td>11,23x</td><td>68%</td><td><span class="badge b-green">Hoogste marge%</span></td></tr>
+            <tr><td>18–24 mannen <sup>*</sup></td><td>€355</td><td>17</td><td>14,67x</td><td>9,57x</td><td>65%</td><td><span class="badge b-gray">Observatie</span></td></tr>
+            <tr><td>55–64 vrouwen</td><td>€22.162</td><td>1.803</td><td>24,99x</td><td>13,60x</td><td>54%</td><td><span class="badge b-green">Solide</span></td></tr>
+            <tr><td>35–44 vrouwen</td><td>€13.112</td><td>479</td><td>8,87x</td><td>5,38x</td><td>61%</td><td><span class="badge b-teal">Hoge marge%</span></td></tr>
+            <tr><td>45–54 vrouwen</td><td>€12.870</td><td>613</td><td>13,27x</td><td>7,18x</td><td>54%</td><td>Solide</td></tr>
+            <tr><td>65+ vrouwen</td><td>€25.962</td><td>668</td><td>5,52x</td><td>2,88x</td><td>52%</td><td><span class="badge b-amber">Bijsturen</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="font-size:12px; color:#999; margin-top:0.5rem;"><sup>*</sup> Deze segmenten draaien op een klein budget waardoor de cijfers zijn gebaseerd op statistische modellering door Meta. De gerapporteerde ROAS en POAS zijn daardoor niet representatief voor wat er bij opschaling zal gebeuren. Beide segmenten zijn als observatie opgenomen maar worden niet actief aanbevolen voor budgetverschuiving.</p>
+      <p>Vanuit POAS-perspectief springt het segment 25–34 jarige mannen er extra uit met een marge% van 68%, ver boven het accountgemiddelde van 55,4%. Dit segment koopt niet alleen goed maar ook duurdere, winstgevendere producten. De doelgroep 65+ vrouwen ontvangt het meeste budget (€25.962, 21,8%) maar heeft de laagste POAS van 2,88x.</p>
+
+      <h2>2.4 Tracking en technische infrastructuur</h2>
+      <p>De technische basis van het Meta-account is overwegend sterk, met een aantal concrete verbeterpunten.</p>
+
+      <div class="callout green">
+        <div class="callout-title">Sterk: Conversions API en POAS-tracking volledig uitgerold</div>
+        <ul>
+          <li>Vrijwel alle events draaien serverside via de Conversions API, de meest betrouwbare vorm van conversietracking</li>
+          <li>POAS-tracking actief sinds augustus 2024: Rietveld stuurt per transactie de werkelijke brutowinst door via het profit_purchase event. Dit is een geavanceerde implementatie die de meeste adverteerders in de verlichtingsbranche niet hebben</li>
+          <li>Over de periode augustus 2024 tot juni 2026 is €1.041.791 aan brutomargewaarde gemeten, met een gemiddelde brutomarge van 55,4% per transactie</li>
+          <li>Omnichannel showroomtracking actief: aankopen die zijn geinitieerd via de showroom worden apart gemeten via een custom parameter in het Purchase event</li>
+          <li>Uitgebreide eventset aanwezig: purchase, add_to_cart, view_item, initiate_checkout, search, profit_purchase en diverse custom events</li>
+          <li>Feed wordt dagelijks bijgewerkt via Channable/BGenius, productdata is actueel</li>
+        </ul>
+      </div>
+
+      <div class="callout amber">
+        <div class="callout-title">Aandachtspunten: drie concrete verbeterpunten</div>
+        <ul>
+          <li>De profit_purchase waarde wordt dynamisch meegestuurd per transactie via de Conversions API. Aandachtspunt: valideren of de waardeparameter consistent en correct wordt meegestuurd bij alle transactietypes</li>
+          <li>q_visit event match quality score is 4,9/10, onder de wenselijke drempel van 6+. Dit beperkt de optimalisatie van de Qvisits-campagnes</li>
+          <li>PageView gebruikt meerdere integraties, wat risico op dubbele event-registratie geeft. Verificatie en deduplicatie is nodig</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 3. KANSEN -->
+    <div class="section" id="kansen">
+      <h1>3. Kansen — waar liggen de groeimogelijkheden?</h1>
+
+      <h2>3.1 Dynamische productadvertenties (DPA's) — al actief, verder uitbouwen</h2>
+      <p>DPA's draaien al binnen het account. De Conversions API stuurt per productpaginabezoek een content_id mee die correct matcht met de catalogus, waardoor Meta bezoekers dynamisch het door hen bekeken product kan terugspelen. Dit is een technisch sterke setup die volledig serverside werkt en daarmee robuuster is dan een browserpixelkoppeling. De focus ligt nu op het verder uitbouwen van wat al loopt:</p>
+
+      <div class="callout blue">
+        <div class="callout-title">Uitbreidingskansen op de bestaande DPA-infrastructuur</div>
+        <ul>
+          <li>Verlaten winkelwagen retargeting op Meta activeren als aanvulling op de e-mailstrategie; de data is er, de campagne nog niet</li>
+          <li>Cross-sell DPA uitrollen: kopers van categorie A tonen producten uit categorie B, automatisch schaalbaar</li>
+          <li>Catalogus formeel koppelen in Gebeurtenisbeheer voor betere diagnostiek en rapportage binnen Meta</li>
+          <li>Aansluiting met de CRO-aanpak voor upsellmodules en gerelateerde producten</li>
+        </ul>
+      </div>
+
+      <h2>3.2 Doelgroepoptimalisatie — budgetverschuiving</h2>
+      <p>Op basis van de demografische analyse zijn er directe efficiencywinsten te behalen door het budget anders te verdelen. De huidige verdeling is historisch gegroeid; de data rechtvaardigt een strategische bijsturing:</p>
+      <ul>
+        <li>25–34 mannen activeren: marge% van 68%, ver boven het gemiddelde, en relatief weinig budget</li>
+        <li>55–64 mannen verder uitbouwen: sterkste combinatie van volume en POAS (27,94x) in het account, budget kan 30–40% omhoog</li>
+        <li>65+ vrouwen bijsturen: marge% van 52% en POAS van 2,88x liggen beide onder het accountgemiddelde. Campagnetype en creatief aanpassen</li>
+      </ul>
+
+      <h2>3.3 Internationale uitrol via Meta</h2>
+      <p>Rietveld is actief in Nederland, België en Duitsland. De Meta-campagnes zijn tot nu toe vrijwel volledig gefocust op Nederland. Internationale opschaling via Meta is een logische volgende stap met een apart aangepaste strategie per markt:</p>
+      <ul>
+        <li>België: vergelijkbare doelgroep als NL, Nederlandstalige content grotendeels herbruikbaar, lage instapdrempel</li>
+        <li>Duitsland (Lumidora): aparte catalogus en creatieve assets nodig, specifieke targeting op interieurinteresse</li>
+        <li>Markten gescheiden houden in campagnestructuur voor accurate ROAS-meting per land</li>
+      </ul>
+
+      <h2>3.4 Budgetverdeling awareness vs. conversie optimaliseren</h2>
+      <p>De Qvisits-campagnes vertegenwoordigen 34,8% van het Meta-budget. Awareness heeft een functie; het voedt de funnel met nieuwe bezoekers die vervolgens via retargeting converteren. Maar 34,8% is aan de hoge kant voor een account dat zo sterk op conversie presteert. In goed ingerichte full funnel accounts ligt de verhouding doorgaans op 20–25% awareness, 75–80% conversie.</p>
+      <p>Er is ruimte om het Qvisits-budget te trimmen zonder de funnel te beschadigen. Het vrijgekomen budget kan worden ingezet op de twee campagnetypes met bewezen rendement:</p>
+      <ul>
+        <li>StoreTraffic opschalen: de nieuwe 2026-campagne staat in de opstartfase en heeft meer budget nodig om te optimaliseren; de voorganger bewees 35x ROAS op €24.000 spend</li>
+        <li>RTG USP uitbouwen: VarA draait actief op 57x ROAS, VarB liet eerder 81x zien; meer budget naar deze lijn versterkt het sterkste deel van het account</li>
+      </ul>
+
+      <h2>3.5 Meta als leadgenerator voor e-mail</h2>
+      <p>De e-mailstrategie van Rietveld beschrijft leadgeneratiecampagnes op Meta als bron voor de welkomstflow. Dit is momenteel niet actief. Meta Lead Ads zijn een directe en schaalbare manier om e-mailadressen te verzamelen bij relevante doelgroepen:</p>
+      <ul>
+        <li>Meta Lead Ads gekoppeld aan welkomstflow e-mailautomation in het e-mailplatform</li>
+        <li>Doelgroep: mensen die een product hebben bekeken maar nog niet gekocht</li>
+        <li>Incentive: 5% korting op de eerste bestelling</li>
+      </ul>
+
+      <h2>3.6 Showroomtraffic verder opschalen</h2>
+      <p>De StoreTraffic-campagnes zijn een absolute topper van het account. De campagne uit september 2024 realiseerde een ROAS van 35,65x en POAS van 20,25x over €24.309 spend, maar staat inmiddels niet meer actief. De opvolger uit 2026 is recent opgestart en bevindt zich nog in de opstartfase (ROAS 8,11x op €2.000 spend). De bewezen werking van dit campagnetype rechtvaardigt verdere opschaling zodra de nieuwe campagne geoptimaliseerd is. <strong>Validatie nodig:</strong> te bevestigen met Rietveld of de showroom conversion-regel correct is ingesteld en de QR-codeflow daadwerkelijk op deze manier werkt.</p>
+    </div>
+
+    <!-- 4. STRATEGIE -->
+    <div class="section" id="strategie">
+      <h1>4. Strategie — aanpak per fase</h1>
+
+      <h2>4.1 Strategisch uitgangspunt: de full funnel aanpak</h2>
+      <p>Meta speelt een unieke rol in de omnichannel mix van Rietveld: het is het enige kanaal dat zowel upper funnel (merkbekendheid, inspiratie) als lower funnel (retargeting, conversie) kan bedienen en dat ook de brug kan slaan naar de fysieke showroom. De strategie is opgebouwd langs vier lagen:</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Funnellaag</th><th>Doel</th><th>Campagnetypes</th><th>Primaire KPI's</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Upper funnel</td><td>Merkbekendheid &amp; inspiratie</td><td>Qvisits, Video, Reels</td><td>Bereik, frequentie, merkherkenning</td></tr>
+            <tr><td>Mid funnel</td><td>Overweging &amp; leadgeneratie</td><td>Traffic, Lead Ads, Engagement</td><td>CTR, CPL, e-mailaanmeldingen</td></tr>
+            <tr><td>Lower funnel</td><td>Conversie &amp; retentie</td><td>Advantage+ Shopping, DPA, RTG</td><td>ROAS, POAS, CPA, aankopen</td></tr>
+            <tr><td>Offline bridge</td><td>Showroombezoek</td><td>StoreTraffic</td><td>Toegeschreven online omzet, CPA</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>4.2 Fase 1: fundament versterken (maand 1–2)</h2>
+      <p>Prioriteit: technische optimalisatie en directe efficiencywinst zonder budgetverhoging.</p>
+      <ul>
+        <li><strong>Pixel koppelen aan catalogus</strong> — DPA-campagnes activeren
+          <ul class="sub">
+            <li>Catalogus segmenteren per markt: NL onder Rietveld Licht, DE onder Lumidora</li>
+            <li>Productsets aanmaken op categorieen: hanglampen, plafondlampen, buitenverlichting</li>
+          </ul>
+        </li>
+        <li><strong>Event match quality verbeteren</strong>
+          <ul class="sub">
+            <li>q_visit event score van 4,9 naar 7+ brengen via parameter-verrijking</li>
+            <li>PageView deduplicatie instellen via de event-deduplicatiesleutel</li>
+          </ul>
+        </li>
+        <li><strong>Budgetverschuiving doorvoeren op bestaande campagnes</strong>
+          <ul class="sub">
+            <li>65+ vrouwen budget -20%, heralloceren naar 55–64 mannen en 25–34 mannen</li>
+          </ul>
+        </li>
+        <li><strong>Rapportagestructuur opzetten in Looker</strong> — Meta naast Google Ads en overige kanalen</li>
+      </ul>
+
+      <h2>4.3 Fase 2: uitbouwen en testen (maand 3–6)</h2>
+      <p>Prioriteit: nieuwe campagnetypes introduceren en internationale uitrol voorbereiden.</p>
+      <ul>
+        <li><strong>Dynamische productadvertenties live zetten</strong>
+          <ul class="sub">
+            <li>Verlaten winkelwagen retargeting op Meta, als aanvulling op e-mailflow</li>
+            <li>View Content retargeting: bezoekers productpagina zonder aankoop</li>
+            <li>Cross-sell DPA: kopers van categorie A tonen categorie B</li>
+          </ul>
+        </li>
+        <li><strong>Meta Lead Ads activeren voor e-maillijstgroei</strong>
+          <ul class="sub">
+            <li>Lookalike op bestaande kopers als doelgroep</li>
+            <li>Directe koppeling met welkomstflow in het e-mailplatform</li>
+          </ul>
+        </li>
+        <li><strong>Belgie uitrollen</strong>
+          <ul class="sub">
+            <li>Separate campagnes NL vs. BE voor ROAS-meting per land</li>
+            <li>Bestaande NL-creatieve assets vertalen/aanpassen</li>
+          </ul>
+        </li>
+        <li><strong>StoreTraffic opschalen</strong> — ROAS van 35x+ verdient meer budget</li>
+      </ul>
+
+      <h2>4.4 Fase 3: schalen en optimaliseren (maand 7–12)</h2>
+      <p>Prioriteit: budgetverhoging op bewezen campagnes, internationale uitrol Duitsland, POAS-gebaseerde biddingoptimalisatie.</p>
+      <ul>
+        <li>Advantage+ campagnes opschalen op basis van DPA-resultaten fase 2</li>
+        <li>Duitsland uitrollen onder Lumidora-branding, aparte creatieve lijn</li>
+        <li>Advantage+ Catalog Ads testen: Meta's volledig geautomatiseerde catalogus-campagne</li>
+        <li>Seizoensgebonden campagnes structureren: Q2 tuinverlichting, Q4 kerstverlichting, in lijn met SEO-contentstrategie</li>
+      </ul>
+    </div>
+
+    <!-- 5. CREATIEF -->
+    <div class="section" id="creatief">
+      <h1>5. Creatieve strategie — content en advertentieformats</h1>
+
+      <h2>5.1 Creatieve principes</h2>
+      <p>Verlichting is een visueel en emotioneel product. Mensen kopen geen lamp, ze kopen sfeer, een gevoel, een ruimte. De creatieve strategie sluit hier direct op aan:</p>
+      <ul>
+        <li>Sfeer boven product: toon lampen in een woonkameromgeving, niet op een witte achtergrond</li>
+        <li>Ruimte als context: eetkamer, slaapkamer, tuin; herkenbare situaties die inspireren</li>
+        <li>Sociale bewijskracht benutten: de reviewscore van 9,4 op basis van 24.450+ reviews is een enorme conversiefactor die actief in advertenties verwerkt moet worden</li>
+        <li>USP's consistent doorvoeren: eigen productie, exclusieve distributie, verlichtingsspecialist</li>
+      </ul>
+
+      <div class="callout amber">
+        <div class="callout-title">Aandachtspunt: huisstijl consistenter doorvoeren in visuals</div>
+        <ul>
+          <li>Het logo en de herkenbare huisstijlkleuren van Rietveld Licht komen in de huidige advertenties onvoldoende naar voren. Voor een merk in de premium verlichtingsmarkt is visuele consistentie cruciaal: herhaling van kleur, lettertype en logo zorgt voor merkherkenning die zich opbouwt over meerdere contactmomenten</li>
+          <li>Wij ontwikkelen een vaste advertentietemplate met het Rietveld-logo op een vaste positie, huisstijlkleuren als accentkleur in de visual of tekstoverlay, en een consistent lettertype dat de merkidentiteit versterkt</li>
+        </ul>
+      </div>
+
+      <div class="callout blue">
+        <div class="callout-title">Meer testen met verschillende creatives</div>
+        <ul>
+          <li>Op dit moment is er beperkte variatie in creatieve assets, waardoor onduidelijk blijft welk type visual, hook of format het beste aanslaat bij welke doelgroep</li>
+          <li>Wij testen structureel met minimaal twee creatieve varianten per advertentieset; variatie in beeldstijl (sfeershot vs. productdetail), format (single image vs. video vs. carousel) en tekstinvalshoek (USP-gedreven vs. review-gedreven vs. seizoensgebonden)</li>
+        </ul>
+      </div>
+
+      <div class="callout green">
+        <div class="callout-title">Kans: showroom beter in beeld brengen in advertenties</div>
+        <ul>
+          <li>De Rietveld-showroom is een uniek verkoopargument: een grote, professioneel gestijlde ruimte waar verlichting daadwerkelijk aanstaat in volledig ingerichte kamers, zodat klanten de sfeer kunnen ervaren zoals die thuis ook zal zijn</li>
+          <li>Dit is een beleving die online concurrenten simpelweg niet kunnen bieden; en die nu onvoldoende wordt uitgespeeld in de visuals</li>
+          <li>Wij produceren video- en fotocontent die de showroom als beleving laat zien: gestijlde kamers met verlichting aan, de warme sfeer van de ruimte, de lunchcorner, klanten die producten in een echte omgeving ervaren</li>
+          <li>Koppel hieraan een duidelijke CTA: "Kom het zelf ervaren; bezoek onze showroom" met adres of routeknop</li>
+        </ul>
+      </div>
+
+      <h2>5.2 Aanbevolen advertentieformats per funnellaag</h2>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Funnellaag</th><th>Format</th><th>Inhoud</th><th>Doel</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Upper funnel</td><td>Reels / Video (15–30s)</td><td>Sfeervolle woonkamer-video, seizoensinspiratie</td><td>Bereik &amp; merkbekendheid</td></tr>
+            <tr><td>Upper funnel</td><td>Carousel</td><td>Ruimte-per-ruimte inspiratie (keuken, slaapkamer, tuin)</td><td>Engagement &amp; websiteverkeer</td></tr>
+            <tr><td>Mid funnel</td><td>Single image</td><td>Categorie-highlight met CTA + reviewscore 9,4</td><td>Overweging &amp; klik</td></tr>
+            <tr><td>Mid funnel</td><td>Lead Ad</td><td>5% korting op de eerste bestelling</td><td>E-mailaanmelding</td></tr>
+            <tr><td>Lower funnel</td><td>Dynamic Product Ad</td><td>Bezochte product + alternatieven</td><td>Aankoop</td></tr>
+            <tr><td>StoreTraffic</td><td>Video / Reels (20–45s)</td><td>Showroombeleving: gestijlde kamers, verlichting aan, lunchcorner, sfeer</td><td>Showroombezoek</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 6. DOELSTELLINGEN -->
+    <div class="section" id="doelstellingen">
+      <h1>6. Doelstellingen &amp; KPI's</h1>
+
+      <h2>6.1 ROAS-doelstellingen per markt</h2>
+      <p>De doelstellingen sluiten aan op de minimale ROAS-targets zoals vastgelegd in de RFP, met een ambitieuze streefwaarde op basis van de historische accountprestaties.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Markt / type</th><th>Minimum ROAS (RFP)</th><th>Streef ROAS</th><th>Huidig</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr class="hl"><td>NL blended</td><td>6x</td><td>10x</td><td>16,36x</td><td><span class="badge b-green">Ruim boven target</span></td></tr>
+            <tr class="hl"><td>NL conversie only</td><td>4x</td><td>12x</td><td>13–57x</td><td><span class="badge b-green">Boven target</span></td></tr>
+            <tr><td>BE uitrol fase 2</td><td>5x</td><td>8x</td><td>n.v.t.</td><td><span class="badge b-amber">Op te starten</span></td></tr>
+            <tr><td>DE uitrol fase 3</td><td>5x</td><td>7x</td><td>n.v.t.</td><td><span class="badge b-amber">Op te starten</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>6.2 KPI's per fase</h2>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>KPI</th><th>Huidig</th><th>Fase 1 (mnd 1–2)</th><th>Fase 2 (mnd 3–6)</th><th>Fase 3 (mnd 7–12)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Blended ROAS NL</td><td>16,36x</td><td>≥16x</td><td>≥18x</td><td>≥20x</td></tr>
+            <tr><td>POAS</td><td>9,46x</td><td>≥9,5x</td><td>≥11x</td><td>≥13x</td></tr>
+            <tr><td>CPA (webshop)</td><td>€17,18</td><td>≤€20</td><td>≤€18</td><td>≤€15</td></tr>
+            <tr><td>Event match quality q_visit</td><td>4,9/10</td><td>5,5+</td><td>7,0+</td><td>7,5+</td></tr>
+            <tr><td>DPA ROAS (uitgebouwd)</td><td>actief</td><td>optimaliseren</td><td>30x+</td><td>40x+</td></tr>
+            <tr><td>E-mail opt-ins via Lead Ads</td><td>0</td><td>n.v.t.</td><td>200+/mnd</td><td>400+/mnd</td></tr>
+            <tr><td>StoreTraffic CPA</td><td>€8,67</td><td>€8–10</td><td>€6–8</td><td>€5–7</td></tr>
+            <tr><td>Bereik brandingcampagnes</td><td>baseline</td><td>meten</td><td>+20% t.o.v. basis</td><td>+35% t.o.v. basis</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>6.3 Onderbouwing van de ROAS-doelstellingen</h2>
+      <p>De gestelde ROAS-doelstellingen zijn niet gebaseerd op aannames, maar op drie concrete interventies die direct voortvloeien uit de analyse van het eigen account.</p>
+
+      <h3>Interventie 1: budgetverschuiving naar beter presterende doelgroepen</h3>
+      <p>Binnen het huidige account ontvangt de doelgroep 65+ vrouwen het hoogste budget: 21,8% van het totale spend. De POAS van dit segment bedraagt 2,88x, ruim onder het accountgemiddelde van 8,76x. Tegelijk presteren 55–64 jarige mannen op 27,94x POAS op slechts 5,9% van het budget. Een verschuiving van 20% van het 65+ vrouwen budget naar sterkere segmenten kost geen extra euro maar verhoogt de blended ROAS en POAS structureel.</p>
+
+      <h3>Interventie 2: uitbouwen van de bestaande DPA-infrastructuur</h3>
+      <p>DPA's draaien al binnen het account via de Conversions API; een technisch sterke, cookieproof implementatie. De focus ligt nu op het uitbreiden van wat er al staat: verlaten winkelwagen retargeting, crosssell DPA's en een formele cataloguskoppeling in Gebeurtenisbeheer voor betere rapportage. De bestaande retargeting campagnes draaien al op 29,37x ROAS. Verdere DPA-uitbouw levert naar verwachting een aanvullende ROAS-verbetering van 15–25%.</p>
+
+      <h3>Interventie 3: budgetverschuiving van awareness naar bewezen conversiecampagnes</h3>
+      <p>De Qvisits-campagnes vertegenwoordigen 34,8% van het Meta-budget (€41.421) maar genereren nauwelijks directe omzet. Wij stellen voor het awareness-aandeel terug te brengen naar 20–25% en het vrijgekomen budget te heralloceren naar StoreTraffic en RTG USP: de twee campagnetypes met bewezen rendement van 35–57x ROAS.</p>
+    </div>
+
+    <!-- 7. OMNICHANNEL -->
+    <div class="section" id="omnichannel">
+      <h1>7. Aansluiting op overige kanalen</h1>
+
+      <h2>7.1 Meta als spil in de omnichannel mix</h2>
+      <p>Meta is geen eiland. De kracht zit in de verbinding met Google Ads, SEO, e-mail en de fysieke showroom. De aanpak is bewust ontworpen als integraal onderdeel van de totale marketingstrategie.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Kanaal</th><th>Signaal naar Meta</th><th>Meta-respons</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Google Ads</td><td>Klik zonder conversie, branded zoekverkeer</td><td>Retargeting op websitebezoekers, DPA's</td></tr>
+            <tr><td>SEO / Blog</td><td>Organische bezoekers productpagina's</td><td>View Content retargeting, categorie-DPA's</td></tr>
+            <tr><td>E-mail</td><td>Leadgeneratie via Meta Lead Ads</td><td>Welkomstflow triggeren in het e-mailplatform</td></tr>
+            <tr><td>Showroom</td><td>QR-scan bij product; online aankoop (validatie nodig)</td><td>StoreTraffic campagnes</td></tr>
+            <tr><td>CRO (website)</td><td>Gedragsdata: filters, zoekacties, lightbox</td><td>Custom events als advertentietriggers</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>7.2 Seizoenskalender — Meta en SEO in sync</h2>
+      <p>De SEO-strategie beschrijft seizoensgebonden contentthema's. Meta versterkt deze door op hetzelfde moment paid awareness en conversiedruk te leggen:</p>
+      <ul>
+        <li>Q1 (jan–mrt): energiebesparing, smart lighting; video's over slimme verlichting</li>
+        <li>Q2 (apr–jun): tuinverlichting, buitenverlichting; sfeerbeelden zomertuin</li>
+        <li>Q3 (jul–sept): woninginrichting, slaapkamer; inspiratiecontent</li>
+        <li>Q4 (okt–dec): kerstverlichting, feestdagen; hoogste budgetperiode, maximale ROAS-druk</li>
+      </ul>
+    </div>
+
+    <!-- 8. DASHBOARDING -->
+    <div class="section" id="dashboarding">
+      <h1>8. Dashboarding &amp; rapportage</h1>
+
+      <h2>8.1 Rapportagestructuur</h2>
+      <p>Het Looker Studio dashboard is altijd up-to-date met realtime data en te allen tijde in te zien. Hierin is Meta volledig geintegreerd naast Google Ads, SEO, Pinterest en een overall overzicht van de gehele website. De rapportage bevat de volgende KPI's:</p>
+      <ul>
+        <li>ROAS en POAS per campagnetype (StoreTraffic, RTG, Advantage+, DPA, Branding)</li>
+        <li>Inzichten in doelgroep en platform (waar komen de conversies vandaan)</li>
+        <li>Bereik en frequentie brandingcampagnes; aparte trendlijn vs. conversiecampagnes</li>
+        <li>Aandeel Meta in totale omzet (blended met Google, e-mail en overige kanalen)</li>
+      </ul>
+
+      <h2>8.2 Kerndashboard — Meta specifiek</h2>
+      <p>De volgende metrics zijn standaard zichtbaar per week en maand:</p>
+      <ul>
+        <li>ROAS en POAS per campagnetype (StoreTraffic, RTG, Advantage+, DPA, Branding)</li>
+        <li>Inzichten in doelgroep en platform (waar komen de conversies vandaan)</li>
+        <li>Bereik en frequentie brandingcampagnes; aparte trendlijn vs. conversiecampagnes</li>
+        <li>Aandeel Meta in totale omzet (blended met Google, e-mail en overige kanalen)</li>
+      </ul>
+    </div>
+
+    <!-- 9. CONCLUSIE -->
+    <div class="section" id="conclusie">
+      <h1>9. Conclusie &amp; prioriteitenmatrix</h1>
+
+      <h2>9.1 Samenvattende conclusies</h2>
+      <p>Het Meta-account van Rietveld Licht staat op een sterk fundament. De conversiecampagnes presteren ruim boven de gestelde ROAS-doelstellingen en de POAS-tracking is een geavanceerde implementatie die wij direct benutten. Er liggen concrete en substantiele kansen op drie vlakken:</p>
+      <ul>
+        <li>Technisch: DPA's draaien al via CAPI; de focus ligt op verdere uitbouw (verlaten winkelwagen, crosssell) en formele cataloguskoppeling in Gebeurtenisbeheer voor betere rapportage</li>
+        <li>Doelgroep: betere budgetverdeling op basis van POAS-data levert directe efficiencywinst op zowel ROAS als marge</li>
+        <li>Strategie: internationale uitrol en e-mailintegratie vergroten het bereik en de lifetime value</li>
+      </ul>
+
+      <h2>9.2 Prioriteitenmatrix</h2>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Actie</th><th>Impact</th><th>Inspanning</th><th>Fase</th><th>Prioriteit</th></tr>
+          </thead>
+          <tbody>
+            <tr class="hl"><td>Catalogus formeel koppelen in Gebeurtenisbeheer</td><td><span class="badge b-amber">Middel</span></td><td>Laag</td><td>1</td><td>Direct</td></tr>
+            <tr class="hl"><td>Budgetverschuiving doelgroepen op POAS</td><td><span class="badge b-red">Hoog</span></td><td>Laag</td><td>1</td><td>Direct</td></tr>
+            <tr class="hl"><td>Event match quality verbeteren</td><td><span class="badge b-red">Hoog</span></td><td>Middel</td><td>1</td><td>Direct</td></tr>
+            <tr><td>POAS-waardeparameter valideren</td><td><span class="badge b-red">Hoog</span></td><td>Laag</td><td>1</td><td>Direct</td></tr>
+            <tr><td>DPA retargeting verlaten winkelwagen</td><td><span class="badge b-red">Zeer hoog</span></td><td>Middel</td><td>2</td><td>Fase 2</td></tr>
+            <tr><td>Meta Lead Ads + e-mailflow</td><td><span class="badge b-amber">Hoog</span></td><td>Middel</td><td>2</td><td>Fase 2</td></tr>
+            <tr><td>Belgie uitrollen</td><td><span class="badge b-amber">Hoog</span></td><td>Laag</td><td>2</td><td>Fase 2</td></tr>
+            <tr><td>StoreTraffic budget opschalen</td><td><span class="badge b-amber">Hoog</span></td><td>Laag</td><td>2</td><td>Fase 2</td></tr>
+            <tr><td>Duitsland uitrollen (Lumidora)</td><td><span class="badge b-green">Hoog</span></td><td>Hoog</td><td>3</td><td>Fase 3</td></tr>
+            <tr><td>Advantage+ Catalog Ads opschalen</td><td><span class="badge b-green">Hoog</span></td><td>Middel</td><td>3</td><td>Fase 3</td></tr>
+            <tr><td>Huisstijl consistenter doorvoeren in advertentievisuals</td><td><span class="badge b-amber">Hoog</span></td><td>Laag</td><td>1</td><td>Direct</td></tr>
+            <tr><td>Showroomcontent produceren (video/foto beleving)</td><td><span class="badge b-red">Hoog</span></td><td>Middel</td><td>1</td><td>Direct</td></tr>
+            <tr><td>Structureel A/B testen creatieve assets</td><td><span class="badge b-amber">Hoog</span></td><td>Laag</td><td>1</td><td>Direct</td></tr>
+            <tr><td>Seizoensgebonden creatieve assets</td><td><span class="badge b-green">Middel</span></td><td>Hoog</td><td>3</td><td>Fase 3</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+  <!-- END TAB COMPLEET -->
+
+  <!-- TAB: DOELSTELLINGEN -->
+  <div class="tab-panel" id="panel-doelstellingen-tab">
+
+    <!-- Doelstellingen & KPI's -->
+    <div class="section" id="doel-kpi">
+      <h1>Doelstellingen &amp; KPI's</h1>
+
+      <h2>ROAS-doelstellingen per markt</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Markt / type</th><th>Minimum ROAS (RFP)</th><th>Streef ROAS</th><th>Huidig</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr class="hl"><td>NL blended</td><td>6x</td><td>10x</td><td>15,80x</td><td><span class="badge b-green">Ruim boven target</span></td></tr>
+            <tr class="hl"><td>NL conversie only</td><td>4x</td><td>12x</td><td>13–57x</td><td><span class="badge b-green">Boven target</span></td></tr>
+            <tr><td>BE uitrol fase 2</td><td>5x</td><td>8x</td><td>n.v.t.</td><td><span class="badge b-amber">Op te starten</span></td></tr>
+            <tr><td>DE uitrol fase 3</td><td>5x</td><td>7x</td><td>n.v.t.</td><td><span class="badge b-amber">Op te starten</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>KPI's per fase</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>KPI</th><th>Huidig</th><th>Fase 1 (mnd 1–2)</th><th>Fase 2 (mnd 3–6)</th><th>Fase 3 (mnd 7–12)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Blended ROAS NL</td><td>15,80x</td><td>≥16x</td><td>≥18x</td><td>≥20x</td></tr>
+            <tr><td>POAS</td><td>8,76x</td><td>≥9,5x</td><td>≥11x</td><td>≥13x</td></tr>
+            <tr><td>CPA (webshop)</td><td>€17,58</td><td>≤€20</td><td>≤€18</td><td>≤€15</td></tr>
+            <tr><td>Event match quality q_visit</td><td>4,9/10</td><td>5,5+</td><td>7,0+</td><td>7,5+</td></tr>
+            <tr><td>DPA ROAS (uitgebouwd)</td><td>actief</td><td>optimaliseren</td><td>30x+</td><td>40x+</td></tr>
+            <tr><td>E-mailaanmeldingen via Lead Ads</td><td>0</td><td>n.v.t.</td><td>200+/mnd</td><td>400+/mnd</td></tr>
+            <tr><td>StoreTraffic CPA</td><td>€8,67</td><td>€8–10</td><td>€6–8</td><td>€5–7</td></tr>
+            <tr><td>Bereik brandingcampagnes</td><td>baseline</td><td>meten</td><td>+20% t.o.v. basis</td><td>+35% t.o.v. basis</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Creatieve strategie -->
+    <div class="section" id="doel-creatief">
+      <h1>Creatieve strategie</h1>
+
+      <h2>Creatieve principes</h2>
+      <p>Verlichting is een visueel en emotioneel product. Mensen kopen geen lamp, ze kopen sfeer, een gevoel, een ruimte. De creatieve strategie sluit hier direct op aan:</p>
+      <ul>
+        <li>Sfeer boven product: toon lampen in een woonkameromgeving, niet op een witte achtergrond</li>
+        <li>Ruimte als context: eetkamer, slaapkamer, tuin; herkenbare situaties die inspireren</li>
+        <li>Sociale bewijskracht benutten: de reviewscore van 9,4 op basis van 24.450+ reviews is een enorme conversiefactor die actief in advertenties verwerkt moet worden</li>
+        <li>USP's consistent doorvoeren: eigen productie, exclusieve distributie, verlichtingsspecialist</li>
+      </ul>
+
+      <div class="callout amber">
+        <div class="callout-title">Aandachtspunt: huisstijl consistenter doorvoeren in visuals</div>
+        <ul>
+          <li>Het logo en de herkenbare huisstijlkleuren van Rietveld Licht komen in de huidige advertenties onvoldoende naar voren. Voor een merk in de premium verlichtingsmarkt is visuele consistentie cruciaal</li>
+          <li>Wij ontwikkelen een vaste advertentietemplate met het Rietveld-logo op een vaste positie, huisstijlkleuren als accentkleur in de visual of tekstoverlay, en een consistent lettertype</li>
+        </ul>
+      </div>
+
+      <div class="callout blue">
+        <div class="callout-title">Meer testen met verschillende creatives</div>
+        <ul>
+          <li>Op dit moment is er beperkte variatie in creatieve assets, waardoor onduidelijk blijft welk type visual, hook of format het beste aanslaat bij welke doelgroep</li>
+          <li>Wij testen structureel met minimaal twee creatieve varianten per advertentieset; variatie in beeldstijl, format en tekstinvalshoek</li>
+        </ul>
+      </div>
+
+      <div class="callout green">
+        <div class="callout-title">Kans: showroom beter in beeld brengen in advertenties</div>
+        <ul>
+          <li>De Rietveld-showroom is een uniek verkoopargument: een grote, professioneel gestijlde ruimte waar verlichting daadwerkelijk aanstaat in volledig ingerichte kamers</li>
+          <li>Wij produceren video- en fotocontent die de showroom als beleving laat zien: gestijlde kamers met verlichting aan, de warme sfeer van de ruimte, de lunchcorner</li>
+          <li>Koppel hieraan een duidelijke CTA: "Kom het zelf ervaren; bezoek onze showroom" met adres of routeknop</li>
+        </ul>
+      </div>
+
+      <h2>Advertentieformats per funnellaag</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Funnellaag</th><th>Format</th><th>Inhoud</th><th>Doel</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Upper funnel</td><td>Reels / Video (15–30s)</td><td>Sfeervolle woonkamer-video, seizoensinspiratie</td><td>Bereik &amp; merkbekendheid</td></tr>
+            <tr><td>Upper funnel</td><td>Carousel</td><td>Ruimte-per-ruimte inspiratie (keuken, slaapkamer, tuin)</td><td>Engagement &amp; websiteverkeer</td></tr>
+            <tr><td>Mid funnel</td><td>Single image</td><td>Categorie-highlight met CTA + reviewscore 9,4</td><td>Overweging &amp; klik</td></tr>
+            <tr><td>Mid funnel</td><td>Lead Ad</td><td>5% korting op de eerste bestelling</td><td>E-mailaanmelding</td></tr>
+            <tr><td>Lower funnel</td><td>Dynamic Product Ad</td><td>Bezochte product + alternatieven</td><td>Aankoop</td></tr>
+            <tr><td>StoreTraffic</td><td>Video / Reels (20–45s)</td><td>Showroombeleving: gestijlde kamers, verlichting aan, lunchcorner, sfeer</td><td>Showroombezoek</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Prioriteitenmatrix -->
+    <div class="section" id="doel-matrix">
+      <h1>Prioriteitenmatrix</h1>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Actie</th><th>Impact</th><th>Inspanning</th><th>Fase</th><th>Prioriteit</th></tr>
+          </thead>
+          <tbody>
+            <tr class="hl"><td>Catalogus formeel koppelen in Gebeurtenisbeheer</td><td><span class="badge b-amber">Middel</span></td><td>Laag</td><td>1</td><td>Direct</td></tr>
+            <tr class="hl"><td>Budgetverschuiving doelgroepen op POAS</td><td><span class="badge b-red">Hoog</span></td><td>Laag</td><td>1</td><td>Direct</td></tr>
+            <tr class="hl"><td>Event match quality verbeteren</td><td><span class="badge b-red">Hoog</span></td><td>Middel</td><td>1</td><td>Direct</td></tr>
+            <tr><td>POAS-waardeparameter valideren</td><td><span class="badge b-red">Hoog</span></td><td>Laag</td><td>1</td><td>Direct</td></tr>
+            <tr><td>DPA retargeting verlaten winkelwagen</td><td><span class="badge b-red">Zeer hoog</span></td><td>Middel</td><td>2</td><td>Fase 2</td></tr>
+            <tr><td>Meta Lead Ads + e-mailflow</td><td><span class="badge b-amber">Hoog</span></td><td>Middel</td><td>2</td><td>Fase 2</td></tr>
+            <tr><td>Belgie uitrollen</td><td><span class="badge b-amber">Hoog</span></td><td>Laag</td><td>2</td><td>Fase 2</td></tr>
+            <tr><td>StoreTraffic budget opschalen</td><td><span class="badge b-amber">Hoog</span></td><td>Laag</td><td>2</td><td>Fase 2</td></tr>
+            <tr><td>Duitsland uitrollen (Lumidora)</td><td><span class="badge b-green">Hoog</span></td><td>Hoog</td><td>3</td><td>Fase 3</td></tr>
+            <tr><td>Advantage+ Catalog Ads opschalen</td><td><span class="badge b-green">Hoog</span></td><td>Middel</td><td>3</td><td>Fase 3</td></tr>
+            <tr><td>Huisstijl consistenter doorvoeren in advertentievisuals</td><td><span class="badge b-amber">Hoog</span></td><td>Laag</td><td>1</td><td>Direct</td></tr>
+            <tr><td>Showroomcontent produceren (video/foto beleving)</td><td><span class="badge b-red">Hoog</span></td><td>Middel</td><td>1</td><td>Direct</td></tr>
+            <tr><td>Structureel A/B testen creatieve assets</td><td><span class="badge b-amber">Hoog</span></td><td>Laag</td><td>1</td><td>Direct</td></tr>
+            <tr><td>Seizoensgebonden creatieve assets</td><td><span class="badge b-green">Middel</span></td><td>Hoog</td><td>3</td><td>Fase 3</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+  <!-- END TAB DOELSTELLINGEN -->
+
+  <div class="footer">
+    Opgesteld op basis van Meta Ads exportdata (sept 2023 – juni 2026), Events Manager, Commerce Manager productsets en de RFP van Rietveld Licht B.V. (april 2026). Vertrouwelijk document.
+  </div>
+
+</main>
+
+<script>
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabPanels = document.querySelectorAll('.tab-panel');
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tab = btn.dataset.tab;
+      tabBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      tabPanels.forEach(p => p.classList.remove('active'));
+      const panel = document.getElementById('panel-' + tab);
+      if (panel) panel.classList.add('active');
+      window.scrollTo(0, 0);
+    });
+  });
+</script>
+
+</body>
+</html>

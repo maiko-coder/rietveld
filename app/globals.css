@@ -190,6 +190,27 @@ a { color: inherit; text-decoration: none; }
   }
 }
 
+.meta-ads-analyse-body {
+  padding-bottom: 64px;
+}
+
+.meta-ads-analyse-body iframe {
+  width: 100%;
+  min-height: 7200px;
+  border: none;
+  display: block;
+}
+
+@media (max-width: 740px) {
+  .meta-ads-analyse-body {
+    padding-bottom: 48px;
+  }
+
+  .meta-ads-analyse-body iframe {
+    min-height: 11000px;
+  }
+}
+
 .pres-nav-inner {
   max-width: 1040px;
   margin: 0 auto;
