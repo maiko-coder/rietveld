@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google Ads — Kosten &amp; resultaten (jaaranalyse)</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f0f2f5; color: #1a1a2e; font-size: 14px; line-height: 1.6; }
+  .content { max-width: none; margin: 0; padding: 32px 0 48px; }
+  .section { margin-bottom: 44px; }
+  .section-title { font-size: 11px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: #888; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid #dde0e8; }
+  .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  @media (max-width: 740px) { .kpi-grid { grid-template-columns: repeat(2, 1fr); } }
+  .kpi-card { background: #fff; border-radius: 10px; padding: 20px; border: 1px solid #e8e8f0; }
+  .kpi-label { font-size: 11px; color: #888; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .kpi-value { font-size: 26px; font-weight: 700; color: #14433a; }
+  .kpi-value.blue { color: #1a2744; }
+  .kpi-sub { font-size: 12px; color: #888; margin-top: 4px; }
+  .insight-box { background: #fff; border-radius: 10px; border: 1px solid #e8e8f0; border-left: 4px solid #2d4a7a; padding: 20px 24px; margin-bottom: 16px; }
+  .insight-box h3 { font-size: 14px; font-weight: 700; color: #1a2744; margin-bottom: 8px; }
+  .insight-box p, .insight-box li { font-size: 13px; color: #444; line-height: 1.7; }
+  .insight-box ul { padding-left: 18px; margin-top: 6px; }
+  .insight-box li { margin-bottom: 6px; }
+  .table-wrap { background: #fff; border-radius: 10px; border: 1px solid #e8e8f0; overflow: hidden; overflow-x: auto; margin-bottom: 14px; }
+  table { width: 100%; border-collapse: collapse; min-width: 560px; }
+  thead th { background: #f8f9fc; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #888; padding: 10px 16px; text-align: left; border-bottom: 1px solid #e8e8f0; white-space: nowrap; }
+  thead th.right { text-align: right; }
+  tbody td { padding: 11px 16px; border-bottom: 1px solid #f2f2f6; font-size: 13px; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody td.right { text-align: right; }
+  tbody td.muted { color: #aaa; }
+  .pos { color: #00b894; font-weight: 600; }
+  .neg { color: #d63031; font-weight: 600; }
+  .neu { color: #888; font-weight: 600; }
+  .tag { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 10px; margin-right: 3px; }
+  .tag-pmax { background: #fff3e0; color: #e67e22; }
+  .tag-search { background: #eef2ff; color: #4a5de0; }
+  .tag-shopping { background: #f0faf5; color: #27ae60; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 740px) { .two-col { grid-template-columns: 1fr; } }
+  .bar-wrap { background: #eef2f7; border-radius: 4px; height: 8px; min-width: 60px; }
+  .bar { background: #2d4a7a; border-radius: 4px; height: 8px; min-width: 2px; }
+  .note { font-size: 12px; color: #888; margin-top: 8px; }
+  code { background: #f0f2f5; padding: 1px 5px; border-radius: 3px; font-size: 12px; }
+  .footer { text-align: center; font-size: 12px; color: #aaa; padding: 24px 0; }
+  a { color: #2d4a7a; }
+</style>
+</head>
+<body>
+
+<div class="content">
+
+  <div class="section">
+    <div class="section-title">Jaar-op-jaar vergelijking — kerncijfers</div>
+    <div class="kpi-grid">
+      <div class="kpi-card"><div class="kpi-label">Spend</div><div class="kpi-value blue">€2.125.972</div><div class="kpi-sub">Vorig jaar: €1.277.134 · <span class="pos">+66,5%</span></div></div>
+      <div class="kpi-card"><div class="kpi-label">Conversies</div><div class="kpi-value blue">66.746</div><div class="kpi-sub">Vorig jaar: 48.826 · <span class="pos">+36,7%</span></div></div>
+      <div class="kpi-card"><div class="kpi-label">ROAS</div><div class="kpi-value blue">5,87</div><div class="kpi-sub">Vorig jaar: 6,43 · <span class="neg">-8,7%</span></div></div>
+      <div class="kpi-card"><div class="kpi-label">CPA</div><div class="kpi-value blue">€31,85</div><div class="kpi-sub">Vorig jaar: €26,16 · <span class="neg">+21,8%</span></div></div>
+    </div>
+    <div class="table-wrap" style="margin-top:16px">
+      <table>
+        <thead><tr><th>Metric</th><th class="right">Huidige 365d</th><th class="right">Vorige 365d</th><th class="right">Verschil</th></tr></thead>
+        <tbody>
+          <tr><td>Spend</td><td class="right">€2.125.972</td><td class="right muted">€1.277.134</td><td class="right"><span class="pos">+66,5%</span></td></tr>
+          <tr><td>Conversies</td><td class="right">66.746</td><td class="right muted">48.826</td><td class="right"><span class="pos">+36,7%</span></td></tr>
+          <tr><td>Conv.waarde</td><td class="right">€12.490.033</td><td class="right muted">€8.210.180</td><td class="right"><span class="pos">+52,1%</span></td></tr>
+          <tr><td>ROAS</td><td class="right">5,87</td><td class="right muted">6,43</td><td class="right"><span class="neg">-8,7%</span></td></tr>
+          <tr><td>CPA</td><td class="right">€31,85</td><td class="right muted">€26,16</td><td class="right"><span class="neg">+21,8%</span></td></tr>
+          <tr><td>CPC</td><td class="right">€0,77</td><td class="right muted">€0,58</td><td class="right"><span class="neg">+32,8%</span></td></tr>
+          <tr><td>Clicks</td><td class="right">2.771.257</td><td class="right muted">2.218.492</td><td class="right"><span class="pos">+24,9%</span></td></tr>
+          <tr><td>Impressies</td><td class="right">190.942.392</td><td class="right muted">154.799.224</td><td class="right"><span class="pos">+23,3%</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="insight-box" style="margin-top:16px">
+      <h3>Belangrijkste YoY-conclusie: agressieve opschaling, licht dalende efficiëntie</h3>
+      <p>Spend steeg <strong>66,5%</strong> (€1.277.134 naar €2.125.972), conversies <strong>36,7%</strong> (48.826 naar 66.746). ROAS daalde van <strong>6,43</strong> naar <strong>5,87</strong> (-8,7%), CPA steeg van €26,16 naar €31,85 (+21,8%). CPC steeg +32,8% — het account is flink opgeschaald, maar rendement per euro daalt licht.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">YoY per kanaaltype</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Kanaal</th><th class="right">Spend vorig</th><th class="right">Spend huidig</th><th class="right">Δ Spend</th><th class="right">ROAS vorig</th><th class="right">ROAS huidig</th><th class="right">Δ ROAS</th></tr></thead>
+        <tbody>
+          <tr><td><span class="tag tag-pmax">Performance Max</span></td><td class="right">€758.466</td><td class="right">€1.593.291</td><td class="right"><span class="pos">+110,1%</span></td><td class="right neu">4,89</td><td class="right neu">4,69</td><td class="right"><span class="neg">-4,1%</span></td></tr>
+          <tr><td><span class="tag tag-search">Search</span></td><td class="right">€271.318</td><td class="right">€483.234</td><td class="right"><span class="pos">+78,1%</span></td><td class="right pos">12,15</td><td class="right pos">9,19</td><td class="right"><span class="neg">-24,3%</span></td></tr>
+          <tr><td><span class="tag tag-shopping">Shopping</span></td><td class="right">€17.233</td><td class="right">€46.381</td><td class="right"><span class="pos">+169,1%</span></td><td class="right pos">18,16</td><td class="right pos">11,92</td><td class="right"><span class="neg">-34,3%</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">PMax-spend bijna verdubbeld (+110%): €758.466 naar €1.593.291. PMax ROAS daalde van 4,89 naar 4,69. Search schaalde +78% met stabielere ROAS.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Maandtrend YoY — spend &amp; ROAS per kalendermaand</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Maand</th><th class="right">Spend vorig</th><th class="right">Spend huidig</th><th class="right">Δ Spend</th><th>Volume</th><th class="right">ROAS vorig</th><th class="right">ROAS huidig</th><th class="right">Δ ROAS</th></tr></thead>
+        <tbody>
+          <tr><td>jun</td><td class="right muted">€94.983</td><td class="right">€110.113</td><td class="right"><span class="pos">+15,9%</span></td><td><div class="bar-wrap"><div class="bar" style="width:49%"></div></div></td><td class="right muted">6,11</td><td class="right pos">6,31</td><td class="right"><span class="pos">+3,4%</span></td></tr>
+          <tr><td>jul</td><td class="right muted">€73.994</td><td class="right">€139.744</td><td class="right"><span class="pos">+88,9%</span></td><td><div class="bar-wrap"><div class="bar" style="width:62%"></div></div></td><td class="right muted">7,41</td><td class="right neu">5,42</td><td class="right"><span class="neg">-26,9%</span></td></tr>
+          <tr><td>aug</td><td class="right muted">€81.528</td><td class="right">€195.284</td><td class="right"><span class="pos">+139,5%</span></td><td><div class="bar-wrap"><div class="bar" style="width:86%"></div></div></td><td class="right muted">6,85</td><td class="right neu">5,80</td><td class="right"><span class="neg">-15,3%</span></td></tr>
+          <tr><td>sep</td><td class="right muted">€93.185</td><td class="right">€182.583</td><td class="right"><span class="pos">+95,9%</span></td><td><div class="bar-wrap"><div class="bar" style="width:80%"></div></div></td><td class="right muted">7,36</td><td class="right neu">5,74</td><td class="right"><span class="neg">-22,0%</span></td></tr>
+          <tr><td>okt</td><td class="right muted">€126.738</td><td class="right">€177.307</td><td class="right"><span class="pos">+39,9%</span></td><td><div class="bar-wrap"><div class="bar" style="width:78%"></div></div></td><td class="right muted">7,04</td><td class="right pos">6,21</td><td class="right"><span class="neg">-11,7%</span></td></tr>
+          <tr><td>nov</td><td class="right muted">€142.672</td><td class="right">€221.823</td><td class="right"><span class="pos">+55,5%</span></td><td><div class="bar-wrap"><div class="bar" style="width:98%"></div></div></td><td class="right muted">6,58</td><td class="right neu">5,46</td><td class="right"><span class="neg">-17,0%</span></td></tr>
+          <tr><td>dec</td><td class="right muted">€126.591</td><td class="right">€175.769</td><td class="right"><span class="pos">+38,8%</span></td><td><div class="bar-wrap"><div class="bar" style="width:77%"></div></div></td><td class="right muted">5,96</td><td class="right neu">5,75</td><td class="right"><span class="neg">-3,4%</span></td></tr>
+          <tr><td>jan</td><td class="right muted">€109.352</td><td class="right">€199.211</td><td class="right"><span class="pos">+82,2%</span></td><td><div class="bar-wrap"><div class="bar" style="width:88%"></div></div></td><td class="right muted">6,87</td><td class="right pos">6,16</td><td class="right"><span class="neg">-10,2%</span></td></tr>
+          <tr><td>feb</td><td class="right muted">€109.070</td><td class="right">€172.973</td><td class="right"><span class="pos">+58,6%</span></td><td><div class="bar-wrap"><div class="bar" style="width:76%"></div></div></td><td class="right muted">6,45</td><td class="right pos">6,47</td><td class="right"><span class="pos">+0,3%</span></td></tr>
+          <tr><td>mrt</td><td class="right muted">€118.545</td><td class="right">€226.851</td><td class="right"><span class="pos">+91,4%</span></td><td><div class="bar-wrap"><div class="bar" style="width:100%"></div></div></td><td class="right muted">5,30</td><td class="right neu">5,72</td><td class="right"><span class="pos">+8,0%</span></td></tr>
+          <tr><td>apr</td><td class="right muted">€106.800</td><td class="right">€152.362</td><td class="right"><span class="pos">+42,7%</span></td><td><div class="bar-wrap"><div class="bar" style="width:67%"></div></div></td><td class="right muted">5,35</td><td class="right pos">6,84</td><td class="right"><span class="pos">+27,9%</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Vergelijking jun–apr (volle maanden). Patroon: vanaf jul '25 steeg spend sterk (+89% jul, +140% aug, +96% sep) terwijl ROAS in die maanden daalde. Feb en apr '26 hielden ROAS stabiel ondanks hogere spend.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Budgetverschuivingen &amp; strategische focus</div>
+    <div class="insight-box">
+      <h3>Drie duidelijke fases van bewuste sturing</h3>
+      <ul style="padding-left:18px;margin-top:8px;font-size:13px;color:#444;line-height:1.8">
+        <li><strong>Fase 1: PMax-consolidatie (feb–apr '25):</strong> PMax-aandeel steeg van ~64% naar <strong>82–86%</strong>. Nieuwe campagnes <em>Bestsellers</em> (mrt) en <em>Sale-producten</em> (apr) gelanceerd. Search daalde naar ~14–18%.</li>
+        <li><strong>Fase 2: Accountbrede opschaling (jul–aug '25):</strong> Totale spend sprong van €110.113 (jun) naar €195.284 (aug, <strong>+77%</strong> in 2 maanden). Wolves (+91% gem. maandbudget), Bestsellers (+104%) en Sale-producten (+880%) zijn de grootste stijgers.</li>
+        <li><strong>Fase 3: Search-experimenten (sep–nov '25), terug naar PMax (2026):</strong> Search-aandeel piekte op <strong>31,6%</strong> (okt) door lancering AI Max Test, Smart Bidding Exploration en Broad Match tests. Daarna consolidatie: feb '26 PMax <strong>79,5%</strong>.</li>
+      </ul>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Maand</th><th class="right">Totaal spend</th><th class="right">PMax-aandeel</th><th class="right">Search-aandeel</th><th class="right">Shopping-aandeel</th></tr></thead>
+        <tbody>
+          <tr><td>jun '24</td><td class="right">€94.983</td><td class="right">77,9%</td><td class="right">20,4%</td><td class="right">1,7%</td></tr>
+          <tr><td>jul '24</td><td class="right">€73.994</td><td class="right">68,3%</td><td class="right">29,7%</td><td class="right">2,0%</td></tr>
+          <tr><td>aug '24</td><td class="right">€81.528</td><td class="right">64,2%</td><td class="right">32,5%</td><td class="right">3,3%</td></tr>
+          <tr><td>sep '24</td><td class="right">€93.185</td><td class="right">56,2%</td><td class="right">32,9%</td><td class="right">10,9%</td></tr>
+          <tr><td>okt '24</td><td class="right">€126.738</td><td class="right">63,2%</td><td class="right">27,7%</td><td class="right">8,0%</td></tr>
+          <tr><td>nov '24</td><td class="right">€142.672</td><td class="right">65,0%</td><td class="right">33,9%</td><td class="right">0,0%</td></tr>
+          <tr><td>dec '24</td><td class="right">€126.591</td><td class="right">64,6%</td><td class="right">34,1%</td><td class="right">0,1%</td></tr>
+          <tr><td>jan '25</td><td class="right">€109.352</td><td class="right">63,8%</td><td class="right">34,1%</td><td class="right">0,1%</td></tr>
+          <tr><td>feb '25</td><td class="right">€109.070</td><td class="right">77,3%</td><td class="right">19,9%</td><td class="right">0,1%</td></tr>
+          <tr><td>mrt '25</td><td class="right">€118.545</td><td class="right">82,3%</td><td class="right">16,1%</td><td class="right">0,1%</td></tr>
+          <tr><td>apr '25</td><td class="right">€106.800</td><td class="right">86,4%</td><td class="right">13,5%</td><td class="right">0,0%</td></tr>
+          <tr><td>jun '25</td><td class="right">€110.113</td><td class="right">82,2%</td><td class="right">17,7%</td><td class="right">0,0%</td></tr>
+          <tr><td>jul '25</td><td class="right">€139.744</td><td class="right">79,0%</td><td class="right">19,9%</td><td class="right">1,1%</td></tr>
+          <tr><td>aug '25</td><td class="right">€195.284</td><td class="right">74,2%</td><td class="right">20,8%</td><td class="right">5,0%</td></tr>
+          <tr><td>sep '25</td><td class="right">€182.583</td><td class="right">74,3%</td><td class="right">23,8%</td><td class="right">1,9%</td></tr>
+          <tr><td>okt '25</td><td class="right">€177.307</td><td class="right">65,8%</td><td class="right">31,6%</td><td class="right">2,6%</td></tr>
+          <tr><td>nov '25</td><td class="right">€221.823</td><td class="right">66,8%</td><td class="right">31,2%</td><td class="right">2,1%</td></tr>
+          <tr><td>dec '25</td><td class="right">€175.769</td><td class="right">74,2%</td><td class="right">23,5%</td><td class="right">2,3%</td></tr>
+          <tr><td>jan '26</td><td class="right">€199.211</td><td class="right">76,8%</td><td class="right">20,5%</td><td class="right">2,7%</td></tr>
+          <tr><td>feb '26</td><td class="right">€172.973</td><td class="right">79,5%</td><td class="right">17,9%</td><td class="right">2,6%</td></tr>
+          <tr><td>mrt '26</td><td class="right">€226.851</td><td class="right">75,6%</td><td class="right">22,8%</td><td class="right">1,6%</td></tr>
+          <tr><td>apr '26</td><td class="right">€152.362</td><td class="right">77,8%</td><td class="right">20,4%</td><td class="right">1,8%</td></tr>
+          <tr><td>mei '26</td><td class="right">€152.730</td><td class="right">79,0%</td><td class="right">19,4%</td><td class="right">1,6%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="two-col" style="margin-top:16px">
+      <div>
+        <div class="section-title" style="border:none;padding:0;margin-bottom:10px">Opgeschaald budget (jul '25+)</div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Campagne</th><th>Type</th><th class="right">Gem. vóór</th><th class="right">Gem. na</th><th class="right">Stijging</th></tr></thead>
+            <tbody>
+              <tr><td>8 | NL | NB PMax - Sale-producten</td><td><span class="tag tag-pmax">PMax</span></td><td class="right muted">€1.641</td><td class="right">€16.075</td><td class="right pos">+879,6%</td></tr>
+              <tr><td>4 | NL | Branded | Shopping Catch all</td><td><span class="tag tag-shopping">Shopping</span></td><td class="right muted">€1.311</td><td class="right">€4.211</td><td class="right pos">+221,1%</td></tr>
+              <tr><td>8 | NL | NB PMax - Bestsellers</td><td><span class="tag tag-pmax">PMax</span></td><td class="right muted">€9.955</td><td class="right">€20.341</td><td class="right pos">+104,3%</td></tr>
+              <tr><td>3 | NL | NB Search | Lampen Cat.</td><td><span class="tag tag-search">Search</span></td><td class="right muted">€8.254</td><td class="right">€16.005</td><td class="right pos">+93,9%</td></tr>
+              <tr><td>8 | NL | NB PMax - Wolves</td><td><span class="tag tag-pmax">PMax</span></td><td class="right muted">€27.728</td><td class="right">€53.083</td><td class="right pos">+91,4%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <div class="section-title" style="border:none;padding:0;margin-bottom:10px">Afgebouwd budget</div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Campagne</th><th>Type</th><th class="right">Gem. vóór</th><th class="right">Gem. na</th><th class="right">Daling</th></tr></thead>
+            <tbody>
+              <tr><td>8 | NL | NB PMax - Lions</td><td><span class="tag tag-pmax">PMax</span></td><td class="right muted">€28.249</td><td class="right">€21.536</td><td class="right neg">-23,8%</td></tr>
+              <tr><td>3 | NL | NB Search | Lampen Alg.</td><td><span class="tag tag-search">Search</span></td><td class="right muted">€4.801</td><td class="right">€3.222</td><td class="right neg">-32,9%</td></tr>
+              <tr><td>6 | NL | PMax - Showroomaankoop</td><td><span class="tag tag-pmax">PMax</span></td><td class="right muted">€4.198</td><td class="right">€2.611</td><td class="right neg">-37,8%</td></tr>
+              <tr><td>5 | NL | NB | PMax - Heroes</td><td><span class="tag tag-pmax">PMax</span></td><td class="right muted">€19.799</td><td class="right">€0</td><td class="right neg">-100,0%</td></tr>
+              <tr><td>5 | NL | NB | PMax - Villains</td><td><span class="tag tag-pmax">PMax</span></td><td class="right muted">€5.034</td><td class="right">€0</td><td class="right neg">-100,0%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Zoekterm-trends YoY</div>
+    <div class="insight-box">
+      <h3>Generieke termen groeien harder dan merktermen</h3>
+      <p>Spend op brede termen <em>lampen</em> (+211%) en <em>verlichting</em> (+178%) steeg sterk. CPA op <em>verlichting</em> verslechterde (€47 naar €82). Merkterm <em>rietveld lampen</em> groeide mee (+100% spend), terwijl <em>rietveld licht</em> daalde (€17.659 naar €10.854).</p>
+    </div>
+    <div class="two-col">
+      <div>
+        <div class="section-title" style="border:none;padding:0;margin-bottom:10px">Grootste spend-stijgers</div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Zoekterm</th><th class="right">Vorig</th><th class="right">Huidig</th><th class="right">Δ</th><th class="right">CPA</th></tr></thead>
+            <tbody>
+              <tr><td>lampen</td><td class="right muted">€6.437</td><td class="right">€20.009</td><td class="right"><span class="pos">+210,8%</span></td><td class="right">€70 naar €89</td></tr>
+              <tr><td>verlichting</td><td class="right muted">€2.607</td><td class="right">€7.237</td><td class="right"><span class="pos">+177,6%</span></td><td class="right">€47 naar €82</td></tr>
+              <tr><td>rietveld sliedrecht</td><td class="right muted">€2.568</td><td class="right">€5.308</td><td class="right"><span class="pos">+106,7%</span></td><td class="right">€7 naar €11</td></tr>
+              <tr><td>japandi lampen</td><td class="right muted">€0</td><td class="right">€1.321</td><td class="right">-</td><td class="right">- naar €70</td></tr>
+              <tr><td>lampen kopen</td><td class="right muted">€168</td><td class="right">€858</td><td class="right"><span class="pos">+410,8%</span></td><td class="right">€31 naar €286</td></tr>
+              <tr><td>badkamerlamp plafond</td><td class="right muted">€706</td><td class="right">€1.303</td><td class="right"><span class="pos">+84,4%</span></td><td class="right">€38 naar €32</td></tr>
+              <tr><td>hanglampen eettafel</td><td class="right muted">€429</td><td class="right">€917</td><td class="right"><span class="pos">+113,8%</span></td><td class="right">€81 naar €112</td></tr>
+              <tr><td>wandlampen</td><td class="right muted">€502</td><td class="right">€936</td><td class="right"><span class="pos">+86,5%</span></td><td class="right">€31 naar €52</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <div class="section-title" style="border:none;padding:0;margin-bottom:10px">Sterk gedaald / verdwenen</div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Zoekterm</th><th class="right">Vorig</th><th class="right">Huidig</th><th class="right">CPA</th></tr></thead>
+            <tbody>
+              <tr><td>lampenlicht</td><td class="right muted">€4.186</td><td class="right">€0</td><td class="right">€237 naar -</td></tr>
+              <tr><td>rietveld</td><td class="right muted">€3.882</td><td class="right">€268</td><td class="right">€3 naar €6</td></tr>
+              <tr><td>plafondlamp</td><td class="right muted">€2.883</td><td class="right">€0</td><td class="right">€49 naar -</td></tr>
+              <tr><td>lamp en licht</td><td class="right muted">€1.659</td><td class="right">€0</td><td class="right">€166 naar -</td></tr>
+              <tr><td>vloerlamp</td><td class="right muted">€1.578</td><td class="right">€200</td><td class="right">€54 naar €36</td></tr>
+              <tr><td>tafellamp</td><td class="right muted">€914</td><td class="right">€212</td><td class="right">€41 naar €235</td></tr>
+              <tr><td>lampen sliedrecht</td><td class="right muted">€885</td><td class="right">€215</td><td class="right">€13 naar €12</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">Termen als <em>lampenlicht</em> en <em>plafondlamp</em> verdwenen, waarschijnlijk verschoven naar PMax.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Huidige periode — totaaloverzicht</div>
+    <div class="kpi-grid">
+      <div class="kpi-card"><div class="kpi-label">Spend</div><div class="kpi-value blue">€2.125.972</div><div class="kpi-sub">Gem. €177.164/maand</div></div>
+      <div class="kpi-card"><div class="kpi-label">Conversies</div><div class="kpi-value blue">66.746</div><div class="kpi-sub">Conv.ratio 2,41%</div></div>
+      <div class="kpi-card"><div class="kpi-label">ROAS</div><div class="kpi-value blue">5,87</div><div class="kpi-sub">Conv.waarde €12.490.033</div></div>
+      <div class="kpi-card"><div class="kpi-label">CPA</div><div class="kpi-value blue">€31,85</div><div class="kpi-sub">Gem. CPC €0,77</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Observaties huidige periode</div>
+    <div class="insight-box"><h3>PMax domineert (75% budget)</h3><p>Wolves, Lions, Sheep en Bestsellers zijn de grootste posten. PMax ROAS 4,69 vs Search 9,19.</p></div>
+    <div class="insight-box"><h3>Branded Search extreem efficiënt</h3><p>Campagne <em>1 | NL | Branded</em>: ROAS 32,41, CPA €6,51. Lokaal ROAS 40,73.</p></div>
+    <div class="insight-box"><h3>Mei 2026 onder gemiddelde</h3><p>ROAS 4,79 vs jaargemiddelde ~5,89. YoY mei: spend €152.718 vs €79.700 vorig jaar.</p></div>
+    <div class="insight-box"><h3>Mobiel-first (69% spend)</h3><p>Desktop conv.ratio 3,12% vs mobiel 2,26%.</p></div>
+  </div>
+
+  <div class="section two-col">
+    <div>
+      <div class="section-title">Spend per kanaal (huidig)</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Kanaal</th><th class="right">Camp.</th><th class="right">Spend</th><th class="right">Conv.</th><th class="right">CPA</th><th class="right">ROAS</th></tr></thead>
+          <tbody>
+            <tr><td><span class="tag tag-pmax">Performance Max</span></td><td class="right">6</td><td class="right">€1.593.291 <span class="muted">(75,1%)</span></td><td class="right">41.480</td><td class="right">€38,41</td><td class="right neu">4,69</td></tr>
+            <tr><td><span class="tag tag-search">Search</span></td><td class="right">12</td><td class="right">€483.234 <span class="muted">(22,8%)</span></td><td class="right">22.044</td><td class="right">€21,92</td><td class="right pos">9,19</td></tr>
+            <tr><td><span class="tag tag-shopping">Shopping</span></td><td class="right">1</td><td class="right">€46.381 <span class="muted">(2,2%)</span></td><td class="right">3.087</td><td class="right">€15,02</td><td class="right pos">11,92</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <div class="section-title">Device-verdeling (huidig)</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Device</th><th class="right">Aandeel</th><th class="right">Spend</th><th class="right">Conv.%</th><th class="right">CPA</th></tr></thead>
+          <tbody>
+            <tr><td>Mobiel</td><td class="right">68,5%</td><td class="right">€1.456.712</td><td class="right">2,26%</td><td class="right">€30,70</td></tr>
+            <tr><td>Desktop</td><td class="right">28,7%</td><td class="right">€609.212</td><td class="right">3,12%</td><td class="right">€34,80</td></tr>
+            <tr><td>Tablet</td><td class="right">2,8%</td><td class="right">€59.492</td><td class="right">1,68%</td><td class="right">€33,46</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Maandtrend huidige periode</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Maand</th><th class="right">Spend</th><th>Volume</th><th class="right">Conv.</th><th class="right">CPA</th><th class="right">ROAS</th></tr></thead>
+        <tbody>
+          <tr><td>mei '25</td><td class="right">€19.233</td><td><div class="bar-wrap"><div class="bar" style="width:8%"></div></div></td><td class="right">707</td><td class="right">€27,22</td><td class="right neu">6,00</td></tr>
+          <tr><td>jun '25</td><td class="right">€110.113</td><td><div class="bar-wrap"><div class="bar" style="width:49%"></div></div></td><td class="right">4.505</td><td class="right">€24,44</td><td class="right pos">6,31</td></tr>
+          <tr><td>jul '25</td><td class="right">€139.744</td><td><div class="bar-wrap"><div class="bar" style="width:62%"></div></div></td><td class="right">4.052</td><td class="right">€34,49</td><td class="right neu">5,42</td></tr>
+          <tr><td>aug '25</td><td class="right">€195.284</td><td><div class="bar-wrap"><div class="bar" style="width:86%"></div></div></td><td class="right">5.477</td><td class="right">€35,66</td><td class="right neu">5,80</td></tr>
+          <tr><td>sep '25</td><td class="right">€182.583</td><td><div class="bar-wrap"><div class="bar" style="width:80%"></div></div></td><td class="right">5.587</td><td class="right">€32,68</td><td class="right neu">5,74</td></tr>
+          <tr><td>okt '25</td><td class="right">€177.307</td><td><div class="bar-wrap"><div class="bar" style="width:78%"></div></div></td><td class="right">5.989</td><td class="right">€29,61</td><td class="right pos">6,21</td></tr>
+          <tr><td>nov '25</td><td class="right">€221.823</td><td><div class="bar-wrap"><div class="bar" style="width:98%"></div></div></td><td class="right">6.716</td><td class="right">€33,03</td><td class="right neu">5,46</td></tr>
+          <tr><td>dec '25</td><td class="right">€175.769</td><td><div class="bar-wrap"><div class="bar" style="width:77%"></div></div></td><td class="right">5.742</td><td class="right">€30,61</td><td class="right neu">5,75</td></tr>
+          <tr><td>jan '26</td><td class="right">€199.211</td><td><div class="bar-wrap"><div class="bar" style="width:88%"></div></div></td><td class="right">6.602</td><td class="right">€30,17</td><td class="right pos">6,16</td></tr>
+          <tr><td>feb '26</td><td class="right">€172.973</td><td><div class="bar-wrap"><div class="bar" style="width:76%"></div></div></td><td class="right">5.868</td><td class="right">€29,48</td><td class="right pos">6,47</td></tr>
+          <tr><td>mrt '26</td><td class="right">€226.851</td><td><div class="bar-wrap"><div class="bar" style="width:100%"></div></div></td><td class="right">6.605</td><td class="right">€34,34</td><td class="right neu">5,72</td></tr>
+          <tr><td>apr '26</td><td class="right">€152.362</td><td><div class="bar-wrap"><div class="bar" style="width:67%"></div></div></td><td class="right">5.093</td><td class="right">€29,91</td><td class="right pos">6,84</td></tr>
+          <tr><td>mei '26</td><td class="right">€152.718</td><td><div class="bar-wrap"><div class="bar" style="width:67%"></div></div></td><td class="right">3.802</td><td class="right">€40,17</td><td class="right neu">4,79</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Top 12 campagnes (huidig)</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Campagne</th><th class="right">Spend</th><th class="right">Clicks</th><th class="right">CPC</th><th class="right">Conv.</th><th class="right">CPA</th><th class="right">ROAS</th></tr></thead>
+        <tbody>
+          <tr><td><strong>8 | NL | NB PMax - Profit - Wolves</strong><br><span class="tag tag-pmax">Performance Max</span></td><td class="right">€626.183</td><td class="right">774.805</td><td class="right">€0,81</td><td class="right">17.859</td><td class="right">€35,06</td><td class="right neu">5,21</td></tr>
+          <tr><td><strong>8 | NL | NB PMax - Profit - Lions</strong><br><span class="tag tag-pmax">Performance Max</span></td><td class="right">€258.067</td><td class="right">310.102</td><td class="right">€0,83</td><td class="right">6.848</td><td class="right">€37,69</td><td class="right neu">4,54</td></tr>
+          <tr><td><strong>8 | NL | NB PMax - Profit - Sheep</strong><br><span class="tag tag-pmax">Performance Max</span></td><td class="right">€256.580</td><td class="right">305.832</td><td class="right">€0,84</td><td class="right">6.500</td><td class="right">€39,47</td><td class="right neu">4,80</td></tr>
+          <tr><td><strong>8 | NL | NB PMax - Profit - Bestsellers</strong><br><span class="tag tag-pmax">Performance Max</span></td><td class="right">€241.678</td><td class="right">252.941</td><td class="right">€0,96</td><td class="right">5.812</td><td class="right">€41,59</td><td class="right neg">3,88</td></tr>
+          <tr><td><strong>3 | NL | NB Search | Lampen Categorieën</strong><br><span class="tag tag-search">Search</span></td><td class="right">€186.832</td><td class="right">231.532</td><td class="right">€0,81</td><td class="right">3.367</td><td class="right">€55,48</td><td class="right neg">3,26</td></tr>
+          <tr><td><strong>8 | NL | NB PMax - Profit - Sale-producten</strong><br><span class="tag tag-pmax">Performance Max</span></td><td class="right">€178.552</td><td class="right">190.983</td><td class="right">€0,93</td><td class="right">3.476</td><td class="right">€51,37</td><td class="right neg">3,44</td></tr>
+          <tr><td><strong>1 | NL | Branded</strong><br><span class="tag tag-search">Search</span></td><td class="right">€85.797</td><td class="right">226.009</td><td class="right">€0,38</td><td class="right">13.174</td><td class="right">€6,51</td><td class="right pos">32,41</td></tr>
+          <tr><td><strong>3 | NL | NB Search | DSA</strong><br><span class="tag tag-search">Search</span></td><td class="right">€61.631</td><td class="right">85.428</td><td class="right">€0,72</td><td class="right">1.255</td><td class="right">€49,11</td><td class="right neg">3,58</td></tr>
+          <tr><td><strong>4 | NL | Branded | Shopping - Catch all</strong><br><span class="tag tag-shopping">Shopping</span></td><td class="right">€46.381</td><td class="right">179.708</td><td class="right">€0,26</td><td class="right">3.087</td><td class="right">€15,02</td><td class="right pos">11,92</td></tr>
+          <tr><td><strong>3 | NL | NB Search | Lampen Algemeen</strong><br><span class="tag tag-search">Search</span></td><td class="right">€36.993</td><td class="right">31.795</td><td class="right">€1,16</td><td class="right">601</td><td class="right">€61,52</td><td class="right neg">3,27</td></tr>
+          <tr><td><strong>3 | NL | NB Search | Lampen Cat. - AI Max Test</strong><br><span class="tag tag-search">Search</span></td><td class="right">€34.506</td><td class="right">44.345</td><td class="right">€0,78</td><td class="right">573</td><td class="right">€60,21</td><td class="right neg">2,81</td></tr>
+          <tr><td><strong>2 | NL | Semi Brand | Productcategorieën</strong><br><span class="tag tag-search">Search</span></td><td class="right">€32.300</td><td class="right">44.773</td><td class="right">€0,72</td><td class="right">1.810</td><td class="right">€17,84</td><td class="right pos">9,81</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Campagnes onder ROAS 4,0 (&gt;€10k)</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Campagne</th><th class="right">Spend</th><th class="right">ROAS</th><th class="right">CPA</th></tr></thead>
+        <tbody>
+          <tr><td>8 | NL | NB PMax - Profit - Bestsellers</td><td class="right">€241.678</td><td class="right neg">3,88</td><td class="right">€41,59</td></tr>
+          <tr><td>3 | NL | NB Search | Lampen Categorieën</td><td class="right">€186.832</td><td class="right neg">3,26</td><td class="right">€55,48</td></tr>
+          <tr><td>8 | NL | NB PMax - Profit - Sale-producten</td><td class="right">€178.552</td><td class="right neg">3,44</td><td class="right">€51,37</td></tr>
+          <tr><td>3 | NL | NB Search | DSA</td><td class="right">€61.631</td><td class="right neg">3,58</td><td class="right">€49,11</td></tr>
+          <tr><td>3 | NL | NB Search | Lampen Algemeen</td><td class="right">€36.993</td><td class="right neg">3,27</td><td class="right">€61,52</td></tr>
+          <tr><td>3 | NL | NB Search | Lampen Cat. - AI Max Test</td><td class="right">€34.506</td><td class="right neg">2,81</td><td class="right">€60,21</td></tr>
+          <tr><td>3 | NL | NB Search | Lampen Cat. - Smart Bidding Exploration</td><td class="right">€19.860</td><td class="right neg">3,78</td><td class="right">€55,60</td></tr>
+          <tr><td>3 | NL | NB | Lampen Categorieën - Broad/Exact</td><td class="right">€11.809</td><td class="right neg">2,86</td><td class="right">€66,18</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Provincieanalyse — prestaties accountbreed per regio</div>
+    <div class="insight-box">
+      <h3>Grote ROAS-verschillen tussen provincies, hier wordt nu niet op gestuurd</h3>
+      <p>Zuid-Holland (ROAS 7,2, winkellocatie) en Utrecht presteren significant beter dan Friesland en Groningen. Bodaanpassingen per locatie werken niet met doel-ROAS; de oplossing is conversiewaarderegels. ROAS-verschil tussen beste en slechtste provincie: <strong>71%</strong>.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Provincie</th><th class="right">Spend</th><th class="right">Aandeel</th><th class="right">Conv.</th><th class="right">CPA</th><th class="right">ROAS</th><th class="right">Beoordeling</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Zuid-Holland</strong></td><td class="right">€455.234</td><td class="right">21,4%</td><td class="right">17.515</td><td class="right">€25,99</td><td class="right pos">7,20</td><td class="right"><span style="color:#00b894;font-weight:600">★ Beste</span></td></tr>
+          <tr><td>Zeeland</td><td class="right">€48.117</td><td class="right">2,3%</td><td class="right">1.743</td><td class="right">€27,60</td><td class="right pos">6,83</td><td class="right"><span style="color:#00b894;font-weight:600">★ Goed</span></td></tr>
+          <tr><td>Utrecht</td><td class="right">€164.982</td><td class="right">7,8%</td><td class="right">5.740</td><td class="right">€28,74</td><td class="right pos">6,51</td><td class="right"><span style="color:#00b894;font-weight:600">★ Goed</span></td></tr>
+          <tr><td>Noord-Holland</td><td class="right">€372.904</td><td class="right">17,5%</td><td class="right">12.135</td><td class="right">€30,73</td><td class="right neu">6,08</td><td class="right"><span style="color:#888">Boven gem.</span></td></tr>
+          <tr><td>Noord-Brabant</td><td class="right">€299.341</td><td class="right">14,1%</td><td class="right">9.286</td><td class="right">€32,24</td><td class="right neu">5,80</td><td class="right"><span style="color:#888">Gemiddeld</span></td></tr>
+          <tr><td>Flevoland</td><td class="right">€49.066</td><td class="right">2,3%</td><td class="right">1.440</td><td class="right">€34,07</td><td class="right neu">5,49</td><td class="right"><span style="color:#888">Gemiddeld</span></td></tr>
+          <tr><td>Gelderland</td><td class="right">€244.183</td><td class="right">11,5%</td><td class="right">6.912</td><td class="right">€35,33</td><td class="right neu">5,29</td><td class="right"><span style="color:#888">Gemiddeld</span></td></tr>
+          <tr><td>Overijssel</td><td class="right">€138.033</td><td class="right">6,5%</td><td class="right">3.765</td><td class="right">€36,66</td><td class="right neu">5,10</td><td class="right"><span style="color:#e67e22">Onder gem.</span></td></tr>
+          <tr><td>Drenthe</td><td class="right">€60.749</td><td class="right">2,9%</td><td class="right">1.558</td><td class="right">€38,99</td><td class="right neu">4,79</td><td class="right"><span style="color:#e67e22">Onder gem.</span></td></tr>
+          <tr><td>Limburg</td><td class="right">€132.042</td><td class="right">6,2%</td><td class="right">3.317</td><td class="right">€39,80</td><td class="right neg">4,70</td><td class="right"><span style="color:#d63031">Laag</span></td></tr>
+          <tr><td>Groningen</td><td class="right">€59.413</td><td class="right">2,8%</td><td class="right">1.428</td><td class="right">€41,61</td><td class="right neg">4,49</td><td class="right"><span style="color:#d63031">Laag</span></td></tr>
+          <tr><td>Friesland</td><td class="right">€77.408</td><td class="right">3,6%</td><td class="right">1.738</td><td class="right">€44,54</td><td class="right neg">4,20</td><td class="right"><span style="color:#d63031">Laagste</span></td></tr>
+          <tr style="border-top:2px solid #dde0e8;font-weight:600"><td>Totaal NL</td><td class="right">€2.101.472</td><td class="right">98,9%</td><td class="right">66.577</td><td class="right">€31,56</td><td class="right">5,87</td><td class="right">-</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Locatietargeting: instelling niet correct in alle campagnes</div>
+    <div class="insight-box">
+      <h3>Advertenties worden ook getoond buiten de doelmarkt</h3>
+      <p>In een aantal campagnes staat de instelling op <em>"Aanwezigheid of interesse"</em> in plaats van alleen <em>"Aanwezigheid"</em>. Iemand in Duitsland die zoekt naar "Nederlandse verlichting" kan dan Rietveld-advertenties te zien krijgen, terwijl Rietveld niet in Duitsland levert. Dit verspilt budget.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Instelling</th><th>Wat het betekent</th><th>Juist voor webshop?</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Aanwezigheid</strong></td><td>Alleen getoond aan mensen die fysiek in Nederland zijn</td><td class="pos">✓ Juist</td></tr>
+          <tr><td><strong>Aanwezigheid of interesse</strong></td><td>Ook getoond aan mensen buiten Nederland die interesse in NL tonen</td><td class="neg">✗ Te breed</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note"><strong>Actie:</strong> alle campagnes → Instellingen → Locaties → Locatie-opties → Aanwezigheid.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Bodaanpassingen worden genegeerd door doel-ROAS</div>
+    <div class="insight-box">
+      <h3>Instellingen die er staan maar geen effect hebben</h3>
+      <p>Er staan bodaanpassingen in voor tijdstippen (advertentieplanning) en provincies. Met doel-ROAS negeert Google deze volledig en ze geven een vals gevoel van controle. Enige uitzondering: apparaatuitsluiting op -100% werkt wél.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Type bodaanpassing</th><th>Werkt met doel-ROAS?</th><th>Alternatief</th></tr></thead>
+        <tbody>
+          <tr><td>Locatie / provincie</td><td class="neg">Nee, wordt genegeerd</td><td>Conversiewaarderegels per locatie</td></tr>
+          <tr><td>Advertentieplanning (tijdstip/dag)</td><td class="neg">Nee, wordt genegeerd</td><td>Conversiewaarderegels per tijdstip</td></tr>
+          <tr><td>Apparaat (-100% uitsluiting)</td><td class="pos">Ja, werkt wel</td><td>-</td></tr>
+          <tr><td>Doelgroep-bodaanpassing</td><td class="neg">Nee, wordt genegeerd</td><td>Conversiewaarderegels per doelgroep</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Bron: <a href="https://support.google.com/google-ads/answer/6268637?hl=nl" target="_blank">Google Ads Help: Over doel-ROAS-biedingen</a>: <em>"Omdat u met de strategie Doel-ROAS uw biedingen kunt optimaliseren op basis van realtime gegevens, worden uw bestaande bodaanpassingen niet gebruikt. Er is één uitzondering: u kunt nog wel bodaanpassingen van -100% voor apparaten instellen."</em></p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Testen met hogere biedingen voor nieuwe klanten</div>
+    <div class="insight-box">
+      <h3>Nu worden nieuwe en terugkerende klanten hetzelfde behandeld</h3>
+      <p>Via <em>"Nieuwe klant"-conversiedoelen</em> in PMax kan Google hogere biedingen doen voor mensen die nog nooit bij Rietveld hebben gekocht. Waardewegingsfactor bijv. 1,4×. Werkt het best in combinatie met Customer Match (klantlijst inladen voor herkenning bestaande klanten).</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Feed-optimalisatie: afbeeldingskwaliteit in Google Shopping</div>
+    <div class="insight-box">
+      <h3>Liggende afbeeldingen in de feed terwijl betere staande versies op de site staan</h3>
+      <p>Google Shopping toont producten het best met staande of vierkante afbeeldingen. Een liggende afbeelding wordt ingekaderd waardoor het product kleiner en minder aantrekkelijk verschijnt. Bij meerdere producten is in de feed een liggende afbeelding actief, terwijl de productpagina een betere staande versie heeft.</p>
+    </div>
+    <p class="note">Actie: loop Merchant Center feed door, vervang liggende afbeeldingen via <code>additional_image_link</code> door de betere staande variant. Minimaal 800×800px, bij voorkeur staand formaat.</p>
+  </div>
+
+</div>
+
+<div class="footer">Google Ads Analyse · Rietveld Licht &amp; Wonen · Juni 2026</div>
+
+</body>
+</html>

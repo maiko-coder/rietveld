@@ -169,6 +169,27 @@ a { color: inherit; text-decoration: none; }
   }
 }
 
+.google-ads-jaaranalyse-body {
+  padding-bottom: 64px;
+}
+
+.google-ads-jaaranalyse-body iframe {
+  width: 100%;
+  min-height: 6400px;
+  border: none;
+  display: block;
+}
+
+@media (max-width: 740px) {
+  .google-ads-jaaranalyse-body {
+    padding-bottom: 48px;
+  }
+
+  .google-ads-jaaranalyse-body iframe {
+    min-height: 9000px;
+  }
+}
+
 .pres-nav-inner {
   max-width: 1040px;
   margin: 0 auto;

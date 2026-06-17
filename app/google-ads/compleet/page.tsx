@@ -60,6 +60,16 @@ function Callout({ title, items, variant = "blue" }: { title: string; items: str
   );
 }
 
+function Tag({ children, variant = "green" }: { children: React.ReactNode; variant?: "green" | "orange" | "blue" }) {
+  const styles = {
+    green: { bg: "#e6f9f4", text: "#14433a" },
+    orange: { bg: "#fff3e0", text: "#e67e22" },
+    blue: { bg: "#eef2ff", text: "#4a5de0" },
+  };
+  const s = styles[variant];
+  return <span style={{ display: "inline-block", fontSize: 10, fontWeight: 700, padding: "2px 8px", borderRadius: 10, background: s.bg, color: s.text }}>{children}</span>;
+}
+
 export default function GoogleAdsCompleet() {
   return (
     <div style={{ fontFamily: "system-ui, -apple-system, sans-serif", background: "#f9fafb", minHeight: "100vh" }}>
@@ -265,6 +275,161 @@ export default function GoogleAdsCompleet() {
           <p style={{ fontSize: 13, color: "#374151", lineHeight: 1.7 }}>
             <strong>Leerperiode na PMax-splitsing:</strong> Direct na een campagnesplitsing is er altijd een leerperiode van 2 tot 4 weken waarin Google opnieuw calibreert. Een tijdelijke ROAS-dip in die periode is normaal en geen reden tot zorg.
           </p>
+        </div>
+
+        {/* Sectie 8: Wat valt ons op */}
+        <H2>8. Wat valt ons op</H2>
+        {[
+          {
+            title: "Budget groeit sneller dan het rendement",
+            body: "Spend steeg +67% YoY, maar de ROAS daalde van 6,43 naar 5,87 en de kosten per bestelling stegen van €26 naar €32. Dit is een normaal gevolg van snel opschalen, maar het geeft aan dat de structuur nog niet volledig meeschaalt met het budget.",
+          },
+          {
+            title: "Bestsellers en Sale presteren ondermaats maar krijgen 20% van het budget",
+            body: "De Bestsellers-campagne (ROAS 3,88) en Sale-campagne (ROAS 3,44) scoren ruim onder het accountgemiddelde (5,87). Samen €420.000 spend per jaar zonder dat er een scherp tROAS-doel of budgetlimiet is ingesteld passend bij deze campagnes.",
+          },
+          {
+            title: "Google stuurt budget naar volume, niet naar rendement (binnen de PMax-campagnes)",
+            body: "Hanglampen en plafondlampen absorberen samen €810.000 bij een ROAS van ~4,67. Spots, tafellampen en inbouwspots leveren ROAS 5,3–6,5 maar krijgen verhoudingsgewijs veel minder budget. Productgroepen binnen PMax zijn een rapportage-instrument, geen stuurinstrument.",
+          },
+          {
+            title: "Producten boven €400 worden nauwelijks geadverteerd",
+            body: "Producten in de prijsklasse €400–800 leveren ROAS 12,45 en €800+ levert ROAS 13,45. Samen krijgen ze slechts €12.072 spend per jaar. Er zit geen prijsklasse-label in de feed, waardoor aparte campagnesturing onmogelijk is.",
+          },
+          {
+            title: `Locatietargeting staat bij sommige campagnes op de verkeerde instelling`,
+            body: `Een aantal campagnes staat op "Aanwezigheid of interesse" in plaats van "Aanwezigheid". Hierdoor worden advertenties ook getoond aan mensen die buiten Nederland zijn maar interesse tonen in NL, terwijl Rietveld niet in het buitenland levert.`,
+          },
+          {
+            title: "Bodaanpassingen voor tijdstip en locatie staan ingesteld maar doen niets",
+            body: "Met een doel-ROAS biedstrategie negeert Google bodaanpassingen voor advertentieplanning en locaties volledig. Ze staan er wel, waardoor het lijkt alsof er op regio en tijdstip wordt gestuurd, maar dat is niet zo. Enige uitzondering: een -100% apparaatuitsluiting werkt wél.",
+          },
+          {
+            title: "Grote ROAS-verschillen per provincie worden niet benut",
+            body: "Zuid-Holland converteert met ROAS 7,2 bijna twee keer zo goed als Friesland (ROAS 4,2). Omdat bodaanpassingen niet werken met tROAS, en conversiewaarderegels nog niet zijn ingesteld, krijgen alle provincies in principe hetzelfde gewicht.",
+          },
+          {
+            title: "Nieuwe en terugkerende klanten worden in het bieden gelijk behandeld",
+            body: "Er is geen onderscheid gemaakt in de waarde van een nieuwe klant vs. een bestaande klant. Google biedt voor beide evenveel, terwijl nieuwe klanten structureel meer langetermijnwaarde hebben.",
+          },
+          {
+            title: "Liggende productafbeeldingen in de Shopping-feed",
+            body: "Bij een aantal producten staat een liggende (brede) afbeelding in de feed terwijl de productpagina een betere staande versie heeft. Een liggende afbeelding laat het product kleiner verschijnen in Shopping-resultaten, wat de klikratio negatief beïnvloedt.",
+          },
+          {
+            title: "Zes testcampagnes met €76k spend die nog niet zijn geëvalueerd",
+            body: "AI Max Test, Broad Match, Smart Bidding Exploration en gerelateerde tests draaien samen voor €76.000. Het is niet duidelijk of de uitkomsten zijn geanalyseerd en of ze structureel blijven of worden afgesloten. Daarnaast staan 24 inactieve conversieacties in het account.",
+          },
+        ].map((obs, i) => (
+          <div key={i} style={{ background: "white", border: "1px solid #e5e7eb", borderRadius: 8, padding: "14px 18px 14px 54px", marginBottom: 10, position: "relative" }}>
+            <div style={{ position: "absolute", left: 16, top: 14, width: 24, height: 24, background: "#fff3e0", color: "#d97706", fontSize: 12, fontWeight: 700, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center" }}>{i + 1}</div>
+            <div style={{ fontSize: 13, fontWeight: 700, color: "#111827", marginBottom: 3 }}>{obs.title}</div>
+            <div style={{ fontSize: 13, color: "#4b5563", lineHeight: 1.75 }}>{obs.body}</div>
+          </div>
+        ))}
+
+        {/* Sectie 9: Wat onze suggesties zijn */}
+        <H2>9. Wat onze suggesties zijn</H2>
+        {[
+          {
+            groupTitle: "Campagnestructuur",
+            items: [
+              { title: "Splits PMax op producttype: volume-campagne vs. efficiëntie-campagne", body: "Maak aparte PMax-campagnes voor (1) hanglamp + plafondlamp met een strakker tROAS-doel (~500%) en (2) spots + inbouwspots + tafellampen + kapstokken met eigen budget en tROAS ~600%. Nu verdringt het volume-type structureel de rendementstypen." },
+              { title: "Voeg een prijsklasse-label toe aan de feed en lanceer een premium-campagne", body: "Voeg een custom label toe met waarden zoals budget / midden / premium / luxury. Maak daarna een aparte PMax-campagne voor producten €400+ met tROAS ~900–1000%. Huidig: €12k spend bij ROAS 12–13. Dit segment is structureel onderbested." },
+              { title: "Voeg ontbrekende feed-labels toe: margeklasse, seizoen, prijsklasse", body: "Een margeklasse-label (hoog/gemiddeld/laag op basis van backend-data) maakt bieden op werkelijke winst mogelijk. Seizoenslabels geven flexibiliteit in budgetverdeling per kwartaal. Beide ontbreken nu volledig." },
+              { title: "Maak een dedicated campagne of asset group voor japandi-producten", body: "Japandi-stijlproducten leveren ROAS 5,1–6,5 en de bijbehorende zoekterm groeit sterk. Nu zitten ze verspreid. Een aparte groep geeft betere sturing en sluit aan op de trending vraag." },
+            ],
+          },
+          {
+            groupTitle: "Bestsellers & Sale",
+            items: [
+              { title: "Bestsellers: splits campagne op device", body: "Accountbreed converteert desktop (3,12%) beter dan mobiel (2,26%). Maak aparte campagnes of asset groups voor mobiel en desktop, zodat je voor elk apparaat een passend budget en tROAS-doel kunt instellen in plaats van beide te mixen in één campagne." },
+              { title: "Bestsellers + Sale: stel een campagne-specifiek tROAS-doel in", body: "Stel een tROAS in die past bij de werkelijke marges van deze producten, niet het accountgemiddelde van 5,87. Voor Sale geldt: bij -25% korting is een tROAS van 275–300% realistisch en winstgevend. Bestsellers draaien nu zonder scherp doel." },
+              { title: "Stel een hard dagbudgetplafond in voor Bestsellers en Sale", body: "Beide campagnes zijn geen core-profit campagnes. Begrens het dagbudget zodat ze de wolves-campagne (ROAS 5,22) niet verdringen." },
+            ],
+          },
+          {
+            groupTitle: "Test: POAS-structuur",
+            items: [
+              { title: `Test met bieden op werkelijke winst (POAS) in plaats van omzet (ROAS)`, body: `De "profit purchase"-conversieactie is al aanwezig in het account. Door deze als stuurdoel te activeren (in plaats van de omzet-ROAS) gaat Google bieden op de werkelijke marge per product. Dat is met name relevant voor Sale en Bestsellers.` },
+              { title: "Voeg een margeklasse-label toe aan de feed als voorbereiding", body: "Om POAS structureel toe te passen is een marge_hoog / marge_midden / marge_laag label nodig (vanuit backend/ERP). Dit maakt het mogelijk per margeklasse een eigen campagne te draaien met bijpassend tROAS-doel. Zonder dit label biedt POAS-tracking alleen op productniveau." },
+              { title: "Koppel het margeklasse-label aan een High-AOV PMax-bucket voor €400+", body: "Producten boven €400 hebben ROAS 12–13 maar krijgen slechts ~€12k spend. In combinatie met een marge-hoog-label en tROAS 800–1000% kan dit segment gecontroleerd worden opgeschaald. Start met €50–100/dag, evalueer na 3 weken." },
+            ],
+          },
+          {
+            groupTitle: "Instellingen: direct aanpassen",
+            items: [
+              { title: `Locatietargeting corrigeren naar "Aanwezigheid"`, body: `Alle campagnes → Instellingen → Locaties → Locatie-opties → Aanwezigheid. Direct effect: advertenties alleen aan mensen die fysiek in Nederland zijn.` },
+              { title: "Verwijder bodaanpassingen voor tijdstip en locatie", body: "Ze werken niet met doel-ROAS en geven een vals gevoel van controle. Verwijder ze en vervang door conversiewaarderegels voor de segmenten die aantoonbaar beter presteren." },
+            ],
+          },
+          {
+            groupTitle: "Biedstrategie & targeting",
+            items: [
+              { title: "Test: regionale targeting Randstad vs. overig (of top 3 provincies)", body: "Er zijn grote ROAS-verschillen per regio (Zuid-Holland 7,2 vs. Friesland 4,2). Test het effect van aparte campagnes of ad groups gericht op de Randstad vs. de rest van Nederland. Zo kun je budget en tROAS per regio onderbouwd sturen." },
+              { title: "Test hogere biedingen voor nieuwe klanten", body: `Via "Nieuwe klant"-conversiedoelen in PMax kan Google hogere biedingen doen voor mensen die nog nooit bij Rietveld hebben gekocht. Waardewegingsfactor bijv. 1,4×. Werkt het best in combinatie met Customer Match (klantlijst inladen).` },
+            ],
+          },
+          {
+            groupTitle: "Feed & accounthygiëne",
+            items: [
+              { title: "Vervang liggende productafbeeldingen door de staande versies", body: "Loop de Merchant Center feed door en vervang liggende afbeeldingen via het veld additional_image_link door de betere staande variant die al op de productpagina staat. Minimaal 800×800px, bij voorkeur staand formaat." },
+              { title: "Evalueer de 6 testcampagnes en sluit af of schaal op", body: "Analyseer de resultaten van AI Max, Broad Match en Smart Bidding Exploration. Houd de winnaar, stop de rest. Ruim daarna de 24 inactieve conversieacties op." },
+            ],
+          },
+        ].map((group) => (
+          <div key={group.groupTitle} style={{ marginBottom: 28 }}>
+            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.07em", textTransform: "uppercase", color: "#15803d", marginBottom: 10, paddingBottom: 6, borderBottom: "1px solid #c8e8e0" }}>{group.groupTitle}</div>
+            {group.items.map((item, i) => (
+              <div key={i} style={{ background: "white", border: "1px solid #e5e7eb", borderRadius: 8, padding: "14px 18px 14px 20px", marginBottom: 8, borderLeft: "3px solid #16a34a" }}>
+                <div style={{ fontSize: 13, fontWeight: 700, color: "#111827", marginBottom: 3 }}>{item.title}</div>
+                <div style={{ fontSize: 13, color: "#4b5563", lineHeight: 1.75 }}>{item.body}</div>
+              </div>
+            ))}
+          </div>
+        ))}
+
+        {/* Sectie 10: Prioritering */}
+        <H2>10. Prioritering</H2>
+        <Table
+          headers={["#", "Actie", "Type", "Impact"]}
+          rows={[
+            ["1", `Locatietargeting corrigeren naar "Aanwezigheid"`, <Tag variant="green">Instelling</Tag>, "Direct: budgetverspilling stopt"],
+            ["2", "Bodaanpassingen locatie + tijdstip verwijderen", <Tag variant="green">Opschonen</Tag>, "Indirect: helderheid in account"],
+            ["3", "Bestsellers + Sale: campagne-specifiek tROAS-doel instellen", <Tag variant="orange">PMax</Tag>, "€420k budget beter gestuurd"],
+            ["4", "Bestsellers: splits campagne op device", <Tag variant="orange">PMax</Tag>, "Aparte sturing op €229k budget"],
+            ["5", "Test: regionale targeting Randstad vs. overig", <Tag variant="blue">Test</Tag>, "Betere regionale efficiëntie"],
+            ["6", "Prijsklasse-label toevoegen aan feed + PMax premium-segment", <Tag variant="green">Feed + PMax</Tag>, "€400+ segment vrijwel onbenut"],
+            ["7", "PMax opsplitsen op producttype (volume vs. efficiëntie)", <Tag variant="orange">Structuur</Tag>, "Betere budgetallocatie"],
+            ["8", "Shopping-afbeeldingen verbeteren via feed", <Tag variant="green">Feed</Tag>, "CTR-verbetering Shopping"],
+            ["9", "Test: POAS-structuur activeren + margeklasse-label feed", <Tag variant="blue">Test</Tag>, "Bieden op winst i.p.v. omzet"],
+            ["10", "Test: hogere biedingen nieuwe klanten (Customer Match)", <Tag variant="blue">Test</Tag>, "Afhankelijk van klantdata"],
+            ["11", "Testcampagnes evalueren + 24 conversieacties opschonen", <Tag variant="green">Opschonen</Tag>, "Helderheid + minder kannibalisatie"],
+          ]}
+        />
+
+        {/* Jaaranalyse button */}
+        <div style={{ paddingTop: 16, paddingBottom: 64, textAlign: "center" }}>
+          <a
+            href="/google-ads/jaaranalyse"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              background: COLOR,
+              color: "white",
+              padding: "14px 28px",
+              borderRadius: 10,
+              fontSize: 14,
+              fontWeight: 600,
+              textDecoration: "none",
+              boxShadow: "0 2px 8px rgba(37,99,235,0.3)",
+            }}
+          >
+            Bekijk kosten &amp; resultaten (jaaranalyse) →
+          </a>
         </div>
 
       </div>
