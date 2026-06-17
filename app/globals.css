@@ -196,7 +196,7 @@ a { color: inherit; text-decoration: none; }
 
 .meta-ads-analyse-body iframe {
   width: 100%;
-  min-height: 8500px;
+  min-height: 11500px;
   border: none;
   display: block;
 }
@@ -207,7 +207,7 @@ a { color: inherit; text-decoration: none; }
   }
 
   .meta-ads-analyse-body iframe {
-    min-height: 11000px;
+    min-height: 18000px;
   }
 }
 
