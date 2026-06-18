@@ -78,7 +78,7 @@ export default function StrategiePage() {
           headers={["Kans", "Wat het oplevert", "Kanaal"]}
           rows={[
             ["Premiumsegment €400+ opschalen", "12 tot 13 keer ROAS, nu vrijwel onbenut", "Google Ads"],
-            ["Dynamische productadvertenties", "Retargeting draait al op 57x ROAS, DPA-uitbouw verder opschalen", "Meta"],
+            ["Showroom als conversiemachine", "StoreTraffic bewezen op 35x ROAS, nu opschalen met betere showroomcontent", "Meta"],
             ["E-mailmarketing als verbindingslaag", "Van 0 naar 30% aandeel in online omzet", "E-mailmarketing"],
             ["Showroom als groeikanaal", "Meer bezoekers, hogere conversie online en offline", "Content, Social, E-mail"],
           ]}
