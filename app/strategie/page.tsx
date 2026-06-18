@@ -184,7 +184,7 @@ export default function StrategiePage() {
             color={CYAN}
             title="Fase 2 · maand 3 tot 6 · structurele groei"
             items={[
-              "Google Ads: premiumsegment €400+ lanceren.",
+              "Google Ads: PMax splitsen per producttype (vervolg), premiumsegment €400+ lanceren.",
               "Meta: dynamische productadvertenties live, Lead Ads naar e-mail, België uitrollen.",
               "Pinterest: overweging- en conversielaag erbij, lookalikes op de eerste kopers.",
               "E-mailmarketing: post-aankoop- en win-backflow, opt-in zichtbaar op de webshop.",
