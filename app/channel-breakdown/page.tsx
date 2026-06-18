@@ -38,14 +38,14 @@ const CHANNELS = [
         <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z" />
       </svg>
     ),
-    summary: "Meta draait uitstekend. Retargeting levert een ROAS op tot 69x. Sturing loopt via de Conversions API op POAS: optimalisatie op werkelijke winst in plaats van alleen omzet. De meeste concurrenten kunnen dat niet.",
+    summary: "Meta draait sterk. Retargeting levert een ROAS tot 57x en POAS-tracking via de Conversions API stuurt op werkelijke winst in plaats van alleen omzet. Kansen liggen in betere doelgroepverdeling op POAS, verlaging van het awareness-budget (nu 34,8%), consistentere huisstijl in de visuals en meer focus op de showroombeleving in advertenties: een uniek verkoopargument dat nu onderbenut blijft.",
     metrics: [
-      { label: "Omzet ROAS", value: "15,74×", sub: "Totale periode", trend: "up" },
-      { label: "POAS", value: "9,46×", sub: "aug 2024–mei 2026", trend: "up" },
-      { label: "Totaal Spend", value: "€115k", sub: "Totale periode", trend: "neutral" },
-      { label: "CPA", value: "€17,78", sub: "Per aankoop", trend: "up" },
+      { label: "Omzet ROAS", value: "15,80×", sub: "Totale periode", trend: "up" },
+      { label: "POAS", value: "8,76×", sub: "aug 2024–juni 2026", trend: "up" },
+      { label: "Totaal Spend", value: "€119k", sub: "Totale periode", trend: "neutral" },
+      { label: "CPA", value: "€17,58", sub: "Per aankoop", trend: "up" },
     ],
-    topAction: "Retargeting verder uitbreiden + Advantage+ Shopping opschalen",
+    topAction: "Doelgroepverdeling op POAS + huisstijl in creatives + showroomcontent voor StoreTraffic opschaling",
     links: [
       { label: "Samenvatting", href: "/meta-ads/samenvatting" },
       { label: "Compleet", href: "/meta-ads/compleet" },
@@ -158,8 +158,8 @@ export default function HomePage() {
           <div className="channel-breakdown-hero-stats">
             {[
               { label: "Google Ads ROAS", value: "5,87", accent: CYAN },
-              { label: "Meta Ads ROAS", value: "15,74×", accent: YELLOW },
-              { label: "Meta POAS", value: "9,46×", accent: CYAN },
+              { label: "Meta Ads ROAS", value: "15,80×", accent: YELLOW },
+              { label: "Meta POAS", value: "8,76×", accent: CYAN },
               { label: "Google Spend", value: "€2,1M", accent: YELLOW },
             ].map((s) => (
               <div key={s.label}>
