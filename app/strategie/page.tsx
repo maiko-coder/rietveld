@@ -156,7 +156,7 @@ export default function StrategiePage() {
           <p style={{ margin: "0 0 10px" }}>Met een betere digitale afspiegeling van de showroom trekken we meer nieuwe bezoekers. En de mensen die zijn geweest, bewerken we beter via e-mailmarketing en retargeting. De twee kanten versterken elkaar.</p>
           <ul style={{ margin: 0, paddingLeft: 18, display: "flex", flexDirection: "column", gap: 6 }}>
             <li>Kunnen we de winkelconversie verhogen door mensen uit te nodigen foto&apos;s of schetsen mee te nemen? Of door te sturen op adviesgesprekken?</li>
-            <li>Kunnen we de wishlist achter een mailadres zetten? Men scant producten, voegt ze toe aan een wishlist en krijgt deze per mail thuisgestuurd.</li>
+            <li>Kunnen we de wishlist achter een mailadres zetten? Men scant dan de producten die ze mooi vinden, voegen deze toe aan hun wishlist toe, om dit vervolgens per mail te ontvangen.</li>
             <li>Met een &ldquo;store visit audience&rdquo; en de e-maillijst kunnen we showroombezoekers ook via Google retargeten.</li>
           </ul>
         </ShowroomBlock>
