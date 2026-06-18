@@ -172,7 +172,7 @@ export default function StrategiePage() {
             color={RED}
             title="Fase 1 · maand 0 tot 3 · fundament en quick wins"
             items={[
-              "Google Ads: locatietargeting corrigeren, ROAS op Bestsellers en Sale, splitsen per apparaat.",
+              "Google Ads: locatietargeting corrigeren, ROAS op Bestsellers en Sale, splitsen per apparaat, PMax splitsen per producttype.",
               "Meta: pixel koppelen aan de catalogus, A/B testen met ander beeld/videomateriaal voor online en offline doelen, doelgroep budget verschuiven naar hoge marge.",
               "Pinterest: catalogus campagne always-on, tracking en feed controleren.",
               "Website: alt-teksten, hreflang en structured data, plus de drie zekere CRO-acties.",
@@ -184,7 +184,7 @@ export default function StrategiePage() {
             color={CYAN}
             title="Fase 2 · maand 3 tot 6 · structurele groei"
             items={[
-              "Google Ads: PMax splitsen per producttype, premiumsegment €400+ lanceren.",
+              "Google Ads: premiumsegment €400+ lanceren.",
               "Meta: dynamische productadvertenties live, Lead Ads naar e-mail, België uitrollen.",
               "Pinterest: overweging- en conversielaag erbij, lookalikes op de eerste kopers.",
               "E-mailmarketing: post-aankoop- en win-backflow, opt-in zichtbaar op de webshop.",
