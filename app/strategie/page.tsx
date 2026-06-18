@@ -77,7 +77,7 @@ export default function StrategiePage() {
         <DarkTable
           headers={["Kans", "Wat het oplevert", "Kanaal"]}
           rows={[
-            ["PMax splitsen op producttype", "Spots en inbouwlampen concurreren nu met hanglampen voor hetzelfde budget — eigen doel per type verhoogt ROAS structureel", "Google Ads"],
+            ["PMax splitsen op producttype", "Spots en inbouwlampen concurreren nu met hanglampen voor hetzelfde budget, eigen doel per type verhoogt ROAS structureel", "Google Ads"],
             ["Showroom als conversiemachine", "StoreTraffic bewezen op 35x ROAS, nu opschalen met betere showroomcontent", "Meta"],
             ["E-mailmarketing als verbindingslaag", "Van 0 naar 30% aandeel in online omzet", "E-mailmarketing"],
             ["Showroom als groeikanaal", "Meer bezoekers, hogere conversie online en offline", "Content, Social, E-mail"],
