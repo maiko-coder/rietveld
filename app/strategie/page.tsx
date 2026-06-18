@@ -17,12 +17,20 @@ function BodyText({ children }: { children: React.ReactNode }) {
 }
 
 function PhaseCard({ title, items, color }: { title: string; items: string[]; color: string }) {
+  const [phase, ...rest] = title.split(" · ");
+  const subtitle = rest.join(" · ");
   return (
-    <div style={{ background: "white", borderRadius: 12, padding: "22px 24px", boxShadow: "0 1px 4px rgba(0,0,0,0.06)", borderLeft: `4px solid ${color}` }}>
-      <h3 style={{ fontSize: 15, fontWeight: 700, color: DARK, margin: "0 0 14px", lineHeight: 1.4 }}>{title}</h3>
-      <ul style={{ margin: 0, paddingLeft: 18, display: "flex", flexDirection: "column", gap: 10 }}>
+    <div style={{ background: "white", borderRadius: 12, boxShadow: "0 1px 4px rgba(0,0,0,0.06)", borderLeft: `4px solid ${color}`, display: "flex", alignItems: "flex-start", gap: 0 }}>
+      <div style={{ minWidth: 200, maxWidth: 200, padding: "20px 24px", borderRight: "1px solid #f3f4f6" }}>
+        <div style={{ fontSize: 13, fontWeight: 700, color, textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 4 }}>{phase}</div>
+        <div style={{ fontSize: 12, color: "#9ca3af", lineHeight: 1.5 }}>{subtitle}</div>
+      </div>
+      <ul style={{ margin: 0, padding: "20px 24px", display: "flex", flexWrap: "wrap", gap: "6px 32px", listStyle: "none", flex: 1 }}>
         {items.map((item) => (
-          <li key={item} style={{ fontSize: 13.5, color: "#4b5563", lineHeight: 1.65 }}>{item}</li>
+          <li key={item} style={{ fontSize: 13.5, color: "#4b5563", lineHeight: 1.65, display: "flex", alignItems: "flex-start", gap: 8, minWidth: 240 }}>
+            <span style={{ width: 6, height: 6, borderRadius: "50%", background: color, flexShrink: 0, marginTop: 7 }} />
+            {item}
+          </li>
         ))}
       </ul>
     </div>
@@ -167,7 +175,7 @@ export default function StrategiePage() {
         <BodyText>
           Deze volgorde is bewust gekozen. We starten met de quick wins die direct rendement opleveren met minimaal risico. Vervolgens focussen we op structurele groei, om tot slot op te schalen en internationaal uit te breiden.
         </BodyText>
-        <Grid3 style={{ marginBottom: 8 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 8 }}>
           <PhaseCard
             color={RED}
             title="Fase 1 · maand 0 tot 3 · fundament en quick wins"
@@ -203,7 +211,7 @@ export default function StrategiePage() {
               "Showroom: dagje-uitconcept uitbouwen in content (koffie, lunch, beleving), campagnes rondom bezoekmomenten.",
             ]}
           />
-        </Grid3>
+        </div>
 
         <SectionTitle>7. Doelstellingen en KPI&apos;s</SectionTitle>
         <BodyText>
