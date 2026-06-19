@@ -7,7 +7,7 @@ export default function SneakPeekPage() {
 
       {/* Hero */}
       <div style={{ background: "linear-gradient(135deg, #1a1a1a 0%, #262626 100%)", color: "white", padding: "56px 32px 48px" }}>
-        <div style={{ maxWidth: 860, margin: "0 auto" }}>
+        <div style={{ maxWidth: 960, margin: "0 auto" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20 }}>
             <span style={{ background: YELLOW, color: "#1a1a1a", fontSize: 10, fontWeight: 800, letterSpacing: "0.12em", textTransform: "uppercase", padding: "4px 10px", borderRadius: 20 }}>
               Sneak peek
@@ -26,31 +26,10 @@ export default function SneakPeekPage() {
         </div>
       </div>
 
-      {/* Video + context */}
-      <div style={{ maxWidth: 860, margin: "0 auto", padding: "48px 32px 64px" }}>
-
-        {/* Video player */}
-        <div style={{
-          background: "#1a1a1a",
-          borderRadius: 16,
-          overflow: "hidden",
-          boxShadow: "0 20px 60px rgba(0,0,0,0.25)",
-          marginBottom: 40,
-        }}>
-          <video
-            controls
-            autoPlay
-            muted
-            loop
-            playsInline
-            style={{ width: "100%", display: "block", maxHeight: 520, objectFit: "contain" }}
-          >
-            <source src="/rietveld-sneak-peek.mp4" type="video/mp4" />
-          </video>
-        </div>
+      <div style={{ maxWidth: 960, margin: "0 auto", padding: "48px 32px 64px" }}>
 
         {/* Context cards */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16, marginBottom: 32 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16, marginBottom: 40 }}>
           {[
             { label: "Campagnetype", value: "StoreTraffic", icon: "📍" },
             { label: "Doel", value: "Showroombezoek", icon: "🏬" },
@@ -62,6 +41,67 @@ export default function SneakPeekPage() {
               <div style={{ fontSize: 18, fontWeight: 700, color: "#111827" }}>{c.value}</div>
             </div>
           ))}
+        </div>
+
+        {/* Hoofdvideo */}
+        <div style={{ marginBottom: 16 }}>
+          <div style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "#9ca3af", marginBottom: 12 }}>Video</div>
+          <div style={{
+            background: "#1a1a1a",
+            borderRadius: 16,
+            overflow: "hidden",
+            boxShadow: "0 12px 40px rgba(0,0,0,0.2)",
+          }}>
+            <video
+              controls
+              autoPlay
+              muted
+              loop
+              playsInline
+              style={{ width: "100%", display: "block", maxHeight: 540, objectFit: "contain" }}
+            >
+              <source src="/rietveld-sneak-peek.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+
+        {/* 3 ads */}
+        <div style={{ marginBottom: 40 }}>
+          <div style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "#9ca3af", marginBottom: 12, marginTop: 32 }}>Advertenties</div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
+
+            {/* Ad 1 - afbeelding */}
+            <div style={{ background: "#1a1a1a", borderRadius: 12, overflow: "hidden", boxShadow: "0 4px 16px rgba(0,0,0,0.15)" }}>
+              <img
+                src="/rietveld-ad-1.png"
+                alt="Stap binnen in een wereld van licht"
+                style={{ width: "100%", display: "block", objectFit: "cover" }}
+              />
+            </div>
+
+            {/* Ad 2 - afbeelding */}
+            <div style={{ background: "#1a1a1a", borderRadius: 12, overflow: "hidden", boxShadow: "0 4px 16px rgba(0,0,0,0.15)" }}>
+              <img
+                src="/rietveld-ad-2.png"
+                alt="Kom de sfeer zelf beleven"
+                style={{ width: "100%", display: "block", objectFit: "cover" }}
+              />
+            </div>
+
+            {/* Ad 3 - video */}
+            <div style={{ background: "#1a1a1a", borderRadius: 12, overflow: "hidden", boxShadow: "0 4px 16px rgba(0,0,0,0.15)" }}>
+              <video
+                controls
+                muted
+                loop
+                playsInline
+                style={{ width: "100%", display: "block", objectFit: "cover" }}
+              >
+                <source src="/rietveld-sneak-peek-2.mp4" type="video/mp4" />
+              </video>
+            </div>
+
+          </div>
         </div>
 
         {/* Toelichting */}
