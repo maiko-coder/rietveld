@@ -71,7 +71,7 @@ export default function SneakPeekPage() {
             De vorige StoreTraffic-campagne realiseerde een ROAS van 35,65x op €24.309 spend. De showroom is het grootste onderscheidende voordeel van Rietveld Licht. Toch wordt de beleving nu nauwelijks zichtbaar gemaakt in de advertenties.
           </p>
           <p style={{ fontSize: 14, color: "#374151", lineHeight: 1.8, margin: 0 }}>
-            De nieuwe campagne brengt de sfeer van de showroom naar buiten: ingerichte kamers, verlichting aan, een omgeving waar mensen de lamp in de praktijk zien. Gecombineerd met een heldere CTA stuurt dit de juiste doelgroep (55+, lokaal) actief richting de winkel.
+            De nieuwe campagne brengt de sfeer van de showroom naar buiten: ingerichte kamers, verlichting aan, een omgeving waar mensen de lamp in de praktijk zien. Gecombineerd met een heldere CTA stuurt dit de juiste doelgroep (55+) actief richting de winkel.
           </p>
         </div>
 
