@@ -152,7 +152,7 @@ export default function StrategiePage() {
           <p style={{ margin: 0 }}>Content moet voortaan de beleving overbrengen. Ingerichte kamers, sfeervolle settings en video&apos;s die laten zien hoe licht een ruimte verandert. Influencers en klantcases met echte woonkamers versterken dit beeld buiten de showroom. Het moet een feestje zijn om in de auto te stappen en langs te komen — want licht moet je ervaren.</p>
         </ShowroomBlock>
 
-        <ShowroomBlock title="Twee kanten van dezelfde medaille: hogere conversie online én offline">
+        <ShowroomBlock title="Hogere conversie online én offline">
           <p style={{ margin: "0 0 10px" }}>Met een betere digitale afspiegeling van de showroom trekken we meer nieuwe bezoekers. En de mensen die zijn geweest, bewerken we beter via e-mailmarketing en retargeting. De twee kanten versterken elkaar.</p>
           <ul style={{ margin: 0, paddingLeft: 18, display: "flex", flexDirection: "column", gap: 6 }}>
             <li>Kunnen we de winkelconversie verhogen door mensen uit te nodigen foto&apos;s of schetsen mee te nemen? Of door te sturen op adviesgesprekken?</li>
