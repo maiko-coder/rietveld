@@ -21,7 +21,7 @@ export default function SneakPeekPage() {
             <span style={{ color: CYAN }}>in de maak</span>
           </h1>
           <p style={{ fontSize: 15, color: "rgba(255,255,255,0.6)", lineHeight: 1.7, maxWidth: 560, margin: 0 }}>
-            Een eerste blik op de richting voor de nieuwe StoreTraffic-campagne. Sfeer, beleving en de showroom als hoofdrolspeler — zo trekken we meer bezoekers naar de winkel.
+            Een eerste blik op de richting voor de nieuwe StoreTraffic-campagne. Sfeer, beleving en de showroom als hoofdrolspeler, zo trekken we meer bezoekers naar de winkel.
           </p>
         </div>
       </div>
