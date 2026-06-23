@@ -153,11 +153,14 @@ export default function StrategiePage() {
         </ShowroomBlock>
 
         <ShowroomBlock title="Hogere conversie online én offline">
-          <p style={{ margin: "0 0 10px" }}>Met een betere digitale afspiegeling van de showroom trekken we meer nieuwe bezoekers. En de mensen die zijn geweest, bewerken we beter via e-mailmarketing en retargeting. De twee kanten versterken elkaar.</p>
-          <ul style={{ margin: 0, paddingLeft: 18, display: "flex", flexDirection: "column", gap: 6 }}>
-            <li>Kunnen we de winkelconversie verhogen door mensen uit te nodigen foto&apos;s of schetsen mee te nemen? Of door te sturen op adviesgesprekken?</li>
-            <li>Kunnen we de wishlist achter een mailadres zetten? Men scant dan de producten die ze mooi vinden, voegen deze toe aan hun wishlist toe, om dit vervolgens per mail te ontvangen.</li>
-            <li>Met een &ldquo;store visit audience&rdquo; en de e-maillijst kunnen we showroombezoekers ook via Google retargeten.</li>
+          <p style={{ margin: "0 0 12px" }}>We vliegen dit in grote lijnen van twee kanten aan. Met een betere digitale afspiegeling van de showroom trekken we meer nieuwe bezoekers. En de mensen die zijn geweest, bewerken we beter via e-mailmarketing en retargeting. De twee kanten versterken elkaar.</p>
+          <p style={{ margin: "0 0 12px", fontStyle: "italic", color: "#6b7280" }}>Om dit concreet te maken, zijn dit manieren en ideeën om hier meteen mee aan de slag te kunnen:</p>
+          <ul style={{ margin: 0, paddingLeft: 18, display: "flex", flexDirection: "column", gap: 8 }}>
+            <li>Kunnen we de winkelconversie verder verhogen door mensen uit te nodigen foto&apos;s van de ruimtes of schetsen mee te nemen waar de nieuwe verlichting moet komen? Of gebeurt het in de praktijk al dat mensen goed beslagen ten ijs komen?</li>
+            <li>Kunnen we de conversie verhogen door te sturen op adviesgesprekken in de winkel?</li>
+            <li>Kunnen we de wishlist achter een mailadres zetten? Men scant dan de producten die ze mooi vinden, voegen deze toe aan hun wishlist die ze vervolgens per mail thuisgestuurd krijgen. Een ander idee is wellicht mensen een gratis kop koffie aan te bieden adhv een code via de mail. Men laat het mailadres achter, krijgen een (algemene) code en moeten deze laten zien aan de counter van de koffiezaak.</li>
+            <li>Met een &ldquo;store visit audience&rdquo; (bezoekers moeten locatiegeschiedenis aan hebben staan) en de e-maillijst kunnen we bezoekers ook via Google retargeten.</li>
+            <li>Tot slot: is er al eens gesproken over een VR-oplossing waardoor men in de eigen ruimte kan zien hoe een lamp hangt of staat?</li>
           </ul>
         </ShowroomBlock>
 
