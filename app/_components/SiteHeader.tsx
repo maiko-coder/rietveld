@@ -91,6 +91,14 @@ const NAV_ITEMS: NavItem[] = [
       { label: "Manoir", href: "/cases/manoir" },
     ],
   },
+  {
+    label: "Content",
+    href: "/content",
+    sub: [
+      { label: "AI-generated", href: "/content/ai-generated" },
+      { label: "Human-created", href: "/content/human-created" },
+    ],
+  },
   { label: "Team", href: "/team" },
   { label: "Rapportage", href: "https://datastudio.google.com/u/4/reporting/b90fa4bf-f791-4123-9be9-0c1c5fff3184/page/VgD" },
 ];
