@@ -35,13 +35,13 @@ export default function HumanCreatedPage() {
 
       <div style={{ maxWidth: 1100, margin: "0 auto", padding: "48px 32px" }}>
         {/* Studio Moda – staand formaat, naast KBC */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gap: 28, alignItems: "start" }}>
-          <div style={{ background: "white", borderRadius: 12, overflow: "hidden", boxShadow: "0 2px 12px rgba(0,0,0,0.08)", border: "1px solid rgba(0,0,0,0.06)" }}>
-            <video src="/content/studio-moda-igfb.mp4" controls playsInline style={{ width: "100%", display: "block", background: "#000" }} />
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gap: 28, alignItems: "stretch" }}>
+          <div style={{ background: "white", borderRadius: 12, overflow: "hidden", boxShadow: "0 2px 12px rgba(0,0,0,0.08)", border: "1px solid rgba(0,0,0,0.06)", display: "flex", flexDirection: "column" }}>
+            <video src="/content/studio-moda-igfb.mp4" controls playsInline style={{ width: "100%", flex: 1, display: "block", background: "#000", objectFit: "contain" }} />
           </div>
           {/* KBC Web – liggend formaat, groter */}
-          <div style={{ background: "white", borderRadius: 12, overflow: "hidden", boxShadow: "0 2px 12px rgba(0,0,0,0.08)", border: "1px solid rgba(0,0,0,0.06)" }}>
-            <video src="/content/kbc-web.mov" controls playsInline style={{ width: "100%", display: "block", background: "#000" }} />
+          <div style={{ background: "white", borderRadius: 12, overflow: "hidden", boxShadow: "0 2px 12px rgba(0,0,0,0.08)", border: "1px solid rgba(0,0,0,0.06)", display: "flex", flexDirection: "column" }}>
+            <video src="/content/kbc-web.mov" controls playsInline style={{ width: "100%", flex: 1, display: "block", background: "#000", objectFit: "contain" }} />
           </div>
         </div>
       </div>
