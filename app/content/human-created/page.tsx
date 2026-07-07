@@ -44,6 +44,11 @@ export default function HumanCreatedPage() {
             <video src="/content/kbc-web.mov" controls playsInline style={{ width: "100%", flex: 1, display: "block", background: "#000", objectFit: "contain" }} />
           </div>
         </div>
+
+        {/* EKO Europe – liggend header-formaat, volle breedte */}
+        <div style={{ marginTop: 28, background: "white", borderRadius: 12, overflow: "hidden", boxShadow: "0 2px 12px rgba(0,0,0,0.08)", border: "1px solid rgba(0,0,0,0.06)" }}>
+          <video src="/content/eko-europe.mp4" controls playsInline style={{ width: "100%", display: "block", background: "#000" }} />
+        </div>
       </div>
     </main>
   );
