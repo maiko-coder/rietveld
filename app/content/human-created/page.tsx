@@ -34,36 +34,15 @@ export default function HumanCreatedPage() {
       </div>
 
       <div style={{ maxWidth: 1100, margin: "0 auto", padding: "48px 32px" }}>
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
-          gap: 28,
-        }}>
-          {[
-            { src: "/content/studio-moda-igfb.mp4", label: "Studio Moda" },
-            { src: "/content/kbc-web.mov", label: "KBC Web" },
-          ].map((video) => (
-            <div
-              key={video.src}
-              style={{
-                background: "white",
-                borderRadius: 12,
-                overflow: "hidden",
-                boxShadow: "0 2px 12px rgba(0,0,0,0.08)",
-                border: "1px solid rgba(0,0,0,0.06)",
-              }}
-            >
-              <video
-                src={video.src}
-                controls
-                playsInline
-                style={{ width: "100%", display: "block", background: "#000", maxHeight: 480 }}
-              />
-              <div style={{ padding: "14px 18px" }}>
-                <p style={{ margin: 0, fontSize: 13.5, fontWeight: 600, color: "#262626" }}>{video.label}</p>
-              </div>
-            </div>
-          ))}
+        {/* Studio Moda – staand formaat, naast KBC */}
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gap: 28, alignItems: "start" }}>
+          <div style={{ background: "white", borderRadius: 12, overflow: "hidden", boxShadow: "0 2px 12px rgba(0,0,0,0.08)", border: "1px solid rgba(0,0,0,0.06)" }}>
+            <video src="/content/studio-moda-igfb.mp4" controls playsInline style={{ width: "100%", display: "block", background: "#000" }} />
+          </div>
+          {/* KBC Web – liggend formaat, groter */}
+          <div style={{ background: "white", borderRadius: 12, overflow: "hidden", boxShadow: "0 2px 12px rgba(0,0,0,0.08)", border: "1px solid rgba(0,0,0,0.06)" }}>
+            <video src="/content/kbc-web.mov" controls playsInline style={{ width: "100%", display: "block", background: "#000" }} />
+          </div>
         </div>
       </div>
     </main>

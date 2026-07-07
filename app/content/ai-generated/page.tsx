@@ -67,9 +67,6 @@ export default function AIGeneratedPage() {
                 muted={video.muted}
                 style={{ width: "100%", display: "block", background: "#000", maxHeight: 480 }}
               />
-              <div style={{ padding: "14px 18px" }}>
-                <p style={{ margin: 0, fontSize: 13.5, fontWeight: 600, color: "#262626" }}>{video.label}</p>
-              </div>
             </div>
           ))}
         </div>
