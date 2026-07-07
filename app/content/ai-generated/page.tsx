@@ -1,6 +1,6 @@
 const videos = [
   { src: "/content/housespecials-ai-reel.mp4", label: "Housespecials AI Reel" },
-  { src: "/content/inboedelhuis-ai-tiktok.mp4", label: "Inboedelhuis AI TikTok" },
+  { src: "/content/inboedelhuis-ai-tiktok.mp4", label: "Inboedelhuis AI TikTok", muted: true },
   { src: "/content/vogels-keukens-kasten.mp4", label: "Vogels Keukens en Kasten" },
   { src: "/content/keukenboetiek-woning.mp4", label: "Keukenboetiek Woning" },
   { src: "/content/landgoed-de-woldberg.mp4", label: "Landgoed de Woldberg" },
@@ -64,6 +64,7 @@ export default function AIGeneratedPage() {
                 src={video.src}
                 controls
                 playsInline
+                muted={video.muted}
                 style={{ width: "100%", display: "block", background: "#000", maxHeight: 480 }}
               />
               <div style={{ padding: "14px 18px" }}>
